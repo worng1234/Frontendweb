@@ -1,0 +1,68 @@
+<div>
+  <h3>Check Student line</h3>
+</div>
+<div>
+  <label>ชั้น : </label>
+  <select>
+    <option></option>
+    <option *ngFor='let c of class'>{{c}}</option>
+  </select>
+  <label>ห้อง :</label>
+  <select>
+    <option></option>
+    <option *ngFor='let r of room'>{{r}}</option>
+  </select>
+  <button type="submit">ค้นหา</button>
+</div>
+<div>
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th>เลขที่</th>
+        <th>รหัสนักเรียน</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>ร่วมเข้าแถว</th>
+        <th>มาสาย</th>
+        <th>ขาดแถว</th>
+        <th>หมายเหตุ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>12811</td>
+        <td>นายกอไก่ ขอไข่</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><textarea></textarea></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>12812</td>
+        <td>นายระยอง โคขวิด</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><textarea></textarea></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>12813</td>
+        <td>นางสาวปารียา ไกรคุ</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><textarea></textarea></td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button type="button">ลายเซ็น</button>
+  </div>
+</div>
+<div>
+  <button type="submit">submit</button>
+  <button type="reset">clear</button>
+  <button type="button">close</button>
+</div>
