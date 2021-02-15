@@ -26,12 +26,6 @@ export class SortNewstudentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  refreshNewstudentList(){
-    this.Newstudentm1List.getNewstudentm1.subscribe(data=>{
-      this.Newstudentm1List=data;
-    })
-
-  }
 
 }
 

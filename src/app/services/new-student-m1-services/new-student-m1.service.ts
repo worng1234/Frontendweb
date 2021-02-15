@@ -18,23 +18,5 @@ export class NewStudentM1Service {
 
   constructor( private http: HttpClient) { }
 
-  getListNewstudentm1():Observable<any[]>{
-    return this.http.get<any>(this.myAppurl + this.myApiurl);
-  }
 
-  deleteNewstudentm1(id: number):Observable<NewStudentM1Component>{
-    return this.http.delete<NewStudentM1Component>(this.myAppurl + this.myApiurl + id);
-  }
-
-  postNewstudentm1(newstudentm1: NewStudentM1Component):Observable<NewStudentM1Component>{
-    return this.http.post<NewStudentM1Component>(this.myAppurl + this.myApiurl, newstudentm1, this.httpOptions);
-  }
-
-  loadNewstudentm1(id: number):Observable<NewStudentM1Component>{
-    return this.http.get<NewStudentM1Component>( this.myAppurl + this.myApiurl + id);
-  }
-
-  putNewstudentm1(id: number, newstudentm1: NewStudentM1Component):Observable<NewStudentM1Component>{
-    return this.http.put<NewStudentM1Component>(this.myAppurl + this.myApiurl, newstudentm1, this.httpOptions);
-  }
 }
