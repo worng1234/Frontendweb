@@ -1,125 +1,132 @@
-<form>
-  <div>
-    <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 1</h2>
-    <h4>ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา เขต 34</h4>
-  </div>
+<div>
+  <form id = "formNewstudentm1" name = "formNewstudentm1"
+  #newstudentm1NewData = "ngForm" (ngSubmit)="addNewstudentm1(newstudentm1NewData.value)">
     <div>
-        <label>คำนำหน้า</label>
-        <select>
-          <option></option>
-          <option *ngFor='let p of prename'>{{p}}</option>
-        </select>
-        <label>ชื่อ</label>
-        <input>
-        <label>นามสกุล</label>
-        <input>
-        <label>เพศ</label>
-        <select>
-          <option></option>
-          <option *ngFor='let g of gender'>{{g}}</option>
-        </select>
+      <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 1</h2>
+      <h4>
+        ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา
+        เขต 34
+      </h4>
+    </div>
+    <div>
+      <label>คำนำหน้า</label>
+      <select>
+        <option></option>
+        <option *ngFor="let p of prename">{{ p }}</option>
+      </select>
+      <label>ชื่อ</label>
+      <input />
+      <label>นามสกุล</label>
+      <input />
+      <label>เพศ</label>
+      <select>
+        <option></option>
+        <option *ngFor="let g of gender">{{ g }}</option>
+      </select>
     </div>
     <div>
       <label>เลขประจำตัวประชาชน</label>
-      <input>
+      <input />
       <label>วันเดือนปีเกิด</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>ศาสนา</label>
-      <input>
+      <input />
       <label>เชื้อชาติ</label>
-      <input>
+      <input />
       <label>สัญชาติ</label>
-      <input>
+      <input />
       <label>โทรศัพท์</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>ชื่อ/นามสกุลบิดา</label>
-      <input>
+      <input />
       <label>เลขประจำตัวประชาชน</label>
-      <input>
+      <input />
       <label>อาชีพ</label>
-      <input>
+      <input />
       <label>โทรศัพท์</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>ชื่อ/นามสกุลมารดา</label>
-      <input>
+      <input />
       <label>เลขประจำตัวประชาชน</label>
-      <input>
+      <input />
       <label>อาชีพ</label>
-      <input>
+      <input />
       <label>โทรศัพท์</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>ผู้ปกครอง</label>
-      <input type="checkbox">
+      <input type="checkbox" />
       <label>บิดา</label>
-      <input type="checkbox">
+      <input type="checkbox" />
       <label>มารดา</label>
       <label>ถ้าเป็นบุคลอื่นโปรดระบุความสัมพันธ์</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>ชื่อ/นามสกุลผู้ปกครอง</label>
-      <input>
+      <input />
       <label>อาชีพ</label>
-      <input>
+      <input />
       <label>โทรศัพท์</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>บ้านเลขที่</label>
-      <input>
+      <input />
       <label>หมู่ที่</label>
-      <input>
+      <input />
       <label>ซอย</label>
-      <input>
+      <input />
       <label>ถนน</label>
-      <input>
+      <input />
     </div>
     <div>
       <label>ตำบล/แขวง</label>
-      <input>
+      <input />
       <label>อำเภอ/เขต</label>
-      <input>
+      <input />
       <label>จังหวัด</label>
-      <input>
+      <input />
       <label>รหัสไปรษณีย์</label>
-      <input>
+      <input />
     </div>
     <div>
-      <label>กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน</label>
-      <input>
+      <label
+        >กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน</label
+      >
+      <input />
     </div>
     <div>
       <label>ตำบล</label>
-      <input>
+      <input />
       <label>อำเภอ</label>
-      <input>
+      <input />
       <label>จังหวัด</label>
-      <input>
+      <input />
     </div>
     <div>
-      <input type="checkbox">
+      <input type="checkbox" />
       <label>ผู้พิการ/เด็กพิเศษ</label>
       <label>(โปรดระบุประเภทความพิเศษ)</label>
-      <input>
+      <input />
     </div>
     <div>
-      <input type="checkbox">
+      <input type="checkbox" />
       <label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
-      <input type="checkbox">
+      <input type="checkbox" />
       <label>อื่นๆ</label>
       <label>โปรดระบุ</label>
-      <input>
+      <input />
     </div>
     <div>
       <button type="submit" class="btn btn-success">ยืนยัน</button>
     </div>
-</form>
-
+  </form>
+</div>
