@@ -1,6 +1,10 @@
 <div>
-  <form id = "formNewstudentm1" name = "formNewstudentm1"
-  #newstudentm1NewData = "ngForm" (ngSubmit)="addNewstudentm1(newstudentm1NewData.value)">
+  <form
+    id="formNewstudentm1"
+    name="formNewstudentm1"
+    #newstudentm1NewData="ngForm"
+    (ngSubmit)="addNewstudentm1(newstudentm1NewData.value)"
+  >
     <div>
       <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 1</h2>
       <h4>
@@ -9,20 +13,30 @@
       </h4>
     </div>
     <div>
-      <label>คำนำหน้า</label>
-      <select>
-        <option></option>
-        <option *ngFor="let p of prename">{{ p }}</option>
-      </select>
-      <label>ชื่อ</label>
-      <input />
-      <label>นามสกุล</label>
-      <input />
-      <label>เพศ</label>
-      <select>
-        <option></option>
-        <option *ngFor="let g of gender">{{ g }}</option>
-      </select>
+      <div>
+        <label for="prename">คำนำหน้า : </label>
+        <select>
+          <option></option>
+          <option *ngFor="let p of prename" id="prename" name="prename" ngModel placeholder="คำนำหน้า">
+            {{ p }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="name">ชื่อ : </label>
+        <input id = "name" name = "name" ngModel placeholder = "ชื่อ"/>
+      </div>
+      <div>
+        <label for="surname"> นามสกุล : </label>
+        <input id = "surname" name = "surname" ngModel placeholder = "นามสกุล"/>
+      </div>
+      <div>
+        <label for="sex">เพศ : </label>
+          <select>
+            <option></option>
+            <option *ngFor="let g of gender" id="sex" name="sex" ngModel>{{ g }}</option>
+          </select>
+      </div>
     </div>
     <div>
       <label>เลขประจำตัวประชาชน</label>
