@@ -38,4 +38,5 @@ export class NewStudentM4Service{
   diabled : string;
   poor_person : string;
   etc : string;
+  tel : string;
 }

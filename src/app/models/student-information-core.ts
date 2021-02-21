@@ -41,5 +41,6 @@ export class StudentInformationCore{
   etc : string;
   status : boolean;
   classroom_id : string;
+  tel : string;
 
 }

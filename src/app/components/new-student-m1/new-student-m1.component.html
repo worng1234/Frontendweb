@@ -41,7 +41,7 @@
     <div>
       <div>
         <label for = "id_number">เลขประจำตัวประชาชน</label>
-        <input id="id_number" name="id_number"/>
+        <input id="id_number" name="id_number" ngModel placeholder="เลขประจำตัวประชน"/>
       </div>
       <div>
         <label for="birthday">วันเดือนปีเกิด</label>
@@ -49,34 +49,34 @@
       </div>
     </div>
     <div>
-      <label>ศาสนา</label>
-      <input />
-      <label>เชื้อชาติ</label>
-      <input />
-      <label>สัญชาติ</label>
-      <input />
-      <label>โทรศัพท์</label>
-      <input />
+      <label for="religion">ศาสนา</label>
+      <input id="religion" name="religion" ngModel placeholder="ศาสนา"/>
+      <label for="nationality">เชื้อชาติ</label>
+      <input id="nationality" name="nationality" ngModel placeholder="เชื้อชาติ"/>
+      <label for="origin">สัญชาติ</label>
+      <input id="origin" name="origin" ngModel placeholder="สัญชาติ"/>
+      <label for="tel">โทรศัพท์</label>
+      <input id="tel" name="tel" ngModel placeholder="โทรศัพท์"/>
     </div>
     <div>
-      <label>ชื่อ/นามสกุลบิดา</label>
-      <input />
-      <label>เลขประจำตัวประชาชน</label>
-      <input />
-      <label>อาชีพ</label>
-      <input />
-      <label>โทรศัพท์</label>
-      <input />
+      <label for="father_name">ชื่อ-นามสกุลบิดา</label>
+      <input id="father_name" name="father_name" ngModel placeholder="ชื่อ-นามสกุลบิดา"/>
+      <label for="father_id">เลขประจำตัวประชาชนบิดา</label>
+      <input id="father_id" name="father_id" ngModel placeholder="เลขประจำตัวประชาชนบิดา"/>
+      <label for="father_job">อาชีพ</label>
+      <input id="father_job" name="father_job" ngModel placeholder="อาชีพ"/>
+      <label for="father_tel">โทรศัพท์</label>
+      <input id="father_tel" name="father" ngModel placeholder="โทรศัพท์"/>
     </div>
     <div>
-      <label>ชื่อ/นามสกุลมารดา</label>
-      <input />
-      <label>เลขประจำตัวประชาชน</label>
-      <input />
-      <label>อาชีพ</label>
-      <input />
-      <label>โทรศัพท์</label>
-      <input />
+      <label for="mother_name">ชื่อ-นามสกุลมารดา</label>
+      <input id="mother_name" name="mother_name" ngModel placeholder="ชื่อ-นามสกุลมารดา"/>
+      <label for="id_number">เลขประจำตัวประชาชนมารดา</label>
+      <input id="id_number" name="id_number" ngModel placeholder="เลขประจำตัวประชาชนมารดา"/>
+      <label for="mother_job">อาชีพ</label>
+      <input id="mother_job" name="mother_job" ngModel placeholder="อาชีพ"/>
+      <label for="mother_tel">โทรศัพท์</label>
+      <input id="mother_tel" name="mother_tel" ngModel placeholder="โทรศัพท์"/>
     </div>
     <div>
       <label>ผู้ปกครอง</label>
@@ -84,16 +84,16 @@
       <label>บิดา</label>
       <input type="checkbox" />
       <label>มารดา</label>
-      <label>ถ้าเป็นบุคลอื่นโปรดระบุความสัมพันธ์</label>
-      <input />
+      <label for="parent">ถ้าเป็นบุคลอื่นโปรดระบุความสัมพันธ์</label>
+      <input id="parent" name="parent" ngModel placeholder="ผู้ปกครอง"/>
     </div>
     <div>
-      <label>ชื่อ/นามสกุลผู้ปกครอง</label>
-      <input />
-      <label>อาชีพ</label>
-      <input />
-      <label>โทรศัพท์</label>
-      <input />
+      <label for="parent_name">ชื่อ-นามสกุลผู้ปกครอง</label>
+      <input id="parent_name" name="parent_name" ngModel placeholder="ชื่อ-นามสกุลผู้ปกครอง"/>
+      <label for="parent_job">อาชีพ</label>
+      <input id="parent_job" name="parent_job" ngModel placeholder="อาชีพ"/>
+      <label for="parent_tel">โทรศัพท์</label>
+      <input id="parent_tel" name="parent_tel" placeholder="โทรศัพท์"/>
     </div>
     <div>
       <label>บ้านเลขที่</label>
