@@ -1,4 +1,4 @@
-import { newstudentm1 } from 'src/app/models/new-student-m1-models';
+import { NewStudentM1Models} from 'src/app/models/new-student-m1-models';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -13,6 +13,6 @@ export class SortNewstudentService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getNewstudentm1List(){
-    return this.http.get<newstudentm1><this.url>;
+   return this.http.get<NewStudentM1Models[]>(this.url);
   }
 }

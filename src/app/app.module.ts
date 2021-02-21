@@ -17,6 +17,7 @@ import { CheckStudentRoomComponent } from './components/check-student-room/check
 import { BehaviorTeacherComponent } from './components/behavior-teacher/behavior-teacher.component';
 import { BehaviorStudentComponent } from './components/behavior-student/behavior-student.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
