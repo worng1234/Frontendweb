@@ -14,6 +14,7 @@ export class NewStudentM1Component implements OnInit {
   constructor( private nm1s: NewStudentM1Service) { }
 
   ngOnInit() {
+
   }
   addNewstudentm1(newstudentm1){
     this.nm1s.addNewstudentm1(newstudentm1);
