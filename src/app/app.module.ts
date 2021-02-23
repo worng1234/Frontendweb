@@ -8,6 +8,7 @@ import { CheckStudentLineComponent } from './components/check-student-line/check
 import { CheckStudentRoomComponent } from './components/check-student-room/check-student-room.component';
 import { BehaviorTeacherComponent } from './components/behavior-teacher/behavior-teacher.component';
 import { BehaviorStudentComponent } from './components/behavior-student/behavior-student.component';
+import { EditComponent } from './components/edit/edit.component';
 
 //services
 import { NewStudentM1Service } from './services/new-student-m1-services/new-student-m1.service';
@@ -20,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 
 
@@ -35,13 +38,16 @@ import { from } from 'rxjs';
     CheckStudentRoomComponent,
     BehaviorTeacherComponent,
     BehaviorStudentComponent,
+    EditComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
+
   ],
   providers: [NewStudentM1Service],
   bootstrap: [AppComponent]

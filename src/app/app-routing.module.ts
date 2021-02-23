@@ -10,6 +10,7 @@ import { CheckStudentLineComponent } from './components/check-student-line/check
 import { BehaviorStudentComponent } from './components/behavior-student/behavior-student.component';
 import { BehaviorTeacherComponent } from './components/behavior-teacher/behavior-teacher.component';
 import { CheckStudentRoomComponent } from './components/check-student-room/check-student-room.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'CheckStudentLine',component:CheckStudentLineComponent},
   {path:'CheckStudentRoom',component:CheckStudentRoomComponent},
   {path:'BehaviorStudent',component:BehaviorStudentComponent},
-  {path:'BehaviorTeacher',component:BehaviorTeacherComponent}
+  {path:'BehaviorTeacher',component:BehaviorTeacherComponent},
+  {path:'Edit',component:EditComponent}
 ];
 
 @NgModule({
