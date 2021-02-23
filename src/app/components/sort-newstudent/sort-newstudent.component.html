@@ -39,41 +39,10 @@
       </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>นาย ณัฐวุฒิ กิติวงค์</td>
-          <td>โรงเรียนบ้านสันปง</td>
-          <td>มัธยมศึกษาปีที่ 4 </td>
-          <td>วิทยาศาสตร์-คณิตศาสตร์</td>
-          <td><button>ดูข้อมูล</button></td>
-          <td><button>ดูเอกสาร</button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>นาย ประยวย หัวเถิก</td>
-          <td>โรงเรียนบ้านนาบุญโหล่งขอด</td>
-          <td>มัธยมศึกษาปีที่ 4 </td>
-          <td>วิทยาศาสตร์-คณิตศาสตร์</td>
-          <td><button>ดูข้อมูล</button></td>
-          <td><button>ดูเอกสาร</button></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>เด็กชาย วิจิตร จันทบุรี</td>
-          <td>โรงเรียนบ้านแจ่งกู่เรือง</td>
-          <td>มัธยมศึกษาปีที่ 1 </td>
-          <td></td>
-          <td><button>ดูข้อมูล</button></td>
-          <td><button>ดูเอกสาร</button></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>เด็กหญิง อังศุมาลิน ไกรคุป</td>
-          <td>โรงเรียนบ้านแม่ปั๋ง</td>
-          <td>มัธยมศึกษาปีที่ 1 </td>
-          <td></td>
-          <td><button>ดูข้อมูล</button></td>
-          <td><button>ดูเอกสาร</button></td>
+        <tr *ngFor = "let s of newstudentm1list">
+          <td>{{ s.id }}</td>
+          <td>{{ s.prename + s.name  }} {{s.surname}}</td>
+          <td>{{ s.final_school}}</td>
         </tr>
       </tbody>
   </table>

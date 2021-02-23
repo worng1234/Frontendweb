@@ -1,17 +1,18 @@
 <div>
+  <div>
+    <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 1</h2>
+    <h4>
+      ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา
+      เขต 34
+    </h4>
+  </div>
   <form
     id="formNewstudentm1"
     name="formNewstudentm1"
     #newstudentm1NewData="ngForm"
     (ngSubmit)="addNewstudentm1(newstudentm1NewData.value)"
   >
-    <div>
-      <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 1</h2>
-      <h4>
-        ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา
-        เขต 34
-      </h4>
-    </div>
+
     <div>
       <div>
         <label for="prename">คำนำหน้า :  </label>
@@ -96,38 +97,36 @@
       <input id="parent_tel" name="parent_tel" placeholder="โทรศัพท์"/>
     </div>
     <div>
-      <label>บ้านเลขที่</label>
-      <input />
-      <label>หมู่ที่</label>
-      <input />
-      <label>ซอย</label>
-      <input />
-      <label>ถนน</label>
-      <input />
+      <label for="house_number">บ้านเลขที่</label>
+      <input id="house_number" name="house_number" ngModel placeholder="บ้านเลขที่"/>
+      <label for="bloc">หมู่ที่</label>
+      <input id="bloc" name="bloc" ngModel placeholder="หมู่ที่"/>
+      <label for="street">ซอย</label>
+      <input id="street" name="street" ngModel placeholder="ซอย"/>
+      <label for="road">ถนน</label>
+      <input id="road" name="road" ngModel placeholder="ถนน"/>
     </div>
     <div>
-      <label>ตำบล/แขวง</label>
-      <input />
-      <label>อำเภอ/เขต</label>
-      <input />
-      <label>จังหวัด</label>
-      <input />
-      <label>รหัสไปรษณีย์</label>
-      <input />
+      <label for="sub_district">ตำบล/แขวง</label>
+      <input id="sub_district" name="sub_district" ngModel placeholder="ตำบล/แขวง"/>
+      <label for="district">อำเภอ/เขต</label>
+      <input id="district" name="district" ngModel placeholder="อำเภอ/แขวง"/>
+      <label for="province">จังหวัด</label>
+      <input id="province" name="province" ngModel placeholder="จังหวัด"/>
+      <label for="post">รหัสไปรษณีย์</label>
+      <input id="post" name="post" ngModel placeholder="รหัสไปรษณีย์"/>
     </div>
     <div>
-      <label
-        >กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน</label
-      >
-      <input />
+      <label for="final_school">สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน</label>
+      <input id="final_school" name="fianl_school" ngModel placeholder="สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน"/>
     </div>
     <div>
-      <label>ตำบล</label>
-      <input />
-      <label>อำเภอ</label>
-      <input />
-      <label>จังหวัด</label>
-      <input />
+      <label for="final_school_sub_district">ตำบล</label>
+      <input id="fianl_school_sub_district" name="final_school_sub_district" ngModel placeholder="ตำบล"/>
+      <label for="final_school_district">อำเภอ</label>
+      <input id="final_school_district" name="fianl_school_district" ngModel placeholder="อำเภอ"/>
+      <label for="final_school_province">จังหวัด</label>
+      <input id="final_school_province" name="final_school_province" ngModel placeholder="จังหวัด"/>
     </div>
     <div>
       <input type="checkbox" />
@@ -144,7 +143,7 @@
       <input />
     </div>
     <div>
-      <button type="submit" class="btn btn-success">ยืนยัน</button>
+      <button type="submit"  value="ยืนยัน" class="btn btn-success">ยืนยัน</button>
     </div>
   </form>
 </div>

@@ -59,6 +59,10 @@ export class NewStudentM1Service {
       "poor_person" : newstudentm1.poor_person,
       "etc" : newstudentm1.etc,
     }
+    this.http.post(this.url, this.newStudentm1) .subscribe(
+      () => {
+        this.router.navigate(['/Newstudentm1']);
+    });
   }
 
 
