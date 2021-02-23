@@ -1,5 +1,6 @@
-export class NewStudentM4Service{
+export class StudentInformationCore{
   id : number;
+  student_id : string;
   prename : string;
   name : string;
   surname : string;
@@ -38,5 +39,8 @@ export class NewStudentM4Service{
   diabled : string;
   poor_person : string;
   etc : string;
+  status : boolean;
+  classroom_id : string;
   tel : string;
+
 }

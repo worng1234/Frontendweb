@@ -1,5 +1,7 @@
-import { NewStudentM1Service } from 'src/app/services/new-student-m1-services/new-student-m1.service';
+import { NewStudentM1Models } from './../../models/new-student-m1-models';
+import { SortNewstudentService } from './../../services/sort-new-student-services/sort-newstudent.service';
 import { Component, OnInit } from '@angular/core';
+
 
 
 
@@ -16,14 +18,18 @@ export class SortNewstudentComponent implements OnInit {
   'โรงเรียนบ้านแม่ปั๋งสาขาขุนปั๋ง','โรงเรียนบ้านแม่เหียะ','โรงเรียนบ้านขุนแจ๋','โรงเรียนบ้านแจ่งกู่เรือง','โรงเรียนบ้านห้วยบง','โรงเรียนบ้านหลวง'];
 
   study_area = ['นอกเขต','ในเขต'];
+  newstudentm1list: NewStudentM1Models[];
 
 
 
-  constructor( private services: NewStudentM1Service) { }
+  constructor( private nsm1list: SortNewstudentService) { }
 
-  Newstudentm1List:any[];
 
-  ngOnInit(): void {
+
+
+  ngOnInit(){
+    this.nsm1list.getNewstudentm1List()
+      .subscribe((data: NewStudentM1Models[]) => {this.newstudentm1list = data;});
   }
 
 

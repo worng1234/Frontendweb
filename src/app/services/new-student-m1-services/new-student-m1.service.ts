@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NewStudentM1Component } from '../../components/new-student-m1/new-student-m1.component';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -57,6 +59,10 @@ export class NewStudentM1Service {
       "poor_person" : newstudentm1.poor_person,
       "etc" : newstudentm1.etc,
     }
+    this.http.post(this.url, this.newStudentm1) .subscribe(
+      () => {
+        this.router.navigate(['/Newstudentm1']);
+    });
   }
 
 

@@ -1,4 +1,4 @@
-export class NewStudentM1Service{
+export class NewStudentM1Models{
   id : number;
   prename : string;
   name : string;
@@ -38,4 +38,5 @@ export class NewStudentM1Service{
   diabled : string;
   poor_person : string;
   etc : string;
+  tel : string;
 }
