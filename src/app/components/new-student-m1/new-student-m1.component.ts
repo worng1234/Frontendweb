@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewStudentM1Component implements OnInit {
 
-  prename = ['นาย','นางสาว'];
-  gender = ['ชาย','หญิง'];
+  prename = ['','นาย','นางสาว'];
+  gender = ['','ชาย','หญิง'];
 
   constructor( private nm1s: NewStudentM1Service) { }
 

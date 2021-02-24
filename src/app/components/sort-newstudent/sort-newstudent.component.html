@@ -4,22 +4,19 @@
   </div>
   <div>
     <label>ระบดับชั้น : </label>
-      <input type="checkbox">
-      <label> มัธยมศึกษาปีที่ 1 </label>
-      <input type="checkbox">
-      <label> มัธยมศึกษาปีที่ 4</label>
+      <select>
+        <option *ngFor="let sc of student_class">{{sc}}</option>
+      </select>
   </div>
   <div>
     <label>เขตการศึกษา : </label>
       <select>
-        <option></option>
         <option *ngFor='let sa of study_area'>{{sa}}</option>
       </select>
   </div>
   <div>
     <label>โรงเรียน : </label>
     <select>
-      <option></option>
       <option *ngFor='let s of school'>{{s}}</option>
     </select>
   </div>

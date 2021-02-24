@@ -17,7 +17,6 @@
       <div>
         <label for="prename">คำนำหน้า :  </label>
         <select>
-          <option></option>
           <option *ngFor="let p of prename" id="prename" name="prename" ngModel placeholder="คำนำหน้า">
             {{ p }}
           </option>
@@ -34,7 +33,6 @@
       <div>
         <label for="sex">เพศ : </label>
           <select>
-            <option></option>
             <option *ngFor="let g of gender" id="sex" name="sex" ngModel>{{ g }}</option>
           </select>
       </div>
