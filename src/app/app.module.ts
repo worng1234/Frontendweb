@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 
 
 
@@ -40,6 +41,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     BehaviorTeacherComponent,
     BehaviorStudentComponent,
     EditComponent,
+    SortNewstudentM4Component,
 
   ],
   imports: [
