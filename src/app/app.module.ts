@@ -23,6 +23,7 @@ import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -49,7 +50,8 @@ import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    Ng2SearchPipeModule
 
   ],
   providers: [NewStudentM1Service],
