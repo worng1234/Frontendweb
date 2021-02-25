@@ -1,16 +1,16 @@
 <form>
   <div>
-    <h2>New Student Register</h2>
+    <h2>New Student Register M1</h2>
   </div>
   <div>
     <label>เขตการศึกษา : </label>
-      <select>
+      <select type="text" name="searchFunction" [(ngModel)]="searchFunction" autocomplete="off">
         <option *ngFor='let sa of study_area'>{{sa}}</option>
       </select>
   </div>
   <div>
     <label>โรงเรียน : </label>
-    <select>
+    <select type="text" name="searchFunction" [(ngModel)]="searchFunction" autocomplete="off">
       <option *ngFor='let s of school'>{{s}}</option>
     </select>
   </div>
@@ -27,7 +27,7 @@
       </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let s of newstudentm1list">
+        <tr *ngFor = "let s of newstudentm1list | filter:searchFunction">
           <td>{{ s.id }}</td>
           <td>{{ s.prename + s.name  }} {{s.surname}}</td>
           <td>{{ s.final_school}}</td>

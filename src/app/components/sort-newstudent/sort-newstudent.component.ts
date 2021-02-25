@@ -21,6 +21,7 @@ export class SortNewstudentComponent implements OnInit {
 
   study_area = ['','นอกเขต','ในเขต'];
   newstudentm1list: NewStudentM1Models[];
+  searchFunction;
 
 
 
