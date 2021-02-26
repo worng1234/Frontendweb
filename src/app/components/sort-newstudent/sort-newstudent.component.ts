@@ -20,8 +20,10 @@ export class SortNewstudentComponent implements OnInit {
   student_class =['','มัธยมศึกษาปีที่ 1','มัธยมศึกษาปีที่ 2'];
 
   study_area = ['','นอกเขต','ในเขต'];
-  newstudentm1list: NewStudentM1Models[];
-  searchFunction;
+  newstudentm1list: NewStudentM1Models[] =[];
+  searchFunction_school;
+  searchFunction_name : string;
+  searchFunction_area;
 
 
 
@@ -33,6 +35,12 @@ export class SortNewstudentComponent implements OnInit {
   ngOnInit(){
     this.nsm1list.getNewstudentm1List()
       .subscribe((data: NewStudentM1Models[]) => {this.newstudentm1list = data;});
+  }
+
+  search(){
+    this.newstudentm1list = this.newstudentm1list.filter(res =>{
+      return res.name;
+    });
   }
 
 

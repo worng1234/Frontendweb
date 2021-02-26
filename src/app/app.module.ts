@@ -14,7 +14,6 @@ import { EditComponent } from './components/edit/edit.component';
 import { NewStudentM1Service } from './services/new-student-m1-services/new-student-m1.service';
 
 //module
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +23,7 @@ import { from } from 'rxjs';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 
 
 
