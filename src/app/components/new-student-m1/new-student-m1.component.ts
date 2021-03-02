@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NewStudentM1Service } from './../../services/new-student-m1-services/new-student-m1.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
@@ -15,17 +16,21 @@ export class NewStudentM1Component implements OnInit {
 
 
 
-  constructor(private nm1s: NewStudentM1Service) { }
+  constructor(private nm1s: NewStudentM1Service,
+              private http: HttpClientModule) { }
 
     ngOnInit() {
+
     }
 
   addNewstudentm1(newstudentm1){
     this.nm1s.addNewstudentm1(newstudentm1);
   }
 
-
-
 }
+
+
+
+
 
 
