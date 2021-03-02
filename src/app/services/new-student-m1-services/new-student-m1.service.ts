@@ -1,3 +1,4 @@
+import { NewStudentM1Models } from 'src/app/models/new-student-m1-models';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -56,7 +57,6 @@ export class NewStudentM1Service {
       "final_school_district" : newstudentm1.final_school_district,
       "final_school_province" : newstudentm1.final_school_province,
       "disabled" : newstudentm1.disabled,
-      "poor_person" : newstudentm1.poor_person,
       "etc" : newstudentm1.etc,
     }
     this.http.post(this.url, this.newStudentm1) .subscribe(

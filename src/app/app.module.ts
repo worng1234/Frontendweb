@@ -20,10 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -47,11 +47,11 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot(),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+
 
   ],
   providers: [NewStudentM1Service],

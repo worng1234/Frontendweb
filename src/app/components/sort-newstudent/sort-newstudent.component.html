@@ -18,8 +18,6 @@
         <th>ลำดับ</th>
         <th>ชื่อ-นามสกุล</th>
         <th>โรงเรียน</th>
-        <th>ประสงค์เข้าศึกษาต่อในชั้น</th>
-        <th>สายการเรียน</th>
         <th>ข้อมูลประจำตัว</th>
         <th>เอกสารสำคัญ</th>
       </tr>
@@ -29,6 +27,8 @@
           <td>{{ s.id }}</td>
           <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
           <td>{{ s.final_school}}</td>
+          <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
+          <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
         </tr>
       </tbody>
   </table>
