@@ -12,6 +12,7 @@ import { EditComponent } from './components/edit/edit.component';
 
 //services
 import { NewStudentM1Service } from './services/new-student-m1-services/new-student-m1.service';
+import { SortNewstudentService } from './services/sort-new-student-services/sort-newstudent.service';
 
 //module
 import { BrowserModule } from '@angular/platform-browser';
@@ -54,7 +55,7 @@ import { FormsModule } from '@angular/forms';
 
 
   ],
-  providers: [NewStudentM1Service],
+  providers: [NewStudentM1Service,SortNewstudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

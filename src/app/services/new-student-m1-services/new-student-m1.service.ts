@@ -1,8 +1,9 @@
-import { NewStudentM1Models } from 'src/app/models/new-student-m1-models';
+import { NewStudentM1Models } from './../../models/new-student-m1-models';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 import { NewStudentM1Component } from '../../components/new-student-m1/new-student-m1.component';
 
 
@@ -11,13 +12,19 @@ import { NewStudentM1Component } from '../../components/new-student-m1/new-stude
   providedIn: 'root'
 })
 export class NewStudentM1Service {
-  url: string = 'https://localhost:44342/api/Newstudentm1';
+  url = 'https://localhost:44342/api/Newstudentm1';
   newStudentm1 : any;
   currentStudentm1 : any = {};
 
 
-
   constructor( private http: HttpClient, private router: Router) { }
+
+  httpHeader = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
   addNewstudentm1(newstudentm1){
     this.newStudentm1 = {
       "id" : newstudentm1.id,
@@ -33,7 +40,7 @@ export class NewStudentM1Service {
       "origin" : newstudentm1.origin,
       "father_name" : newstudentm1.father_name,
       "father_id" : newstudentm1.father_id,
-      "faher_job" : newstudentm1.father_job,
+      "father_job" : newstudentm1.father_job,
       "father_tel" : newstudentm1.father_tel,
       "mother_name" : newstudentm1.mother_name,
       "mother_id" : newstudentm1.mother_id,
@@ -57,9 +64,10 @@ export class NewStudentM1Service {
       "final_school_district" : newstudentm1.final_school_district,
       "final_school_province" : newstudentm1.final_school_province,
       "disabled" : newstudentm1.disabled,
+      "poor_person" : newstudentm1.poor_person,
       "etc" : newstudentm1.etc,
     }
-    this.http.post(this.url, this.newStudentm1) .subscribe(
+    this.http.post<any>(this.url, this.newStudentm1) .subscribe(
       () => {
         this.router.navigate(['/Newstudentm1']);
     });

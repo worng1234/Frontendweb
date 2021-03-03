@@ -1,7 +1,8 @@
+import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NewStudentM1Service } from './../../services/new-student-m1-services/new-student-m1.service';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from "@angular/forms";
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-new-student-m1',
@@ -13,19 +14,19 @@ export class NewStudentM1Component implements OnInit {
   prename = ['','นาย','นางสาว'];
   gender = ['','ชาย','หญิง'];
 
+  constructor(
+    public nm1s: NewStudentM1Service,
+    public router: Router,
+    private http: HttpClientModule) { }
 
-
-
-  constructor(private nm1s: NewStudentM1Service,
-              private http: HttpClientModule) { }
-
-    ngOnInit() {
-
+    ngOnInit(): void{
     }
 
   addNewstudentm1(newstudentm1){
     this.nm1s.addNewstudentm1(newstudentm1);
   }
+
+
 
 }
 

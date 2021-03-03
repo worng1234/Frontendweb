@@ -13,7 +13,6 @@
     name="formNewstudentm1"
     #newstudentm1NewData="ngForm"
     (ngSubmit)="addNewstudentm1(newstudentm1NewData.value)"
-
   >
 
     <div>
@@ -35,8 +34,8 @@
       </div>
       <div>
         <label for="sex">เพศ : </label>
-          <select>
-            <option *ngFor="let g of gender" id="sex" name="sex" ngModel>{{ g }}</option>
+          <select id="sex" name="sex" ngModel>
+            <option *ngFor="let g of gender" >{{ g }}</option>
           </select>
       </div>
     </div>
@@ -68,13 +67,13 @@
       <label for="father_job">อาชีพ</label>
       <input id="father_job" name="father_job" ngModel placeholder="อาชีพ"/>
       <label for="father_tel">โทรศัพท์</label>
-      <input id="father_tel" name="father" ngModel placeholder="โทรศัพท์"/>
+      <input id="father_tel" name="father_tel" ngModel placeholder="โทรศัพท์"/>
     </div>
     <div>
       <label for="mother_name">ชื่อ-นามสกุลมารดา</label>
       <input id="mother_name" name="mother_name" ngModel placeholder="ชื่อ-นามสกุลมารดา"/>
-      <label for="id_number">เลขประจำตัวประชาชนมารดา</label>
-      <input id="id_number" name="id_number" ngModel placeholder="เลขประจำตัวประชาชนมารดา"/>
+      <label for="mother_id">เลขประจำตัวประชาชนมารดา</label>
+      <input id="mother_id" name="mother_id" ngModel placeholder="เลขประจำตัวประชาชนมารดา"/>
       <label for="mother_job">อาชีพ</label>
       <input id="mother_job" name="mother_job" ngModel placeholder="อาชีพ"/>
       <label for="mother_tel">โทรศัพท์</label>
@@ -119,13 +118,13 @@
     </div>
     <div class="form-group">
       <label for="final_school">สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน</label>
-      <input id="final_school" name="fianl_school" ngModel placeholder="สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน"/>
+      <input id="final_school" name="final_school" ngModel placeholder="สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน"/>
     </div>
     <div>
       <label for="final_school_sub_district">ตำบล</label>
       <input id="fianl_school_sub_district" name="final_school_sub_district" ngModel placeholder="ตำบล"/>
       <label for="final_school_district">อำเภอ</label>
-      <input id="final_school_district" name="fianl_school_district" ngModel placeholder="อำเภอ"/>
+      <input id="final_school_district" name="final_school_district" ngModel placeholder="อำเภอ"/>
       <label for="final_school_province">จังหวัด</label>
       <input id="final_school_province" name="final_school_province" ngModel placeholder="จังหวัด"/>
     </div>
@@ -133,20 +132,21 @@
       <input type="checkbox" />
       <label>ผู้พิการ/เด็กพิเศษ</label>
       <label>(โปรดระบุประเภทความพิเศษ)</label>
-      <input />
+      <input id="disabled" name="disabled" ngModel/>
     </div>
     <div>
-      <input type="checkbox" />
+      <input type="checkbox" id="poor_person" name="poor_person" ngModel/>
       <label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
       <input type="checkbox" />
       <label>อื่นๆ</label>
       <label>โปรดระบุ</label>
-      <input />
+      <input id="etc" name="etc" ngModel/>
     </div>
     <div>
-      <input type="submit" value="ยืนยัน" class="btn btn-success">
-
+      <button type="submit" value="submit">ยืนยัน</button>
     </div>
   </form>
   </div>
 </div>
+
+
