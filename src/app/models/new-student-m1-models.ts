@@ -4,7 +4,7 @@ export class NewStudentM1Models{
   name: string;
   surname: string;
   sex: string;
-  pic: string;
+  pic: any;
   id_number: string;
   birthday: string;
   religion: string;

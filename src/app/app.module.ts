@@ -24,6 +24,7 @@ import { from } from 'rxjs';
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
 
 
 
@@ -44,6 +45,7 @@ import { FormsModule } from '@angular/forms';
     BehaviorStudentComponent,
     EditComponent,
     SortNewstudentM4Component,
+    UploadPicComponent,
 
   ],
   imports: [
