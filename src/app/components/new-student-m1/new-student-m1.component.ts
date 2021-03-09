@@ -17,14 +17,13 @@ export class NewStudentM1Component implements OnInit {
   prename = ['','นาย','นางสาว'];
   gender = ['','ชาย','หญิง'];
   public respones: {dbPath: ''}
-  public pic: string;
+  public pic ;
 
 
   constructor(
     public nm1s: NewStudentM1Service,
     public router: Router,
-    public nm1md: NewStudentM1Models,
-    private http: HttpClientModule) { }
+    private http: HttpClientModule,) { }
 
     ngOnInit(): void{}
 
@@ -33,12 +32,14 @@ export class NewStudentM1Component implements OnInit {
   }
 
   public onCreate = () => {
-    picPath: this.nm1md.pic;
+    picPath: this.respones.dbPath;
   }
 
   public uploadFinished = (event) =>{
-    this.nm1md = event;
+    this.respones.dbPath = event;
   }
+
+
 
 
 }

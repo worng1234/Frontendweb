@@ -30,8 +30,6 @@ export class SortNewstudentComponent implements OnInit {
   constructor( private nsm1list: SortNewstudentService) { }
 
 
-
-
   ngOnInit(){
     this.nsm1list.getNewstudentm1List()
       .subscribe((data: NewStudentM1Models[]) => {this.newstudentm1list = data;});
