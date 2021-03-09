@@ -23,7 +23,7 @@ export class SortNewstudentComponent implements OnInit {
   newstudentm1list: NewStudentM1Models[] =[];
   searchFunction_school;
   searchFunction_name : string;
-  searchFunction_area;
+  searchFunction_area: string;
 
 
 

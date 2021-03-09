@@ -73,7 +73,5 @@ export class NewStudentM1Service {
         this.router.navigate(['/Newstudentm1']);
     });
 
-    //uploadPic
-
   }
 }

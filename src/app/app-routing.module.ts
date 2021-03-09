@@ -1,10 +1,11 @@
 
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { NewStudentM4Component } from './components/new-student-m4/new-student-m4.component';
-import { NewStudentM1Component } from './components/new-student-m1/new-student-m1.component';
+import { NewStudentM1Component } from 'src/app/components/new-student-m1/new-student-m1.component';
 import { SortNewstudentComponent } from './components/sort-newstudent/sort-newstudent.component';
 import { CheckStudentLineComponent } from './components/check-student-line/check-student-line.component';
 import { BehaviorStudentComponent } from './components/behavior-student/behavior-student.component';
@@ -15,7 +16,7 @@ import { EditComponent } from './components/edit/edit.component';
 
 const routes: Routes = [
   {path:'Mainpage',component:MainpageComponent,pathMatch:'full'},
-  {path:'NewStudentRegisterM1',component:NewStudentM1Component},
+  {path:'Newstudentm1',component:NewStudentM1Component},
   {path:'NewStudentRegisterM4',component:NewStudentM4Component},
   {path:'SortNewstudent',component:SortNewstudentComponent},
   {path:'CheckStudentLine',component:CheckStudentLineComponent},
