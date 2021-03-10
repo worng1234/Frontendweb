@@ -1,9 +1,10 @@
 import { NewStudentM1Models } from './../../models/new-student-m1-models';
 import { Router } from '@angular/router';
-import { HttpClientModule, HttpEventType } from '@angular/common/http';
+import { HttpClientModule, HttpEventType, HttpClient } from '@angular/common/http';
 import { NewStudentM1Service } from './../../services/new-student-m1-services/new-student-m1.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
+
 
 
 @Component({
@@ -17,13 +18,15 @@ export class NewStudentM1Component implements OnInit {
   prename = ['','นาย','นางสาว'];
   gender = ['','ชาย','หญิง'];
   public respones: {dbPath: ''}
-  public pic ;
+  public message: string;
+  public progress: number;
+  @Output() public onUploadFinished = new EventEmitter();
 
 
   constructor(
     public nm1s: NewStudentM1Service,
     public router: Router,
-    private http: HttpClientModule,) { }
+    private http: HttpClient,) { }
 
     ngOnInit(): void{}
 
@@ -39,6 +42,26 @@ export class NewStudentM1Component implements OnInit {
     this.respones.dbPath = event;
   }
 
+  public uploadFile = (files) =>{
+    if(files.length === 0){
+      return;
+    }
+    let fileToUpload = <File>files[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+
+    this.http.post('https://localhost:44342/api/Upload', formData,{ reportProgress: true, observe: 'events'})
+    .subscribe(event => {
+      if(event.type === HttpEventType.UploadProgress){
+        this.progress = Math.round(100* event.loaded / event.total);
+      }
+      else if(event.type === HttpEventType.Response){
+        this.message = 'Upload success.';
+        this.onUploadFinished.emit(event.body);
+      }
+    });
+
+  }
 
 
 
