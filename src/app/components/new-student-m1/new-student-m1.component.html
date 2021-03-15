@@ -16,21 +16,10 @@
   >
 
     <div>
-      <div class="row" style="margin-bottom: 15px;">
-        <div class="col-md-3">
-          <input type="file" #file placeholder="choose file" id="pic" name="pic" ngModel (change)="uploadFile(file.files)"
-            style="display: none;" >
-            <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
-        </div>
-        <div class="col-md-4">
-          <span class="upload-pic" *ngIf="progress > 0">
-            {{progress}}%
-          </span>
-          <span class="upload-pic" *ngIf="message">
-            {{message}}
-          </span>
-        </div>
+      <div>
+        <input type="file" #file id="pic" name="pic" (change)="onFileChanged($event)" ngModel >
       </div>
+
       <div class="form-group">
         <label for="prename">คำนำหน้า :  </label>
         <select id="prename" name="prename"  ngModel>
@@ -158,7 +147,7 @@
       <input id="etc" name="etc" ngModel/>
     </div>
     <div>
-      <button type="submit" value="submit" (click)="onCreate()">ยืนยัน</button>
+      <button type="submit" value="submit" (click)="onUpload($event)">ยืนยัน</button>
     </div>
   </form>
   </div>

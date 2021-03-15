@@ -1,7 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NewStudentM1Models } from './../../models/new-student-m1-models';
 import { SortNewstudentService } from './../../services/sort-new-student-services/sort-newstudent.service';
 import { Component, OnInit } from '@angular/core';
-
 
 
 
@@ -26,8 +26,7 @@ export class SortNewstudentComponent implements OnInit {
   searchFunction_area: string;
 
 
-
-  constructor( private nsm1list: SortNewstudentService) { }
+  constructor( private nsm1list: SortNewstudentService, private http: HttpClientModule) { }
 
 
   ngOnInit(){
@@ -40,6 +39,14 @@ export class SortNewstudentComponent implements OnInit {
       return res.name;
     });
   }
+
+  public createImgPath = (serverPath: string) => {
+    return `https://localhost:44342/${serverPath}`;
+    return console.log(serverPath);
+
+  }
+
+
 
 
 }

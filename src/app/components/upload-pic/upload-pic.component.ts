@@ -1,4 +1,3 @@
-import { NewStudentM1Service } from './../../services/new-student-m1-services/new-student-m1.service';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
@@ -14,7 +13,7 @@ export class UploadPicComponent implements OnInit {
   @Output() public onUploadFinished = new EventEmitter();
 
 
-  constructor(private http: HttpClient, public nm1s: NewStudentM1Service) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -38,10 +37,6 @@ export class UploadPicComponent implements OnInit {
       }
     });
 
-  }
-
-  addNewstudentm1(newstudentm1){
-    this.nm1s.addNewstudentm1(newstudentm1);
   }
 
 }
