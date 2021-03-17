@@ -45,9 +45,5 @@ export class SortNewstudentComponent implements OnInit {
     console.log(serverPath);
 
   }
-
-
-
-
 }
 
