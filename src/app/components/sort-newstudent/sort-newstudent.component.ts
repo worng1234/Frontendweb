@@ -42,7 +42,7 @@ export class SortNewstudentComponent implements OnInit {
 
   public createImgPath = (serverPath: string) => {
     return `https://localhost:44342/${serverPath}`;
-    return console.log(serverPath);
+    console.log(serverPath);
 
   }
 
