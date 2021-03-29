@@ -3,55 +3,58 @@
     <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 4</h2>
     <h4>ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา เขต 34</h4>
   </div>
+  <form
+    id="formNewstudentm4"
+    name="formNewstudentm4"
+    #newStudentm4NewData="ngForm"
+    (ngSubmit)="addNewstudentm4(newStudentm4NewData.value)">
     <div>
         <label>คำนำหน้า</label>
-        <select>
+        <select id="prename" name="prename" ngModel>
           <option *ngFor='let p of prename'>{{p}}</option>
         </select>
         <label>ชื่อ</label>
-        <input>
+        <input id="name" name="name" ngModel>
         <label>นามสกุล</label>
-        <input>
+        <input id="surname" name="surname" ngModel>
         <label>เพศ</label>
-        <select>
+        <select id="sex" name="sex" ngModel>
           <option *ngFor='let g of gender'>{{g}}</option>
         </select>
     </div>
     <div>
       <label>เลขประจำตัวประชาชน</label>
-      <input>
+      <input id="id_number" name="id_number" ngModel>
       <label>วันเดือนปีเกิด</label>
-      <input>
+      <input id="birthday" name="birthday" ngModel>
     </div>
     <div>
       <label>ศาสนา</label>
-      <input>
+      <input id="religion" name="religion" ngModel>
       <label>เชื้อชาติ</label>
-      <input>
+      <input id="nationality" name="nationality" ngModel>
       <label>สัญชาติ</label>
-      <input>
-      <label>โทรศัพท์</label>
-      <input>
+      <input id="origin" name="origin" ngModel>
     </div>
     <div>
       <label>ชื่อ/นามสกุลบิดา</label>
-      <input>
+      <input id="father_name" name="father_name" ngModel>
       <label>เลขประจำตัวประชาชน</label>
-      <input>
+      <input id="father_id" name="father_id" ngModel>
       <label>อาชีพ</label>
-      <input>
+      <input id="father_job" name="father_job" ngModel>
       <label>โทรศัพท์</label>
-      <input>
+      <input id="father_tel" name="father_tel" ngModel>
     </div>
     <div>
       <label>ชื่อ/นามสกุลมารดา</label>
-      <input>
+      <input id="mother_name" name="mother_name" ngModel>
       <label>เลขประจำตัวประชาชน</label>
-      <input>
+      <input id="mother_id" name="mother_id" ngModel>
       <label>อาชีพ</label>
-      <input>
+      <input id="mother_job" name="mother_job" ngModel>
       <label>โทรศัพท์</label>
-      <input>
+      <input id="mother_tel" name="mother_tel" ngModel>
     </div>
     <div>
       <label>ผู้ปกครอง</label>
