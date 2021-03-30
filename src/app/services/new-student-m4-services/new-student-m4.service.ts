@@ -15,6 +15,13 @@ export class NewStudentM4Service {
 
 
   constructor( private http: HttpClient, private router: Router) { }
+
+  httpHeader = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
   addNewstudentm4(newstudentm4){
     this.newStudentm4 = {
       "id" : newstudentm4.id,
@@ -67,6 +74,10 @@ export class NewStudentM4Service {
       "major_9" : newstudentm4.major_9,
       "major_10" : newstudentm4.major_10,
     }
+    this.http.post<any>(this.url, this.newStudentm4) .subscribe(
+      () => {
+        this.router.navigate(['/Newstudentm4']);
+    });
   }
 
 }

@@ -67,47 +67,47 @@
     </div>
     <div>
       <label>ชื่อ/นามสกุลผู้ปกครอง</label>
-      <input>
+      <input id="parent_name" name="parent_name" ngModel>
       <label>อาชีพ</label>
-      <input>
+      <input id="parent_job" name="parent_job" ngModel>
       <label>โทรศัพท์</label>
-      <input>
+      <input id="parent_tel" name="parent_tel" ngModel>
     </div>
     <div>
       <label>บ้านเลขที่</label>
-      <input>
+      <input id="house_number" name="house_number" ngModel>
       <label>หมู่ที่</label>
-      <input>
+      <input id="bloc" name="bloc" ngModel>
       <label>ซอย</label>
-      <input>
+      <input id="street" name="street" ngModel>
       <label>ถนน</label>
-      <input>
+      <input id="road" name="road" ngModel>
     </div>
     <div>
       <label>ตำบล/แขวง</label>
-      <input>
+      <input id="sub_district" name="sub_district" ngModel>
       <label>อำเภอ/เขต</label>
-      <input>
+      <input id="district" name="district" ngModel>
       <label>จังหวัด</label>
-      <input>
+      <input id="province" name="province" ngModel>
       <label>รหัสไปรษณีย์</label>
-      <input>
+      <input id="post" name="post" ngModel>
     </div>
     <div>
-      <label>กำลังศึกษาอยู่/สำเร็จการศึกษา ชั้นมัธยมศึกษาปีที่ 3 จากโรงเรียน</label>
-      <input>
+      <label>สำเร็จการศึกษา ชั้นมัธยมศึกษาปีที่ 3 จากโรงเรียน</label>
+      <input id="final_school" name="final_school" ngModel>
     </div>
     <div>
       <label>ตำบล</label>
-      <input>
+      <input id="final_school_sub_district" name="final_school_sub_district" ngModel>
       <label>อำเภอ</label>
-      <input>
+      <input id="final_school_district" name="final_school_district" ngModel>
       <label>จังหวัด</label>
-      <input>
+      <input id="final_school_province" name="final_school_province" ngModel>
     </div>
     <div>
       <label>เลขประจำตัวนักเรียน(เฉพาะนักเรียน ม.3 โรงเรียนพร้าววิทยาคม)</label>
-      <input>
+      <input >
     </div>
     <div>
       <input type="checkbox">
@@ -126,67 +126,67 @@
     <div>
       <div>
         <label>อันดับที่ 1</label>
-        <select>
+        <select id="major_1" name="major_1" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 2</label>
-        <select>
+        <select id="major_2" name="major_2" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 3</label>
-        <select>
+        <select id="major_3" name="major_3" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 4</label>
-        <select>
+        <select id="major_4" name="major_4" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 5</label>
-        <select>
+        <select id="major_5" name="major_5" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 6</label>
-        <select>
+        <select id="major_6" name="major_6" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 7</label>
-        <select>
+        <select id="major_7" name="major_7" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 8</label>
-        <select>
+        <select id="major_8" name="major_8" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 9</label>
-        <select>
+        <select id="major_9" name="major_9" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 10</label>
-        <select>
+        <select id="major_10" name="major_10" ngModel>
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
     </div>
     <div>
-      <button type="submit" class="btn btn-success">ยืนยัน</button>
+      <button type="submit" class="btn btn-success" value="submit">ยืนยัน</button>
     </div>
 </form>
 

@@ -15,6 +15,7 @@ export class NewStudentM4Component implements OnInit {
   major = ['','วิทยาศาสตร์-คณิตศาสตร์','ศิลป์-จีน','ศิลป์-คำนวณ',
           'คหกรรม','เกษตร','ปวช','ศิลป์-พละ','ศิลป์-วาด',
           'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ'];
+
   constructor(
     public nm4s: NewStudentM4Service,
     public router: Router,
