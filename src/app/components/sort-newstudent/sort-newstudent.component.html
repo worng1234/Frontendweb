@@ -4,6 +4,9 @@
   </div>
   <div>
     <label>ค้นหาจากชื่อ : </label>
+    <select name="prename" [(ngModel)]="searchFunction_prename" autocomplete="off">
+      <option *ngFor='let p of prename'>{{p}}</option>
+    </select>
     <input type="text" name="searchFunction_name" [(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
   </div>
   <div>
@@ -24,7 +27,7 @@
       </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let s of newstudentm1list | filter:searchFunction_school | filter:searchFunction_name">
+        <tr *ngFor = "let s of newstudentm1list | filter:searchFunction_school | filter:searchFunction_name | filter:searchFunction_prename">
           <td><img [src]="createImgPath(s.pic)" alt="" srcset="" height="100%" width="100%"></td>
           <td>{{ s.id }}</td>
           <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>

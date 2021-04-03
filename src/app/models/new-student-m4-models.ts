@@ -1,4 +1,4 @@
-export class NewStudentM4Service{
+export class NewStudentM4Models{
   id : number;
   prename : string;
   name : string;

@@ -1,3 +1,46 @@
 <form>
-
+  <div>
+    <h2>New Student Register M4</h2>
+  </div>
+  <div>
+    <label>ค้นหาจากชื่อ : </label>
+    <select name="prename" [(ngModel)]="searchFunction_prename" autocomplete="off">
+      <option *ngFor='let p of prename'>{{p}}</option>
+    </select>
+    <input type="text" name="searchFunction_name" [(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
+  </div>
+  <div>
+    <label>โรงเรียน : </label>
+    <select type="text" name="searchFunction_school" [(ngModel)]="searchFunction_school" autocomplete="off">
+      <option *ngFor='let s of school'>{{s}}</option>
+    </select>
+  </div>
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th>ลำดับ</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>โรงเรียน</th>
+        <th>วิชาเอก</th>
+        <th>ข้อมูลประจำตัว</th>
+        <th>เอกสารสำคัญ</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let s of newstudentm4list | filter:searchFunction_school | filter:searchFunction_name | filter:searchFunction_prename">
+          <td>{{ s.id }}</td>
+          <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
+          <td>{{ s.final_school}}</td>
+          <td>อันดับ 1 {{s.major_1}}<br>
+            อันดับ 2 {{s.major_2}}<br>
+            อันดับ 3 {{s.major_3}}</td>
+          <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
+          <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
+        </tr>
+      </tbody>
+  </table>
+  <div>
+    <button>พิมพ์เอกสาร</button>
+    <button>Clear</button>
+  </div>
 </form>

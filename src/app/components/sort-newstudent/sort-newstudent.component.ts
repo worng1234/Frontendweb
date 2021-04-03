@@ -20,10 +20,12 @@ export class SortNewstudentComponent implements OnInit {
   student_class =['','มัธยมศึกษาปีที่ 1','มัธยมศึกษาปีที่ 2'];
 
   study_area = ['','นอกเขต','ในเขต'];
+  prename = ['','นาย','นางสาว']
   newstudentm1list: NewStudentM1Models[] =[];
   searchFunction_school;
   searchFunction_name : string;
   searchFunction_area: string;
+  searchFunction_prename;
 
 
   constructor( private nsm1list: SortNewstudentService, private http: HttpClientModule) { }
