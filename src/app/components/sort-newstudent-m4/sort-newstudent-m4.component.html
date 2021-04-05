@@ -15,6 +15,24 @@
       <option *ngFor='let s of school'>{{s}}</option>
     </select>
   </div>
+  <div>
+    <label>วิชาเอก1</label>
+    <select type="text" name="searchFunction_major1" [(ngModel)]="searchFunction_major1" autocomplete="off">
+      <option *ngFor='let m of major'>{{m}}</option>
+    </select>
+  </div>
+  <div>
+    <label>วิชาเอก2</label>
+    <select type="text" name="searchFunction_major2" [(ngModel)]="searchFunction_major2" autocomplete="off">
+      <option *ngFor='let m of major'>{{m}}</option>
+    </select>
+  </div>
+  <div>
+    <label>วิชาเอก3</label>
+    <select type="text" name="searchFunction_major3" [(ngModel)]="searchFunction_major3" autocomplete="off">
+      <option *ngFor='let m of major'>{{m}}</option>
+    </select>
+  </div>
   <table class="table table-bordered border-primary">
     <thead>
       <tr>
@@ -27,13 +45,16 @@
       </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let s of newstudentm4list | filter:searchFunction_school | filter:searchFunction_name | filter:searchFunction_prename">
+        <tr *ngFor = "let s of newstudentm4list | filter:searchFunction_school |
+                      filter:searchFunction_name | filter:searchFunction_prename |
+                      filter:searchFunction_major1 | filter:searchFunction_major2 |
+                      filter:searchFunction_major3">
           <td>{{ s.id }}</td>
           <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
           <td>{{ s.final_school}}</td>
           <td>อันดับ 1 {{s.major_1}}<br>
-            อันดับ 2 {{s.major_2}}<br>
-            อันดับ 3 {{s.major_3}}</td>
+              อันดับ 2 {{s.major_2}}<br>
+              อันดับ 3 {{s.major_3}}</td>
           <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
           <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
         </tr>

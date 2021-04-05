@@ -25,6 +25,7 @@ import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
+import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
 
 
 
@@ -46,6 +47,7 @@ import { UploadPicComponent } from './components/upload-pic/upload-pic.component
     EditComponent,
     SortNewstudentM4Component,
     UploadPicComponent,
+    StudentCoreInformationComponent,
 
   ],
   imports: [

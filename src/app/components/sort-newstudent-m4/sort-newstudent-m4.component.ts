@@ -17,14 +17,22 @@ export class SortNewstudentM4Component implements OnInit {
   'โรงเรียนบ้านป่าไหน่','โรงเรียนบ้านสันกลาง','โรงเรียนประชาสามัคคีวิทยา','โรงเรียนประดู่วิทยา','โรงเรียนบ้านแม่ปั๋ง',
   'โรงเรียนบ้านแม่ปั๋งสาขาขุนปั๋ง','โรงเรียนบ้านแม่เหียะ','โรงเรียนบ้านขุนแจ๋','โรงเรียนบ้านแจ่งกู่เรือง','โรงเรียนบ้านห้วยบง','โรงเรียนบ้านหลวง'];
 
+  major = ['','วิทยาศาสตร์-คณิตศาสตร์','ศิลป์-จีน','ศิลป์-คำนวณ',
+          'คหกรรม','เกษตร','ปวช','ศิลป์-พละ','ศิลป์-วาด',
+          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ'];
+
   student_class =['','มัธยมศึกษาปีที่ 1','มัธยมศึกษาปีที่ 2'];
 
   study_area = ['','นอกเขต','ในเขต'];
-  prename = ['','นาย','นางสาว']
+  prename = ['','นาย','นางสาว'];
+
   searchFunction_school;
   searchFunction_name : string;
   searchFunction_area: string;
   searchFunction_prename;
+  searchFunction_major1;
+  searchFunction_major2;
+  searchFunction_major3;
 
   constructor( private nsm4List: SortNewStudentM4ServicesService, private http: HttpClientModule) { }
 
