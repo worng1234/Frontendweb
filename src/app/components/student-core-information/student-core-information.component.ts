@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { StudentCoreInformationService } from 'src/app/services/student_core_information_services/student-core-information.service';
+import { StudentInformationCore } from 'src/app/models/student-information-core';
 
 @Component({
   selector: 'app-student-core-information',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentCoreInformationComponent implements OnInit {
 
-  constructor() { }
+  sciList : StudentInformationCore[] = [];
+
+  constructor( private sci : StudentCoreInformationService, private http : HttpClientModule) { }
 
   ngOnInit(): void {
+    this.sci.getStudentList()
+    .subscribe((data: StudentInformationCore[]) => {this.sciList = data;});
   }
 
 }

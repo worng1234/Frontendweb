@@ -1,1 +1,21 @@
-<p>student-core-information works!</p>
+<form>
+  <div>
+    <h3>Student List</h3>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let s of sciList">
+          <td>{{s.student_id}}</td>
+          <td>{{s.prename}}{{s.name}}</td>
+          <td>{{s.surname}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>

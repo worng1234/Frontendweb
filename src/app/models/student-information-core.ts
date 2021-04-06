@@ -4,7 +4,7 @@ export class StudentInformationCore{
   prename : string;
   name : string;
   surname : string;
-  sex : boolean;
+  sex : string;
   pic : string;
   id_number : string;
   birthday : string;
