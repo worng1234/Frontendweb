@@ -26,6 +26,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
 import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
+import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
 
 
 
@@ -48,6 +49,7 @@ import { StudentCoreInformationComponent } from './components/student-core-infor
     SortNewstudentM4Component,
     UploadPicComponent,
     StudentCoreInformationComponent,
+    ShowStudentByIdComponent,
 
   ],
   imports: [
