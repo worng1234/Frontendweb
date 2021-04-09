@@ -16,8 +16,8 @@ export class StudentCoreInformationService {
     return this.http.get<StudentInformationCore[]>(this.url);
   }
 
-  getStudentListID(id : number): Observable<any>{
-    return this.http.get(this.url + id);
+  getStudentListID(id){
+    return this.http.get('https://localhost:44342/api/Studentcoreinformation/' + id);
   }
 
 }
