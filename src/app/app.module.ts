@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
 import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
+import { StatusStudentComponent } from './components/status-student/status-student.component';
 
 
 
@@ -50,6 +51,7 @@ import { ShowStudentByIdComponent } from './components/show-student-by-id/show-s
     UploadPicComponent,
     StudentCoreInformationComponent,
     ShowStudentByIdComponent,
+    StatusStudentComponent,
 
   ],
   imports: [
