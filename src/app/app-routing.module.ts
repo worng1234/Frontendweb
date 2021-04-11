@@ -13,6 +13,7 @@ import { NewStudentM1Component } from "src/app/components/new-student-m1/new-stu
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
+import { StatusStudentComponent } from './components/status-student/status-student.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'Edit',component:EditComponent},
   {path:'SortNewstudentM4',component:SortNewstudentM4Component},
   {path:'StudentCoreInformation',component:StudentCoreInformationComponent},
-  {path:'Showstudentbyid/:id',component:ShowStudentByIdComponent}
+  {path:'Showstudentbyid/:id',component:ShowStudentByIdComponent},
+  {path:'Statusstudent/:id',component:StatusStudentComponent}
 ];
 
 @NgModule({

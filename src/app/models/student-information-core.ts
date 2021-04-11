@@ -42,5 +42,6 @@ export class StudentInformationCore{
   status : boolean;
   classroom_id : string;
   tel : string;
+  score : string;
 
 }
