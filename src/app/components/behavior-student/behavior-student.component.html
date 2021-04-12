@@ -5,13 +5,31 @@
   <div>
     <h4>ค้นหา</h4>
     <label>ชัน ม.</label>
-    <select>
-      <option *ngFor = "let sc of search_class">{{sc}}</option>
+    <select [(ngModel)] = "search_class" autocomplete="off">
+      <option *ngFor = "let c of class">{{c}}</option>
     </select>
     <label>ห้อง</label>
-    <select>
-      <option *ngFor = "let sr of search_room">{{sr}}</option>
+    <select [(ngModel)] = "search_room" autocomplete="off">
+      <option *ngFor = "let r of room">{{r}}</option>
     </select>
+    <label>สายการเรียน</label>
+    <select [(ngModel)] = "search_major" autocomplete="off">
+      <option *ngFor = "let m of major">{{m}}</option>
+    </select>
+  </div>
+  <div>
+    <label>คำนำหน้า</label>
+    <select [(ngModel)] = "search_prename" autocomplete="off">
+      <option *ngFor = "let p of prename">{{p}}</option>
+    </select>
+    <label>ชื่อ</label>
+    <input [(ngModel)] = "search_name" autocomplete="off">
+    <label>นามสกุล</label>
+    <input [(ngModel)] = "search_surname" autocomplete="off">
+  </div>
+  <div>
+    <label>รหัสนักเรียน</label>
+    <input [(ngModel)] = "search_studentID" autocomplete="off">
   </div>
   <div>
     <table class="table table-bordered border-primary">
@@ -19,13 +37,17 @@
         <th>รหัสนักเรียน</th>
         <th>ชื่อ-นามสกุล</th>
         <th>ชั้น/ห้อง</th>
+        <th>สายการเรียน</th>
         <th>ตรวจสอบความประพฤติ</th>
       </thead>
       <tbody >
-        <tr *ngFor = "let s of sciList">
+        <tr *ngFor = "let s of sciList | filter:search_room | filter:search_class | filter:search_major |
+                                        filter:search_prename | filter:search_name | filter:search_surname |
+                                        filter:search_studentID">
           <td>{{s.student_id}}</td>
           <td>{{s.prename}}{{s.name}} {{s.surname}}</td>
           <td>{{s.classroom_id}}</td>
+          <td></td>
           <td><button class="btn btn-primary" [routerLink] = "['/Statusstudent', s.id]">view</button></td>
         </tr>
       </tbody>

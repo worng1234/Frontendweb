@@ -13,8 +13,20 @@ export class BehaviorStudentComponent implements OnInit {
 
   sciList: StudentInformationCore[] = [];
 
-  search_class = ['','1','2','3','4','5','6'];
-  search_room = ['','1','2','3','4','5','6','7','8','9','10'];
+  class = ['','1','2','3','4','5','6'];
+  room = ['','1','2','3','4','5','6','7','8','9','10'];
+  major = ['','วิทยาศาสตร์-คณิตศาสตร์','ศิลป์-จีน','ศิลป์-คำนวณ',
+          'คหกรรม','เกษตร','ปวช','ศิลป์-พละ','ศิลป์-วาด',
+          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ'];
+  prename = ['','นาย','นางสาว'];
+
+  search_class;
+  search_room;
+  search_major : string;
+  search_prename : string;
+  search_name : string;
+  search_surname : string;
+  search_studentID;
 
   constructor( private sci: StudentCoreInformationService,
                private http: HttpClientModule) { }
