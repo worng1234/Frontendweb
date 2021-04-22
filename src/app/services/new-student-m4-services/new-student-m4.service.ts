@@ -10,8 +10,10 @@ import { Router } from '@angular/router';
 })
 export class NewStudentM4Service {
   url: string = 'https://localhost:44342/api/Newstudentm4';
+  urlr: string =  'https://localhost:44342/api/RegisterMajor';
   newStudentm4 : any;
   currentStudentm4 : any = {};
+  Registermajor : any;
 
 
   constructor( private http: HttpClient, private router: Router) { }
@@ -63,16 +65,7 @@ export class NewStudentM4Service {
       "disabled" : newstudentm4.disabled,
       "poor_person" : newstudentm4.poor_person,
       "etc" : newstudentm4.etc,
-      "major_1" : newstudentm4.major_1,
-      "major_2" : newstudentm4.major_2,
-      "major_3" : newstudentm4.major_3,
-      "major_4" : newstudentm4.major_4,
-      "major_5" : newstudentm4.major_5,
-      "major_6" : newstudentm4.major_6,
-      "major_7" : newstudentm4.major_7,
-      "major_8" : newstudentm4.major_8,
-      "major_9" : newstudentm4.major_9,
-      "major_10" : newstudentm4.major_10,
+      "major_name" : newstudentm4.major_name
     }
     this.http.post<any>(this.url, this.newStudentm4) .subscribe(
       () => {
