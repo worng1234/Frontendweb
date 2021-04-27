@@ -52,9 +52,9 @@
           <td>{{ s.id }}</td>
           <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
           <td>{{ s.final_school}}</td>
-          <td>อันดับ 1 {{s.major_1}}<br>
-              อันดับ 2 {{s.major_2}}<br>
-              อันดับ 3 {{s.major_3}}</td>
+          <td>อันดับ 1 {{s.major_name1}}<br>
+              อันดับ 2 {{s.major_name2}}<br>
+              อันดับ 3 {{s.major_name3}}</td>
           <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
           <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
         </tr>

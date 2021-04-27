@@ -39,4 +39,14 @@ export class NewStudentM4Models{
   poor_person : string;
   etc : string;
   tel : string;
+  major_name1 : string;
+  major_name2 : string;
+  major_name3 : string;
+  major_name4 : string;
+  major_name5 : string;
+  major_name6 : string;
+  major_name7 : string;
+  major_name8 : string;
+  major_name9 : string;
+  major_name10 : string;
 }

@@ -65,7 +65,16 @@ export class NewStudentM4Service {
       "disabled" : newstudentm4.disabled,
       "poor_person" : newstudentm4.poor_person,
       "etc" : newstudentm4.etc,
-      "major_name" : newstudentm4.major_name
+      "major_name1" : newstudentm4.major_name1,
+      "major_name2" : newstudentm4.major_name2,
+      "major_name3" : newstudentm4.major_name3,
+      "major_name4" : newstudentm4.major_name4,
+      "major_name5" : newstudentm4.major_name5,
+      "major_name6" : newstudentm4.major_name6,
+      "major_name7" : newstudentm4.major_name7,
+      "major_name8" : newstudentm4.major_name8,
+      "major_name9" : newstudentm4.major_name9,
+      "major_name10" : newstudentm4.major_name10,
     }
     this.http.post<any>(this.url, this.newStudentm4) .subscribe(
       () => {
