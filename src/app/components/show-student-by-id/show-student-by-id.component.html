@@ -1,4 +1,67 @@
 <div>
-  <h2>{{sciListid.student_id}}</h2>
-  <h2>{{sciListid.prename}}{{sciListid.name}} {{sciListid.surname}}</h2>
+  <div>
+    <h2>ข้อมูลประจำตัวนักเรียน</h2>
+  </div>
+  <div><img src="" alt=""></div>
+  <div>
+    <h3>ข้อมูลทางการศึกษา</h3>
+    <div>
+      <label>ชื่อ-นามสกุล/Name : {{sciListid.prename}}{{sciListid.name}} {{sciListid.surname}}</label>
+    </div>
+    <div>
+      <label>บัตรประจำตัวประชาชน/ID card : {{sciListid.id_number}}</label>
+    </div>
+    <div>
+      <label>รหัสนักเรียน/Student ID : {{sciListid.student_id}}</label>
+    </div>
+    <div>
+      <label>โทรศัพท์/Tel : {{sciListid.tel}}</label>
+    </div>
+    <div>
+      <label>อีเมล์/Email : </label>
+    </div>
+    <div>
+      <label>ชั้นเรียน/Class : </label>
+    </div>
+    <div>
+      <label>ห้อง/Room : </label>
+    </div>
+    <div>
+      <label>สายการเรียน/Major : </label>
+    </div>
+    <div>
+      <label>ครูที่ปรึกษา/Teacher advisor : </label>
+    </div>
+  </div>
+  <div>
+    <h3>ข้อมูลครอบครัว</h3>
+    <div>
+      <label>บิดา/Father : {{sciListid.father_name}}<label>โทรศัพท์/Tel : {{sciListid.father_tel}}</label></label>
+    </div>
+    <div>
+      <label>มารดา/Mother : {{sciListid.mother_name}}<label>โทรศัพท์/Tel : {{sciListid.mother_tel}}</label></label>
+    </div>
+    <div>
+      <label>ผู้ปกครอง/Parent : {{sciListid.parent_name}}<label>โทรศัพท์/Tel : {{sciListid.parent_tel}}</label></label>
+    </div>
+    <div>
+      <label>ที่อยู่/Address :
+        <label>บ้านเลขที่ {{sciListid.house_number}}</label>
+        <label>หมู่ {{sciListid.bloc}} </label>
+        <label>ซอย {{sciListid.street}} </label>
+        <label>ถนน {{sciListid.road}} </label>
+        <label>ตำบล {{sciListid.sub_district}} </label>
+        <label>อำเภอ {{sciListid.district}} </label>
+        <label>จังหวัด {{sciListid.province}} </label>
+        <label>รหัสไปรษณีย์ {{sciListid.post}} </label>
+      </label>
+    </div>
+  </div>
+  <div>
+    <label>พิการ : {{sciListid.diabled}}</label>
+  </div>
+  <div>
+    <button type="reset">แก้ไขข้อมูล</button>
+    <button type="submit">Logout</button>
+  </div>
 </div>
