@@ -14,6 +14,7 @@ import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-
 import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
 import { StatusStudentComponent } from './components/status-student/status-student.component';
+import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'SortNewstudentM4',component:SortNewstudentM4Component},
   {path:'StudentCoreInformation',component:StudentCoreInformationComponent},
   {path:'Showstudentbyid/:id',component:ShowStudentByIdComponent},
-  {path:'Statusstudent/:id',component:StatusStudentComponent}
+  {path:'Statusstudent/:id',component:StatusStudentComponent},
+  {path:'Fixprofilestudent/:id',component:FixProfileStudentComponent}
 ];
 
 @NgModule({

@@ -4,18 +4,16 @@ import { StudentInformationCore } from 'src/app/models/student-information-core'
 import { StudentCoreInformationService } from 'src/app/services/student_core_information_services/student-core-information.service';
 
 @Component({
-  selector: 'app-show-student-by-id',
-  templateUrl: './show-student-by-id.component.html',
-  styleUrls: ['./show-student-by-id.component.css']
+  selector: 'app-fix-profile-student',
+  templateUrl: './fix-profile-student.component.html',
+  styleUrls: ['./fix-profile-student.component.css']
 })
-export class ShowStudentByIdComponent implements OnInit {
-  sciList: StudentInformationCore[] = [];
+export class FixProfileStudentComponent implements OnInit {
   data: any;
   id: any;
   sciListid: StudentInformationCore;
 
-  constructor(private aRoute: ActivatedRoute, private sci: StudentCoreInformationService) {
-   }
+  constructor(private aRoute: ActivatedRoute, private sci: StudentCoreInformationService) { }
 
   ngOnInit(): void {
     this.id = this.aRoute.snapshot.params.id;

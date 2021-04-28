@@ -28,6 +28,7 @@ import { UploadPicComponent } from './components/upload-pic/upload-pic.component
 import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
 import { StatusStudentComponent } from './components/status-student/status-student.component';
+import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
 
 
 
@@ -52,6 +53,7 @@ import { StatusStudentComponent } from './components/status-student/status-stude
     StudentCoreInformationComponent,
     ShowStudentByIdComponent,
     StatusStudentComponent,
+    FixProfileStudentComponent,
 
   ],
   imports: [
