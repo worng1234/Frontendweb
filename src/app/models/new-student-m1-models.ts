@@ -39,4 +39,5 @@ export class NewStudentM1Models{
   poor_person: string;
   etc: string;
   tel: string;
+  email: string;
 }

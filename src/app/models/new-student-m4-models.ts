@@ -49,4 +49,5 @@ export class NewStudentM4Models{
   major_name8 : string;
   major_name9 : string;
   major_name10 : string;
+  email: string;
 }

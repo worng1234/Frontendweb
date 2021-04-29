@@ -43,5 +43,6 @@ export class StudentInformationCore{
   classroom_id : string;
   tel : string;
   score : string;
+  email: string;
 
 }
