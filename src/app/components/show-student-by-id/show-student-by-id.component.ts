@@ -9,15 +9,16 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
   styleUrls: ['./show-student-by-id.component.css']
 })
 export class ShowStudentByIdComponent implements OnInit {
-  sciList: StudentInformationCore[] = [];
   data: any;
-  id: any;
+  id: number;
   sciListid: StudentInformationCore;
+
+
 
   constructor(private aRoute: ActivatedRoute, private sci: StudentCoreInformationService) {
    }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.id = this.aRoute.snapshot.params.id;
     this.getStudentListID();
   }
@@ -25,8 +26,8 @@ export class ShowStudentByIdComponent implements OnInit {
   getStudentListID(){
     this.sci.getStudentListID(this.id).subscribe(res => {
       this.data = res;
-      this.sciListid=this.data;
-    })
+      this.sciListid = this.data;
+    });
   }
 
 }

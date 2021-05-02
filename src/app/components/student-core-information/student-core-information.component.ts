@@ -18,7 +18,7 @@ export class StudentCoreInformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.sci.getStudentList()
-    .subscribe((data: StudentInformationCore[]) => {this.sciList = data;});
+    .subscribe((data: StudentInformationCore[]) => { console.log(data); this.sciList = data;});
   }
 
 

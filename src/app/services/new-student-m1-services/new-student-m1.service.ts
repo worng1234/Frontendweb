@@ -67,6 +67,7 @@ export class NewStudentM1Service {
       "disabled" : newstudentm1.disabled,
       "poor_person" : newstudentm1.poor_person,
       "etc" : newstudentm1.etc,
+      "email" : newstudentm1.email,
     }
     this.http.post<any>(this.url, this.newStudentm1) .subscribe(
       () => {

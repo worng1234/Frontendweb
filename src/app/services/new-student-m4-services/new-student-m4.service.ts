@@ -75,6 +75,7 @@ export class NewStudentM4Service {
       "major_name8" : newstudentm4.major_name8,
       "major_name9" : newstudentm4.major_name9,
       "major_name10" : newstudentm4.major_name10,
+      "email" : newstudentm4.email,
     }
     this.http.post<any>(this.url, this.newStudentm4) .subscribe(
       () => {

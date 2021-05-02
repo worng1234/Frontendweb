@@ -11,7 +11,6 @@
       </thead>
       <tbody>
         <tr *ngFor = "let s of sciList">
-
           <td><a [routerLink] = "['/Showstudentbyid', s.id]">{{s.student_id}}</a></td>
           <td>{{s.prename}}{{s.name}}</td>
           <td>{{s.surname}}</td>

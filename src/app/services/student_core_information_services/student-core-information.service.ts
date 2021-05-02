@@ -1,23 +1,46 @@
+import { StudentInformationCore } from './../../models/student-information-core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient ,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentInformationCore } from 'src/app/models/student-information-core';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentCoreInformationService {
-  url: string = 'https://localhost:44342/api/Studentcoreinformation'
+  url: string = 'https://localhost:44342/api/StudentCoreInformation';
+  currentStudent: any = {};
 
   constructor( private http: HttpClient, private router: Router) { }
 
-  getStudentList(){
+  getStudentList(): Observable<any>{
     return this.http.get<StudentInformationCore[]>(this.url);
   }
 
-  getStudentListID(id){
-    return this.http.get('https://localhost:44342/api/Studentcoreinformation/' + id);
+  getStudentListID(id: number): Observable<any>{
+    return this.http.get(this.url + '/' + id);
   }
 
+  fixProfileStudent(StudentInformationCore){
+    this.currentStudent = {
+      "id" : StudentInformationCore.id,
+      "name" : StudentInformationCore.name,
+      "surname" : StudentInformationCore.surname,
+      "id_number" : StudentInformationCore.id_number,
+      "tel" : StudentInformationCore.tel,
+      "email" : StudentInformationCore.email,
+      "father_name" : StudentInformationCore.father_name,
+      "father_tel" : StudentInformationCore.father_tel,
+      "mother_name" : StudentInformationCore.mother_name,
+      "mother_tel" : StudentInformationCore.mother_tel,
+      "parent_name" : StudentInformationCore.parent_name,
+      "parent_tel" : StudentInformationCore.parent_tel,
+    };
+    this.http.put(this.url + '/' + StudentInformationCore.id,
+    this.currentStudent).toPromise()
+      .then(() => {
+        this.router.navigate(['/Studentcoreinformation'])
+      });
+  }
 }

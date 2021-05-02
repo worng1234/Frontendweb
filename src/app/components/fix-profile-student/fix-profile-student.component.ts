@@ -10,21 +10,32 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
 })
 export class FixProfileStudentComponent implements OnInit {
   data: any;
-  id: any;
+  id: number;
   sciListid: StudentInformationCore;
+  getStudentListID: any = {};
 
   constructor(private aRoute: ActivatedRoute, private sci: StudentCoreInformationService) { }
 
   ngOnInit(): void {
-    this.id = this.aRoute.snapshot.params.id;
-    this.getStudentListID();
+    this.aRoute.params.subscribe(params => {
+      this.sci.getStudentListID(params.id).subscribe(data => {
+        this.getStudentListID = data;
+      });
+    });
+
+    //this.id = this.aRoute.snapshot.params.id;
+    //this.getStudentListID();
   }
 
-  getStudentListID(){
+  /*getStudentListID(){
     this.sci.getStudentListID(this.id).subscribe(res => {
       this.data = res;
       this.sciListid=this.data;
-    })
+    });
+  }*/
+
+  fixProfileStudent(StudentInformationCore){
+    this.sci.fixProfileStudent(StudentInformationCore);
   }
 
 }
