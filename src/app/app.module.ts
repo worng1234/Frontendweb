@@ -23,7 +23,7 @@ import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
 import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
@@ -62,6 +62,7 @@ import { FixProfileStudentComponent } from './components/fix-profile-student/fix
     AppRoutingModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    ReactiveFormsModule,
 
 
   ],

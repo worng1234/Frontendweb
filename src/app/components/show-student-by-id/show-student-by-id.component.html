@@ -1,4 +1,4 @@
-<div>
+<div *ngIf = "sciListid !== undefined">
   <div>
     <h2>ข้อมูลประจำตัวนักเรียน</h2>
   </div>
@@ -18,7 +18,7 @@
       <label>โทรศัพท์/Tel : </label>
     </div>
     <div>
-      <label>อีเมล์/Email : </label>
+      <label>อีเมล์/Email : {{sciListid.email}}</label>
     </div>
     <div>
       <label>ชั้นเรียน/Class : </label>
@@ -61,7 +61,7 @@
     <label>พิการ : {{sciListid.diabled}}</label>
   </div>
   <div >
-    <button type="reset" [routerLink] = "['/Fixprofilestudent',sciListid.id]">แก้ไขข้อมูล</button>
+    <button class="btn btn-primary"  [routerLink] ="['/Fixprofilestudent',sciListid.id]">แก้ไขข้อมูล</button>
     <button type="submit">Logout</button>
   </div>
 </div>

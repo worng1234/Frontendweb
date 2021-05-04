@@ -1,55 +1,72 @@
 <div>
     <div><h2>แก้ไขข้อมูล</h2></div>
-    <form id="fixprofilestudent"
-          name="fixprofilestudent"
-          #fixprofilestudentUpdateData="ngForm"
-          (ngSubmit)="fixProfileStudent(fixprofilestudentUpdateData.value)">
-      <div>
-          <label>ชื่อ : </label>
-          <input type="text" name="name" id="name" [(ngModel)]="getStudentListID.name" placeholder="{{sciListid.name}}">
-      </div>
-      <div>
-          <label>นามสกุล : </label>
-          <input type="text" name="surname" id="surname" [(ngModel)]="getStudentListID.surname" placeholder="{{sciListid.surname}}">
-      </div>
-      <div class="form-group">
-          <label>บัตรประจำตัวประชาชน : </label>
-          <input type="text" name="id_number" id="id_number" [(ngModel)]="getStudentListID.id_number" placeholder="{{sciListid.id_number}}">
-      </div>
-      <div>
-          <label>โทรศัพท์ : </label>
-          <input type="text" name="tel" id="tel" placeholder="{{sciListid.tel}}">
-      </div>
-      <div>
-          <label>อีเมล์ : </label>
-          <input type="text" name="email" id="email" placeholder="{{sciListid.email}}">
-      </div>
-      <h3>ข้อมูลครอบครัว</h3>
-      <div>
-          <label>บิดา : </label>
-          <input type="text" name="father_name" id="father_name" placeholder="{{sciListid.father_name}}">
-          <label>โทรศัพท์บิดา : </label>
-          <input type="text" name="father_tel" id="father_tel" placeholder="{{sciListid.father_tel}}">
-      </div>
-      <div>
-          <label>มารดา : </label>
-          <input type="text" name="mother_name" id="mother_name" placeholder="{{sciListid.mother_name}}">
-          <label>โทรศัพท์มารดา : </label>
-          <input type="text" name="mother_tel" id="mother_tel" placeholder="{{sciListid.mother_tel}}">
-      </div>
-      <div>
-          <label>ผู้ปกครอง: </label>
-          <input type="text" name="parent_name" id="parent_name" placeholder="{{sciListid.parent_name}}">
-          <label>โทรศัพท์ผู้ปกครอง : </label>
-          <input type="text" name="parent_tel" id="parent_tel" placeholder="{{sciListid.parent_tel}}">
-      </div>
-      <div>
-          <label>ทีอยู่ : </label>
-        <!--<input type="text" name="email" id="email" placeholder="{{sciListid.tel}}">-->
-      </div>
-      <div>
-          <input type="submit" value="ยืนยัน" class="btn btn-success" />
-          <button type="submit">ย้อนกลับ</button>
-      </div>
-  </form>
+    <div *ngIf="currentStudent" class="edit-form">
+      <form>
+        <div class="form-group">
+          <label for="prename">คำนำหน้า</label>
+          <input type="text" class="form-control" id="prename" readonly
+                 [(ngModel)]="currentStudent.prename" name="prename">
+        </div>
+        <div class="form-group">
+          <label for="prename">ชื่อ</label>
+          <input type="text" class="form-control" id="name"
+                 [(ngModel)]="currentStudent.name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="prename">นามสกุล</label>
+          <input type="text" class="form-control" id="surname"
+                 [(ngModel)]="currentStudent.surname" name="surname">
+        </div>
+        <div class="form-group">
+          <label for="prename">เลขบัตรประจำตัวประชาชน</label>
+          <input type="text" class="form-control" id="id_number"
+                 [(ngModel)]="currentStudent.id_number" name="id_number">
+        </div>
+        <div class="form-group">
+          <label for="prename">โทรศัพท์</label>
+          <input type="text" class="form-control" id="tel"
+                 [(ngModel)]="currentStudent.tel" name="tel">
+        </div>
+        <div class="form-group">
+          <label for="prename">อีเมล์</label>
+          <input type="text" class="form-control" id="email"
+                 [(ngModel)]="currentStudent.email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="prename">บิดา</label>
+          <input type="text" class="form-control" id="father_name"
+                 [(ngModel)]="currentStudent.father_name" name="father_name">
+        </div>
+        <div class="form-group">
+          <label for="prename">เบอร์โทรติดต่อบิดา</label>
+          <input type="text" class="form-control" id="father_tel"
+                 [(ngModel)]="currentStudent.father_tel" name="father_tel">
+        </div>
+        <div class="form-group">
+          <label for="prename">มารดา</label>
+          <input type="text" class="form-control" id="mother_name"
+                 [(ngModel)]="currentStudent.mother_name" name="mother_name">
+        </div>
+        <div class="form-group">
+          <label for="prename">เบอร์โทรติดต่อมารดา</label>
+          <input type="text" class="form-control" id="mother_tel"
+                 [(ngModel)]="currentStudent.mother_tel" name="mother_tel">
+        </div>
+        <div class="form-group">
+          <label for="prename">ผู้ปกครอง</label>
+          <input type="text" class="form-control" id="parent_name"
+                 [(ngModel)]="currentStudent.parent_name" name="parent_name">
+        </div>
+        <div class="form-group">
+          <label for="prename">เบอร์โทรติดต่อผู้ปกครอง</label>
+          <input type="text" class="form-control" id="parent_tel"
+                 [(ngModel)]="currentStudent.parent_tel" name="parent_tel">
+        </div>
+      </form>
+      <button type="submit" class="badge badge-success" (click)="updateProfilestudent()">ยืนยัน</button>
+    </div>
+    <div *ngIf="!currentStudent">
+      <br />
+      <p>This product is not accessible</p>
+    </div>
 </div>

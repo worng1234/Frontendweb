@@ -18,7 +18,7 @@ import { FixProfileStudentComponent } from './components/fix-profile-student/fix
 
 
 const routes: Routes = [
-  //{path:'Mainpage',component:MainpageComponent,pathMatch:'full'},
+  {path:'Mainpage',component:MainpageComponent,pathMatch:'full'},
   {path:'Newstudentm1',component:NewStudentM1Component,pathMatch:'full'},
   {path:'NewStudentRegisterM4',component:NewStudentM4Component},
   {path:'SortNewstudent',component:SortNewstudentComponent},
@@ -28,10 +28,10 @@ const routes: Routes = [
   {path:'BehaviorTeacher',component:BehaviorTeacherComponent},
   {path:'Edit',component:EditComponent},
   {path:'SortNewstudentM4',component:SortNewstudentM4Component},
-  {path:'StudentCoreInformation',component:StudentCoreInformationComponent},
-  {path:'Showstudentbyid/:id',component:ShowStudentByIdComponent},
-  {path:'Statusstudent/:id',component:StatusStudentComponent},
-  {path:'Fixprofilestudent/:id',component:FixProfileStudentComponent}
+  {path:'StudentCoreInformation', component: StudentCoreInformationComponent},
+  {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},
+  {path: 'Statusstudent/:id' , component: StatusStudentComponent},
+  {path: 'Fixprofilestudent/:id' , component: FixProfileStudentComponent}
 ];
 
 @NgModule({

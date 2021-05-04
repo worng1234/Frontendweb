@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentInformationCore } from 'src/app/models/student-information-core';
 import { StudentCoreInformationService } from 'src/app/services/student_core_information_services/student-core-information.service';
 
@@ -9,33 +10,38 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
   styleUrls: ['./fix-profile-student.component.css']
 })
 export class FixProfileStudentComponent implements OnInit {
-  data: any;
-  id: number;
-  sciListid: StudentInformationCore;
-  getStudentListID: any = {};
+  currentStudent = null;
+  message ='';
 
-  constructor(private aRoute: ActivatedRoute, private sci: StudentCoreInformationService) { }
+  constructor(private aRoute: ActivatedRoute,
+              private sci: StudentCoreInformationService,
+              private fb: FormBuilder,
+              private router: Router) {}
 
   ngOnInit(): void {
-    this.aRoute.params.subscribe(params => {
-      this.sci.getStudentListID(params.id).subscribe(data => {
-        this.getStudentListID = data;
-      });
-    });
-
-    //this.id = this.aRoute.snapshot.params.id;
-    //this.getStudentListID();
+    this.message='';
+    this.getStudentListID(this.aRoute.snapshot.paramMap.get('id'));
   }
 
-  /*getStudentListID(){
-    this.sci.getStudentListID(this.id).subscribe(res => {
-      this.data = res;
-      this.sciListid=this.data;
+  getStudentListID(id): void{
+    this.sci.getStudentListID(id).subscribe(data =>{
+      this.currentStudent = data;
+      console.log(data);
+    },error =>{
+      console.log(error);
     });
-  }*/
+  }
 
-  fixProfileStudent(StudentInformationCore){
-    this.sci.fixProfileStudent(StudentInformationCore);
+  updateProfilestudent(): void {
+    this.sci.updateProfilestudent(this.currentStudent.id, this.currentStudent)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    })
   }
 
 }
+
+
