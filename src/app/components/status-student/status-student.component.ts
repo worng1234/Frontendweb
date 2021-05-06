@@ -12,10 +12,13 @@ export class StatusStudentComponent implements OnInit {
 
   data: any;
   id: any;
-  sciListid: StudentInformationCore;
+  sciListid: StudentInformationCore | undefined;
 
   constructor( private aRoute: ActivatedRoute,
-               private sci: StudentCoreInformationService) { }
+               private sci: StudentCoreInformationService) {
+      this.aRoute.snapshot.paramMap.get('id');
+      this.id = +this.aRoute.snapshot.paramMap.get('id');
+  }
 
   ngOnInit(): void {
     this.aRoute.snapshot.params.id;
@@ -23,9 +26,8 @@ export class StatusStudentComponent implements OnInit {
   }
 
   getStudentListID(){
-    this.sci.getStudentListID(this.id).subscribe(res => {
-      this.data = res;
-      this.sciListid = this.data;
+    this.sci.getStudentListID(this.id).subscribe(data => {
+      this.sciListid = data;
     })
   }
 

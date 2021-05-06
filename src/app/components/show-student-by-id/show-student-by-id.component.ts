@@ -22,8 +22,6 @@ export class ShowStudentByIdComponent implements OnInit {
 
   ngOnInit(){
     this.getStudentListID();
-    // this.id = this.aRoute.snapshot.params.id;
-    // this.getStudentListID();
   }
 
   getStudentListID(){
@@ -31,11 +29,6 @@ export class ShowStudentByIdComponent implements OnInit {
       this.sciListid = data;
     })
   }
-  // getStudentListID(){
-  //   this.sci.getStudentListID(this.id).subscribe(res => {
-  //     this.data = res;
-  //     this.sciListid = this.data;
-  //   });
-  // }
+
 
 }

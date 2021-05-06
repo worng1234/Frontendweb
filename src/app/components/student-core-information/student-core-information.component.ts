@@ -12,6 +12,11 @@ import { StudentInformationCore } from 'src/app/models/student-information-core'
 export class StudentCoreInformationComponent implements OnInit {
 
   sciList : StudentInformationCore[] = [];
+  prename = ['','นาย','นางสาว'];
+  searchPrename: string;
+  searchName: string;
+  searchSurname: string;
+  searchStudentID: string;
 
 
   constructor( private sci : StudentCoreInformationService, private http : HttpClientModule) {}
@@ -21,6 +26,11 @@ export class StudentCoreInformationComponent implements OnInit {
     .subscribe((data: StudentInformationCore[]) => { console.log(data); this.sciList = data;});
   }
 
+  search(){
+    this.sciList = this.sciList.filter(res =>{
+      return res.name;
+    });
+  }
 
 
 }
