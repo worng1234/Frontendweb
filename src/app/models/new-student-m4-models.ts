@@ -1,7 +1,9 @@
 export class NewStudentM4Models{
   id : number;
+  student_id : string;
   prename : string;
   name : string;
+  name_cen : string;
   surname : string;
   sex : boolean;
   pic : string;
@@ -11,15 +13,21 @@ export class NewStudentM4Models{
   nationality : string;
   origin : string;
   father_name : string;
+  father_namecen : string;
+  father_surname : string;
   father_id : string;
   father_job : string;
   father_tel : string;
   mother_name : string;
+  mother_namecen : string;
+  mother_surname : string;
   mother_id : string;
   mother_job : string;
   mother_tel : string;
   parent : string;
   parent_name : string;
+  parent_namecen : string;
+  parent_surname : string;
   parent_id : string;
   parent_job : string;
   parent_tel : string;
@@ -50,4 +58,8 @@ export class NewStudentM4Models{
   major_name9 : string;
   major_name10 : string;
   email: string;
+  onet_sci: string;
+  onet_math: string;
+  onet_thai: string;
+  onet_eng: string;
 }

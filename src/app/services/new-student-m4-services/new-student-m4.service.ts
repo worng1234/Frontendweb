@@ -27,8 +27,10 @@ export class NewStudentM4Service {
   addNewstudentm4(newstudentm4){
     this.newStudentm4 = {
       "id" : newstudentm4.id,
+      "student_id" : newstudentm4.student_id,
       "prename" : newstudentm4.prename,
       "name" : newstudentm4.name,
+      "name_cen" : newstudentm4.name_cen,
       "surname" : newstudentm4.surname,
       "sex" : newstudentm4.sex,
       "pic" : newstudentm4.pic,
@@ -38,15 +40,21 @@ export class NewStudentM4Service {
       "nationality" : newstudentm4.nationality,
       "origin" : newstudentm4.origin,
       "father_name" : newstudentm4.father_name,
+      "father_namecen" : newstudentm4.father_namecen,
+      "father_surname" : newstudentm4.father_surname,
       "father_id" : newstudentm4.father_id,
       "faher_job" : newstudentm4.father_job,
       "father_tel" : newstudentm4.father_tel,
       "mother_name" : newstudentm4.mother_name,
+      "mother_namecen" : newstudentm4.mother_namecen,
+      "mother_surname" : newstudentm4.mother_surname,
       "mother_id" : newstudentm4.mother_id,
       "mother_job" : newstudentm4.mother_job,
       "mother_tel" : newstudentm4.mother_tel,
       "parent" : newstudentm4.parent,
       "parent_name" : newstudentm4.parent_name,
+      "parent_namecen" : newstudentm4.parent_namecen,
+      "parent_surname" : newstudentm4.parent_surname,
       "parent_id" : newstudentm4.parent_id,
       "parent_job" : newstudentm4.parent_job,
       "parent_tel" : newstudentm4.parent_tel,
@@ -76,6 +84,10 @@ export class NewStudentM4Service {
       "major_name9" : newstudentm4.major_name9,
       "major_name10" : newstudentm4.major_name10,
       "email" : newstudentm4.email,
+      "onet_sci": newstudentm4.onet_sci,
+      "onet_math": newstudentm4.onet_math,
+      "onet_thai": newstudentm4.onet_thai,
+      "onet_eng": newstudentm4.onet_eng,
     }
     this.http.post<any>(this.url, this.newStudentm4) .subscribe(
       () => {

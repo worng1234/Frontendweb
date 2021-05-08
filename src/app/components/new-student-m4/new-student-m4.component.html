@@ -15,6 +15,8 @@
         </select>
         <label>ชื่อ</label>
         <input id="name" name="name" ngModel>
+        <label>ชื่อกลาง</label>
+        <input id="name_cen" name="name_cen" ngModel>
         <label>นามสกุล</label>
         <input id="surname" name="surname" ngModel>
         <label>เพศ</label>
@@ -37,8 +39,12 @@
       <input id="origin" name="origin" ngModel>
     </div>
     <div>
-      <label>ชื่อ/นามสกุลบิดา</label>
+      <label>ชื่อบิดา</label>
       <input id="father_name" name="father_name" ngModel>
+      <label>ชื่อกลาง</label>
+      <input id="father_namecen" name="father_namecen" ngModel>
+      <label>นามสกุลบิดา</label>
+      <input id="father_surname" name="father_surname" ngModel>
       <label>เลขประจำตัวประชาชน</label>
       <input id="father_id" name="father_id" ngModel>
       <label>อาชีพ</label>
@@ -47,8 +53,12 @@
       <input id="father_tel" name="father_tel" ngModel>
     </div>
     <div>
-      <label>ชื่อ/นามสกุลมารดา</label>
+      <label>ชื่อมารดา</label>
       <input id="mother_name" name="mother_name" ngModel>
+      <label>ชื่อกลาง</label>
+      <input id="mother_namecen" name="mother_namecen" ngModel>
+      <label>นามสกุลมารดา</label>
+      <input id="mother_surname" name="mother_surname" ngModel>
       <label>เลขประจำตัวประชาชน</label>
       <input id="mother_id" name="mother_id" ngModel>
       <label>อาชีพ</label>
@@ -66,8 +76,12 @@
       <input>
     </div>
     <div>
-      <label>ชื่อ/นามสกุลผู้ปกครอง</label>
+      <label>ชื่อผู้ปกครอง</label>
       <input id="parent_name" name="parent_name" ngModel>
+      <label>ชื่อกลาง</label>
+      <input id="parent_namecen" name="parent_namecen" ngModel>
+      <label>นามสกุลผู้ปกครอง</label>
+      <input id="parent_surname" name="parent_surname" ngModel>
       <label>อาชีพ</label>
       <input id="parent_job" name="parent_job" ngModel>
       <label>โทรศัพท์</label>
@@ -107,7 +121,18 @@
     </div>
     <div>
       <label>เลขประจำตัวนักเรียน(เฉพาะนักเรียน ม.3 โรงเรียนพร้าววิทยาคม)</label>
-      <input >
+      <input id="student_id" name="student_id" ngModel>
+    </div>
+    <div>
+      <h5>คะแนน o net</h5>
+      <label>คณิตศาสตร์</label>
+      <input id="onet_sci" name="onet_sci" ngModel>
+      <label>วิทยาศาสตร์</label>
+      <input id="onet_math" name="onet_math" ngModel>
+      <label>ภาษาไทย</label>
+      <input id="onet_thai" name="onet_thai" ngModel>
+      <label>ภาษาอังกฤษ</label>
+      <input id="onet_eng" name="onet_eng" ngModel>
     </div>
     <div>
       <input type="checkbox">
