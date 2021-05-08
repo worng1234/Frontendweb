@@ -33,7 +33,11 @@
         <input id = "name" name = "name" ngModel placeholder = "ชื่อ"/>
       </div>
       <div class="form-group">
-        <label for="name">นามสกุล : </label>
+        <label for="name_cen">ชื่อกลาง : </label>
+        <input id = "name_cen" name = "name_cen" ngModel placeholder = "ชื่อกลาง"/>
+      </div>
+      <div class="form-group">
+        <label for="surname">นามสกุล : </label>
         <input id = "surname" name = "surname" ngModel placeholder = "นามสกุล"/>
       </div>
       <div>
@@ -64,8 +68,12 @@
       <input id="tel" name="tel" ngModel placeholder="โทรศัพท์"/>
     </div>
     <div>
-      <label for="father_name">ชื่อ-นามสกุลบิดา</label>
-      <input id="father_name" name="father_name" ngModel placeholder="ชื่อ-นามสกุลบิดา"/>
+      <label for="father_name">ชื่อบิดา</label>
+      <input id="father_name" name="father_name" ngModel placeholder="ชื่อบิดา"/>
+      <label for="father_namecen">ชื่อกลาง</label>
+      <input id="father_namecen" name="father_namecen" ngModel placeholder="ชื่อกลาง"/>
+      <label for="father_surname">นามสกุล</label>
+      <input id="father_surname" name="father_surname" ngModel placeholder="นามสกุล"/>
       <label for="father_id">เลขประจำตัวประชาชนบิดา</label>
       <input id="father_id" name="father_id" ngModel placeholder="เลขประจำตัวประชาชนบิดา"/>
       <label for="father_job">อาชีพ</label>
@@ -74,8 +82,12 @@
       <input id="father_tel" name="father_tel" ngModel placeholder="โทรศัพท์"/>
     </div>
     <div>
-      <label for="mother_name">ชื่อ-นามสกุลมารดา</label>
-      <input id="mother_name" name="mother_name" ngModel placeholder="ชื่อ-นามสกุลมารดา"/>
+      <label for="mother_name">ชื่อมารดา</label>
+      <input id="mother_name" name="mother_name" ngModel placeholder="ชื่อมารดา"/>
+      <label for="mother_namecen">ชื่อกลาง</label>
+      <input id="mother_namecen" name="mother_namecen" ngModel placeholder="ชื่อกลาง"/>
+      <label for="mother_surname">นามสกุล</label>
+      <input id="mother_surname" name="mother_surname" ngModel placeholder="ฯามสกุล"/>
       <label for="mother_id">เลขประจำตัวประชาชนมารดา</label>
       <input id="mother_id" name="mother_id" ngModel placeholder="เลขประจำตัวประชาชนมารดา"/>
       <label for="mother_job">อาชีพ</label>
@@ -93,8 +105,12 @@
       <input id="parent" name="parent" ngModel placeholder="ผู้ปกครอง"/>
     </div>
     <div>
-      <label for="parent_name">ชื่อ-นามสกุลผู้ปกครอง</label>
-      <input id="parent_name" name="parent_name" ngModel placeholder="ชื่อ-นามสกุลผู้ปกครอง"/>
+      <label for="parent_name">ชื่อผู้ปกครอง</label>
+      <input id="parent_name" name="parent_name" ngModel placeholder="ชื่อผู้ปกครอง"/>
+      <label for="parent_namecen">ชื่อกลาง</label>
+      <input id="parent_namecen" name="parent_namecen" ngModel placeholder="ชื่อกลาง"/>
+      <label for="parent_surname">นามสกุลผู้ปกครอง</label>
+      <input id="parent_surname" name="parent_surname" ngModel placeholder="นามสกุลผู้ปกครอง"/>
       <label for="parent_job">อาชีพ</label>
       <input id="parent_job" name="parent_job" ngModel placeholder="อาชีพ"/>
       <label for="parent_tel">โทรศัพท์</label>
