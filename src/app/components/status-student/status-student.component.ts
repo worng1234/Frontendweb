@@ -1,7 +1,7 @@
+import { BehaviorserviceService } from './../../services/behaviorservice/behaviorservice.service';
+import { Behaviorstudent } from './../../models/behavior-student-models';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StudentInformationCore } from 'src/app/models/student-information-core';
-import { StudentCoreInformationService } from 'src/app/services/student_core_information_services/student-core-information.service';
 
 @Component({
   selector: 'app-status-student',
@@ -9,26 +9,25 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
   styleUrls: ['./status-student.component.css']
 })
 export class StatusStudentComponent implements OnInit {
-
   data: any;
-  id: any;
-  sciListid: StudentInformationCore | undefined;
+  id: number;
+  behavior: Behaviorstudent | undefined;
+  behaviors: Behaviorstudent[] = [];
 
-  constructor( private aRoute: ActivatedRoute,
-               private sci: StudentCoreInformationService) {
+  constructor( private aRoute: ActivatedRoute, private bs: BehaviorserviceService) {
       this.aRoute.snapshot.paramMap.get('id');
       this.id = +this.aRoute.snapshot.paramMap.get('id');
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.aRoute.snapshot.params.id;
-    this.getStudentListID();
+    this.getBehaviorstudentID();
   }
 
-  getStudentListID(){
-    this.sci.getStudentListID(this.id).subscribe(data => {
-      this.sciListid = data;
-    })
+  getBehaviorstudentID(){
+   this.bs.getBehaviorstudenttID(this.id).subscribe(data =>{
+     this.behavior = data;
+   })
   }
 
 }

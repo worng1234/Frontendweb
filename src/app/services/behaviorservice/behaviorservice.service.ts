@@ -1,33 +1,22 @@
-import { catchError, retry } from 'rxjs/operators';
-import { StudentInformationCore } from './../../models/student-information-core';
+import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient ,HttpParams ,HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StudentCoreInformationService {
-  url: string = 'https://localhost:44342/api/StudentCoreInformation';
-  currentStudent: any = {};
+export class BehaviorserviceService {
+  url: string = 'https://localhost:44342/api/BehaviorJoinStudentcore';
 
   constructor( private http: HttpClient, private router: Router) { }
 
-  getStudentList(): Observable<any>{
-    return this.http.get<StudentInformationCore[]>(this.url);
-  }
-
-  getStudentListID(id: number): Observable<any>{
+  getBehaviorstudenttID(id: number): Observable<any>{
     return this.http.get(this.url + '/' + id).pipe(
       retry(1),
       catchError(this.httpError)
     )
-  }
-
-  updateProfilestudent(id: number, data): Observable<any>{
-    return this.http.put(this.url + '/' + id, data);
   }
 
   httpError(error) {

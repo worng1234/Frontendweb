@@ -1,8 +1,11 @@
-<div *ngIf = "sciListid !== undefined">
+<div *ngIf = "behavior !== undefined">
     <div><h2>Student</h2></div>
   <div>
     <!-- <img src="" alt=""> -->
-    <label>Sudent_id</label>
+    <label>Sudent_id : {{behavior.student_id}}</label>
+    <div>
+      <label>Name :  {{behavior.prename}}{{behavior.name}} {{behavior.surname}}</label>
+    </div>
     <div>
       <label>class/room : </label>
     </div>
@@ -21,18 +24,18 @@
     <div>
       <table class="table table-bordered border-primary">
         <thead>
-          <th>ลำดับ</th>
           <th>ประวัติ</th>
           <th>หักคะแนน</th>
           <th>เพิ่มคะแนน</th>
           <th>รายละเอียด</th>
         </thead>
         <tbody>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><button type="button" class="btn btn-secondary">View</button></td>
+          <tr *ngFor = "let b of behaviors">
+            <td>{{b.title}}</td>
+            <td>{{b.pos_score}}</td>
+            <td>{{b.neg_score}}</td>
+            <td><button type="button" class="btn btn-secondary">View</button></td>
+          </tr>
         </tbody>
       </table>
     </div>
