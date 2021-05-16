@@ -1,10 +1,10 @@
-<div *ngIf = "behavior !== undefined">
+<div *ngIf = "bh !== undefined">
     <div><h2>Student</h2></div>
   <div>
-    <!-- <img src="" alt=""> -->
-    <label>Sudent_id : {{behavior.student_id}}</label>
+    <img src="" alt="">
+    <label>Sudent_id : {{bh.student_id}}</label>
     <div>
-      <label>Name :  {{behavior.prename}}{{behavior.name}} {{behavior.surname}}</label>
+      <label>Name :  {{bh.prename}}{{bh.name}} {{bh.surname}}</label>
     </div>
     <div>
       <label>class/room : </label>
@@ -30,7 +30,7 @@
           <th>รายละเอียด</th>
         </thead>
         <tbody>
-          <tr *ngFor = "let b of behaviors">
+          <tr *ngFor = "let b of b">
             <td>{{b.title}}</td>
             <td>{{b.pos_score}}</td>
             <td>{{b.neg_score}}</td>

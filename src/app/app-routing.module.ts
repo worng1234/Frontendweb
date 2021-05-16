@@ -30,7 +30,7 @@ const routes: Routes = [
   {path:'SortNewstudentM4',component:SortNewstudentM4Component},
   {path:'StudentCoreInformation', component: StudentCoreInformationComponent},
   {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},
-  {path: 'Statusstudent/:id' , component: StatusStudentComponent},
+  {path: 'Statusstudent/:student_id' , component: StatusStudentComponent},
   {path: 'Fixprofilestudent/:id' , component: FixProfileStudentComponent}
 ];
 

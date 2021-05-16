@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class SortNewstudentService {
   url: string = 'https://localhost:44342/api/Newstudentm1';
-  url2 : string = 'https://localhost:44342/api/Testjoin/GetNewstudentm4'
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -18,8 +17,5 @@ export class SortNewstudentService {
    return this.http.get<NewStudentM1Models[]>(this.url);
   }
 
-  getTest(){
-    return this.http.get<test[]>(this.url2);
-  }
 
 }

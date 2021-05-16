@@ -1,6 +1,6 @@
-export class Behaviorstudent{
-  id : number;
-  student_id : string;
+export class BehaviorstudentModels{
+  id: number;
+  student_id: number;
   prename : string;
   name : string;
   surname : string;

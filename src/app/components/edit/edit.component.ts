@@ -14,8 +14,7 @@ export class EditComponent implements OnInit {
   constructor(private http: HttpClientModule, private sn : SortNewstudentService) { }
 
   ngOnInit(): void {
-    this.sn.getTest()
-      .subscribe((data : test[]) => {this.T = data});
+
   }
 
 

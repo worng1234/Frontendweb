@@ -1,6 +1,6 @@
 export class StudentInformationCore{
   id : number;
-  student_id : string;
+  student_id : number;
   prename : string;
   name : string;
   surname : string;
