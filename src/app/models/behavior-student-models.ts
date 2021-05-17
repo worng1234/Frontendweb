@@ -1,4 +1,4 @@
-export class BehaviorstudentModels{
+export class Behaviorstudent{
   id: number;
   student_id: number;
   prename : string;

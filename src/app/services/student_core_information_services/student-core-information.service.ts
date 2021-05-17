@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class StudentCoreInformationService {
   url: string = 'https://localhost:44342/api/StudentCoreInformation';
-  url2: string = 'https://localhost:44342/api/BehaviorJoinStudentcore';
 
 
   constructor( private http: HttpClient, private router: Router) { }
@@ -25,10 +24,6 @@ export class StudentCoreInformationService {
       retry(1),
       catchError(this.httpError)
     )
-  }
-
-  getStatusstudent(student_id: number): Observable<any>{
-    return this.http.get(this.url2 + '/' + student_id);
   }
 
   updateProfilestudent(id: number, data): Observable<any>{

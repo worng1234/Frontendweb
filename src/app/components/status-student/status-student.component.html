@@ -1,8 +1,10 @@
-<div *ngIf = "bh !== undefined">
+<div>
     <div><h2>Student</h2></div>
   <div>
-    <img src="" alt="">
-    <label>Sudent_id : {{bh.student_id}}</label>
+    <!-- <img src="" alt=""> -->
+    <div *ngFor="let b of b; let fst = first;">
+      <label *ngIf="fst">Sudent_id : {{b.student_id}}</label>
+    </div>
     <div>
       <label>Name :  {{bh.prename}}{{bh.name}} {{bh.surname}}</label>
     </div>

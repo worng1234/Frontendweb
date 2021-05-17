@@ -3,7 +3,7 @@ import { Observable, throwError} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorstudentModels } from './../../models/behavior-student-models';
+import { Behaviorstudent } from './../../models/behavior-student-models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +14,11 @@ export class BerhaviorService {
   constructor( private http: HttpClient, private router: Router) { }
 
   getBehaviorstudent(): Observable<any>{
-    return this.http.get<BehaviorstudentModels[]>(this.url);
+    return this.http.get<Behaviorstudent[]>(this.url);
   }
 
   getBehaviorstudentID(student_id: number): Observable<any>{
-    return this.http.get(this.url + '/' + student_id).pipe(
-      retry(1),
-      catchError(this.httpError)
-    )
+    return this.http.get<Behaviorstudent[]>(this.url + '/' + student_id);
   }
 
   httpError(error) {
