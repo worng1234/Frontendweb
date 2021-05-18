@@ -10,6 +10,7 @@ import { Behaviorstudent } from './../../models/behavior-student-models';
 })
 export class BerhaviorService {
   url: string = 'https://localhost:44342/api/BehaviorJoinStudentcore';
+  url2: string = 'https://localhost:44342/api/BehaviorStudent';
 
   constructor( private http: HttpClient, private router: Router) { }
 
@@ -21,14 +22,5 @@ export class BerhaviorService {
     return this.http.get<Behaviorstudent[]>(this.url + '/' + student_id);
   }
 
-  httpError(error) {
-    let msg = '';
-    if(error.error instanceof ErrorEvent) {
-      msg = error.error.message;
-    } else {
-      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log(msg);
-    return throwError(msg);
-  }
+
 }
