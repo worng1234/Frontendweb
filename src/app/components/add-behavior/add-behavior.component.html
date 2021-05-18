@@ -1,6 +1,29 @@
 <h3>Add Behavior!!</h3>
 <div>
-  <div>
-    <button class="btn btn-danger" [routerLink] = "['/Mainbehavior']">ย้อนกลับ</button>
-  </div>
+  <form action="" method="post">
+    <div>
+      <label>วัน/เดือน/ปี : </label>
+      <input type="text" placeholder="00/00/0000">
+    </div>
+    <div>
+      <label>รหัสนักเรียน : </label>
+      <input type="text" placeholder="xxxxxx">
+    </div>
+    <div>
+      <label>เรื่อง : </label>
+      <input type="text">
+    </div>
+    <div >
+      <label>รายละเอียด</label>
+      <textarea class="form-control" placeholder="รายละเอียด" id="floatingTextarea2" style="height: 100px"></textarea>
+    </div>
+    <div>
+      <label>หักคะแนน : </label>
+      <input type="text">
+    </div>
+    <div>
+      <button class="btn btn-success">ยืนยัน</button>
+      <button class="btn btn-danger" [routerLink] = "['/Mainbehavior']">ย้อนกลับ</button>
+    </div>
+  </form>
 </div>
