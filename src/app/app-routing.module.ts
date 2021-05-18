@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+//Components
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { NewStudentM4Component } from './components/new-student-m4/new-student-m4.component';
 import { SortNewstudentComponent } from './components/sort-newstudent/sort-newstudent.component';
@@ -15,13 +16,16 @@ import { StudentCoreInformationComponent } from './components/student-core-infor
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
 import { StatusStudentComponent } from './components/status-student/status-student.component';
 import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
+import { AddBehaviorComponent } from './components/add-behavior/add-behavior.component';
+import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
 
 
 const routes: Routes = [
-  {path:'Mainpage',component:MainpageComponent,pathMatch:'full'},
-  {path:'Newstudentm1',component:NewStudentM1Component,pathMatch:'full'},
+  {path:'' ,redirectTo: '/mainpage',pathMatch:'full'},
+  {path:'mainpage',component:MainpageComponent},
+  {path:'NewStudentRegisterM1',component:NewStudentM1Component},
   {path:'NewStudentRegisterM4',component:NewStudentM4Component},
-  {path:'SortNewstudent',component:SortNewstudentComponent},
+  {path:'SortNewstudentm1',component:SortNewstudentComponent},
   {path:'CheckStudentLine',component:CheckStudentLineComponent},
   {path:'CheckStudentRoom',component:CheckStudentRoomComponent},
   {path:'BehaviorStudent',component:BehaviorStudentComponent},
@@ -31,7 +35,9 @@ const routes: Routes = [
   {path:'StudentCoreInformation', component: StudentCoreInformationComponent},
   {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},
   {path: 'Statusstudent/:student_id' , component: StatusStudentComponent},
-  {path: 'Fixprofilestudent/:id' , component: FixProfileStudentComponent}
+  {path: 'Fixprofilestudent/:id' , component: FixProfileStudentComponent},
+  {path: 'Mainbehavior' , component:MainBehaviorComponent},
+  {path: 'Addbehavior' , component:AddBehaviorComponent}
 ];
 
 @NgModule({

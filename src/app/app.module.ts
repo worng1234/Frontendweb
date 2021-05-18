@@ -29,6 +29,8 @@ import { StudentCoreInformationComponent } from './components/student-core-infor
 import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
 import { StatusStudentComponent } from './components/status-student/status-student.component';
 import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
+import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
+import { AddBehaviorComponent } from './components/add-behavior/add-behavior.component';
 
 
 
@@ -54,6 +56,8 @@ import { FixProfileStudentComponent } from './components/fix-profile-student/fix
     ShowStudentByIdComponent,
     StatusStudentComponent,
     FixProfileStudentComponent,
+    MainBehaviorComponent,
+    AddBehaviorComponent,
 
   ],
   imports: [

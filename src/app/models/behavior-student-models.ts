@@ -8,4 +8,5 @@ export class Behaviorstudent{
   pos_score: string;
   neg_score: string;
   score: string;
+  behavior_date: string;
 }

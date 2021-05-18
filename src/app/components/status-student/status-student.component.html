@@ -5,8 +5,8 @@
     <div *ngFor="let b of b; let fst = first;">
       <label *ngIf="fst">Sudent_id : {{b.student_id}}</label>
     </div>
-    <div>
-      <label>Name :  {{bh.prename}}{{bh.name}} {{bh.surname}}</label>
+    <div *ngFor = "let b of b; let fst = first;">
+      <label *ngIf = "fst">Name : {{b.prename}}{{b.name}} {{b.surname}}</label>
     </div>
     <div>
       <label>class/room : </label>
@@ -26,6 +26,7 @@
     <div>
       <table class="table table-bordered border-primary">
         <thead>
+          <th>วัน/เดือน/ปี</th>
           <th>ประวัติ</th>
           <th>หักคะแนน</th>
           <th>เพิ่มคะแนน</th>
@@ -33,6 +34,7 @@
         </thead>
         <tbody>
           <tr *ngFor = "let b of b">
+            <td>{{b.behavior_date}}</td>
             <td>{{b.title}}</td>
             <td>{{b.pos_score}}</td>
             <td>{{b.neg_score}}</td>

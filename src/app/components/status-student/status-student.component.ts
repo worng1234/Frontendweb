@@ -13,7 +13,6 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
 export class StatusStudentComponent implements OnInit {
   data: any;
   student_id: number;
-  bh: Behaviorstudent | undefined;
   b: Behaviorstudent[] = [];
 
   constructor( private aRoute: ActivatedRoute, private bs: BerhaviorService,) {
