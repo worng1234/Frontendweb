@@ -77,8 +77,9 @@ export class NewStudentM1Service {
       "email" : newstudentm1.email,
     }
     this.http.post<any>(this.url, this.newStudentm1) .subscribe(
-      () => {
+      (data) => {
         this.router.navigate(['/Newstudentm1']);
+        console.log(data);
     });
 
   }

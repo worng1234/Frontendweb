@@ -1,29 +1,31 @@
 <h3>Add Behavior!!</h3>
-<div>
-  <form action="" method="post">
+
+  <form
+    #addbehaviorNewdata="ngForm"
+    (ngSubmit)="AddBehavio(addbehaviorNewdata.value)">
     <div>
       <label>วัน/เดือน/ปี : </label>
-      <input type="text" placeholder="00/00/0000">
+      <input id="behavior_date" name="behavior_date" ngModel placeholder="00/00/0000">
     </div>
     <div>
       <label>รหัสนักเรียน : </label>
-      <input type="text" placeholder="xxxxxx">
+      <input id="student_id" name="student_id" ngModel placeholder="xxxxxx">
     </div>
     <div>
       <label>เรื่อง : </label>
-      <input type="text">
+      <input id="title" name="title" ngModel >
     </div>
     <div >
       <label>รายละเอียด</label>
-      <textarea class="form-control" placeholder="รายละเอียด" id="floatingTextarea2" style="height: 100px"></textarea>
+      <input id="behavior_history" name="behavior_history"  ngModel >
     </div>
     <div>
       <label>หักคะแนน : </label>
       <input type="text">
     </div>
     <div>
-      <button class="btn btn-success">ยืนยัน</button>
-      <button class="btn btn-danger" [routerLink] = "['/Mainbehavior']">ย้อนกลับ</button>
+      <button type="submit" class="btn btn-success" value="submit">ยืนยัน</button>
     </div>
   </form>
-</div>
+  <button class="btn btn-danger" [routerLink] = "['/Mainbehavior']">ย้อนกลับ</button>
+

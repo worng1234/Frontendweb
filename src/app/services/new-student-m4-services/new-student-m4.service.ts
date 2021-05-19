@@ -90,8 +90,9 @@ export class NewStudentM4Service {
       "onet_eng": newstudentm4.onet_eng,
     }
     this.http.post<any>(this.url, this.newStudentm4) .subscribe(
-      () => {
+      (data) => {
         this.router.navigate(['/Newstudentm4']);
+        console.log(data);
     });
   }
 

@@ -1,4 +1,7 @@
+import { AddBehaviorService } from './../../services/add-behavior/add-behavior.service';
+import { BerhaviorService } from './../../services/behaviorservice/berhavior.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-behavior',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddBehaviorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bh : AddBehaviorService, private router : Router) { }
 
   ngOnInit(): void {
   }
 
+  AddBehavio(addbehavior){
+    this.bh.AddBehavior(addbehavior);
+    //console.log(addbehavior);
+  }
 }
