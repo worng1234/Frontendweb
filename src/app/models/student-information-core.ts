@@ -1,8 +1,10 @@
 export class StudentInformationCore{
   id : number;
   student_id : number;
+  student_id_card: number;
   prename : string;
   name : string;
+  name_cen : string;
   surname : string;
   sex : string;
   pic : string;
@@ -11,19 +13,6 @@ export class StudentInformationCore{
   religion : string;
   nationality : string;
   origin : string;
-  father_name : string;
-  father_id : string;
-  father_job : string;
-  father_tel : string;
-  mother_name : string;
-  mother_id : string;
-  mother_job : string;
-  mother_tel : string;
-  parent : string;
-  parent_name : string;
-  parent_id : string;
-  parent_job : string;
-  parent_tel : string;
   house_number : string;
   bloc : string;
   street : string;
@@ -32,10 +21,6 @@ export class StudentInformationCore{
   district : string;
   province : string;
   post : string;
-  final_school : string;
-  final_school_sub_district : string;
-  final_school_district : string;
-  final_school_province : string;
   diabled : string;
   poor_person : string;
   etc : string;
@@ -44,5 +29,20 @@ export class StudentInformationCore{
   tel : string;
   score : string;
   email: string;
+  blood_group: string;
+  talent: string;
+  distance_school: number;
+  go_school: string;
+  no_son: number;
+  no_brother: number;
+  no_he: number;
+  no_she: number;
+  no_parent: number;
+  status_parent: string;
+  total_parent: string;
+  total_student: string;
+  student_job: string;
+  student_job_name: string;
+  student_job_total: number;
 
 }
