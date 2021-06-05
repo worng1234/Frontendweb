@@ -18,6 +18,7 @@ import { StatusStudentComponent } from './components/status-student/status-stude
 import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
 import { AddBehaviorComponent } from './components/add-behavior/add-behavior.component';
 import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
+import { AddStudentCoreComponent } from './components/add-student-core/add-student-core.component';
 
 
 const routes: Routes = [
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path: 'Statusstudent/:student_id' , component: StatusStudentComponent},
   {path: 'Fixprofilestudent/:id' , component: FixProfileStudentComponent},
   {path: 'Mainbehavior' , component:MainBehaviorComponent},
-  {path: 'Addbehavior' , component:AddBehaviorComponent}
+  {path: 'Addbehavior' , component:AddBehaviorComponent},
+  {path: 'Addstudentcore' , component:AddStudentCoreComponent}
 ];
 
 @NgModule({

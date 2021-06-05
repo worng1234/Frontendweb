@@ -31,6 +31,7 @@ import { StatusStudentComponent } from './components/status-student/status-stude
 import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
 import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
 import { AddBehaviorComponent } from './components/add-behavior/add-behavior.component';
+import { AddStudentCoreComponent } from './components/add-student-core/add-student-core.component';
 
 
 
@@ -58,6 +59,7 @@ import { AddBehaviorComponent } from './components/add-behavior/add-behavior.com
     FixProfileStudentComponent,
     MainBehaviorComponent,
     AddBehaviorComponent,
+    AddStudentCoreComponent,
 
   ],
   imports: [
