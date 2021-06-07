@@ -2,292 +2,598 @@
   <h3>Add Student Core</h3>
 </div>
 <div>
-  <form>
+  <form (ngSubmit)="submit()">
     <!-- step1 -->
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เลขประจำตัวนักเรียน" aria-label="เลขประจำตัวนักเรียน">
+    <div *ngIf="step == 1">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เลขประจำตัวนักเรียน"
+            aria-label="เลขประจำตัวนักเรียน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="แผนการเรียน"
+            aria-label="แผนการเรียน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ระดับชั้น"
+            aria-label="ระดับชั้น"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ลำดับห้อง"
+            aria-label="ลำดับห้อง"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="แผนการเรียน" aria-label="แผนการเรียน">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เลขบัตรประจำตัวประชาชน"
+            aria-label="เลขบัตรประจำตัวประชาชน"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ระดับชั้น" aria-label="ระดับชั้น">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="คำนำหน้าชื่อ"
+            aria-label="คำนำหน้าชื่อ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อภาษาไทย"
+            aria-label="ชื่อภาษาไทย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อกลาง"
+            aria-label="ชื่อกลาง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นามสกุลภาษาไทย"
+            aria-label="นามสกุลภาษาไทย"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ลำดับห้อง" aria-label="ลำดับห้อง">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="คำนำหน้าชื่อ(ภาษาอังกฤษ)"
+            aria-label="คำนำหน้าชื่อ(ภาษาอังกฤษ)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อ(ภาษาอังกฤษ)"
+            aria-label="ชื่อ(ภาษาอังกฤษ)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อกลาง(ภาษาอังกฤษ)"
+            aria-label="ชื่อกลาง(ภาษาอังกฤษ)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นามสกุล(ภาษาอังกฤษ)"
+            aria-label="นามสกุล(ภาษาอังกฤษ)"
+          />
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เลขบัตรประจำตัวประชาชน" aria-label="เลขบัตรประจำตัวประชาชน">
+      <div class="row mb-3">
+        <div class="col">
+          <p>วันเดือนปีเกิดที่ปรากฏในบัตรประชาชน</p>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="คำนำหน้าชื่อ" aria-label="คำนำหน้าชื่อ">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ปี"
+            aria-label="ปี"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เดือน"
+            aria-label="เดือน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="วัน"
+            aria-label="วัน"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อภาษาไทย" aria-label="ชื่อภาษาไทย">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อเล่น"
+            aria-label="ชื่อเล่น"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เพศ"
+            aria-label="เพศ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมู่เลือด"
+            aria-label="หมู่เลือด"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ศาสนา"
+            aria-label="ศาสนา"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เชื่อชาติ"
+            aria-label="เชื่อชาติ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="สัญชาติ"
+            aria-label="สัญชาติ"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อกลาง" aria-label="ชื่อกลาง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นามสกุลภาษาไทย" aria-label="นามสกุลภาษาไทย">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="คำนำหน้าชื่อ(ภาษาอังกฤษ)" aria-label="คำนำหน้าชื่อ(ภาษาอังกฤษ)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อ(ภาษาอังกฤษ)" aria-label="ชื่อ(ภาษาอังกฤษ)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อกลาง(ภาษาอังกฤษ)" aria-label="ชื่อกลาง(ภาษาอังกฤษ)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นามสกุล(ภาษาอังกฤษ)" aria-label="นามสกุล(ภาษาอังกฤษ)">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <p>วันเดือนปีเกิดที่ปรากฏในบัตรประชาชน</p>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ปี" aria-label="ปี">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เดือน" aria-label="เดือน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="วัน" aria-label="วัน">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อเล่น" aria-label="ชื่อเล่น">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เพศ" aria-label="เพศ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมู่เลือด" aria-label="หมู่เลือด">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ศาสนา" aria-label="ศาสนา">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เชื่อชาติ" aria-label="เชื่อชาติ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="สัญชาติ" aria-label="สัญชาติ">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น" aria-label="ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ที่สามารถติดต่อได้" aria-label="หมายเลขโทรศัพท์ที่สามารถติดต่อได้">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อีเมล์(example@email.com)" aria-label="อีเมล์(example@email.com)">
-      </div>
-    </div>
-    <div class="container" align = 'center'>
-      <div class="col-md-auto">
-        <button class="btn btn-primary">ถัดไป</button>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น"
+            aria-label="ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมายเลขโทรศัพท์ที่สามารถติดต่อได้"
+            aria-label="หมายเลขโทรศัพท์ที่สามารถติดต่อได้"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อีเมล์(example@email.com)"
+            aria-label="อีเมล์(example@email.com)"
+          />
+        </div>
       </div>
     </div>
     <!-- step2 -->
-    <div class="row mb-3">
-      <div class="col">
-        <p>ที่อยู่ตามทะเบียนบ้าน</p>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="บ้านเลขที่" aria-label="บ้านเลขที่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมู่" aria-label="หมู่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อหมู่บ้าน" aria-label="ชื่อหมู่บ้าน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ซอย" aria-label="ซอย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ถนน" aria-label="ถนน">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ตำบล/แขวง" aria-label="ตำบล/แขวง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อำเภอ/เขต" aria-label="อำเภอ/เขต">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จังหวัด" aria-label="จังหวัด">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รหัสไปรษณีย์" aria-label="รหัสไปรษณีย์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <p>ที่อยู่ปัจจุบัน</p>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col-sm-auto">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">ที่อยู่ตามทะเบียนบ้าน</label>
-      </div>
-      <div class="col-sm-auto">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
-        <label class="form-check-label" for="inlineRadio1">ที่อยู่อื่นโปรดระบุ</label>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="บ้านเลขที่" aria-label="บ้านเลขที่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมู่" aria-label="หมู่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อหมู่บ้าน" aria-label="ชื่อหมู่บ้าน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ซอย" aria-label="ซอย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ถนน" aria-label="ถนน">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ตำบล/แขวง" aria-label="ตำบล/แขวง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อำเภอ/เขต" aria-label="อำเภอ/เขต">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จังหวัด" aria-label="จังหวัด">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รหัสไปรษณีย์" aria-label="รหัสไปรษณีย์">
-      </div>
-    </div>
-    <div class="container" align = 'center'>
-      <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-danger">ย้อนกลับ</button>
+    <div *ngIf="step == 2">
+      <div class="row mb-3">
+        <div class="col">
+          <p>ที่อยู่ตามทะเบียนบ้าน</p>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-primary">ถัดไป</button>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="บ้านเลขที่"
+            aria-label="บ้านเลขที่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมู่"
+            aria-label="หมู่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อหมู่บ้าน"
+            aria-label="ชื่อหมู่บ้าน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ซอย"
+            aria-label="ซอย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ถนน"
+            aria-label="ถนน"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ตำบล/แขวง"
+            aria-label="ตำบล/แขวง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อำเภอ/เขต"
+            aria-label="อำเภอ/เขต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จังหวัด"
+            aria-label="จังหวัด"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รหัสไปรษณีย์"
+            aria-label="รหัสไปรษณีย์"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <p>ที่อยู่ปัจจุบัน</p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-auto">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value="option1"
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >ที่อยู่ตามทะเบียนบ้าน</label
+          >
+        </div>
+        <div class="col-sm-auto">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="option1"
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >ที่อยู่อื่นโปรดระบุ</label
+          >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="บ้านเลขที่"
+            aria-label="บ้านเลขที่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมู่"
+            aria-label="หมู่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อหมู่บ้าน"
+            aria-label="ชื่อหมู่บ้าน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ซอย"
+            aria-label="ซอย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ถนน"
+            aria-label="ถนน"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ตำบล/แขวง"
+            aria-label="ตำบล/แขวง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อำเภอ/เขต"
+            aria-label="อำเภอ/เขต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จังหวัด"
+            aria-label="จังหวัด"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รหัสไปรษณีย์"
+            aria-label="รหัสไปรษณีย์"
+          />
         </div>
       </div>
     </div>
     <!-- step3 -->
-    <div class="row mb-3">
-      <div class="col">
-        <p>ด้านความสามารถ</p>
+    <div *ngIf="step == 3">
+      <div class="row mb-3">
+        <div class="col">
+          <p>ด้านความสามารถ</p>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>สำเร็จการศึกษา</span>
+      <div class="row mb-3">
+        <div class="col">
+          <span>สำเร็จการศึกษา</span>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อโรงเรียน" aria-label="ชื่อโรงเรียน">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อโรงเรียน"
+            aria-label="ชื่อโรงเรียน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จบชั้น"
+            aria-label="จบชั้น"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ผลการเรียน"
+            aria-label="ผลการเรียน"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จบชั้น" aria-label="จบชั้น">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ตำบล/แขวง"
+            aria-label="ตำบล/แขวง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อำเภอ/เขต"
+            aria-label="อำเภอ/เขต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จังหวัด"
+            aria-label="จังหวัด"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ผลการเรียน" aria-label="ผลการเรียน">
+      <div class="row mb-3">
+        <div class="col">
+          <span>วิชาที่ชอบ</span>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ตำบล/แขวง" aria-label="ตำบล/แขวง">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="1"
+            aria-label="1"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="2"
+            aria-label="2"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="3"
+            aria-label="3"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="4"
+            aria-label="4"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อำเภอ/เขต" aria-label="อำเภอ/เขต">
+      <div class="row mb-3">
+        <div class="col">
+          <span>วิชาที่ไม่ถนัด</span>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จังหวัด" aria-label="จังหวัด">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="1"
+            aria-label="1"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="2"
+            aria-label="2"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="3"
+            aria-label="3"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="4"
+            aria-label="4"
+          />
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>วิชาที่ชอบ</span>
+      <div class="row mb-3">
+        <div class="col">
+          <span>เป้าหมายของชีวิตในอนาคต</span>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="1" aria-label="1">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ความสามารถพิเศษ"
+            aria-label="ความสามารถพิเศษ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อยากประกอบอาชีพ"
+            aria-label="อยากประกอบอาชีพ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เพราะอะไร"
+            aria-label="เพราะอะไร"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="2" aria-label="2">
+      <div class="row mb-3">
+        <div class="col">
+          <span>การอ่านเขียน(เลือก 1 ข้อ)</span>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="3" aria-label="3">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="4" aria-label="4">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>วิชาที่ไม่ถนัด</span>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="1" aria-label="1">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="2" aria-label="2">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="3" aria-label="3">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="4" aria-label="4">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>เป้าหมายของชีวิตในอนาคต</span>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ความสามารถพิเศษ" aria-label="ความสามารถพิเศษ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อยากประกอบอาชีพ" aria-label="อยากประกอบอาชีพ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เพราะอะไร" aria-label="เพราะอะไร">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>การอ่านเขียน(เลือก 1 ข้อ)</span>
-      </div>
-    </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <button class="btn btn-secondary">อ่านเขียนคล่อง</button>
@@ -302,11 +608,11 @@
           <button class="btn btn-secondary">อ่านเขียนไม่ได้</button>
         </div>
       </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>นักเรียนไม่เข้าใจบทเรียนทุกวิชา(เลือก 1 ข้อ)</span>
+      <div class="row mb-3">
+        <div class="col">
+          <span>นักเรียนไม่เข้าใจบทเรียนทุกวิชา(เลือก 1 ข้อ)</span>
+        </div>
       </div>
-    </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <button class="btn btn-secondary">ใช่</button>
@@ -315,54 +621,76 @@
           <button class="btn btn-secondary">ไม่ใช่</button>
         </div>
       </div>
-    <div class="container" align = 'center'>
-      <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-danger">ย้อนกลับ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-primary">ถัดไป</button>
-        </div>
-      </div>
     </div>
     <!-- step4 -->
-    <div class="row mb-3">
-      <div class="col">
-        <span>การเดินทาง</span>
+    <div *ngIf="step == 4">
+      <div class="row mb-3">
+        <div class="col">
+          <span>การเดินทาง</span>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="การเดินทางมาโรงเรียน" aria-label="การเดินทางมาโรงเรียน">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="การเดินทางมาโรงเรียน"
+            aria-label="การเดินทางมาโรงเรียน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ระยะเวลาเดินทาง(นาที)"
+            aria-label="ระยะเวลาเดินทาง(นาที)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ระยะห่างจากโรงเรียน(เมตร)"
+            aria-label="ระยะห่างจากโรงเรียน(เมตร)"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ระยะเวลาเดินทาง(นาที)" aria-label="ระยะเวลาเดินทาง(นาที)">
+      <div class="row mb-3">
+        <div class="col">
+          <span>การเรียนออนไลน์</span>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ระยะห่างจากโรงเรียน(เมตร)" aria-label="ระยะห่างจากโรงเรียน(เมตร)">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="การเดินทางมาโรงเรียน"
+            aria-label="การเดินทางมาโรงเรียน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ระยะเวลาเดินทาง(นาที)"
+            aria-label="ระยะเวลาเดินทาง(นาที)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ระยะห่างจากโรงเรียน(เมตร)"
+            aria-label="ระยะห่างจากโรงเรียน(เมตร)"
+          />
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>การเรียนออนไลน์</span>
+      <div class="row mb-3">
+        <div class="col">
+          <span>อุปกรณ์ที่มี</span>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="การเดินทางมาโรงเรียน" aria-label="การเดินทางมาโรงเรียน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ระยะเวลาเดินทาง(นาที)" aria-label="ระยะเวลาเดินทาง(นาที)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ระยะห่างจากโรงเรียน(เมตร)" aria-label="ระยะห่างจากโรงเรียน(เมตร)">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>อุปกรณ์ที่มี</span>
-      </div>
-    </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <button class="btn btn-secondary">มือถือ/สมาร์ทโฟน</button>
@@ -382,165 +710,187 @@
           <span>อินเตอร์เน็ตที่ใช้</span>
         </div>
       </div>
-        <div class="row mb-auto">
-          <div class="col mb-3">
-            <button class="btn btn-secondary">อินเตอร์เน็ตมือถือ</button>
-          </div>
-          <div class="col mb-3">
-            <button class="btn btn-secondary">อินเตอร์เน็ตสาย</button>
-          </div>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <button class="btn btn-secondary">อินเตอร์เน็ตมือถือ</button>
         </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>ข้อมูลด้านอื่นๆ</span>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">อินเตอร์เน็ตสาย</button>
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ความพิการ" aria-label="ความพิการ">
+      <div class="row mb-3">
+        <div class="col">
+          <span>ข้อมูลด้านอื่นๆ</span>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ความด้อยโอกาส" aria-label="ความด้อยโอกาส">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ความพิการ"
+            aria-label="ความพิการ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ความด้อยโอกาส"
+            aria-label="ความด้อยโอกาส"
+          />
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <span>ความขาดแคลน(เลือกได้มากกว่า 1 ข้อ)</span>
+      <div class="row mb-3">
+        <div class="col">
+          <span>ความขาดแคลน(เลือกได้มากกว่า 1 ข้อ)</span>
+        </div>
       </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ขาดแคลนแบบเรียน</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ขาดแคลนแบบเรียน</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ขาดแคลนเครื่องเขียน</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ขาดแคลนอาหารกลางวัน</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ขาดแคลนเครื่องแบบ</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ขาดแคลน</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ขาดแคลนเครื่องเขียน</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>คบเพื่อนที่เกี่ยวกับสิ่งเสพติด</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ขาดแคลนอาหารกลางวัน</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>มีพฤติกรรมส่อไปทางชู้สาว</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ขาดแคลนเครื่องแบบ</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>ชอบเที่ยวกลางคืน</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ขาดแคลน</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>มีพฤติกรรมเสพหรือจำหน่ายสิ่งเสพติด</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
       </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>คบเพื่อนที่เกี่ยวกับสิ่งเสพติด</span>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>พักหรืออยู่อาสัยกับเพื่อนต่างเพศที่ไม่ใช่ญาติพี่น้อง</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>มีการล่วงละเมิดทางเพศ</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>นักเรียนรู้สึกว่าโลกนี้(เลือก 1 ข้อ)</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">น่าอยู่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่น่าอยู่</button>
+        </div>
       </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>มีพฤติกรรมส่อไปทางชู้สาว</span>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>นักเรียนรู้สึกว่าตัวเอง(เลือก 1 ข้อ)</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">มีค่า</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่มีค่า</button>
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
+      <div class="row mb-3"></div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร"
+            aria-label="นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร"
+            aria-label="นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร"
+          />
+        </div>
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
+      <div class="row mb-auto">
+        <span
+          >ปัญหาเรื่องใดที่นักเรียนกำลังประสบอยู่ในขณะนี้(เลือกได้มากกว่า 1
+          ข้อ)</span
+        >
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ครอบครัว</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">การเรียน</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">สุขภาพ</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">เศรษฐกิจ</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">การคบเพื่อน</button>
+        </div>
       </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>ชอบเที่ยวกลางคืน</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>มีพฤติกรรมเสพหรือจำหน่ายสิ่งเสพติด</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>พักหรืออยู่อาสัยกับเพื่อนต่างเพศที่ไม่ใช่ญาติพี่น้อง</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>มีการล่วงละเมิดทางเพศ</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>นักเรียนรู้สึกว่าโลกนี้(เลือก 1 ข้อ)</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">น่าอยู่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่น่าอยู่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>นักเรียนรู้สึกว่าตัวเอง(เลือก 1 ข้อ)</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">มีค่า</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่มีค่า</button>
-      </div>
-    </div>
-    <div class="row mb-3">
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร" aria-label="นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร" aria-label="นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร">
-      </div>
-    </div>
-    <div class="row mb-auto">
-        <span>ปัญหาเรื่องใดที่นักเรียนกำลังประสบอยู่ในขณะนี้(เลือกได้มากกว่า 1 ข้อ)</span>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ครอบครัว</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">การเรียน</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">สุขภาพ</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">เศรษฐกิจ</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">การคบเพื่อน</button>
-      </div>
-    </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <button class="btn btn-secondary">การวางตัวในสังคม</button>
@@ -555,450 +905,832 @@
           <button class="btn btn-secondary">การเลือกศึกษาต่อ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน</button>
+          <button class="btn btn-secondary">
+            การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน
+          </button>
         </div>
-    </div>
-    <div class="row mb-auto">
-      <span>ถ้าต้องการความช่วยเหลือ/ปรึกษา นักเรียนต้องการความช่วยเหลือ/ปรึกษาจากใคร(เลือกได้มากกว่า 1 ข้อ)</span>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">บิดา</button>
-        <!-- <input type="button" class="btn btn-secondary" value="บิดา"> -->
       </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">มารดา</button>
-        <!-- <input type="button" class="btn btn-secondary" value="มารดา"> -->
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ครูแนะแนว</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ครูที่ปรึกษา</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">เพื่อน</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">อื่นๆ</button>
-      </div>
-    </div>
-    <div class="container" align = 'center'>
       <div class="row mb-auto">
+        <span
+          >ถ้าต้องการความช่วยเหลือ/ปรึกษา
+          นักเรียนต้องการความช่วยเหลือ/ปรึกษาจากใคร(เลือกได้มากกว่า 1 ข้อ)</span
+        >
         <div class="col mb-3">
-          <button class="btn btn-danger">ย้อนกลับ</button>
+          <button class="btn btn-secondary">บิดา</button>
+          <!-- <input type="button" class="btn btn-secondary" value="บิดา"> -->
         </div>
         <div class="col mb-3">
-          <button class="btn btn-primary">ถัดไป</button>
+          <button class="btn btn-secondary">มารดา</button>
+          <!-- <input type="button" class="btn btn-secondary" value="มารดา"> -->
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ครูแนะแนว</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ครูที่ปรึกษา</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">เพื่อน</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">อื่นๆ</button>
         </div>
       </div>
     </div>
     <!-- step5 -->
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="น้ำหนัก" aria-label="น้ำหนัก">
+    <div *ngIf="step == 5">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="น้ำหนัก"
+            aria-label="น้ำหนัก"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ส่วนสูง"
+            aria-label="ส่วนสูง"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ส่วนสูง" aria-label="ส่วนสูง">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="โรคประจำตัว"
+            aria-label="โรคประจำตัว"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ยาที่แพ้"
+            aria-label="ยาที่แพ้"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ยาที่ต้องรับประทานประจำ"
+            aria-label="ยาที่ต้องรับประทานประจำ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="วิธีแก้ไขเมื่ออาการ"
+            aria-label="วิธีแก้ไขเมื่ออาการ"
+          />
+        </div>
       </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="โรคประจำตัว" aria-label="โรคประจำตัว">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ยาที่แพ้" aria-label="ยาที่แพ้">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ยาที่ต้องรับประทานประจำ" aria-label="ยาที่ต้องรับประทานประจำ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="วิธีแก้ไขเมื่ออาการ" aria-label="วิธีแก้ไขเมื่ออาการ">
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <span>นักเรียนมีภาวะทางสายตา(เลือกได้มากกว่า 1 อย่าง เช่น สายตาสั้น-เอียง)</span>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ปกติ</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">สายตาสั้น</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">สายตายาว</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">สายตาเอียง</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ตาบอดสี</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">อื่นๆ</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>นักเรียนสวมแว่นตา</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>นักเรียนมีความบกพร่องทางการได้ยิน</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="row mb-auto">
-      <div class="col mb-3">
-        <span>นักเรียนมีความบกพร่องทางร่างกาย</span>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ใช่</button>
-      </div>
-      <div class="col mb-3">
-        <button class="btn btn-secondary">ไม่ใช่</button>
-      </div>
-    </div>
-    <div class="container" align = 'center'>
       <div class="row mb-auto">
+        <span
+          >นักเรียนมีภาวะทางสายตา(เลือกได้มากกว่า 1 อย่าง เช่น
+          สายตาสั้น-เอียง)</span
+        >
         <div class="col mb-3">
-          <button class="btn btn-danger">ย้อนกลับ</button>
+          <button class="btn btn-secondary">ปกติ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-primary">ถัดไป</button>
+          <button class="btn btn-secondary">สายตาสั้น</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">สายตายาว</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">สายตาเอียง</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ตาบอดสี</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">อื่นๆ</button>
+        </div>
+      </div>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>นักเรียนสวมแว่นตา</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
+      </div>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>นักเรียนมีความบกพร่องทางการได้ยิน</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
+      </div>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
+        </div>
+      </div>
+      <div class="row mb-auto">
+        <div class="col mb-3">
+          <span>นักเรียนมีความบกพร่องทางร่างกาย</span>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ใช่</button>
+        </div>
+        <div class="col mb-3">
+          <button class="btn btn-secondary">ไม่ใช่</button>
         </div>
       </div>
     </div>
     <!-- step6 -->
-    <div class="row mb-3">
-      <span>ข้อมูลบิดา</span>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">คำนำหน้าชื่อ</option>
-        </select>
+    <div *ngIf="step == 6">
+      <div class="row mb-3">
+        <span>ข้อมูลบิดา</span>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">คำนำหน้าชื่อ</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อภาษาไทย"
+            aria-label="ชื่อภาษาไทย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อกลาง"
+            aria-label="ชื่อกลาง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นามสกุลภาษาไทย"
+            aria-label="นามสกุลภาษาไทย"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อภาษาไทย" aria-label="ชื่อภาษาไทย">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เลขบัตรประจำตัวประชาชน"
+            aria-label="เลขบัตรประจำตัวประชาชน"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">ชนิดของบัตร</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อายุ"
+            aria-label="อายุ"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">หมู่เลือด</option>
+          </select>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อกลาง" aria-label="ชื่อกลาง">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ประกอบอาชีพ"
+            aria-label="ประกอบอาชีพ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รายได้ต่อเดือน(บาท)"
+            aria-label="รายได้ต่อเดือน(บาท)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมายเลขโทรศัพท์"
+            aria-label="หมายเลขโทรศัพท์"
+          />
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นามสกุลภาษาไทย" aria-label="นามสกุลภาษาไทย">
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="บ้านเลขที่"
+            aria-label="บ้านเลขที่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมู่"
+            aria-label="หมู่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อหมู่บ้าน"
+            aria-label="ชื่อหมู่บ้าน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ซอย"
+            aria-label="ซอย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ถนน"
+            aria-label="ถนน"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ตำบล/แขวง"
+            aria-label="ตำบล/แขวง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อำเภอ/เขต"
+            aria-label="อำเภอ/เขต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จังหวัด"
+            aria-label="จังหวัด"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รหัสไปรษณีย์"
+            aria-label="รหัสไปรษณีย์"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <span>ข้อมูลมารดา</span>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">คำนำหน้าชื่อ</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อภาษาไทย"
+            aria-label="ชื่อภาษาไทย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อกลาง"
+            aria-label="ชื่อกลาง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นามสกุลภาษาไทย"
+            aria-label="นามสกุลภาษาไทย"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เลขบัตรประจำตัวประชาชน"
+            aria-label="เลขบัตรประจำตัวประชาชน"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">ชนิดของบัตร</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อายุ"
+            aria-label="อายุ"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">หมู่เลือด</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ประกอบอาชีพ"
+            aria-label="ประกอบอาชีพ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รายได้ต่อเดือน(บาท)"
+            aria-label="รายได้ต่อเดือน(บาท)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมายเลขโทรศัพท์"
+            aria-label="หมายเลขโทรศัพท์"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="บ้านเลขที่"
+            aria-label="บ้านเลขที่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมู่"
+            aria-label="หมู่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อหมู่บ้าน"
+            aria-label="ชื่อหมู่บ้าน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ซอย"
+            aria-label="ซอย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ถนน"
+            aria-label="ถนน"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ตำบล/แขวง"
+            aria-label="ตำบล/แขวง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อำเภอ/เขต"
+            aria-label="อำเภอ/เขต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จังหวัด"
+            aria-label="จังหวัด"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รหัสไปรษณีย์"
+            aria-label="รหัสไปรษณีย์"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <span>ข้อมูลผู้ปกครอง</span>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input type="checkbox" id="f" />
+          <label for="f">มิดา</label>
+        </div>
+        <div class="col">
+          <input type="checkbox" id="m" />
+          <label for="m">มารดา</label>
+        </div>
+        <div class="col">
+          <input type="checkbox" id="p" />
+          <label for="p">บุคคลอื่น(โปรดระบุ)</label>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <select class="form-select">
+            <option value="1">คำนำหน้าชื่อ</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อภาษาไทย"
+            aria-label="ชื่อภาษาไทย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อกลาง"
+            aria-label="ชื่อกลาง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นามสกุลภาษาไทย"
+            aria-label="นามสกุลภาษาไทย"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="เลขบัตรประจำตัวประชาชน"
+            aria-label="เลขบัตรประจำตัวประชาชน"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">ชนิดของบัตร</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อายุ"
+            aria-label="อายุ"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">หมู่เลือด</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ประกอบอาชีพ"
+            aria-label="ประกอบอาชีพ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รายได้ต่อเดือน(บาท)"
+            aria-label="รายได้ต่อเดือน(บาท)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมายเลขโทรศัพท์"
+            aria-label="หมายเลขโทรศัพท์"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="บ้านเลขที่"
+            aria-label="บ้านเลขที่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="หมู่"
+            aria-label="หมู่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ชื่อหมู่บ้าน"
+            aria-label="ชื่อหมู่บ้าน"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ซอย"
+            aria-label="ซอย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ถนน"
+            aria-label="ถนน"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ตำบล/แขวง"
+            aria-label="ตำบล/แขวง"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="อำเภอ/เขต"
+            aria-label="อำเภอ/เขต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จังหวัด"
+            aria-label="จังหวัด"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รหัสไปรษณีย์"
+            aria-label="รหัสไปรษณีย์"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <span>ข้อมูลครอบครัวเบื้องต้น</span>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">สถานภาพสมรสของบิดามารดา</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">สถานะผู้ปกครองนักเรียน</option>
+          </select>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนพี่น้องร่วมสายโลหิต"
+            aria-label="จำนวนพี่น้องร่วมสายโลหิต"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนพี่ชาย"
+            aria-label="จำนวนพี่ชาย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนน้องชาย"
+            aria-label="จำนวนน้องชาย"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนพี่สาว"
+            aria-label="จำนวนพี่สาว"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนน้องสาว"
+            aria-label="จำนวนน้องสาว"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นักเรียนเป็นบุตรคนที่"
+            aria-label="นักเรียนเป็นบุตรคนที่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนพี่น้องที่ศึกษาอยู่(ไม่นับรวมนักเรียน)"
+            aria-label="จำนวนพี่น้องที่ศึกษาอยู่(ไม่นับรวมนักเรียน)"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนพี่น้องที่ประกอบอาชีพแล้ว"
+            aria-label="จำนวนพี่น้องที่ประกอบอาชีพแล้ว"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว"
+            aria-label="จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นักเรียนมีหน้าที่รับผิดชอบภายในบ้านหรือนอกเหนือจากการเรียน ได้แก่"
+            aria-label="นักเรียนมีหน้าที่รับผิดชอบภายในบ้านหรือนอกเหนือจากการเรียน ได้แก่"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="นักเรียนนำเงินมาโรงเรียนวันละ(บาท)"
+            aria-label="นักเรียนนำเงินมาโรงเรียนวันละ(บาท)"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รายได้ของครอบครัว"
+            aria-label="รายได้ของครอบครัว"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ผู้ออกค่าใช้จ่ายให้นักเรียน(ชื่อ-นามสกุล)"
+            aria-label="ผู้ออกค่าใช้จ่ายให้นักเรียน(ชื่อ-นามสกุล)"
+          />
+        </div>
+        <div class="col">
+          <select class="form-select">
+            <option value="1">เกี่ยวข้องเป็น</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <span>การหารายได้ด้วยตัวเอง</span>
+        <div class="col">
+          <input type="checkbox" />
+          <label>มี</label>
+          <input type="checkbox" />
+          <label>ไม่มี</label>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="โปรดระบุความสามารถพิเศษ"
+            aria-label="โปรดระบุความสามารถพิเศษ"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="รายได้เฉลี่ยวันละ(บาท)"
+            aria-label="รายได้เฉลี่ยวันละ(บาท)"
+          />
+        </div>
       </div>
     </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เลขบัตรประจำตัวประชาชน" aria-label="เลขบัตรประจำตัวประชาชน">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">ชนิดของบัตร</option>
-        </select>
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อายุ" aria-label="อายุ">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">หมู่เลือด</option>
-        </select>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ประกอบอาชีพ" aria-label="ประกอบอาชีพ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รายได้ต่อเดือน(บาท)" aria-label="รายได้ต่อเดือน(บาท)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมายเลขโทรศัพท์" aria-label="หมายเลขโทรศัพท์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="บ้านเลขที่" aria-label="บ้านเลขที่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมู่" aria-label="หมู่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อหมู่บ้าน" aria-label="ชื่อหมู่บ้าน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ซอย" aria-label="ซอย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ถนน" aria-label="ถนน">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ตำบล/แขวง" aria-label="ตำบล/แขวง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อำเภอ/เขต" aria-label="อำเภอ/เขต">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จังหวัด" aria-label="จังหวัด">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รหัสไปรษณีย์" aria-label="รหัสไปรษณีย์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <span>ข้อมูลมารดา</span>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">คำนำหน้าชื่อ</option>
-        </select>
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อภาษาไทย" aria-label="ชื่อภาษาไทย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อกลาง" aria-label="ชื่อกลาง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นามสกุลภาษาไทย" aria-label="นามสกุลภาษาไทย">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เลขบัตรประจำตัวประชาชน" aria-label="เลขบัตรประจำตัวประชาชน">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">ชนิดของบัตร</option>
-        </select>
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อายุ" aria-label="อายุ">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">หมู่เลือด</option>
-        </select>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ประกอบอาชีพ" aria-label="ประกอบอาชีพ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รายได้ต่อเดือน(บาท)" aria-label="รายได้ต่อเดือน(บาท)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมายเลขโทรศัพท์" aria-label="หมายเลขโทรศัพท์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="บ้านเลขที่" aria-label="บ้านเลขที่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมู่" aria-label="หมู่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อหมู่บ้าน" aria-label="ชื่อหมู่บ้าน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ซอย" aria-label="ซอย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ถนน" aria-label="ถนน">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ตำบล/แขวง" aria-label="ตำบล/แขวง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อำเภอ/เขต" aria-label="อำเภอ/เขต">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จังหวัด" aria-label="จังหวัด">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รหัสไปรษณีย์" aria-label="รหัสไปรษณีย์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <span>ข้อมูลผู้ปกครอง</span>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="checkbox" id="f">
-        <label for="f">มิดา</label>
-      </div>
-      <div class="col">
-        <input type="checkbox" id="m">
-        <label for="m">มารดา</label>
-      </div>
-      <div class="col">
-        <input type="checkbox" id="p">
-        <label for="p">บุคคลอื่น(โปรดระบุ)</label>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <select class="form-select">
-          <option value="1">คำนำหน้าชื่อ</option>
-        </select>
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อภาษาไทย" aria-label="ชื่อภาษาไทย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อกลาง" aria-label="ชื่อกลาง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นามสกุลภาษาไทย" aria-label="นามสกุลภาษาไทย">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="เลขบัตรประจำตัวประชาชน" aria-label="เลขบัตรประจำตัวประชาชน">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">ชนิดของบัตร</option>
-        </select>
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อายุ" aria-label="อายุ">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">หมู่เลือด</option>
-        </select>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ประกอบอาชีพ" aria-label="ประกอบอาชีพ">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รายได้ต่อเดือน(บาท)" aria-label="รายได้ต่อเดือน(บาท)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมายเลขโทรศัพท์" aria-label="หมายเลขโทรศัพท์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="บ้านเลขที่" aria-label="บ้านเลขที่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="หมู่" aria-label="หมู่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ชื่อหมู่บ้าน" aria-label="ชื่อหมู่บ้าน">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ซอย" aria-label="ซอย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ถนน" aria-label="ถนน">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ตำบล/แขวง" aria-label="ตำบล/แขวง">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="อำเภอ/เขต" aria-label="อำเภอ/เขต">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จังหวัด" aria-label="จังหวัด">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รหัสไปรษณีย์" aria-label="รหัสไปรษณีย์">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <span>ข้อมูลครอบครัวเบื้องต้น</span>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">สถานภาพสมรสของบิดามารดา</option>
-        </select>
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">สถานะผู้ปกครองนักเรียน</option>
-        </select>
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนพี่น้องร่วมสายโลหิต" aria-label="จำนวนพี่น้องร่วมสายโลหิต">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนพี่ชาย" aria-label="จำนวนพี่ชาย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนน้องชาย" aria-label="จำนวนน้องชาย">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนพี่สาว" aria-label="จำนวนพี่สาว">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนน้องสาว" aria-label="จำนวนน้องสาว">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นักเรียนเป็นบุตรคนที่" aria-label="นักเรียนเป็นบุตรคนที่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนพี่น้องที่ศึกษาอยู่(ไม่นับรวมนักเรียน)" aria-label="จำนวนพี่น้องที่ศึกษาอยู่(ไม่นับรวมนักเรียน)">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนพี่น้องที่ประกอบอาชีพแล้ว" aria-label="จำนวนพี่น้องที่ประกอบอาชีพแล้ว">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว" aria-label="จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นักเรียนมีหน้าที่รับผิดชอบภายในบ้านหรือนอกเหนือจากการเรียน ได้แก่" aria-label="นักเรียนมีหน้าที่รับผิดชอบภายในบ้านหรือนอกเหนือจากการเรียน ได้แก่">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="นักเรียนนำเงินมาโรงเรียนวันละ(บาท)" aria-label="นักเรียนนำเงินมาโรงเรียนวันละ(บาท)">
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="รายได้ของครอบครัว" aria-label="รายได้ของครอบครัว">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="ผู้ออกค่าใช้จ่ายให้นักเรียน(ชื่อ-นามสกุล)" aria-label="ผู้ออกค่าใช้จ่ายให้นักเรียน(ชื่อ-นามสกุล)">
-      </div>
-      <div class="col">
-        <select class="form-select">
-          <option value="1">เกี่ยวข้องเป็น</option>
-        </select>
-      </div>
-    </div>
+      <div class="container" align="center">
+        <div class="row mb-auto">
+          <div class="col mb-3">
+            <button class="btn btn-danger" *ngIf="step !=1" (click)="back()">ย้อนกลับ</button>
+          </div>
+          <div class="col mb-3">
+            <button class="btn btn-primary" *ngIf="step !=7">ถัดไป</button>
+          </div>
+          <div class="col mb-3">
+            <button class="btn btn-primary" *ngIf="step ==7">ยืนยัน</button>
+          </div>
+        </div>
+      </div>
+    <!-- step7 -->
   </form>
 </div>
