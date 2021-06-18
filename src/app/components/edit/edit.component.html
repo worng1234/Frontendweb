@@ -1,1 +1,22 @@
+<h3>Add test</h3>
 
+<form
+ #AddtestNewdata1 = "ngForm"
+ #AddtestNewdata2 = "ngForm"
+ (ngSubmit)="addTest(AddtestNewdata1.value,AddtestNewdata2.value)">
+  <div>
+    <label>ชื่อ : </label>
+    <input type="text" id="name" name="name" ngModel>
+  </div>
+  <div>
+    <label>นามสกุล : </label>
+    <input type="text" id="surname" name="surname" ngModel>
+  </div>
+  <div>
+    <label>ที่อยู่ : </label>
+    <input type="text" id="address" name="address" ngModel>
+  </div>
+  <div>
+    <button type="submit" value="submit">ยืนยัน</button>
+  </div>
+</form>

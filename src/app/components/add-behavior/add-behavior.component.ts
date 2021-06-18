@@ -17,6 +17,5 @@ export class AddBehaviorComponent implements OnInit {
 
   AddBehavio(addbehavior){
     this.bh.AddBehavior(addbehavior);
-    //console.log(addbehavior);
   }
 }
