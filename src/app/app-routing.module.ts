@@ -1,3 +1,4 @@
+import { IndexComponent } from './components/index/index.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -22,7 +23,8 @@ import { AddStudentCoreComponent } from './components/add-student-core/add-stude
 
 
 const routes: Routes = [
-  {path: '' ,redirectTo: '/mainpage',pathMatch:'full'},
+  {path: '' ,redirectTo: '/index',pathMatch:'full'},
+  {path: 'index',component:IndexComponent},
   {path: 'mainpage',component:MainpageComponent},
   {path: 'NewStudentRegisterM1',component:NewStudentM1Component},
   {path: 'NewStudentRegisterM4',component:NewStudentM4Component},
