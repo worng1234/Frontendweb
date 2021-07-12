@@ -13,7 +13,7 @@ import { IfStmt } from '@angular/compiler';
   providedIn: 'root'
 })
 export class NewStudentM1Service {
-  url = 'https://localhost:44342/api/Newstudentm1';
+  url = 'https://localhost:8000/api/newstudentm1';
   newStudentm1 : any;
   currentStudentm1 : any = {};
 

@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class SortNewstudentService {
-  url: string = 'https://localhost:44342/api/Newstudentm1';
+  url: string = 'http://127.0.0.1:8000/api/newstudentm4';
+  
 
   constructor(private http: HttpClient, private router: Router) { }
 

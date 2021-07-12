@@ -42,10 +42,10 @@ export class SortNewstudentComponent implements OnInit {
     });
   }
 
-  public createImgPath = (serverPath: string) => {
-    return `https://localhost:44342/${serverPath}`;
-    console.log(serverPath);
+  // public createImgPath = (serverPath: string) => {
+  //   return `https://localhost:44342/${serverPath}`;
+  //   console.log(serverPath);
 
-  }
+  // }
 }
 
