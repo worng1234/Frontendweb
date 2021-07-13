@@ -31,7 +31,7 @@
       </thead>
       <tbody>
         <tr *ngFor = "let s of newstudentm1list | filter:searchFunction_school | filter:searchFunction_name | filter:searchFunction_prename">
-          <td><img [src]="createImgPath(s.pic)" alt="" srcset="" height="100%" width="100%"></td>
+          <!-- <td><img [src]="createImgPath(s.pic)" alt="" srcset="" height="100%" width="100%"></td> -->
           <td>{{ s.id }}</td>
           <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
           <td>{{ s.final_school}}</td>

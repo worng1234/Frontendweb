@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 
+
 @Component({
   selector: 'app-sort-newstudent',
   templateUrl: './sort-newstudent.component.html',
@@ -34,7 +35,9 @@ export class SortNewstudentComponent implements OnInit {
   ngOnInit(){
     this.nsm1list.getNewstudentm1List()
       .subscribe((data: NewStudentM1Models[]) => {this.newstudentm1list = data;});
+   
   }
+
 
   search(){
     this.newstudentm1list = this.newstudentm1list.filter(res =>{

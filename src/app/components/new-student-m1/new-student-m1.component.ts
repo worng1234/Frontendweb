@@ -17,6 +17,7 @@ export class NewStudentM1Component implements OnInit {
 
   prename = ['','นาย','นางสาว'];
   gender = ['','ชาย','หญิง'];
+  newstudent = new NewStudentM1Models();
 
 
   constructor(
@@ -24,29 +25,17 @@ export class NewStudentM1Component implements OnInit {
     public router: Router,
     private http: HttpClient,) { }
 
-    ngOnInit(): void{}
-    selectedFile: File;
+    ngOnInit(): void{
+    
+    }
+    
 
-  addNewstudentm1(newstudentm1){
-    this.nm1s.addNewstudentm1(newstudentm1);
-  }
-
-  onFileChanged(event){
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
-  }
-
-  onUpload = (files) =>{
-    const uploadData = new FormData();
-    uploadData.append('file', this.selectedFile, this.selectedFile.name);
-    this.http.post('https://localhost:44342/api/Upload', uploadData,{
-      reportProgress: true,
-      observe: 'events'
+  addNewstudentm1(){
+    this.nm1s.addNewstudentm1(this.newstudent).subscribe(res => {
+      console.log(res);
     })
-    .subscribe(event => {
-      console.log(event);
-    });
   }
+
 
 }
 
