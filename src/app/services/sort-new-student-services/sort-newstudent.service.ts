@@ -9,13 +9,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class SortNewstudentService {
-  url: string = 'http://127.0.0.1:8000/api/getnewstudentm1';
-  
 
   constructor(private http: HttpClient, private router: Router) { }
 
   getNewstudentm1List(){
-   return this.http.get<NewStudentM1Models[]>(this.url);
+   return this.http.get<NewStudentM1Models[]>('http://127.0.0.1:8000/api/getnewstudentm1');
   }
 
 

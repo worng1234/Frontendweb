@@ -22,7 +22,7 @@ export class SortNewstudentComponent implements OnInit {
 
   study_area = ['','นอกเขต','ในเขต'];
   prename = ['','นาย','นางสาว']
-  newstudentm1list: NewStudentM1Models[] =[];
+  newstudentm1list:any;
   searchFunction_school;
   searchFunction_name : string;
   searchFunction_area: string;
@@ -33,9 +33,14 @@ export class SortNewstudentComponent implements OnInit {
 
 
   ngOnInit(){
-    this.nsm1list.getNewstudentm1List()
-      .subscribe((data: NewStudentM1Models[]) => {this.newstudentm1list = data;});
+    this.getAll();
    
+  }
+
+  getAll(){
+    this.nsm1list.getNewstudentm1List().subscribe(res => {
+      this.newstudentm1list = res;
+    })
   }
 
 

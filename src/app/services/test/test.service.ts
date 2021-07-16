@@ -1,16 +1,16 @@
-import { Observable } from 'rxjs';
-import { test1 } from './../../models/test1';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { HttpClient ,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { test2 } from 'src/app/models/test2';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
 
-  url: string = 'https://localhost:44342/api/test';
+  private url = 'http://127.0.0.1:8000/api/getnewstudentm1';
   url2: string = 'https://localhost:44342/api/test2';
   addTest1: any;
   addTest2: any;
@@ -43,5 +43,18 @@ export class TestService {
       this.router.navigate(['/test2']);
       console.log(data2);
     });
+  }
+
+
+
+
+  errorHandler(error) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(errorMessage);
   }
 }

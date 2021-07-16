@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TestService } from 'src/app/services/test/test.service';
 
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -11,9 +12,11 @@ import { TestService } from 'src/app/services/test/test.service';
 export class EditComponent implements OnInit {
 
 
+
   constructor(private http: HttpClientModule, private t : TestService) { }
 
   ngOnInit(): void {
+
 
   }
   addTest(addtest1,addtest2){

@@ -26,14 +26,16 @@ export class NewStudentM1Component implements OnInit {
     private http: HttpClient,) { }
 
     ngOnInit(): void{
-    
+
     }
-    
 
   addNewstudentm1(){
     this.nm1s.addNewstudentm1(this.newstudent).subscribe(res => {
       console.log(res);
     })
+  }
+  test(){
+    console.log(this.newstudent);
   }
 
 
