@@ -34,9 +34,6 @@ export class NewStudentM1Component implements OnInit {
       console.log(res);
     })
   }
-  test(){
-    console.log(this.newstudent);
-  }
 
 
 }

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class StudentCoreInformationService {
-  url: string = 'https://localhost:44342/api/StudentCoreInformation';
+  url: string = 'http://localhost:8000/api/getstudentcore';
 
 
   constructor( private http: HttpClient, private router: Router) { }

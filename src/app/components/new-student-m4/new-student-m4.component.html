@@ -1,70 +1,68 @@
-<form>
-  <div>
+<div>
     <h2>ใบสมัครเข้าเรียนต่อชั้นมัธยมศึกษาปีที่ 4</h2>
     <h4>ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา เขต 34</h4>
   </div>
-  <form
-    #newStudentm4NewData="ngForm"
-    (ngSubmit)="addNewstudentm4(newStudentm4NewData.value)">
-    <div>
+
+ <form (ngSubmit)="addNewstudentm4()">
+    <div class="form-group">
         <label>คำนำหน้า</label>
-        <select id="prename" name="prename" ngModel>
+        <select type="text" name="prename" [(ngModel)]="newstudentm4.prename" class="form-control">
           <option *ngFor='let p of prename'>{{p}}</option>
         </select>
         <label>ชื่อ</label>
-        <input id="name" name="name" ngModel>
+        <input  type="text" name="name" [(ngModel)]="newstudentm4.name" class="form-control">
         <label>ชื่อกลาง</label>
-        <input id="name_cen" name="name_cen" ngModel>
+        <input type="text" name="name_cen" [(ngModel)]="newstudentm4.name_cen" class="form-control">
         <label>นามสกุล</label>
-        <input id="surname" name="surname" ngModel>
+        <input type="text" name="surname" [(ngModel)]="newstudentm4.surname" class="form-control">
         <label>เพศ</label>
-        <select id="sex" name="sex" ngModel>
+        <select type="text" id="sex" name="sex" [(ngModel)]="newstudentm4.sex" class="form-control">
           <option *ngFor='let g of gender'>{{g}}</option>
         </select>
     </div>
-    <div>
+    <div class="form-group">
       <label>เลขประจำตัวประชาชน</label>
-      <input id="id_number" name="id_number" ngModel>
+      <input name="id_number" [(ngModel)]="newstudentm4.id_number">
       <label>วันเดือนปีเกิด</label>
-      <input id="birthday" name="birthday" ngModel>
+      <input name="birthday" [(ngModel)]="newstudentm4.birthday">
     </div>
-    <div>
+    <div class="form-group">
       <label>ศาสนา</label>
-      <input id="religion" name="religion" ngModel>
+      <input name="religion" [(ngModel)]="newstudentm4.religion">
       <label>เชื้อชาติ</label>
-      <input id="nationality" name="nationality" ngModel>
+      <input name="nationality" [(ngModel)]="newstudentm4.nationality">
       <label>สัญชาติ</label>
-      <input id="origin" name="origin" ngModel>
+      <input name="origin" [(ngModel)]="newstudentm4.origin">
     </div>
-    <div>
+    <div class="form-group">
       <label>ชื่อบิดา</label>
-      <input id="father_name" name="father_name" ngModel>
+      <input name="father_name" [(ngModel)]="newstudentm4.father_name">
       <label>ชื่อกลาง</label>
-      <input id="father_namecen" name="father_namecen" ngModel>
+      <input name="father_namecen" [(ngModel)]="newstudentm4.father_namecen">
       <label>นามสกุลบิดา</label>
-      <input id="father_surname" name="father_surname" ngModel>
+      <input name="father_surname" [(ngModel)]="newstudentm4.father_surname">
       <label>เลขประจำตัวประชาชน</label>
-      <input id="father_id" name="father_id" ngModel>
+      <input name="father_id" [(ngModel)]="newstudentm4.father_id">
       <label>อาชีพ</label>
-      <input id="father_job" name="father_job" ngModel>
+      <input name="father_job" [(ngModel)]="newstudentm4.father_job">
       <label>โทรศัพท์</label>
-      <input id="father_tel" name="father_tel" ngModel>
+      <input name="father_tel" [(ngModel)]="newstudentm4.father_tel">
     </div>
-    <div>
+    <div class="form-group">
       <label>ชื่อมารดา</label>
-      <input id="mother_name" name="mother_name" ngModel>
+      <input name="mother_name" [(ngModel)]="newstudentm4.mother_name">
       <label>ชื่อกลาง</label>
-      <input id="mother_namecen" name="mother_namecen" ngModel>
+      <input name="mother_namecen" [(ngModel)]="newstudentm4.mother_namecen">
       <label>นามสกุลมารดา</label>
-      <input id="mother_surname" name="mother_surname" ngModel>
+      <input name="mother_surname" [(ngModel)]="newstudentm4.mother_surname">
       <label>เลขประจำตัวประชาชน</label>
-      <input id="mother_id" name="mother_id" ngModel>
+      <input name="mother_id" [(ngModel)]="newstudentm4.mother_id">
       <label>อาชีพ</label>
-      <input id="mother_job" name="mother_job" ngModel>
+      <input name="mother_job" [(ngModel)]="newstudentm4.mother_job">
       <label>โทรศัพท์</label>
-      <input id="mother_tel" name="mother_tel" ngModel>
+      <input name="mother_tel" [(ngModel)]="newstudentm4.mother_tel">
     </div>
-    <div>
+    <div class="form-group">
       <label>ผู้ปกครอง</label>
       <input type="checkbox">
       <label>บิดา</label>
@@ -73,72 +71,72 @@
       <label>ถ้าเป็นบุคลอื่นโปรดระบุความสัมพันธ์</label>
       <input>
     </div>
-    <div>
+    <div class="form-group">
       <label>ชื่อผู้ปกครอง</label>
-      <input id="parent_name" name="parent_name" ngModel>
+      <input name="parent_name" [(ngModel)]="newstudentm4.parent_name">
       <label>ชื่อกลาง</label>
-      <input id="parent_namecen" name="parent_namecen" ngModel>
+      <input name="parent_namecen" [(ngModel)]="newstudentm4.parent_namecen">
       <label>นามสกุลผู้ปกครอง</label>
-      <input id="parent_surname" name="parent_surname" ngModel>
+      <input name="parent_surname" [(ngModel)]="newstudentm4.parent_surname">
       <label>อาชีพ</label>
-      <input id="parent_job" name="parent_job" ngModel>
+      <input name="parent_job" [(ngModel)]="newstudentm4.parent_job">
       <label>โทรศัพท์</label>
-      <input id="parent_tel" name="parent_tel" ngModel>
+      <input name="parent_tel" [(ngModel)]="newstudentm4.parent_tel">
     </div>
-    <div>
+    <div class="form-group">
       <label>บ้านเลขที่</label>
-      <input id="house_number" name="house_number" ngModel>
+      <input name="house_number" [(ngModel)]="newstudentm4.house_number">
       <label>หมู่ที่</label>
-      <input id="bloc" name="bloc" ngModel>
+      <input name="bloc" [(ngModel)]="newstudentm4.bloc">
       <label>ซอย</label>
-      <input id="street" name="street" ngModel>
+      <input name="street" [(ngModel)]="newstudentm4.street">
       <label>ถนน</label>
-      <input id="road" name="road" ngModel>
+      <input name="road" [(ngModel)]="newstudentm4.road">
     </div>
-    <div>
+    <div class="form-group">
       <label>ตำบล/แขวง</label>
-      <input id="sub_district" name="sub_district" ngModel>
+      <input name="sub_district" [(ngModel)]="newstudentm4.sub_district">
       <label>อำเภอ/เขต</label>
-      <input id="district" name="district" ngModel>
+      <input name="district" [(ngModel)]="newstudentm4.district">
       <label>จังหวัด</label>
-      <input id="province" name="province" ngModel>
+      <input name="province" [(ngModel)]="newstudentm4.province">
       <label>รหัสไปรษณีย์</label>
-      <input id="post" name="post" ngModel>
+      <input name="post" [(ngModel)]="newstudentm4.post">
     </div>
-    <div>
+    <div class="form-group">
       <label>สำเร็จการศึกษา ชั้นมัธยมศึกษาปีที่ 3 จากโรงเรียน</label>
-      <input id="final_school" name="final_school" ngModel>
+      <input name="final_school" [(ngModel)]="newstudentm4.final_school">
     </div>
-    <div>
+    <div class="form-group">
       <label>ตำบล</label>
-      <input id="final_school_sub_district" name="final_school_sub_district" ngModel>
+      <input name="final_school_sub_district" [(ngModel)]="newstudentm4.final_school_sub_district">
       <label>อำเภอ</label>
-      <input id="final_school_district" name="final_school_district" ngModel>
+      <input name="final_school_district" [(ngModel)]="newstudentm4.final_school_district">
       <label>จังหวัด</label>
-      <input id="final_school_province" name="final_school_province" ngModel>
+      <input name="final_school_province" [(ngModel)]="newstudentm4.final_school_province">
     </div>
-    <div>
+    <div class="form-group">
       <label>เลขประจำตัวนักเรียน(เฉพาะนักเรียน ม.3 โรงเรียนพร้าววิทยาคม)</label>
-      <input id="student_id" name="student_id" ngModel>
+      <input name="student_id" [(ngModel)]="newstudentm4.student_id">
     </div>
-    <div>
+    <div class="form-group">
       <h5>คะแนน o net</h5>
       <label>คณิตศาสตร์</label>
-      <input id="onet_sci" name="onet_sci" ngModel>
+      <input name="onet_sci" [(ngModel)]="newstudentm4.onet_sci">
       <label>วิทยาศาสตร์</label>
-      <input id="onet_math" name="onet_math" ngModel>
+      <input name="onet_math" [(ngModel)]="newstudentm4.prename">
       <label>ภาษาไทย</label>
-      <input id="onet_thai" name="onet_thai" ngModel>
+      <input name="onet_thai" [(ngModel)]="newstudentm4.onet_thai">
       <label>ภาษาอังกฤษ</label>
-      <input id="onet_eng" name="onet_eng" ngModel>
+      <input name="onet_eng" [(ngModel)]="newstudentm4.onet_eng">
     </div>
-    <div>
+    <div class="form-group">
       <input type="checkbox">
       <label>ผู้พิการ/เด็กพิเศษ</label>
       <label>(โปรดระบุประเภทความพิเศษ)</label>
       <input>
     </div>
-    <div>
+    <div class="form-group">
       <input type="checkbox">
       <label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
       <input type="checkbox">
@@ -146,64 +144,64 @@
       <label>โปรดระบุ</label>
       <input>
     </div>
-    <div>
+    <div class="form-group">
       <div>
         <label>อันดับที่ 1</label>
-        <select id="major_name1" name="major_name1" ngModel>
+        <select name="major_name1" [(ngModel)]="newstudentm4.major_name1">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 2</label>
-        <select id="major_name2" name="major_name2" ngModel>
+        <select name="major_name2" [(ngModel)]="newstudentm4.major_name2">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 3</label>
-        <select id="major_name3" name="major_name3" ngModel>
+        <select name="major_name3" [(ngModel)]="newstudentm4.major_name3">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 4</label>
-        <select id="major_name4" name="major_name4" ngModel>
+        <select name="major_name4" [(ngModel)]="newstudentm4.major_name4">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 5</label>
-        <select id="major_name5" name="major_name5" ngModel>
+        <select name="major_name5" [(ngModel)]="newstudentm4.major_name5">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 6</label>
-        <select id="major_name6" name="major_name6" ngModel>
+        <select name="major_name6" [(ngModel)]="newstudentm4.major_name6">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 7</label>
-        <select id="major_name7" name="major_name7" ngModel>
+        <select name="major_name7" [(ngModel)]="newstudentm4.major_name7">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 8</label>
-        <select id="major_name8" name="major_name8" ngModel>
+        <select name="major_name8" [(ngModel)]="newstudentm4.major_name8">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 9</label>
-        <select id="major_name9" name="major_name9" ngModel>
+        <select name="major_name9" [(ngModel)]="newstudentm4.major_name9">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
       <div>
         <label>อันดับที่ 10</label>
-        <select id="major_name10" name="major_name10" ngModel>
+        <select name="major_name10" [(ngModel)]="newstudentm4.major_name10">
           <option *ngFor='let m of major'>{{m}}</option>
         </select>
       </div>
@@ -211,7 +209,7 @@
     <div>
       <button type="submit" class="btn btn-success" value="submit">ยืนยัน</button>
     </div>
-</form>
+  </form>
 <div>
   <button class="btn btn-danger" [routerLink] = "['/mainpage']">ย้อนกลับ</button>
 </div>

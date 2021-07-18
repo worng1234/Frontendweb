@@ -12,6 +12,6 @@ export class SortNewStudentM4ServicesService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getNewstudentm4List(){
-    return this.http.get<NewStudentM4Models[]>(this.url);
+    return this.http.get<NewStudentM4Models[]>('http://127.0.0.1:8000/api/getnewstudentm4');
   }
 }

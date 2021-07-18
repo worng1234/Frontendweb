@@ -37,6 +37,7 @@ import { IndexComponent } from './components/index/index.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { IndexComponent } from './components/index/index.component';
     HttpClientModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
-    
+
   ],
   providers: [NewStudentM1Service,SortNewstudentService],
   bootstrap: [AppComponent]
