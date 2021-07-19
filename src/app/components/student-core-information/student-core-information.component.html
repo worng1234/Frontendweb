@@ -30,13 +30,15 @@
           <th>Student ID</th>
           <th>Name</th>
           <th>Surname</th>
+          <th>ShowstudentbyID</th>
         </thead>
         <tbody>
           <tr *ngFor = "let s of sciList | filter:searchPrename | filter:searchName | filter:searchSurname
                                         | filter:searchStudentID">
-            <td><a [routerLink] = "['/Showstudentbyid', s.id]">{{s.student_id}}</a></td>
+            <td>{{s.student_id}}</td>
             <td>{{s.prename}}{{s.name}}</td>
             <td>{{s.surname}}</td>
+            <td><button [routerLink] = "['/Showstudentbyid', s.id ]">Show</button></td>
           </tr>
         </tbody>
       </table>

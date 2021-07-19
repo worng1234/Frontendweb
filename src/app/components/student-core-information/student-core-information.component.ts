@@ -11,7 +11,7 @@ import { StudentInformationCore } from 'src/app/models/student-information-core'
 })
 export class StudentCoreInformationComponent implements OnInit {
 
-  sciList : StudentInformationCore[] = [];
+  sciList : any;
   prename = ['','นาย','นางสาว'];
   searchPrename: string;
   searchName: string;

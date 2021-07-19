@@ -10,23 +10,27 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
 })
 export class ShowStudentByIdComponent implements OnInit {
   data: any;
-  id: number;
-  sciListid: StudentInformationCore | undefined;
+  id: any;
+  sciListid = new StudentInformationCore();
 
 
 
   constructor(private aRoute: ActivatedRoute, private sci: StudentCoreInformationService) {
-    this.aRoute.snapshot.paramMap.get('id');
-    this.id = +this.aRoute.snapshot.paramMap.get('id');
+    // this.aRoute.snapshot.paramMap.get('id');
+    // this.id = +this.aRoute.snapshot.paramMap.get('id');
    }
 
   ngOnInit(){
+    console.log(this.aRoute.snapshot.params.id);
+    this.id = this.aRoute.snapshot.params.id;
     this.getStudentListID();
   }
 
   getStudentListID(){
-    this.sci.getStudentListID(this.id).subscribe(data => {
-      this.sciListid = data;
+    this.sci.getStudentListID(this.id).subscribe(res=> {
+      // console.log(res);
+      this.data = res;
+      this.sciListid = this.data;
     })
   }
 

@@ -16,14 +16,11 @@ export class StudentCoreInformationService {
   constructor( private http: HttpClient, private router: Router) { }
 
   getStudentList(): Observable<any>{
-    return this.http.get<StudentInformationCore[]>(this.url);
+    return this.http.get<StudentInformationCore[]>('http://localhost:8000/api/getstudentcore');
   }
 
-  getStudentListID(id: number): Observable<any>{
-    return this.http.get(this.url + '/' + id).pipe(
-      retry(1),
-      catchError(this.httpError)
-    )
+  getStudentListID(id){
+    return this.http.get('http://127.0.0.1:8000/api/getstudentcoreid/'+id);
   }
 
   updateProfilestudent(id: number, data): Observable<any>{
