@@ -1,23 +1,22 @@
 <h3>Add Behavior!!</h3>
 
   <form
-    #addbehaviorNewdata="ngForm"
-    (ngSubmit)="AddBehavio(addbehaviorNewdata.value)">
+    (ngSubmit)="AddBehavior()">
     <div>
       <label>วัน/เดือน/ปี : </label>
-      <input id="behavior_date" name="behavior_date" ngModel placeholder="00/00/0000">
+      <input  name="behavior_date" [(ngModel)]="behavior.behavior_date" placeholder="00/00/0000">
     </div>
     <div>
       <label>รหัสนักเรียน : </label>
-      <input id="student_id" name="student_id" ngModel placeholder="xxxxxx">
+      <input name="student_id" [(ngModel)]="behavior.B_student_id" placeholder="xxxxxx">
     </div>
     <div>
       <label>เรื่อง : </label>
-      <input id="title" name="title" ngModel >
+      <input name="title" [(ngModel)]="behavior.title" >
     </div>
     <div >
       <label>รายละเอียด</label>
-      <input id="behavior_history" name="behavior_history"  ngModel >
+      <input  name="behavior_history"  [(ngModel)]="behavior.behavior_history" >
     </div>
     <div>
       <label>หักคะแนน : </label>

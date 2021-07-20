@@ -26,8 +26,8 @@ export class BerhaviorService {
     return this.http.get<Behaviorstudent[]>(this.url);
   }
 
-  getBehaviorstudentID(student_id: number): Observable<any>{
-    return this.http.get<Behaviorstudent[]>(this.url + '/' + student_id);
+  getBehaviorstudentID(student_id): Observable<any>{
+    return this.http.get<Behaviorstudent[]>('http://127.0.0.1:8000/api/joinstudentandbehaviorid/' + student_id);
   }
 
   // AddBehavior(addbehavior) {

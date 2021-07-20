@@ -27,6 +27,10 @@ export class StudentCoreInformationService {
     return this.http.put('http://127.0.0.1:8000/api/editstudentcore/' + id, data);
   }
 
+  getStudentjoin(student_id){
+    return this.http.get('http://127.0.0.1:8000/api/joinstudentandbehaviorid/'+student_id);
+  }
+
   httpError(error) {
     let msg = '';
     if(error.error instanceof ErrorEvent) {
