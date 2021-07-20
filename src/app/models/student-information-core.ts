@@ -1,7 +1,7 @@
 export class StudentInformationCore{
   id : number;
   student_id : number;
-  student_id_card: number;
+  student_id_card: string;
   prename : string;
   name : string;
   name_cen : string;

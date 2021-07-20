@@ -24,7 +24,7 @@ export class StudentCoreInformationService {
   }
 
   updateProfilestudent(id: number, data): Observable<any>{
-    return this.http.put(this.url + '/' + id, data);
+    return this.http.put('http://127.0.0.1:8000/api/editstudentcore/' + id, data);
   }
 
   httpError(error) {

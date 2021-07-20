@@ -9,7 +9,7 @@
       <label>ชื่อ-นามสกุล/Name : {{sciListid.prename}}{{sciListid.name}} {{sciListid.surname}}</label>
     </div>
     <div>
-      <label>บัตรประจำตัวประชาชน/ID card : {{sciListid.id_number}}</label>
+      <label>บัตรประจำตัวประชาชน/ID card : {{sciListid.student_id_card}}</label>
     </div>
     <div>
       <label>รหัสนักเรียน/Student ID : {{sciListid.student_id}}</label>
@@ -63,6 +63,7 @@
   <div >
     <button class="btn btn-primary"  [routerLink] ="['/Fixprofilestudent',sciListid.id]">แก้ไขข้อมูล</button>
     <button type="submit">Logout</button>
+    <button  class="btn btn-danger" [routerLink] ="['/StudentCoreInformation']">ย้อนกลับ</button>
   </div>
 </div>
 
