@@ -7,11 +7,19 @@
     </h4>
   </div>
 
-  <form (ngSubmit)="addNewstudentm1()">
-    
+  <form (ngSubmit)="addNewstudentm1()" [formGroup]="form">
+    <div>
+      <label>Post Image</label>
+      <input type="file" formControlName="image" name="image" id="image" class="form-control"
+      (change)="uploadImage($event)" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+
+      <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+        <div *ngIf="f.image.errors.require">Image is require</div>
+      </div>
+    </div>
       <div class="form-group">
         <label for="prename">คำนำหน้า :  </label>
-        <select type="text" name="prename"  class="form-control" [(ngModel)]="newstudent.prename">
+        <select type="text" formControlName="prename" name="prename"  class="form-control" [(ngModel)]="newstudent.prename">
           <option *ngFor="let p of prename" placeholder="คำนำหน้า">
             {{ p }}
           </option>
@@ -19,70 +27,70 @@
       </div>
       <div class="form-group">
         <label for="name">ชื่อ : </label>
-        <input type="text" name = "name" [(ngModel)]="newstudent.name" class="form-control" placeholder = "ชื่อ"/>
+        <input type="text" formControlName="name" name = "name" [(ngModel)]="newstudent.name" class="form-control" placeholder = "ชื่อ"/>
       </div>
       <div class="form-group">
         <label for="name_cen">ชื่อกลาง : </label>
-        <input type="text" name = "nameCen" [(ngModel)]="newstudent.nameCen" class="form-control" placeholder = "ชื่อกลาง"/>
+        <input type="text" formControlName="nameCen" name = "nameCen" [(ngModel)]="newstudent.nameCen" class="form-control" placeholder = "ชื่อกลาง"/>
       </div>
       <div class="form-group">
         <label for="surname">นามสกุล : </label>
-        <input type="text" name = "surname" [(ngModel)]="newstudent.surname" class="form-control" placeholder = "นามสกุล"/>
+        <input type="text" formControlName="surname" name = "surname" [(ngModel)]="newstudent.surname" class="form-control" placeholder = "นามสกุล"/>
       </div>
       <div class="form-group">
         <label for="sex">เพศ : </label>
-          <select type="text" name="sex" [(ngModel)]="newstudent.sex" class="form-control">
+          <select type="text" formControlName="sex" name="sex" [(ngModel)]="newstudent.sex" class="form-control">
             <option *ngFor="let g of gender" >{{ g }}</option>
           </select>
       </div>
-    
-    
+
+
       <div class="form-group">
         <label for = "id_number">เลขประจำตัวประชาชน</label>
-        <input type="text" name="idNumber" [(ngModel)]="newstudent.idNumber" class="form-control" placeholder="เลขประจำตัวประชน"/>
+        <input type="text" formControlName="idNumber" name="idNumber" [(ngModel)]="newstudent.idNumber" class="form-control" placeholder="เลขประจำตัวประชน"/>
       </div>
       <div>
         <label for="birthday">วันเดือนปีเกิด</label>
-        <input type="text" name="birthday" [(ngModel)]="newstudent.birthday" class="form-control"/>
+        <input type="text" formControlName="birthday" name="birthday" [(ngModel)]="newstudent.birthday" class="form-control"/>
       </div>
-    
+
     <div class="form-group">
       <label for="religion">ศาสนา</label>
-      <input type="text" name="religion" [(ngModel)]="newstudent.religion" class="form-control" placeholder="ศาสนา"/>
+      <input type="text" formControlName="religion" name="religion" [(ngModel)]="newstudent.religion" class="form-control" placeholder="ศาสนา"/>
       <label for="nationality">เชื้อชาติ</label>
-      <input type="text" name="nationality" [(ngModel)]="newstudent.nationality" class="form-control" placeholder="เชื้อชาติ"/>
+      <input type="text" formControlName="nationality" name="nationality" [(ngModel)]="newstudent.nationality" class="form-control" placeholder="เชื้อชาติ"/>
       <label for="origin">สัญชาติ</label>
-      <input type="text" name="origin" [(ngModel)]="newstudent.origin" class="form-control" placeholder="สัญชาติ"/>
+      <input type="text" formControlName="origin" name="origin" [(ngModel)]="newstudent.origin" class="form-control" placeholder="สัญชาติ"/>
       <label for="tel">โทรศัพท์</label>
-      <input type="text" name="tel" [(ngModel)]="newstudent.tel" class="form-control" placeholder="โทรศัพท์"/>
+      <input type="text" formControlName="tel" name="tel" [(ngModel)]="newstudent.tel" class="form-control" placeholder="โทรศัพท์"/>
     </div>
     <div class="form-group">
       <label for="father_name">ชื่อบิดา</label>
-      <input type="text" name="fatherName" [(ngModel)]="newstudent.fatherName" class="form-control" placeholder="ชื่อบิดา"/>
+      <input type="text" formControlName="fatherName" name="fatherName" [(ngModel)]="newstudent.fatherName" class="form-control" placeholder="ชื่อบิดา"/>
       <label for="father_namecen">ชื่อกลาง</label>
-      <input type="text" name="fatherNamecen" [(ngModel)]="newstudent.fatherNamecen" class="form-control" placeholder="ชื่อกลาง"/>
+      <input type="text" formControlName="fatherNamecen" name="fatherNamecen" [(ngModel)]="newstudent.fatherNamecen" class="form-control" placeholder="ชื่อกลาง"/>
       <label for="father_surname">นามสกุล</label>
-      <input type="text" name="fatherNurname" [(ngModel)]="newstudent.fatherSurname" class="form-control" placeholder="นามสกุล"/>
+      <input type="text" formControlName="fatherSurname" name="fatherSurname" [(ngModel)]="newstudent.fatherSurname" class="form-control" placeholder="นามสกุล"/>
       <label for="father_id">เลขประจำตัวประชาชนบิดา</label>
-      <input type="text" name="fatherId" [(ngModel)]="newstudent.fatherId" class="form-control" placeholder="เลขประจำตัวประชาชนบิดา"/>
+      <input type="text" formControlName="fatherId" name="fatherId" [(ngModel)]="newstudent.fatherId" class="form-control" placeholder="เลขประจำตัวประชาชนบิดา"/>
       <label for="father_job">อาชีพ</label>
-      <input [(ngModel)]="newstudent.fatherJob" type="text" name="fatherJob"  class="form-control" placeholder="อาชีพ"/>
+      <input formControlName="fatherJob" [(ngModel)]="newstudent.fatherJob" type="text" name="fatherJob"  class="form-control" placeholder="อาชีพ"/>
       <label for="father_tel">โทรศัพท์</label>
-      <input type="text" name="fatherTel" [(ngModel)]="newstudent.fatherTel" class="form-control" placeholder="โทรศัพท์"/>
+      <input type="text" formControlName="fatherTel" name="fatherTel" [(ngModel)]="newstudent.fatherTel" class="form-control" placeholder="โทรศัพท์"/>
     </div>
     <div class="form-group">
       <label for="mother_name">ชื่อมารดา</label>
-      <input type="text" name="motherName" [(ngModel)]="newstudent.motherName" class="form-control" placeholder="ชื่อมารดา"/>
+      <input type="text" formControlName="motherName" name="motherName" [(ngModel)]="newstudent.motherName" class="form-control" placeholder="ชื่อมารดา"/>
       <label for="mother_namecen">ชื่อกลาง</label>
-      <input type="text" name="motherNamecen" [(ngModel)]="newstudent.motherNamecen" class="form-control" placeholder="ชื่อกลาง"/>
+      <input type="text" formControlName="motherNamecen" name="motherNamecen" [(ngModel)]="newstudent.motherNamecen" class="form-control" placeholder="ชื่อกลาง"/>
       <label for="mother_surname">นามสกุล</label>
-      <input type="text" name="motherSurname" [(ngModel)]="newstudent.motherSurname" class="form-control" placeholder="ฯามสกุล"/>
+      <input type="text" formControlName="motherSurname" name="motherSurname" [(ngModel)]="newstudent.motherSurname" class="form-control" placeholder="ฯามสกุล"/>
       <label for="mother_id">เลขประจำตัวประชาชนมารดา</label>
-      <input type="text" name="motherId" [(ngModel)]="newstudent.motherId" class="form-control" placeholder="เลขประจำตัวประชาชนมารดา"/>
+      <input type="text" formControlName="motherId" name="motherId" [(ngModel)]="newstudent.motherId" class="form-control" placeholder="เลขประจำตัวประชาชนมารดา"/>
       <label for="mother_job">อาชีพ</label>
-      <input type="text" name="motherJob" [(ngModel)]="newstudent.motherJob" class="form-control" placeholder="อาชีพ"/>
+      <input type="text" formControlName="motherJob" name="motherJob" [(ngModel)]="newstudent.motherJob" class="form-control" placeholder="อาชีพ"/>
       <label for="mother_tel">โทรศัพท์</label>
-      <input type="text" name="motherTel" [(ngModel)]="newstudent.motherTel" class="form-control" placeholder="โทรศัพท์"/>
+      <input type="text" formControlName="motherTel" name="motherTel" [(ngModel)]="newstudent.motherTel" class="form-control" placeholder="โทรศัพท์"/>
     </div>
     <div class="form-group">
       <label>ผู้ปกครอง</label>
@@ -91,67 +99,67 @@
       <input type="checkbox" />
       <label>มารดา</label>
       <label for="parent">ถ้าเป็นบุคลอื่นโปรดระบุความสัมพันธ์</label>
-      <input type="text" name="parent" [(ngModel)]="newstudent.parent" class="form-control" placeholder="ผู้ปกครอง"/>
+      <input type="text" formControlName="parent" name="parent" [(ngModel)]="newstudent.parent" class="form-control" placeholder="ผู้ปกครอง"/>
     </div>
     <div class="form-group">
       <label for="parent_name">ชื่อผู้ปกครอง</label>
-      <input type="text" name="parentName" [(ngModel)]="newstudent.parentName" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="ชื่อผู้ปกครอง"/>
+      <input type="text" formControlName="parentName" name="parentName" [(ngModel)]="newstudent.parentName" class="form-control" placeholder="ชื่อผู้ปกครอง"/>
       <label for="parent_namecen">ชื่อกลาง</label>
-      <input type="text" iname="parentNamecen" [(ngModel)]="newstudent.parentNamecen" class="form-control" placeholder="ชื่อกลาง"/>
+      <input type="text" formControlName="parentNamecen" name="parentNamecen" [(ngModel)]="newstudent.parentNamecen" class="form-control" placeholder="ชื่อกลาง"/>
       <label for="parent_surname">นามสกุลผู้ปกครอง</label>
-      <input type="text" name="parentSurname" [(ngModel)]="newstudent.parentSurname" class="form-control" placeholder="นามสกุลผู้ปกครอง"/>
+      <input type="text" formControlName="parentSurname" name="parentSurname" [(ngModel)]="newstudent.parentSurname" class="form-control" placeholder="นามสกุลผู้ปกครอง"/>
       <label for="parent_job">เลข</label>
-      <input type="text" name="parentId" [(ngModel)]="newstudent.parentId" class="form-control" placeholder="อาชีพ"/>
+      <input type="text" formControlName="parentId" name="parentId" [(ngModel)]="newstudent.parentId" class="form-control" placeholder="อาชีพ"/>
       <label for="parent_job">อาชีพ</label>
-      <input type="text" name="parentJob" [(ngModel)]="newstudent.parentJob" class="form-control" placeholder="อาชีพ"/>
+      <input type="text" formControlName="parentJob" name="parentJob" [(ngModel)]="newstudent.parentJob" class="form-control" placeholder="อาชีพ"/>
       <label for="parent_tel">โทรศัพท์</label>
-      <input type="text" name="parentTel" [(ngModel)]="newstudent.parentTel" class="form-control" placeholder="โทรศัพท์"/>
+      <input type="text" formControlName="parentTel" name="parentTel" [(ngModel)]="newstudent.parentTel" class="form-control" placeholder="โทรศัพท์"/>
     </div>
     <div class="form-group">
       <label for="house_number">บ้านเลขที่</label>
-      <input type="text" name="houseNumber" [(ngModel)]="newstudent.houseNumber" class="form-control"  placeholder="บ้านเลขที่"/>
+      <input type="text" formControlName="houseNumber" name="houseNumber" [(ngModel)]="newstudent.houseNumber" class="form-control"  placeholder="บ้านเลขที่"/>
       <label for="bloc">หมู่ที่</label>
-      <input type="text" name="bloc" [(ngModel)]="newstudent.bloc" class="form-control" placeholder="หมู่ที่"/>
+      <input type="text" formControlName="bloc" name="bloc" [(ngModel)]="newstudent.bloc" class="form-control" placeholder="หมู่ที่"/>
       <label for="street">ซอย</label>
-      <input type="text" name="street" [(ngModel)]="newstudent.street" class="form-control" placeholder="ซอย"/>
+      <input type="text" formControlName="street" name="street" [(ngModel)]="newstudent.street" class="form-control" placeholder="ซอย"/>
       <label for="road">ถนน</label>
-      <input type="text" name="road" [(ngModel)]="newstudent.road" class="form-control" placeholder="ถนน"/>
+      <input type="text" formControlName="road" name="road" [(ngModel)]="newstudent.road" class="form-control" placeholder="ถนน"/>
     </div>
     <div class="form-group">
       <label for="sub_district">ตำบล/แขวง</label>
-      <input type="text" name="subDistrict" [(ngModel)]="newstudent.subDistrict" class="form-control" placeholder="ตำบล/แขวง"/>
+      <input type="text" formControlName="subDistrict" name="subDistrict" [(ngModel)]="newstudent.subDistrict" class="form-control" placeholder="ตำบล/แขวง"/>
       <label for="district">อำเภอ/เขต</label>
-      <input type="text" name="district" [(ngModel)]="newstudent.district" class="form-control" placeholder="อำเภอ/แขวง"/>
+      <input type="text" formControlName="district" name="district" [(ngModel)]="newstudent.district" class="form-control" placeholder="อำเภอ/แขวง"/>
       <label for="province">จังหวัด</label>
-      <input type="text" name="province" [(ngModel)]="newstudent.province" class="form-control" placeholder="จังหวัด"/>
+      <input type="text" formControlName="province" name="province" [(ngModel)]="newstudent.province" class="form-control" placeholder="จังหวัด"/>
       <label for="post">รหัสไปรษณีย์</label>
-      <input type="text" name="post" [(ngModel)]="newstudent.post" class="form-control" placeholder="รหัสไปรษณีย์"/>
+      <input type="text" formControlName="post" name="post" [(ngModel)]="newstudent.post" class="form-control" placeholder="รหัสไปรษณีย์"/>
     </div>
     <div class="form-group">
       <label for="final_school">สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน</label>
-      <input type="text" name="finalSchool" [(ngModel)]="newstudent.finalSchool" class="form-control" placeholder="สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน"/>
+      <input type="text" formControlName="finalSchool" name="finalSchool" [(ngModel)]="newstudent.finalSchool" class="form-control" placeholder="สำเร็จการศึกษา ชั้นประถมศึกษาปีที่ 6 จากโรงเรียน"/>
     </div>
     <div class="form-group">
       <label for="final_school_sub_district">ตำบล</label>
-      <input type="text" name="finalSchoolSubDistrict" [(ngModel)]="newstudent.finalSchoolSubDistrict" class="form-control" placeholder="ตำบล"/>
+      <input type="text" formControlName="finalSchoolSubDistrict" name="finalSchoolSubDistrict" [(ngModel)]="newstudent.finalSchoolSubDistrict" class="form-control" placeholder="ตำบล"/>
       <label for="final_school_district">อำเภอ</label>
-      <input type="text" name="finalSchoolDistrict" [(ngModel)]="newstudent.finalSchoolDistrict" class="form-control" placeholder="อำเภอ"/>
+      <input type="text" formControlName="finalSchoolDistrict" name="finalSchoolDistrict" [(ngModel)]="newstudent.finalSchoolDistrict" class="form-control" placeholder="อำเภอ"/>
       <label for="final_school_province">จังหวัด</label>
-      <input type="text" name="finalSchoolProvince" [(ngModel)]="newstudent.finalSchoolProvince" class="form-control" placeholder="จังหวัด"/>
+      <input type="text" formControlName="finalSchoolProvince" name="finalSchoolProvince" [(ngModel)]="newstudent.finalSchoolProvince" class="form-control" placeholder="จังหวัด"/>
     </div>
     <div class="form-group">
       <input type="checkbox" />
       <label>ผู้พิการ/เด็กพิเศษ</label>
       <label>(โปรดระบุประเภทความพิเศษ)</label>
-      <input type="text" name="disabled" [(ngModel)]="newstudent.disabled" class="form-control"/>
+      <input type="text" formControlName="disabled" name="disabled" [(ngModel)]="newstudent.disabled" class="form-control"/>
     </div>
     <div class="form-group">
-      <input type="checkbox" name="poorPerson" [(ngModel)]="newstudent.poorPerson" class="form-control"/>
+      <input type="checkbox" formControlName="poorPerson" name="poorPerson" [(ngModel)]="newstudent.poorPerson" class="form-control"/>
       <label>ผู้ด้อยโอกาส/ฐานะยากจน</label>
       <input type="checkbox" />
       <label>อื่นๆ</label>
       <label>โปรดระบุ</label>
-      <input type="text" name="etc" [(ngModel)]="newstudent.etc" class="form-control"/>
+      <input type="text" formControlName="etc" name="etc" [(ngModel)]="newstudent.etc" class="form-control"/>
     </div>
     <div>
       <button type="submit" value="submit">ยืนยัน</button>
@@ -160,7 +168,7 @@
   <div>
     <button class="btn btn-danger" [routerLink] = "['/mainpage']">ย้อนกลับ</button>
   </div>
-  
+
 
 
 

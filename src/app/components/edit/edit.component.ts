@@ -19,10 +19,7 @@ export class EditComponent implements OnInit {
 
 
   }
-  addTest(addtest1,addtest2){
-    this.t.savetest1(addtest1);
-    this.t.savetest2(addtest2);
-  }
+
 
 
 

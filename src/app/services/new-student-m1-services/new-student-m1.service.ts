@@ -6,6 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { NewStudentM1Component } from '../../components/new-student-m1/new-student-m1.component';
 import { IfStmt } from '@angular/compiler';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -27,6 +28,13 @@ export class NewStudentM1Service {
   addNewstudentm1(data: any){
     return this.http.post('http://127.0.0.1:8000/api/newstudentm1', data);
   }
+
+  uploadImage(data: any){
+    const headers = new HttpHeaders();
+    return this.http.post(environment.apiURL+'/api/uploadimage1/', data, {
+      headers: headers
+     });
+    }
 
 
 }

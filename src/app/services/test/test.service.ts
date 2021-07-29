@@ -3,6 +3,7 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient ,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -16,34 +17,18 @@ export class TestService {
   addTest2: any;
 
   constructor( private http: HttpClient, private router: Router) { }
-  httpHeader = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+    httpHeader = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
   }
 
-  savetest1(addtest1){
-   this.addTest1 = {
-     "id" : addtest1.id,
-     "name" : addtest1.name,
-     "surname" : addtest1.surname,
-   }
-   this.http.post<any>(this.url, this.addTest1) .subscribe((data) => {
-     this.router.navigate(['/test']);
-     console.log(data);
-   });
-  }
-
-  savetest2(addtest2){
-    this.addTest2 = {
-      "id" : addtest2.id,
-      "address" : addtest2.address,
+  uploadData(data: any){
+    const headers = new HttpHeaders();
+    return this.http.post(environment.apiURL+'/api/uploadimage1/', data, {
+      headers: headers
+     });
     }
-    this.http.post<any>(this.url2, this.addTest2) .subscribe((data2) =>{
-      this.router.navigate(['/test2']);
-      console.log(data2);
-    });
-  }
 
 
 

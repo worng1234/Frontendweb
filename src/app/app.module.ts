@@ -9,6 +9,17 @@ import { CheckStudentRoomComponent } from './components/check-student-room/check
 import { BehaviorTeacherComponent } from './components/behavior-teacher/behavior-teacher.component';
 import { BehaviorStudentComponent } from './components/behavior-student/behavior-student.component';
 import { EditComponent } from './components/edit/edit.component';
+import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
+import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
+import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
+import { StatusStudentComponent } from './components/status-student/status-student.component';
+import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
+import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
+import { AddBehaviorComponent } from './components/add-behavior/add-behavior.component';
+import { AddStudentCoreComponent } from './components/add-student-core/add-student-core.component';
+import { IndexComponent } from './components/index/index.component';
+import { TestComponent } from './components/test/test.component';
+import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 
 //services
 import { NewStudentM1Service } from './services/new-student-m1-services/new-student-m1.service';
@@ -21,18 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
-import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UploadPicComponent } from './components/upload-pic/upload-pic.component';
-import { StudentCoreInformationComponent } from './components/student-core-information/student-core-information.component';
-import { ShowStudentByIdComponent } from './components/show-student-by-id/show-student-by-id.component';
-import { StatusStudentComponent } from './components/status-student/status-student.component';
-import { FixProfileStudentComponent } from './components/fix-profile-student/fix-profile-student.component';
-import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
-import { AddBehaviorComponent } from './components/add-behavior/add-behavior.component';
-import { AddStudentCoreComponent } from './components/add-student-core/add-student-core.component';
-import { IndexComponent } from './components/index/index.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -61,6 +65,7 @@ import { IndexComponent } from './components/index/index.component';
     AddBehaviorComponent,
     AddStudentCoreComponent,
     IndexComponent,
+    TestComponent,
 
   ],
   imports: [
@@ -70,6 +75,8 @@ import { IndexComponent } from './components/index/index.component';
     HttpClientModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
 
   ],
   providers: [NewStudentM1Service,SortNewstudentService],
