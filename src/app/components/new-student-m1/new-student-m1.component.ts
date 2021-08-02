@@ -24,7 +24,7 @@ export class NewStudentM1Component implements OnInit {
   submitted = false;
   form: FormGroup;
   test3 = new test3();
-  data:any;
+  img:any;
 
 
   constructor(
@@ -38,20 +38,32 @@ export class NewStudentM1Component implements OnInit {
     }
 
   addNewstudentm1(){
-    this.nm1s.addNewstudentm1(this.newstudent).subscribe(res => {
+    //Image
+    let formdata = new FormData();
+    formdata.append("pic",this.files, this.files.name);
+    //Information
+    formdata.append("name",this.newstudent.name);
+    //POST
+    this.nm1s.addNewstudentm1(formdata).subscribe(res => {
       console.log(res);
     });
+  }
+
+  imageUpload(event){
+    this.files = event.target.files[0];
+    console.log(this.files);
+  }
+
+  upload(){
     this.submitted = true;
     if(this.form.invalid){
       return;
     }
-    const formData = new FormData();
-    formData.append("image", this.files, this.files.image);
-
-    this.nm1s.uploadImage(formData).subscribe(res => {
-      this.data = res;
-      console.log(this.data);
-    });
+    let formdata = new FormData();
+    formdata.append("pic",this.files, this.files.name);
+    // this.nm1s.addNewstudentm1(formdata).subscribe(res => {
+    //   console.log(res);
+    // });
   }
 
   get f(){
@@ -71,6 +83,7 @@ export class NewStudentM1Component implements OnInit {
       nameCen: [null, Validators.required],
       surname: [null, Validators.required],
       sex: [null, Validators.required],
+      pic: [null, Validators.required],
       idNumber: [null, Validators.required],
       birthday: [null, Validators.required],
       religion: [null, Validators.required],

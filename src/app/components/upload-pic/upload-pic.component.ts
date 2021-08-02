@@ -26,7 +26,7 @@ export class UploadPicComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
 
-    this.http.post('https://localhost:44342/api/Upload', formData,{ reportProgress: true, observe: 'events'})
+    this.http.post('https://localhost:8000/api/uploadimage', formData,{ reportProgress: true, observe: 'events'})
     .subscribe(event => {
       if(event.type === HttpEventType.UploadProgress){
         this.progress = Math.round(100* event.loaded / event.total);

@@ -25,7 +25,7 @@ export class TestService {
 
   uploadData(data: any){
     const headers = new HttpHeaders();
-    return this.http.post(environment.apiURL+'/api/uploadimage1/', data, {
+    return this.http.post(environment.apiURL+'/api/uploadimage/', data, {
       headers: headers
      });
     }

@@ -7,16 +7,21 @@
     </h4>
   </div>
 
-  <form (ngSubmit)="addNewstudentm1()" [formGroup]="form">
+  <form (ngSubmit)="addNewstudentm1();upload()" [formGroup]="form">
     <div>
       <label>Post Image</label>
-      <input type="file" formControlName="image" name="image" id="image" class="form-control"
-      (change)="uploadImage($event)" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+      <input type="file" formControlName="pic" name="pic" [(ngModel)]="newstudent.pic" class="form-control"
+      (change)="uploadImage($event)" [ngClass]="{ 'is-invalid': submitted && f.pic.errors }">
 
-      <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
-        <div *ngIf="f.image.errors.require">Image is require</div>
+      <div *ngIf="submitted && f.pic.errors" class="invalid-feedback">
+        <div *ngIf="f.pic.errors.require">Image is require</div>
       </div>
+
     </div>
+    <!-- <div>
+      <label>Pic</label>
+      <input type="file" name="pic" class="form-control" [(ngModel)]="newstudent.pic" (change)="imageUpload($event)">
+    </div> -->
       <div class="form-group">
         <label for="prename">คำนำหน้า :  </label>
         <select type="text" formControlName="prename" name="prename"  class="form-control" [(ngModel)]="newstudent.prename">
@@ -162,7 +167,7 @@
       <input type="text" formControlName="etc" name="etc" [(ngModel)]="newstudent.etc" class="form-control"/>
     </div>
     <div>
-      <button type="submit" value="submit">ยืนยัน</button>
+      <input type="submit" class="btn btn-primary">
     </div>
   </form>
   <div>
