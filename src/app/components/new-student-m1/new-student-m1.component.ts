@@ -42,7 +42,52 @@ export class NewStudentM1Component implements OnInit {
     let formdata = new FormData();
     formdata.append("pic",this.files, this.files.name);
     //Information
+    formdata.append("prename",this.newstudent.prename);
     formdata.append("name",this.newstudent.name);
+    formdata.append("surname",this.newstudent.surname);
+    formdata.append("sex",this.newstudent.sex);
+    formdata.append("idNumber",this.newstudent.idNumber);
+    formdata.append("birthday",this.newstudent.birthday);
+    formdata.append("religion",this.newstudent.religion);
+    formdata.append("nationality",this.newstudent.nationality);
+    formdata.append("origin",this.newstudent.origin);
+    formdata.append("disabled",this.newstudent.disabled);
+    formdata.append("poorPerson",this.newstudent.poorPerson);
+    formdata.append("etc",this.newstudent.etc);
+    formdata.append("tel",this.newstudent.tel);
+    formdata.append("email",this.newstudent.email);
+    formdata.append("nameCen",this.newstudent.nameCen);
+    formdata.append("fatherName",this.newstudent.fatherName);
+    formdata.append("fatherNamecen",this.newstudent.fatherNamecen);
+    formdata.append("fatherSurname",this.newstudent.fatherSurname);
+    formdata.append("fatherId",this.newstudent.fatherId);
+    formdata.append("fatherJob",this.newstudent.fatherJob);
+    formdata.append("fatherTel",this.newstudent.fatherTel);
+    formdata.append("motherName",this.newstudent.motherName);
+    formdata.append("motherNamecen",this.newstudent.motherNamecen);
+    formdata.append("motherSurname",this.newstudent.motherSurname);
+    formdata.append("motherId",this.newstudent.motherId);
+    formdata.append("motherJob",this.newstudent.motherJob);
+    formdata.append("motherTel",this.newstudent.motherTel);
+    formdata.append("parent",this.newstudent.parent);
+    formdata.append("parentName",this.newstudent.parentName);
+    formdata.append("parentNamecen",this.newstudent.parentNamecen);
+    formdata.append("parentSurname",this.newstudent.parentSurname);
+    formdata.append("parentId",this.newstudent.parentId);
+    formdata.append("parentJob",this.newstudent.parentJob);
+    formdata.append("parentTel",this.newstudent.parentTel);
+    formdata.append("houseNumber",this.newstudent.houseNumber);
+    formdata.append("street",this.newstudent.street);
+    formdata.append("bloc",this.newstudent.bloc);
+    formdata.append("road",this.newstudent.road);
+    formdata.append("subDistrict",this.newstudent.subDistrict);
+    formdata.append("district",this.newstudent.district);
+    formdata.append("province",this.newstudent.province);
+    formdata.append("post",this.newstudent.post);
+    formdata.append("finalSchool",this.newstudent.finalSchool);
+    formdata.append("finalSchoolSubDistrict",this.newstudent.finalSchoolSubDistrict);
+    formdata.append("finalSchoolDistrict",this.newstudent.finalSchoolDistrict);
+    formdata.append("finalSchoolProvince",this.newstudent.finalSchoolProvince);
     //POST
     this.nm1s.addNewstudentm1(formdata).subscribe(res => {
       console.log(res);
@@ -52,18 +97,6 @@ export class NewStudentM1Component implements OnInit {
   imageUpload(event){
     this.files = event.target.files[0];
     console.log(this.files);
-  }
-
-  upload(){
-    this.submitted = true;
-    if(this.form.invalid){
-      return;
-    }
-    let formdata = new FormData();
-    formdata.append("pic",this.files, this.files.name);
-    // this.nm1s.addNewstudentm1(formdata).subscribe(res => {
-    //   console.log(res);
-    // });
   }
 
   get f(){

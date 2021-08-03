@@ -3,7 +3,16 @@
     <h4>ศูนย์รับสมัครโรงเรียนพร้าววิทยาคม สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา เขต 34</h4>
   </div>
 
- <form (ngSubmit)="addNewstudentm4()">
+ <form (ngSubmit)="addNewstudentm4()" [formGroup]="form">
+  <div>
+    <label>Post Image</label>
+    <input type="file" formControlName="pic" name="pic" [(ngModel)]="newstudentm4.pic" class="form-control"
+    (change)="uploadImage($event)" [ngClass]="{ 'is-invalid': submitted && f.pic.errors }">
+
+    <div *ngIf="submitted && f.pic.errors" class="invalid-feedback">
+      <div *ngIf="f.pic.errors.require">Image is require</div>
+    </div>
+  </div>
     <div class="form-group">
         <label>คำนำหน้า</label>
         <select type="text" name="prename" [(ngModel)]="newstudentm4.prename" class="form-control">

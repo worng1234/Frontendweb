@@ -27,19 +27,20 @@ export class SortNewstudentComponent implements OnInit {
   searchFunction_name : string;
   searchFunction_area: string;
   searchFunction_prename;
+  imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
 
 
   constructor( private nsm1list: SortNewstudentService, private http: HttpClientModule) { }
 
-
   ngOnInit(){
     this.getAll();
-   
+
   }
 
   getAll(){
     this.nsm1list.getNewstudentm1List().subscribe(res => {
       this.newstudentm1list = res;
+      console.log(this.newstudentm1list);
     })
   }
 

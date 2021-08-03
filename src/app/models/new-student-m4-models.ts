@@ -5,7 +5,7 @@ export class NewStudentM4Models{
   name : string;
   name_cen : string;
   surname : string;
-  sex : boolean;
+  sex : string;
   pic : string;
   id_number : string;
   birthday : string;
@@ -43,7 +43,7 @@ export class NewStudentM4Models{
   final_school_sub_district : string;
   final_school_district : string;
   final_school_province : string;
-  diabled : string;
+  disabled : string;
   poor_person : string;
   etc : string;
   tel : string;
