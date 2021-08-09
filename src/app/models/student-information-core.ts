@@ -30,19 +30,5 @@ export class StudentInformationCore{
   score : string;
   email: string;
   blood_group: string;
-  talent: string;
-  distance_school: number;
-  go_school: string;
-  no_son: number;
-  no_brother: number;
-  no_he: number;
-  no_she: number;
-  no_parent: number;
-  status_parent: string;
-  total_parent: string;
-  total_student: string;
-  student_job: string;
-  student_job_name: string;
-  student_job_total: number;
 
 }

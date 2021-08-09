@@ -40,6 +40,7 @@
     <thead>
       <tr>
         <th>ลำดับ</th>
+        <th>รูป</th>
         <th>ชื่อ-นามสกุล</th>
         <th>โรงเรียน</th>
         <th>วิชาเอก</th>
@@ -53,6 +54,7 @@
                       filter:searchFunction_major1 | filter:searchFunction_major2 |
                       filter:searchFunction_major3">
           <td>{{ s.id }}</td>
+          <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
           <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
           <td>{{ s.final_school}}</td>
           <td>อันดับ 1 {{s.major_name1}}<br>

@@ -33,12 +33,15 @@ export class SortNewstudentM4Component implements OnInit {
   searchFunction_major1;
   searchFunction_major2;
   searchFunction_major3;
+  imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
 
   constructor( private nsm4List: SortNewStudentM4ServicesService, private http: HttpClientModule) { }
 
   ngOnInit(): void {
     this.nsm4List.getNewstudentm4List()
-      .subscribe((data: NewStudentM4Models[]) => {this.newstudentm4list = data;});
+      .subscribe((data: NewStudentM4Models[]) => {this.newstudentm4list = data;
+        console.log(this.newstudentm4list);});
+
   }
   search(){
     this.newstudentm4list = this.newstudentm4list.filter(res =>{

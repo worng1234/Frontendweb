@@ -2,7 +2,7 @@
   <h3>Add Student Core</h3>
 </div>
 <div>
-  <form (ngSubmit)="submit()">
+  <form (ngSubmit)="submit(); addstudentcore()">
     <!-- step1 -->
     <div *ngIf="step == 1">
       <div class="row mb-3">
@@ -12,6 +12,8 @@
             class="form-control"
             placeholder="เลขประจำตัวนักเรียน"
             aria-label="เลขประจำตัวนักเรียน"
+            name="student_id"
+            [(ngModel)]="studentcore.student_id"
           />
         </div>
         <div class="col">
@@ -20,6 +22,8 @@
             class="form-control"
             placeholder="แผนการเรียน"
             aria-label="แผนการเรียน"
+            name="student_major"
+            [(ngModel)]="studentcore.student_major"
           />
         </div>
         <div class="col">
@@ -28,6 +32,8 @@
             class="form-control"
             placeholder="ระดับชั้น"
             aria-label="ระดับชั้น"
+            name="student_class"
+            [(ngModel)]="studentcore.student_class"
           />
         </div>
         <div class="col">
@@ -36,6 +42,8 @@
             class="form-control"
             placeholder="ลำดับห้อง"
             aria-label="ลำดับห้อง"
+            name="student_room"
+            [(ngModel)]="studentcore.student_room"
           />
         </div>
       </div>
@@ -46,6 +54,8 @@
             class="form-control"
             placeholder="เลขบัตรประจำตัวประชาชน"
             aria-label="เลขบัตรประจำตัวประชาชน"
+            name="student_id_card"
+            [(ngModel)]="studentcore.student_id_card"
           />
         </div>
       </div>
@@ -56,6 +66,8 @@
             class="form-control"
             placeholder="คำนำหน้าชื่อ"
             aria-label="คำนำหน้าชื่อ"
+            name="prename"
+            [(ngModel)]="studentcore.prename"
           />
         </div>
         <div class="col">
@@ -64,6 +76,8 @@
             class="form-control"
             placeholder="ชื่อภาษาไทย"
             aria-label="ชื่อภาษาไทย"
+            name="name"
+            [(ngModel)]="studentcore.name"
           />
         </div>
         <div class="col">
@@ -72,6 +86,8 @@
             class="form-control"
             placeholder="ชื่อกลาง"
             aria-label="ชื่อกลาง"
+            name="name_cen"
+            [(ngModel)]="studentcore.name_cen"
           />
         </div>
         <div class="col">
@@ -80,6 +96,8 @@
             class="form-control"
             placeholder="นามสกุลภาษาไทย"
             aria-label="นามสกุลภาษาไทย"
+            name="surname"
+            [(ngModel)]="studentcore.surname"
           />
         </div>
       </div>
@@ -90,6 +108,8 @@
             class="form-control"
             placeholder="คำนำหน้าชื่อ(ภาษาอังกฤษ)"
             aria-label="คำนำหน้าชื่อ(ภาษาอังกฤษ)"
+            name="prename_eng"
+            [(ngModel)]="studentcore.prename_eng"
           />
         </div>
         <div class="col">
@@ -98,6 +118,8 @@
             class="form-control"
             placeholder="ชื่อ(ภาษาอังกฤษ)"
             aria-label="ชื่อ(ภาษาอังกฤษ)"
+            name="name_eng"
+            [(ngModel)]="studentcore.name_eng"
           />
         </div>
         <div class="col">
@@ -106,6 +128,8 @@
             class="form-control"
             placeholder="ชื่อกลาง(ภาษาอังกฤษ)"
             aria-label="ชื่อกลาง(ภาษาอังกฤษ)"
+            name="name_cen_eng"
+            [(ngModel)]="studentcore.name_cen_eng"
           />
         </div>
         <div class="col">
@@ -114,6 +138,8 @@
             class="form-control"
             placeholder="นามสกุล(ภาษาอังกฤษ)"
             aria-label="นามสกุล(ภาษาอังกฤษ)"
+            name="surname_eng"
+            [(ngModel)]="studentcore.surname_eng"
           />
         </div>
       </div>
@@ -129,6 +155,8 @@
             class="form-control"
             placeholder="ปี"
             aria-label="ปี"
+            name="birth_year"
+            [(ngModel)]="studentcore.birth_year"
           />
         </div>
         <div class="col">
@@ -137,6 +165,8 @@
             class="form-control"
             placeholder="เดือน"
             aria-label="เดือน"
+            name="birth_month"
+            [(ngModel)]="studentcore.birth_month"
           />
         </div>
         <div class="col">
@@ -145,6 +175,8 @@
             class="form-control"
             placeholder="วัน"
             aria-label="วัน"
+            name="birth_day"
+            [(ngModel)]="studentcore.birth_day"
           />
         </div>
       </div>
@@ -155,6 +187,8 @@
             class="form-control"
             placeholder="ชื่อเล่น"
             aria-label="ชื่อเล่น"
+            name="nickname"
+            [(ngModel)]="studentcore.nickname"
           />
         </div>
         <div class="col">
@@ -163,6 +197,8 @@
             class="form-control"
             placeholder="เพศ"
             aria-label="เพศ"
+            name="gender"
+            [(ngModel)]="studentcore.gender"
           />
         </div>
         <div class="col">
@@ -171,6 +207,8 @@
             class="form-control"
             placeholder="หมู่เลือด"
             aria-label="หมู่เลือด"
+            name="bloodgroup"
+            [(ngModel)]="studentcore.bloodgroup"
           />
         </div>
         <div class="col">
@@ -179,6 +217,8 @@
             class="form-control"
             placeholder="ศาสนา"
             aria-label="ศาสนา"
+            name="religion"
+            [(ngModel)]="studentcore.religion"
           />
         </div>
         <div class="col">
@@ -187,6 +227,8 @@
             class="form-control"
             placeholder="เชื่อชาติ"
             aria-label="เชื่อชาติ"
+            name="origin"
+            [(ngModel)]="studentcore.origin"
           />
         </div>
         <div class="col">
@@ -195,6 +237,8 @@
             class="form-control"
             placeholder="สัญชาติ"
             aria-label="สัญชาติ"
+            name="nationality"
+            [(ngModel)]="studentcore.nationality"
           />
         </div>
       </div>
@@ -205,6 +249,8 @@
             class="form-control"
             placeholder="ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น"
             aria-label="ภาษาที่ใช้ เช่น ไทย จีน อังกฤษ ญี่ปุ่น"
+            name="language"
+            [(ngModel)]="studentcore.language"
           />
         </div>
         <div class="col">
@@ -213,6 +259,8 @@
             class="form-control"
             placeholder="หมายเลขโทรศัพท์ที่สามารถติดต่อได้"
             aria-label="หมายเลขโทรศัพท์ที่สามารถติดต่อได้"
+            name="tel_s"
+            [(ngModel)]="studentcore.tel_s"
           />
         </div>
         <div class="col">
@@ -221,6 +269,8 @@
             class="form-control"
             placeholder="อีเมล์(example@email.com)"
             aria-label="อีเมล์(example@email.com)"
+            name="email"
+            [(ngModel)]="studentcore.email"
           />
         </div>
       </div>
@@ -239,6 +289,8 @@
             class="form-control"
             placeholder="บ้านเลขที่"
             aria-label="บ้านเลขที่"
+            name="house_number"
+            [(ngModel)]="addstudents.house_number"
           />
         </div>
         <div class="col">
@@ -247,6 +299,8 @@
             class="form-control"
             placeholder="หมู่"
             aria-label="หมู่"
+            name="group"
+            [(ngModel)]="addstudents.group"
           />
         </div>
         <div class="col">
@@ -255,6 +309,8 @@
             class="form-control"
             placeholder="ชื่อหมู่บ้าน"
             aria-label="ชื่อหมู่บ้าน"
+            name="village"
+            [(ngModel)]="addstudents.village"
           />
         </div>
         <div class="col">
@@ -263,6 +319,8 @@
             class="form-control"
             placeholder="ซอย"
             aria-label="ซอย"
+            name="alley"
+            [(ngModel)]="addstudents.alley"
           />
         </div>
         <div class="col">
@@ -271,6 +329,8 @@
             class="form-control"
             placeholder="ถนน"
             aria-label="ถนน"
+            name="street"
+            [(ngModel)]="addstudents.street"
           />
         </div>
       </div>
@@ -281,6 +341,8 @@
             class="form-control"
             placeholder="ตำบล/แขวง"
             aria-label="ตำบล/แขวง"
+            name="subdistrict"
+            [(ngModel)]="addstudents.subdistrict"
           />
         </div>
         <div class="col">
@@ -289,6 +351,8 @@
             class="form-control"
             placeholder="อำเภอ/เขต"
             aria-label="อำเภอ/เขต"
+            name="district"
+            [(ngModel)]="addstudents.district"
           />
         </div>
         <div class="col">
@@ -297,6 +361,8 @@
             class="form-control"
             placeholder="จังหวัด"
             aria-label="จังหวัด"
+            name="province"
+            [(ngModel)]="addstudents.province"
           />
         </div>
         <div class="col">
@@ -305,6 +371,8 @@
             class="form-control"
             placeholder="รหัสไปรษณีย์"
             aria-label="รหัสไปรษณีย์"
+            name="post"
+            [(ngModel)]="addstudents.post"
           />
         </div>
       </div>
@@ -321,6 +389,8 @@
             name="inlineRadioOptions"
             id="inlineRadio1"
             value="option1"
+            name="address_now"
+            [(ngModel)]="addstudents.address_now"
           />
           <label class="form-check-label" for="inlineRadio1"
             >ที่อยู่ตามทะเบียนบ้าน</label
@@ -333,6 +403,8 @@
             name="inlineRadioOptions"
             id="inlineRadio2"
             value="option1"
+            name="address_now"
+            [(ngModel)]="addstudents.address_now"
           />
           <label class="form-check-label" for="inlineRadio1"
             >ที่อยู่อื่นโปรดระบุ</label
@@ -346,6 +418,8 @@
             class="form-control"
             placeholder="บ้านเลขที่"
             aria-label="บ้านเลขที่"
+            name="house_number_n"
+            [(ngModel)]="addstudents.house_number_n"
           />
         </div>
         <div class="col">
@@ -354,6 +428,8 @@
             class="form-control"
             placeholder="หมู่"
             aria-label="หมู่"
+            name="group_n"
+            [(ngModel)]="addstudents.group_n"
           />
         </div>
         <div class="col">
@@ -362,6 +438,8 @@
             class="form-control"
             placeholder="ชื่อหมู่บ้าน"
             aria-label="ชื่อหมู่บ้าน"
+            name="village_n"
+            [(ngModel)]="addstudents.village_n"
           />
         </div>
         <div class="col">
@@ -370,6 +448,8 @@
             class="form-control"
             placeholder="ซอย"
             aria-label="ซอย"
+            name="alley_n"
+            [(ngModel)]="addstudents.alley_n"
           />
         </div>
         <div class="col">
@@ -378,6 +458,8 @@
             class="form-control"
             placeholder="ถนน"
             aria-label="ถนน"
+            name="street_n"
+            [(ngModel)]="addstudents.street_n"
           />
         </div>
       </div>
@@ -388,6 +470,8 @@
             class="form-control"
             placeholder="ตำบล/แขวง"
             aria-label="ตำบล/แขวง"
+            name="subdistrict_n"
+            [(ngModel)]="addstudents.subdistrict_n"
           />
         </div>
         <div class="col">
@@ -396,6 +480,8 @@
             class="form-control"
             placeholder="อำเภอ/เขต"
             aria-label="อำเภอ/เขต"
+            name="district_n"
+            [(ngModel)]="addstudents.district_n"
           />
         </div>
         <div class="col">
@@ -404,6 +490,8 @@
             class="form-control"
             placeholder="จังหวัด"
             aria-label="จังหวัด"
+            name="province_n"
+            [(ngModel)]="addstudents.province_n"
           />
         </div>
         <div class="col">
@@ -412,6 +500,8 @@
             class="form-control"
             placeholder="รหัสไปรษณีย์"
             aria-label="รหัสไปรษณีย์"
+            name="post_n"
+            [(ngModel)]="addstudents.post_n"
           />
         </div>
       </div>
@@ -435,6 +525,8 @@
             class="form-control"
             placeholder="ชื่อโรงเรียน"
             aria-label="ชื่อโรงเรียน"
+            name="final_school"
+            [(ngModel)]="talent.final_school"
           />
         </div>
         <div class="col">
@@ -443,6 +535,8 @@
             class="form-control"
             placeholder="จบชั้น"
             aria-label="จบชั้น"
+            name="final_class"
+            [(ngModel)]="talent.final_class"
           />
         </div>
         <div class="col">
@@ -451,6 +545,8 @@
             class="form-control"
             placeholder="ผลการเรียน"
             aria-label="ผลการเรียน"
+            name="avg_grade"
+            [(ngModel)]="talent.avg_grade"
           />
         </div>
       </div>
@@ -461,6 +557,8 @@
             class="form-control"
             placeholder="ตำบล/แขวง"
             aria-label="ตำบล/แขวง"
+            name="f_subdistrict"
+            [(ngModel)]="talent.f_subdistrict"
           />
         </div>
         <div class="col">
@@ -469,6 +567,8 @@
             class="form-control"
             placeholder="อำเภอ/เขต"
             aria-label="อำเภอ/เขต"
+            name="f_district"
+            [(ngModel)]="talent.f_district"
           />
         </div>
         <div class="col">
@@ -477,6 +577,8 @@
             class="form-control"
             placeholder="จังหวัด"
             aria-label="จังหวัด"
+            name="f_province"
+            [(ngModel)]="talent.f_province"
           />
         </div>
       </div>
@@ -492,6 +594,8 @@
             class="form-control"
             placeholder="1"
             aria-label="1"
+            name="like_subject1"
+            [(ngModel)]="talent.like_subject1"
           />
         </div>
         <div class="col">
@@ -500,6 +604,8 @@
             class="form-control"
             placeholder="2"
             aria-label="2"
+            name="like_subject2"
+            [(ngModel)]="talent.like_subject2"
           />
         </div>
         <div class="col">
@@ -508,6 +614,8 @@
             class="form-control"
             placeholder="3"
             aria-label="3"
+            name="like_subject3"
+            [(ngModel)]="talent.like_subject3"
           />
         </div>
         <div class="col">
@@ -516,6 +624,8 @@
             class="form-control"
             placeholder="4"
             aria-label="4"
+            name="like_subject4"
+            [(ngModel)]="talent.like_subject4"
           />
         </div>
       </div>
@@ -531,6 +641,8 @@
             class="form-control"
             placeholder="1"
             aria-label="1"
+            name="unlike_subject1"
+            [(ngModel)]="talent.unlike_subject1"
           />
         </div>
         <div class="col">
@@ -539,6 +651,8 @@
             class="form-control"
             placeholder="2"
             aria-label="2"
+            name="unlike_subject2"
+            [(ngModel)]="talent.unlike_subject2"
           />
         </div>
         <div class="col">
@@ -547,6 +661,8 @@
             class="form-control"
             placeholder="3"
             aria-label="3"
+            name="unlike_subject3"
+            [(ngModel)]="talent.unlike_subject3"
           />
         </div>
         <div class="col">
@@ -555,6 +671,8 @@
             class="form-control"
             placeholder="4"
             aria-label="4"
+            name="unlike_subject4"
+            [(ngModel)]="talent.unlike_subject4"
           />
         </div>
       </div>
@@ -570,6 +688,8 @@
             class="form-control"
             placeholder="ความสามารถพิเศษ"
             aria-label="ความสามารถพิเศษ"
+            name="talent"
+            [(ngModel)]="talent.talent"
           />
         </div>
         <div class="col">
@@ -578,6 +698,8 @@
             class="form-control"
             placeholder="อยากประกอบอาชีพ"
             aria-label="อยากประกอบอาชีพ"
+            name="dream_job"
+            [(ngModel)]="talent.dream_job"
           />
         </div>
         <div class="col">
@@ -586,6 +708,8 @@
             class="form-control"
             placeholder="เพราะอะไร"
             aria-label="เพราะอะไร"
+            name="because"
+            [(ngModel)]="talent.because"
           />
         </div>
       </div>
@@ -596,16 +720,20 @@
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
-          <button class="btn btn-secondary">อ่านเขียนคล่อง</button>
+          <button class="btn btn-secondary" name="read_write"
+          [(ngModel)]="talent.read_write">อ่านเขียนคล่อง</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">อ่านเขียนไม่คล่อง</button>
+          <button class="btn btn-secondary" name="read_write"
+          [(ngModel)]="talent.read_write">อ่านเขียนไม่คล่อง</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">อ่านเขียนได้</button>
+          <button class="btn btn-secondary" name="read_write"
+          [(ngModel)]="talent.read_write">อ่านเขียนได้</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">อ่านเขียนไม่ได้</button>
+          <button class="btn btn-secondary" name="read_write"
+          [(ngModel)]="talent.read_write">อ่านเขียนไม่ได้</button>
         </div>
       </div>
       <div class="row mb-3">
@@ -615,10 +743,12 @@
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="understand"
+          [(ngModel)]="talent.understand">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="understand"
+          [(ngModel)]="talent.understand">ไม่ใช่</button>
         </div>
       </div>
     </div>
@@ -636,6 +766,8 @@
             class="form-control"
             placeholder="การเดินทางมาโรงเรียน"
             aria-label="การเดินทางมาโรงเรียน"
+            name="go_school"
+            [(ngModel)]="studentdetail.go_school"
           />
         </div>
         <div class="col">
@@ -644,6 +776,8 @@
             class="form-control"
             placeholder="ระยะเวลาเดินทาง(นาที)"
             aria-label="ระยะเวลาเดินทาง(นาที)"
+            name="distance"
+            [(ngModel)]="studentdetail.distance"
           />
         </div>
         <div class="col">
@@ -652,6 +786,8 @@
             class="form-control"
             placeholder="ระยะห่างจากโรงเรียน(เมตร)"
             aria-label="ระยะห่างจากโรงเรียน(เมตร)"
+            name="long_distance"
+            [(ngModel)]="studentdetail.long_distance"
           />
         </div>
       </div>
@@ -662,47 +798,25 @@
       </div>
       <div class="row mb-3">
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="การเดินทางมาโรงเรียน"
-            aria-label="การเดินทางมาโรงเรียน"
-          />
-        </div>
-        <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="ระยะเวลาเดินทาง(นาที)"
-            aria-label="ระยะเวลาเดินทาง(นาที)"
-          />
-        </div>
-        <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="ระยะห่างจากโรงเรียน(เมตร)"
-            aria-label="ระยะห่างจากโรงเรียน(เมตร)"
-          />
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col">
           <span>อุปกรณ์ที่มี</span>
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
-          <button class="btn btn-secondary">มือถือ/สมาร์ทโฟน</button>
+          <button class="btn btn-secondary" name="gadject1"
+          [(ngModel)]="studentdetail.gadject1">มือถือ/สมาร์ทโฟน</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">แท็บเล็ต</button>
+          <button class="btn btn-secondary" name="gadject2"
+          [(ngModel)]="studentdetail.gadject2">แท็บเล็ต</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">โน๊ตบุค</button>
+          <button class="btn btn-secondary" name="gadject3"
+          [(ngModel)]="studentdetail.gadject3">โน๊ตบุค</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">คอมพิวเตอร์</button>
+          <button class="btn btn-secondary" name="gadject4"
+          [(ngModel)]="studentdetail.gadject4">คอมพิวเตอร์</button>
         </div>
       </div>
       <div class="row mb-3">
@@ -712,10 +826,12 @@
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
-          <button class="btn btn-secondary">อินเตอร์เน็ตมือถือ</button>
+          <button class="btn btn-secondary" name="internet1"
+          [(ngModel)]="studentdetail.internet1">อินเตอร์เน็ตมือถือ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">อินเตอร์เน็ตสาย</button>
+          <button class="btn btn-secondary" name="internet2"
+          [(ngModel)]="studentdetail.internet2">อินเตอร์เน็ตสาย</button>
         </div>
       </div>
       <div class="row mb-3">
@@ -730,6 +846,8 @@
             class="form-control"
             placeholder="ความพิการ"
             aria-label="ความพิการ"
+            name="disebled"
+            [(ngModel)]="studentdetail.disebled"
           />
         </div>
         <div class="col">
@@ -738,6 +856,8 @@
             class="form-control"
             placeholder="ความด้อยโอกาส"
             aria-label="ความด้อยโอกาส"
+            name="unfortuned"
+            [(ngModel)]="studentdetail.unfortuned"
           />
         </div>
       </div>
@@ -748,19 +868,24 @@
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
-          <button class="btn btn-secondary">ขาดแคลนแบบเรียน</button>
+          <button class="btn btn-secondary" name="lack1"
+          [(ngModel)]="studentdetail.lack1">ขาดแคลนแบบเรียน</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ขาดแคลนเครื่องเขียน</button>
+          <button class="btn btn-secondary" name="lack2"
+          [(ngModel)]="studentdetail.lack2">ขาดแคลนเครื่องเขียน</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ขาดแคลนอาหารกลางวัน</button>
+          <button class="btn btn-secondary" name="lack3"
+          [(ngModel)]="studentdetail.lack3">ขาดแคลนอาหารกลางวัน</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ขาดแคลนเครื่องแบบ</button>
+          <button class="btn btn-secondary" name="lack4"
+          [(ngModel)]="studentdetail.lack4">ขาดแคลนเครื่องแบบ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ขาดแคลน</button>
+          <button class="btn btn-secondary" name="lack5"
+          [(ngModel)]="studentdetail.lack5">ไม่ขาดแคลน</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -768,10 +893,12 @@
           <span>คบเพื่อนที่เกี่ยวกับสิ่งเสพติด</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="friend_drug"
+          [(ngModel)]="studentdetail.friend_drug">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="friend_drug"
+          [(ngModel)]="studentdetail.friend_drug">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -779,10 +906,12 @@
           <span>มีพฤติกรรมส่อไปทางชู้สาว</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="sexual"
+          [(ngModel)]="studentdetail.sexual">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="sexual"
+          [(ngModel)]="studentdetail.sexual">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -790,10 +919,12 @@
           <span>ชอบเที่ยวกลางคืน</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="dark_travel"
+          [(ngModel)]="studentdetail.dark_travel">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="dark_travel"
+          [(ngModel)]="studentdetail.dark_travel">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -801,10 +932,12 @@
           <span>มีพฤติกรรมเสพหรือจำหน่ายสิ่งเสพติด</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="sell_drug"
+          [(ngModel)]="studentdetail.sell_drug">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="sell_drug"
+          [(ngModel)]="studentdetail.sell_drug">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -812,10 +945,12 @@
           <span>พักหรืออยู่อาสัยกับเพื่อนต่างเพศที่ไม่ใช่ญาติพี่น้อง</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="not_parent"
+          [(ngModel)]="studentdetail.not_parent">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="not_parent"
+          [(ngModel)]="studentdetail.not_parent">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -823,10 +958,12 @@
           <span>มีการล่วงละเมิดทางเพศ</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="sexual_harrasment"
+          [(ngModel)]="studentdetail.sexual_harrasment">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="sexual_harrasment"
+          [(ngModel)]="studentdetail.sexual_harrasment">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -834,10 +971,12 @@
           <span>นักเรียนรู้สึกว่าโลกนี้(เลือก 1 ข้อ)</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">น่าอยู่</button>
+          <button class="btn btn-secondary" name="cute_world"
+          [(ngModel)]="studentdetail.cute_world">น่าอยู่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่น่าอยู่</button>
+          <button class="btn btn-secondary" name="cute_world"
+          [(ngModel)]="studentdetail.cute_world">ไม่น่าอยู่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -845,10 +984,12 @@
           <span>นักเรียนรู้สึกว่าตัวเอง(เลือก 1 ข้อ)</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">มีค่า</button>
+          <button class="btn btn-secondary" name="rich_man"
+          [(ngModel)]="studentdetail.rich_man">มีค่า</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่มีค่า</button>
+          <button class="btn btn-secondary" name="rich_man"
+          [(ngModel)]="studentdetail.rich_man">ไม่มีค่า</button>
         </div>
       </div>
       <div class="row mb-3"></div>
@@ -859,6 +1000,8 @@
             class="form-control"
             placeholder="นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร"
             aria-label="นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร"
+            name="good_guy"
+            [(ngModel)]="studentdetail.good_guy"
           />
         </div>
         <div class="col">
@@ -867,6 +1010,8 @@
             class="form-control"
             placeholder="นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร"
             aria-label="นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร"
+            name="social_good"
+            [(ngModel)]="studentdetail.social_good"
           />
         </div>
       </div>
@@ -876,36 +1021,46 @@
           ข้อ)</span
         >
         <div class="col mb-3">
-          <button class="btn btn-secondary">ครอบครัว</button>
+          <button class="btn btn-secondary" name="problem1"
+          [(ngModel)]="studentdetail.problem1">ครอบครัว</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">การเรียน</button>
+          <button class="btn btn-secondary" name="problem2"
+          [(ngModel)]="studentdetail.problem2">การเรียน</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">สุขภาพ</button>
+          <button class="btn btn-secondary" name="problem3"
+          [(ngModel)]="studentdetail.problem3">สุขภาพ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">เศรษฐกิจ</button>
+          <button class="btn btn-secondary" name="problem4"
+          [(ngModel)]="studentdetail.problem4">เศรษฐกิจ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">การคบเพื่อน</button>
+          <button class="btn btn-secondary" name="problem5"
+          [(ngModel)]="studentdetail.problem5">การคบเพื่อน</button>
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
-          <button class="btn btn-secondary">การวางตัวในสังคม</button>
+          <button class="btn btn-secondary" name="problem6"
+          [(ngModel)]="studentdetail.problem6">การวางตัวในสังคม</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">การใช้เวลาว่าง</button>
+          <button class="btn btn-secondary" name="problem7"
+          [(ngModel)]="studentdetail.problem7">การใช้เวลาว่าง</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">การเลือกอาชีพ</button>
+          <button class="btn btn-secondary" name="problem8"
+          [(ngModel)]="studentdetail.problem8">การเลือกอาชีพ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">การเลือกศึกษาต่อ</button>
+          <button class="btn btn-secondary" name="problem9"
+          [(ngModel)]="studentdetail.problem9">การเลือกศึกษาต่อ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">
+          <button class="btn btn-secondary" name="problem10"
+          [(ngModel)]="studentdetail.problem10">
             การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน
           </button>
         </div>
@@ -916,24 +1071,30 @@
           นักเรียนต้องการความช่วยเหลือ/ปรึกษาจากใคร(เลือกได้มากกว่า 1 ข้อ)</span
         >
         <div class="col mb-3">
-          <button class="btn btn-secondary">บิดา</button>
+          <button class="btn btn-secondary" name="help1"
+          [(ngModel)]="studentdetail.help1">บิดา</button>
           <!-- <input type="button" class="btn btn-secondary" value="บิดา"> -->
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">มารดา</button>
+          <button class="btn btn-secondary" name="help2"
+          [(ngModel)]="studentdetail.help2">มารดา</button>
           <!-- <input type="button" class="btn btn-secondary" value="มารดา"> -->
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ครูแนะแนว</button>
+          <button class="btn btn-secondary" name="help3"
+          [(ngModel)]="studentdetail.help3">ครูแนะแนว</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ครูที่ปรึกษา</button>
+          <button class="btn btn-secondary" name="help4"
+          [(ngModel)]="studentdetail.help4">ครูที่ปรึกษา</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">เพื่อน</button>
+          <button class="btn btn-secondary" name="help5"
+          [(ngModel)]="studentdetail.help5">เพื่อน</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">อื่นๆ</button>
+          <button class="btn btn-secondary" name="help6"
+          [(ngModel)]="studentdetail.help6">อื่นๆ</button>
         </div>
       </div>
     </div>
@@ -946,6 +1107,8 @@
             class="form-control"
             placeholder="น้ำหนัก"
             aria-label="น้ำหนัก"
+            name="weight"
+            [(ngModel)]="healty.weight"
           />
         </div>
         <div class="col">
@@ -954,6 +1117,8 @@
             class="form-control"
             placeholder="ส่วนสูง"
             aria-label="ส่วนสูง"
+            name="height"
+            [(ngModel)]="healty.height"
           />
         </div>
       </div>
@@ -964,6 +1129,8 @@
             class="form-control"
             placeholder="โรคประจำตัว"
             aria-label="โรคประจำตัว"
+            name="disease"
+            [(ngModel)]="healty.disease"
           />
         </div>
         <div class="col">
@@ -972,6 +1139,8 @@
             class="form-control"
             placeholder="ยาที่แพ้"
             aria-label="ยาที่แพ้"
+            name="medicine_lose"
+            [(ngModel)]="healty.medicine_lose"
           />
         </div>
         <div class="col">
@@ -980,6 +1149,8 @@
             class="form-control"
             placeholder="ยาที่ต้องรับประทานประจำ"
             aria-label="ยาที่ต้องรับประทานประจำ"
+            name="medicine"
+            [(ngModel)]="healty.medicine"
           />
         </div>
         <div class="col">
@@ -988,6 +1159,8 @@
             class="form-control"
             placeholder="วิธีแก้ไขเมื่ออาการ"
             aria-label="วิธีแก้ไขเมื่ออาการ"
+            name="remedy"
+            [(ngModel)]="healty.remedy"
           />
         </div>
       </div>
@@ -997,22 +1170,28 @@
           สายตาสั้น-เอียง)</span
         >
         <div class="col mb-3">
-          <button class="btn btn-secondary">ปกติ</button>
+          <button class="btn btn-secondary" name="sight_eye1"
+          [(ngModel)]="healty.sight_eye1">ปกติ</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">สายตาสั้น</button>
+          <button class="btn btn-secondary" name="sight_eye2"
+          [(ngModel)]="healty.sight_eye2">สายตาสั้น</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">สายตายาว</button>
+          <button class="btn btn-secondary" name="sight_eye3"
+          [(ngModel)]="healty.sight_eye3">สายตายาว</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">สายตาเอียง</button>
+          <button class="btn btn-secondary" name="sight_eye4"
+          [(ngModel)]="healty.sight_eye4">สายตาเอียง</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ตาบอดสี</button>
+          <button class="btn btn-secondary" name="sight_eye5"
+          [(ngModel)]="healty.sight_eye5">ตาบอดสี</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">อื่นๆ</button>
+          <button class="btn btn-secondary" name="sight_eye6"
+          [(ngModel)]="healty.sight_eye6">อื่นๆ</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -1020,10 +1199,12 @@
           <span>นักเรียนสวมแว่นตา</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="glasses"
+          [(ngModel)]="healty.glasses">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="glasses"
+          [(ngModel)]="healty.glasses">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -1031,10 +1212,12 @@
           <span>นักเรียนมีความบกพร่องทางการได้ยิน</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="unsound"
+          [(ngModel)]="healty.unsound">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="unsound"
+          [(ngModel)]="healty.unsound">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -1042,10 +1225,12 @@
           <span>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="danger"
+          [(ngModel)]="healty.danger">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="danger"
+          [(ngModel)]="healty.danger">ไม่ใช่</button>
         </div>
       </div>
       <div class="row mb-auto">
@@ -1053,10 +1238,12 @@
           <span>นักเรียนมีความบกพร่องทางร่างกาย</span>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ใช่</button>
+          <button class="btn btn-secondary" name="defective"
+          [(ngModel)]="healty.defective">ใช่</button>
         </div>
         <div class="col mb-3">
-          <button class="btn btn-secondary">ไม่ใช่</button>
+          <button class="btn btn-secondary" name="defective"
+          [(ngModel)]="healty.defective">ไม่ใช่</button>
         </div>
       </div>
     </div>

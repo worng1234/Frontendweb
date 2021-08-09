@@ -74,7 +74,6 @@ export class NewStudentM4Component implements OnInit {
     formdata.append("final_school_province",this.newstudentm4.final_school_province);
     formdata.append("disabled",this.newstudentm4.disabled);
     formdata.append("poor_person",this.newstudentm4.poor_person);
-    formdata.append("poor_person",this.newstudentm4.poor_person);
     formdata.append("etc",this.newstudentm4.etc);
     formdata.append("birthday",this.newstudentm4.birthday);
     formdata.append("tel",this.newstudentm4.tel);
