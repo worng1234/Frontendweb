@@ -2,9 +2,9 @@
   <h3>Add Student Core</h3>
 </div>
 <div>
-  <form (ngSubmit)="submit(); addstudentcore()">
+  <form (ngSubmit)="addstudentcore()">
     <!-- step1 -->
-    <div *ngIf="step == 1">
+    <div>
       <div class="row mb-3">
         <div class="col">
           <input
@@ -276,7 +276,7 @@
       </div>
     </div>
     <!-- step2 -->
-    <div *ngIf="step == 2">
+    <div>
       <div class="row mb-3">
         <div class="col">
           <p>ที่อยู่ตามทะเบียนบ้าน</p>
@@ -507,7 +507,7 @@
       </div>
     </div>
     <!-- step3 -->
-    <div *ngIf="step == 3">
+    <div>
       <div class="row mb-3">
         <div class="col">
           <p>ด้านความสามารถ</p>
@@ -719,21 +719,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="read_write"
-          [(ngModel)]="talent.read_write">อ่านเขียนคล่อง</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="read_write"
-          [(ngModel)]="talent.read_write">อ่านเขียนไม่คล่อง</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="read_write"
-          [(ngModel)]="talent.read_write">อ่านเขียนได้</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="read_write"
-          [(ngModel)]="talent.read_write">อ่านเขียนไม่ได้</button>
+        <div class="col mb-3" *ngFor="let obj of talentArr1">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -742,18 +729,13 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="understand"
-          [(ngModel)]="talent.understand">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="understand"
-          [(ngModel)]="talent.understand">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of talentArr2">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
     </div>
     <!-- step4 -->
-    <div *ngIf="step == 4">
+    <div>
       <div class="row mb-3">
         <div class="col">
           <span>การเดินทาง</span>
@@ -802,21 +784,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="gadject1"
-          [(ngModel)]="studentdetail.gadject1">มือถือ/สมาร์ทโฟน</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="gadject2"
-          [(ngModel)]="studentdetail.gadject2">แท็บเล็ต</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="gadject3"
-          [(ngModel)]="studentdetail.gadject3">โน๊ตบุค</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="gadject4"
-          [(ngModel)]="studentdetail.gadject4">คอมพิวเตอร์</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr1">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -825,13 +794,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="internet1"
-          [(ngModel)]="studentdetail.internet1">อินเตอร์เน็ตมือถือ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="internet2"
-          [(ngModel)]="studentdetail.internet2">อินเตอร์เน็ตสาย</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr2">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -867,129 +831,72 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="lack1"
-          [(ngModel)]="studentdetail.lack1">ขาดแคลนแบบเรียน</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="lack2"
-          [(ngModel)]="studentdetail.lack2">ขาดแคลนเครื่องเขียน</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="lack3"
-          [(ngModel)]="studentdetail.lack3">ขาดแคลนอาหารกลางวัน</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="lack4"
-          [(ngModel)]="studentdetail.lack4">ขาดแคลนเครื่องแบบ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="lack5"
-          [(ngModel)]="studentdetail.lack5">ไม่ขาดแคลน</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr3">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>คบเพื่อนที่เกี่ยวกับสิ่งเสพติด</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="friend_drug"
-          [(ngModel)]="studentdetail.friend_drug">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="friend_drug"
-          [(ngModel)]="studentdetail.friend_drug">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr4">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>มีพฤติกรรมส่อไปทางชู้สาว</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sexual"
-          [(ngModel)]="studentdetail.sexual">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sexual"
-          [(ngModel)]="studentdetail.sexual">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr5">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>ชอบเที่ยวกลางคืน</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="dark_travel"
-          [(ngModel)]="studentdetail.dark_travel">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="dark_travel"
-          [(ngModel)]="studentdetail.dark_travel">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr6">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>มีพฤติกรรมเสพหรือจำหน่ายสิ่งเสพติด</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sell_drug"
-          [(ngModel)]="studentdetail.sell_drug">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sell_drug"
-          [(ngModel)]="studentdetail.sell_drug">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr7">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>พักหรืออยู่อาสัยกับเพื่อนต่างเพศที่ไม่ใช่ญาติพี่น้อง</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="not_parent"
-          [(ngModel)]="studentdetail.not_parent">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="not_parent"
-          [(ngModel)]="studentdetail.not_parent">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr8">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>มีการล่วงละเมิดทางเพศ</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sexual_harrasment"
-          [(ngModel)]="studentdetail.sexual_harrasment">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sexual_harrasment"
-          [(ngModel)]="studentdetail.sexual_harrasment">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr8">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนรู้สึกว่าโลกนี้(เลือก 1 ข้อ)</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="cute_world"
-          [(ngModel)]="studentdetail.cute_world">น่าอยู่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="cute_world"
-          [(ngModel)]="studentdetail.cute_world">ไม่น่าอยู่</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr9">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนรู้สึกว่าตัวเอง(เลือก 1 ข้อ)</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="rich_man"
-          [(ngModel)]="studentdetail.rich_man">มีค่า</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="rich_man"
-          [(ngModel)]="studentdetail.rich_man">ไม่มีค่า</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr10">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3"></div>
@@ -1020,49 +927,8 @@
           >ปัญหาเรื่องใดที่นักเรียนกำลังประสบอยู่ในขณะนี้(เลือกได้มากกว่า 1
           ข้อ)</span
         >
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem1"
-          [(ngModel)]="studentdetail.problem1">ครอบครัว</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem2"
-          [(ngModel)]="studentdetail.problem2">การเรียน</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem3"
-          [(ngModel)]="studentdetail.problem3">สุขภาพ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem4"
-          [(ngModel)]="studentdetail.problem4">เศรษฐกิจ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem5"
-          [(ngModel)]="studentdetail.problem5">การคบเพื่อน</button>
-        </div>
-      </div>
-      <div class="row mb-auto">
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem6"
-          [(ngModel)]="studentdetail.problem6">การวางตัวในสังคม</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem7"
-          [(ngModel)]="studentdetail.problem7">การใช้เวลาว่าง</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem8"
-          [(ngModel)]="studentdetail.problem8">การเลือกอาชีพ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem9"
-          [(ngModel)]="studentdetail.problem9">การเลือกศึกษาต่อ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="problem10"
-          [(ngModel)]="studentdetail.problem10">
-            การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน
-          </button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr11">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
@@ -1070,36 +936,13 @@
           >ถ้าต้องการความช่วยเหลือ/ปรึกษา
           นักเรียนต้องการความช่วยเหลือ/ปรึกษาจากใคร(เลือกได้มากกว่า 1 ข้อ)</span
         >
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="help1"
-          [(ngModel)]="studentdetail.help1">บิดา</button>
-          <!-- <input type="button" class="btn btn-secondary" value="บิดา"> -->
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="help2"
-          [(ngModel)]="studentdetail.help2">มารดา</button>
-          <!-- <input type="button" class="btn btn-secondary" value="มารดา"> -->
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="help3"
-          [(ngModel)]="studentdetail.help3">ครูแนะแนว</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="help4"
-          [(ngModel)]="studentdetail.help4">ครูที่ปรึกษา</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="help5"
-          [(ngModel)]="studentdetail.help5">เพื่อน</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="help6"
-          [(ngModel)]="studentdetail.help6">อื่นๆ</button>
+        <div class="col mb-3" *ngFor="let obj of studentdetailArr12">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
     </div>
     <!-- step5 -->
-    <div *ngIf="step == 5">
+    <div>
       <div class="row mb-3">
         <div class="col">
           <input
@@ -1169,90 +1012,47 @@
           >นักเรียนมีภาวะทางสายตา(เลือกได้มากกว่า 1 อย่าง เช่น
           สายตาสั้น-เอียง)</span
         >
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sight_eye1"
-          [(ngModel)]="healty.sight_eye1">ปกติ</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sight_eye2"
-          [(ngModel)]="healty.sight_eye2">สายตาสั้น</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sight_eye3"
-          [(ngModel)]="healty.sight_eye3">สายตายาว</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sight_eye4"
-          [(ngModel)]="healty.sight_eye4">สายตาเอียง</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sight_eye5"
-          [(ngModel)]="healty.sight_eye5">ตาบอดสี</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="sight_eye6"
-          [(ngModel)]="healty.sight_eye6">อื่นๆ</button>
+        <div class="col mb-3" *ngFor="let obj of healtyArr1">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3">
-          <span>นักเรียนสวมแว่นตา</span>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="glasses"
-          [(ngModel)]="healty.glasses">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="glasses"
-          [(ngModel)]="healty.glasses">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of healtyArr2">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนมีความบกพร่องทางการได้ยิน</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="unsound"
-          [(ngModel)]="healty.unsound">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="unsound"
-          [(ngModel)]="healty.unsound">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of healtyArr3">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="danger"
-          [(ngModel)]="healty.danger">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="danger"
-          [(ngModel)]="healty.danger">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of healtyArr4">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนมีความบกพร่องทางร่างกาย</span>
         </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="defective"
-          [(ngModel)]="healty.defective">ใช่</button>
-        </div>
-        <div class="col mb-3">
-          <button class="btn btn-secondary" name="defective"
-          [(ngModel)]="healty.defective">ไม่ใช่</button>
+        <div class="col mb-3" *ngFor="let obj of healtyArr5">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
     </div>
     <!-- step6 -->
-    <div *ngIf="step == 6">
+    <div>
       <div class="row mb-3">
         <span>ข้อมูลบิดา</span>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="prename_f"
+          [(ngModel)]="parent.prename_f">
             <option value="1">คำนำหน้าชื่อ</option>
           </select>
         </div>
@@ -1262,6 +1062,8 @@
             class="form-control"
             placeholder="ชื่อภาษาไทย"
             aria-label="ชื่อภาษาไทย"
+            name="name_f"
+          [(ngModel)]="parent.name_f"
           />
         </div>
         <div class="col">
@@ -1270,6 +1072,8 @@
             class="form-control"
             placeholder="ชื่อกลาง"
             aria-label="ชื่อกลาง"
+            name="name_cen_f"
+          [(ngModel)]="parent.name_cen_f"
           />
         </div>
         <div class="col">
@@ -1278,6 +1082,8 @@
             class="form-control"
             placeholder="นามสกุลภาษาไทย"
             aria-label="นามสกุลภาษาไทย"
+            name="surname_f"
+          [(ngModel)]="parent.surname_f"
           />
         </div>
       </div>
@@ -1288,10 +1094,13 @@
             class="form-control"
             placeholder="เลขบัตรประจำตัวประชาชน"
             aria-label="เลขบัตรประจำตัวประชาชน"
+            name="id_father"
+          [(ngModel)]="parent.id_father"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="type_card_f"
+          [(ngModel)]="parent.type_card_f">
             <option value="1">ชนิดของบัตร</option>
           </select>
         </div>
@@ -1301,10 +1110,13 @@
             class="form-control"
             placeholder="อายุ"
             aria-label="อายุ"
+            name="age_f"
+          [(ngModel)]="parent.age_f"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="bloodgroup_f"
+          [(ngModel)]="parent.bloodgroup_f">
             <option value="1">หมู่เลือด</option>
           </select>
         </div>
@@ -1316,6 +1128,8 @@
             class="form-control"
             placeholder="ประกอบอาชีพ"
             aria-label="ประกอบอาชีพ"
+            name="job_f"
+          [(ngModel)]="parent.job_f"
           />
         </div>
         <div class="col">
@@ -1324,6 +1138,8 @@
             class="form-control"
             placeholder="รายได้ต่อเดือน(บาท)"
             aria-label="รายได้ต่อเดือน(บาท)"
+            name="salary_f"
+          [(ngModel)]="parent.salary_f"
           />
         </div>
         <div class="col">
@@ -1332,6 +1148,8 @@
             class="form-control"
             placeholder="หมายเลขโทรศัพท์"
             aria-label="หมายเลขโทรศัพท์"
+            name="tel_f"
+          [(ngModel)]="parent.tel_f"
           />
         </div>
       </div>
@@ -1342,6 +1160,8 @@
             class="form-control"
             placeholder="บ้านเลขที่"
             aria-label="บ้านเลขที่"
+            name="house_number_f"
+          [(ngModel)]="parent.house_number_f"
           />
         </div>
         <div class="col">
@@ -1350,6 +1170,8 @@
             class="form-control"
             placeholder="หมู่"
             aria-label="หมู่"
+            name="group_f"
+          [(ngModel)]="parent.group_f"
           />
         </div>
         <div class="col">
@@ -1358,6 +1180,8 @@
             class="form-control"
             placeholder="ชื่อหมู่บ้าน"
             aria-label="ชื่อหมู่บ้าน"
+            name="village_f"
+          [(ngModel)]="parent.village_f"
           />
         </div>
         <div class="col">
@@ -1366,6 +1190,8 @@
             class="form-control"
             placeholder="ซอย"
             aria-label="ซอย"
+            name="alley_f"
+          [(ngModel)]="parent.alley_f"
           />
         </div>
         <div class="col">
@@ -1374,6 +1200,8 @@
             class="form-control"
             placeholder="ถนน"
             aria-label="ถนน"
+            name="street_f"
+          [(ngModel)]="parent.street_f"
           />
         </div>
       </div>
@@ -1384,6 +1212,8 @@
             class="form-control"
             placeholder="ตำบล/แขวง"
             aria-label="ตำบล/แขวง"
+            name="subdistrict_f"
+          [(ngModel)]="parent.subdistrict_f"
           />
         </div>
         <div class="col">
@@ -1392,6 +1222,8 @@
             class="form-control"
             placeholder="อำเภอ/เขต"
             aria-label="อำเภอ/เขต"
+            name="district_f"
+          [(ngModel)]="parent.district_f"
           />
         </div>
         <div class="col">
@@ -1400,6 +1232,8 @@
             class="form-control"
             placeholder="จังหวัด"
             aria-label="จังหวัด"
+            name="province_f"
+          [(ngModel)]="parent.province_f"
           />
         </div>
         <div class="col">
@@ -1408,13 +1242,16 @@
             class="form-control"
             placeholder="รหัสไปรษณีย์"
             aria-label="รหัสไปรษณีย์"
+            name="post_f"
+          [(ngModel)]="parent.post_f"
           />
         </div>
       </div>
       <div class="row mb-3">
         <span>ข้อมูลมารดา</span>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="prename_m"
+          [(ngModel)]="parent.prename_m">
             <option value="1">คำนำหน้าชื่อ</option>
           </select>
         </div>
@@ -1424,6 +1261,8 @@
             class="form-control"
             placeholder="ชื่อภาษาไทย"
             aria-label="ชื่อภาษาไทย"
+            name="name_m"
+          [(ngModel)]="parent.name_m"
           />
         </div>
         <div class="col">
@@ -1432,6 +1271,8 @@
             class="form-control"
             placeholder="ชื่อกลาง"
             aria-label="ชื่อกลาง"
+            name="name_cen_m"
+          [(ngModel)]="parent.name_cen_m"
           />
         </div>
         <div class="col">
@@ -1440,6 +1281,8 @@
             class="form-control"
             placeholder="นามสกุลภาษาไทย"
             aria-label="นามสกุลภาษาไทย"
+            name="surname_m"
+          [(ngModel)]="parent.surname_m"
           />
         </div>
       </div>
@@ -1450,10 +1293,13 @@
             class="form-control"
             placeholder="เลขบัตรประจำตัวประชาชน"
             aria-label="เลขบัตรประจำตัวประชาชน"
+            name="id_mother"
+          [(ngModel)]="parent.id_mother"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="type_card_m"
+          [(ngModel)]="parent.type_card_m">
             <option value="1">ชนิดของบัตร</option>
           </select>
         </div>
@@ -1463,10 +1309,13 @@
             class="form-control"
             placeholder="อายุ"
             aria-label="อายุ"
+            name="age_m"
+          [(ngModel)]="parent.age_m"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="bloodgroup_m"
+          [(ngModel)]="parent.bloodgroup_m">
             <option value="1">หมู่เลือด</option>
           </select>
         </div>
@@ -1478,6 +1327,8 @@
             class="form-control"
             placeholder="ประกอบอาชีพ"
             aria-label="ประกอบอาชีพ"
+            name="job_m"
+          [(ngModel)]="parent.job_m"
           />
         </div>
         <div class="col">
@@ -1486,6 +1337,8 @@
             class="form-control"
             placeholder="รายได้ต่อเดือน(บาท)"
             aria-label="รายได้ต่อเดือน(บาท)"
+            name="salary_m"
+          [(ngModel)]="parent.salary_m"
           />
         </div>
         <div class="col">
@@ -1494,6 +1347,8 @@
             class="form-control"
             placeholder="หมายเลขโทรศัพท์"
             aria-label="หมายเลขโทรศัพท์"
+            name="tel_m"
+          [(ngModel)]="parent.tel_m"
           />
         </div>
       </div>
@@ -1504,6 +1359,8 @@
             class="form-control"
             placeholder="บ้านเลขที่"
             aria-label="บ้านเลขที่"
+            name="house_number_m"
+          [(ngModel)]="parent.house_number_m"
           />
         </div>
         <div class="col">
@@ -1512,6 +1369,8 @@
             class="form-control"
             placeholder="หมู่"
             aria-label="หมู่"
+            name="group_m"
+          [(ngModel)]="parent.group_m"
           />
         </div>
         <div class="col">
@@ -1520,6 +1379,8 @@
             class="form-control"
             placeholder="ชื่อหมู่บ้าน"
             aria-label="ชื่อหมู่บ้าน"
+            name="village_m"
+          [(ngModel)]="parent.village_m"
           />
         </div>
         <div class="col">
@@ -1528,6 +1389,8 @@
             class="form-control"
             placeholder="ซอย"
             aria-label="ซอย"
+            name="alley_m"
+          [(ngModel)]="parent.alley_m"
           />
         </div>
         <div class="col">
@@ -1536,6 +1399,8 @@
             class="form-control"
             placeholder="ถนน"
             aria-label="ถนน"
+            name="street_m"
+          [(ngModel)]="parent.street_m"
           />
         </div>
       </div>
@@ -1546,6 +1411,8 @@
             class="form-control"
             placeholder="ตำบล/แขวง"
             aria-label="ตำบล/แขวง"
+            name="subdistrict_m"
+          [(ngModel)]="parent.subdistrict_m"
           />
         </div>
         <div class="col">
@@ -1554,6 +1421,8 @@
             class="form-control"
             placeholder="อำเภอ/เขต"
             aria-label="อำเภอ/เขต"
+            name="district_m"
+          [(ngModel)]="parent.district_m"
           />
         </div>
         <div class="col">
@@ -1562,6 +1431,8 @@
             class="form-control"
             placeholder="จังหวัด"
             aria-label="จังหวัด"
+            name="province_m"
+          [(ngModel)]="parent.province_m"
           />
         </div>
         <div class="col">
@@ -1570,6 +1441,8 @@
             class="form-control"
             placeholder="รหัสไปรษณีย์"
             aria-label="รหัสไปรษณีย์"
+            name="post_m"
+          [(ngModel)]="parent.post_m"
           />
         </div>
       </div>
@@ -1577,22 +1450,14 @@
         <span>ข้อมูลผู้ปกครอง</span>
       </div>
       <div class="row mb-3">
-        <div class="col">
-          <input type="checkbox" id="f" />
-          <label for="f">มิดา</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="m" />
-          <label for="m">มารดา</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="p" />
-          <label for="p">บุคคลอื่น(โปรดระบุ)</label>
+        <div class="col mb-3" *ngFor="let obj of parentArr1">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="prename_p"
+          [(ngModel)]="parent.prename_p">
             <option value="1">คำนำหน้าชื่อ</option>
           </select>
         </div>
@@ -1602,6 +1467,8 @@
             class="form-control"
             placeholder="ชื่อภาษาไทย"
             aria-label="ชื่อภาษาไทย"
+            name="name_p"
+          [(ngModel)]="parent.name_p"
           />
         </div>
         <div class="col">
@@ -1610,6 +1477,8 @@
             class="form-control"
             placeholder="ชื่อกลาง"
             aria-label="ชื่อกลาง"
+            name="name_cen_p"
+          [(ngModel)]="parent.name_cen_p"
           />
         </div>
         <div class="col">
@@ -1618,6 +1487,8 @@
             class="form-control"
             placeholder="นามสกุลภาษาไทย"
             aria-label="นามสกุลภาษาไทย"
+            name="surname_p"
+          [(ngModel)]="parent.surname_p"
           />
         </div>
       </div>
@@ -1628,10 +1499,13 @@
             class="form-control"
             placeholder="เลขบัตรประจำตัวประชาชน"
             aria-label="เลขบัตรประจำตัวประชาชน"
+            name="id_parent"
+          [(ngModel)]="parent.id_parent"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="type_card_p"
+          [(ngModel)]="parent.type_card_p">
             <option value="1">ชนิดของบัตร</option>
           </select>
         </div>
@@ -1641,10 +1515,13 @@
             class="form-control"
             placeholder="อายุ"
             aria-label="อายุ"
+            name="age_p"
+          [(ngModel)]="parent.age_p"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="bloodgroup_p"
+          [(ngModel)]="parent.bloodgroup_p">
             <option value="1">หมู่เลือด</option>
           </select>
         </div>
@@ -1656,6 +1533,8 @@
             class="form-control"
             placeholder="ประกอบอาชีพ"
             aria-label="ประกอบอาชีพ"
+            name="job_p"
+          [(ngModel)]="parent.job_p"
           />
         </div>
         <div class="col">
@@ -1664,6 +1543,8 @@
             class="form-control"
             placeholder="รายได้ต่อเดือน(บาท)"
             aria-label="รายได้ต่อเดือน(บาท)"
+            name="salary_p"
+          [(ngModel)]="parent.salary_p"
           />
         </div>
         <div class="col">
@@ -1672,6 +1553,8 @@
             class="form-control"
             placeholder="หมายเลขโทรศัพท์"
             aria-label="หมายเลขโทรศัพท์"
+            name="tel_p"
+          [(ngModel)]="parent.tel_p"
           />
         </div>
       </div>
@@ -1682,6 +1565,8 @@
             class="form-control"
             placeholder="บ้านเลขที่"
             aria-label="บ้านเลขที่"
+            name="house_number_p"
+          [(ngModel)]="parent.house_number_p"
           />
         </div>
         <div class="col">
@@ -1690,6 +1575,8 @@
             class="form-control"
             placeholder="หมู่"
             aria-label="หมู่"
+            name="group_p"
+          [(ngModel)]="parent.group_p"
           />
         </div>
         <div class="col">
@@ -1698,6 +1585,8 @@
             class="form-control"
             placeholder="ชื่อหมู่บ้าน"
             aria-label="ชื่อหมู่บ้าน"
+            name="village_p"
+          [(ngModel)]="parent.village_p"
           />
         </div>
         <div class="col">
@@ -1706,6 +1595,8 @@
             class="form-control"
             placeholder="ซอย"
             aria-label="ซอย"
+            name="alley_p"
+          [(ngModel)]="parent.alley_p"
           />
         </div>
         <div class="col">
@@ -1714,6 +1605,8 @@
             class="form-control"
             placeholder="ถนน"
             aria-label="ถนน"
+            name="street_p"
+          [(ngModel)]="parent.street_p"
           />
         </div>
       </div>
@@ -1724,6 +1617,8 @@
             class="form-control"
             placeholder="ตำบล/แขวง"
             aria-label="ตำบล/แขวง"
+            name="subdistrict_p"
+          [(ngModel)]="parent.subdistrict_p"
           />
         </div>
         <div class="col">
@@ -1732,6 +1627,8 @@
             class="form-control"
             placeholder="อำเภอ/เขต"
             aria-label="อำเภอ/เขต"
+            name="district_p"
+          [(ngModel)]="parent.district_p"
           />
         </div>
         <div class="col">
@@ -1740,6 +1637,8 @@
             class="form-control"
             placeholder="จังหวัด"
             aria-label="จังหวัด"
+            name="province_p"
+          [(ngModel)]="parent.province_p"
           />
         </div>
         <div class="col">
@@ -1748,18 +1647,22 @@
             class="form-control"
             placeholder="รหัสไปรษณีย์"
             aria-label="รหัสไปรษณีย์"
+            name="post_p"
+          [(ngModel)]="parent.post_p"
           />
         </div>
       </div>
       <div class="row mb-3">
         <span>ข้อมูลครอบครัวเบื้องต้น</span>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="status_parent"
+          [(ngModel)]="parent.status_parent">
             <option value="1">สถานภาพสมรสของบิดามารดา</option>
           </select>
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="student_parent"
+          [(ngModel)]="parent.student_parent">
             <option value="1">สถานะผู้ปกครองนักเรียน</option>
           </select>
         </div>
@@ -1769,6 +1672,8 @@
             class="form-control"
             placeholder="จำนวนพี่น้องร่วมสายโลหิต"
             aria-label="จำนวนพี่น้องร่วมสายโลหิต"
+            name="no_blood"
+          [(ngModel)]="parent.no_blood"
           />
         </div>
         <div class="col">
@@ -1777,6 +1682,8 @@
             class="form-control"
             placeholder="จำนวนพี่ชาย"
             aria-label="จำนวนพี่ชาย"
+            name="no_brother"
+          [(ngModel)]="parent.no_brother"
           />
         </div>
         <div class="col">
@@ -1785,6 +1692,8 @@
             class="form-control"
             placeholder="จำนวนน้องชาย"
             aria-label="จำนวนน้องชาย"
+            name="no_son"
+          [(ngModel)]="parent.no_son"
           />
         </div>
         <div class="col">
@@ -1793,6 +1702,8 @@
             class="form-control"
             placeholder="จำนวนพี่สาว"
             aria-label="จำนวนพี่สาว"
+            name="no_sister"
+          [(ngModel)]="parent.no_sister"
           />
         </div>
         <div class="col">
@@ -1801,6 +1712,8 @@
             class="form-control"
             placeholder="จำนวนน้องสาว"
             aria-label="จำนวนน้องสาว"
+            name="no_son2"
+          [(ngModel)]="parent.no_son2"
           />
         </div>
       </div>
@@ -1811,6 +1724,8 @@
             class="form-control"
             placeholder="นักเรียนเป็นบุตรคนที่"
             aria-label="นักเรียนเป็นบุตรคนที่"
+            name="no_parent"
+          [(ngModel)]="parent.no_parent"
           />
         </div>
         <div class="col">
@@ -1819,6 +1734,8 @@
             class="form-control"
             placeholder="จำนวนพี่น้องที่ศึกษาอยู่(ไม่นับรวมนักเรียน)"
             aria-label="จำนวนพี่น้องที่ศึกษาอยู่(ไม่นับรวมนักเรียน)"
+            name="no_study"
+          [(ngModel)]="parent.no_study"
           />
         </div>
         <div class="col">
@@ -1827,6 +1744,8 @@
             class="form-control"
             placeholder="จำนวนพี่น้องที่ประกอบอาชีพแล้ว"
             aria-label="จำนวนพี่น้องที่ประกอบอาชีพแล้ว"
+            name="no_job"
+          [(ngModel)]="parent.no_job"
           />
         </div>
         <div class="col">
@@ -1835,6 +1754,8 @@
             class="form-control"
             placeholder="จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว"
             aria-label="จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว"
+            name="no_house"
+          [(ngModel)]="parent.no_house"
           />
         </div>
       </div>
@@ -1845,6 +1766,8 @@
             class="form-control"
             placeholder="นักเรียนมีหน้าที่รับผิดชอบภายในบ้านหรือนอกเหนือจากการเรียน ได้แก่"
             aria-label="นักเรียนมีหน้าที่รับผิดชอบภายในบ้านหรือนอกเหนือจากการเรียน ได้แก่"
+            name="student_job"
+          [(ngModel)]="parent.student_job"
           />
         </div>
         <div class="col">
@@ -1853,6 +1776,8 @@
             class="form-control"
             placeholder="นักเรียนนำเงินมาโรงเรียนวันละ(บาท)"
             aria-label="นักเรียนนำเงินมาโรงเรียนวันละ(บาท)"
+            name="student_money"
+          [(ngModel)]="parent.student_money"
           />
         </div>
       </div>
@@ -1863,6 +1788,8 @@
             class="form-control"
             placeholder="รายได้ของครอบครัว"
             aria-label="รายได้ของครอบครัว"
+            name="parent_money"
+          [(ngModel)]="parent.parent_money"
           />
         </div>
         <div class="col">
@@ -1871,21 +1798,21 @@
             class="form-control"
             placeholder="ผู้ออกค่าใช้จ่ายให้นักเรียน(ชื่อ-นามสกุล)"
             aria-label="ผู้ออกค่าใช้จ่ายให้นักเรียน(ชื่อ-นามสกุล)"
+            name="parent_total"
+          [(ngModel)]="parent.parent_total"
           />
         </div>
         <div class="col">
-          <select class="form-select">
+          <select class="form-select" name="parent_house"
+          [(ngModel)]="parent.parent_house">
             <option value="1">เกี่ยวข้องเป็น</option>
           </select>
         </div>
       </div>
       <div class="row mb-3">
         <span>การหารายได้ด้วยตัวเอง</span>
-        <div class="col">
-          <input type="checkbox" />
-          <label>มี</label>
-          <input type="checkbox" />
-          <label>ไม่มี</label>
+        <div class="col" *ngFor="let obj of parentArr2">
+          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
         </div>
         <div class="col">
           <input
@@ -1893,6 +1820,8 @@
             class="form-control"
             placeholder="โปรดระบุความสามารถพิเศษ"
             aria-label="โปรดระบุความสามารถพิเศษ"
+            name="job_detail"
+          [(ngModel)]="parent.job_detail"
           />
         </div>
         <div class="col">
@@ -1901,6 +1830,8 @@
             class="form-control"
             placeholder="รายได้เฉลี่ยวันละ(บาท)"
             aria-label="รายได้เฉลี่ยวันละ(บาท)"
+            name="total_study"
+          [(ngModel)]="parent.total_study"
           />
         </div>
       </div>
@@ -1908,13 +1839,13 @@
       <div class="container" align="center">
         <div class="row mb-auto">
           <div class="col mb-3">
-            <button class="btn btn-danger" *ngIf="step !=1" (click)="back()">ย้อนกลับ</button>
+            <button class="btn btn-danger">ย้อนกลับ</button>
           </div>
           <div class="col mb-3">
-            <button class="btn btn-primary" *ngIf="step !=7">ถัดไป</button>
+            <button class="btn btn-primary">ถัดไป</button>
           </div>
           <div class="col mb-3">
-            <button class="btn btn-primary" *ngIf="step ==7">ยืนยัน</button>
+            <button class="btn btn-primary">ยืนยัน</button>
           </div>
         </div>
       </div>

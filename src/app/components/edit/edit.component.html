@@ -12,9 +12,8 @@
     <label>นามสกุล : </label>
     <input type="text" id="surname" name="surname" ngModel>
   </div>
-  <div>
-    <label>ที่อยู่ : </label>
-    <input type="text" id="address" name="address" ngModel>
+  <div *ngFor="let obj of checkboxArr">
+    <input type="checkbox" value="{{obj.value}}" (change)="testchange($event)"> {{obj.key}}
   </div>
   <div>
     <button type="submit" value="submit">ยืนยัน</button>
