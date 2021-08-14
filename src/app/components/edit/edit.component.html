@@ -1,16 +1,15 @@
 <h3>Add test</h3>
 
 <form
- #AddtestNewdata1 = "ngForm"
- #AddtestNewdata2 = "ngForm"
+ (ngSubmit)="addtest()"
  >
   <div>
     <label>ชื่อ : </label>
-    <input type="text" id="name" name="name" ngModel>
+    <input type="text" id="name" name="name" [(ngModel)]="test.name">
   </div>
   <div>
     <label>นามสกุล : </label>
-    <input type="text" id="surname" name="surname" ngModel>
+    <input type="text" id="surname" name="surname" [(ngModel)]="test.surname">
   </div>
   <div *ngFor="let obj of checkboxArr">
     <input type="checkbox" value="{{obj.value}}" (change)="testchange($event)"> {{obj.key}}

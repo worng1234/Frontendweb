@@ -13,6 +13,7 @@ import { AddStudentcoreService } from 'src/app/services/add-studentcore/add-stud
   styleUrls: ['./add-student-core.component.css']
 })
 export class AddStudentCoreComponent implements OnInit {
+  //form&model
   step: any = 1;
   addstudents = new Addressstudent();
   healty = new Healtystudent();
@@ -21,220 +22,249 @@ export class AddStudentCoreComponent implements OnInit {
   studentcore = new Studentcore();
   talent = new Talentstudent();
 
-  talentArr1 = [
+
+  //checkbox
+  read_write:any = [];
+  understandTalent:any = [];
+  gadjectDetail:any = [];
+  internetDetail:any = [];
+  lackDetail:any = [];
+  frienddrug:any = [];
+  sexualDetail:any=[];
+  darktravelDetail:any = [];
+  selldrugDetail:any = [];
+  notparentDetail:any = [];
+  sexualharrasmentDetail:any = [];
+  cuteworldDetail:any = [];
+  richmanDetail:any = [];
+  problemDetail:any = [];
+  helpDetail:any = [];
+
+  //array
+  read_writeArr = [
     {
       "key":"อ่านเขียนคล่อง",
-      "value":"read_write"
+      "value":"อ่านเขียนคล่อง"
     },
     {
       "key":"อ่านเขียนไม่คล่อง",
-      "value":"read_write"
+      "value":"อ่านเขียนไม่คล่อง"
     },
     {
       "key":"อ่านเขียนได้",
-      "value":"read_write"
+      "value":"อ่านเขียนได้"
     },
     {
       "key":"อ่านเขียนไม่ได้",
-      "value":"read_write"
+      "value":"อ่านเขียนไม่ได้"
     },
   ]
-  talentArr2 = [
+  understandArr = [
     {
       "key":"ใช่",
-      "value":"understand"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"understand"
+      "value":"ไม่ใช่"
     },
   ]
-  studentdetailArr1 = [
+  gadjectArr = [
     {
       "key":"มือถือ/สมาร์ทโฟน",
-      "value":"gadject1"
+      "value":"มือถือ/สมาร์ทโฟน"
     },
     {
       "key":"แท็บเล็ต",
-      "value":"gadject2"
+      "value":"แท็บเล็ต"
     },
     {
       "key":"โน๊ตบุค",
-      "value":"gadject3"
+      "value":"โน๊ตบุค"
     },
     {
       "key":"คอมพิวเตอร์",
-      "value":"gadject4"
+      "value":"คอมพิวเตอร์"
     },
   ]
-  studentdetailArr2 = [
+  internetArr = [
     {
       "key":"อินเตอร์เน็ตมือถือ",
-      "value":"internet1"
+      "value":"อินเตอร์เน็ตมือถือ"
     },
     {
       "key":"อินเตอร์เน็ตสาย",
-      "value":"internet2"
+      "value":"อินเตอร์เน็ตสาย"
     },
   ]
-  studentdetailArr3 = [
+  lackArr = [
     {
       "key":"ขาดแคลนแบบเรียน",
-      "value":"lack1"
+      "value":"ขาดแคลนแบบเรียน"
     },
     {
       "key":"ขาดแคลนเครื่องเขียน",
-      "value":"lack2"
+      "value":"ขาดแคลนเครื่องเขียน"
     },
     {
       "key":"ขาดแคลนอาหารกลางวัน",
-      "value":"lack3"
+      "value":"ขาดแคลนอาหารกลางวัน"
     },
     {
       "key":"ขาดแคลนเครื่องแบบ",
-      "value":"lack4"
+      "value":"ขาดแคลนเครื่องแบบ"
     },
     {
       "key":"ไม่ขาดแคลน",
-      "value":"lack5"
+      "value":"ไม่ขาดแคลน"
     },
   ]
-  studentdetailArr4 = [
+  friend_drugArr = [
     {
       "key":"ใช่",
-      "value":"friend_drug"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"friend_drug"
+      "value":"ไม่ใช่"
     }
   ]
-  studentdetailArr5 = [
+  sexualArr = [
     {
       "key":"ใช่",
-      "value":"sexual"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"sexual"
+      "value":"ไม่ใช่"
     }
   ]
-  studentdetailArr6 = [
+  dark_travelArr = [
     {
       "key":"ใช่",
-      "value":"dark_travel"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"dark_travel"
+      "value":"ไม่ใช่"
     }
   ]
-  studentdetailArr7 = [
+  sell_drugArr = [
     {
       "key":"ใช่",
-      "value":"sell_drug"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"sell_drug"
+      "value":"ไม่ใช่"
     }
   ]
-  studentdetailArr8 = [
+  not_parentArr = [
     {
       "key":"ใช่",
-      "value":"not_parent"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"not_parent"
+      "value":"ไม่ใช่"
     }
   ]
-  studentdetailArr9 = [
+  sexual_harrasmentArr = [
+    {
+      "key":"ใช่",
+      "value":"ใช่"
+    },
+    {
+      "key":"ไม่ใช่",
+      "value":"ไม่ใช่"
+    }
+  ]
+  cute_worldArr = [
     {
       "key":"น่าอยู่",
-      "value":"cute_world"
+      "value":"น่าอยู่"
     },
     {
       "key":"ไม่น่าอยู่",
-      "value":"cute_world"
+      "value":"ไม่น่าอยู่"
     }
   ]
-  studentdetailArr10 = [
+  rich_manArr = [
     {
       "key":"มีค่า",
-      "value":"rich_man"
+      "value":"มีค่า"
     },
     {
       "key":"ไม่มีค่า",
-      "value":"rich_man"
+      "value":"ไม่มีค่า"
     }
   ]
-  studentdetailArr11 = [
+  problemArr = [
     {
       "key":"ครอบครัว",
-      "value":"problem1"
+      "value":"ครอบครัว"
     },
     {
       "key":"การเรียน",
-      "value":"problem2"
+      "value":"การเรียน"
     },
     {
       "key":"สุขภาพ",
-      "value":"problem3"
+      "value":"สุขภาพ"
     },
     {
       "key":"เศรษฐกิจ",
-      "value":"problem4"
+      "value":"เศรษฐกิจ"
     },
     {
       "key":"การคบเพื่อน",
-      "value":"problem5"
+      "value":"การคบเพื่อน"
     },
     {
       "key":"การวางตัวในสังคม",
-      "value":"problem6"
+      "value":"การวางตัวในสังคม"
     },
     {
       "key":"การใช้เวลาว่าง",
-      "value":"problem7"
+      "value":"การใช้เวลาว่าง"
     },
     {
       "key":"การเลือกอาชีพ",
-      "value":"problem8"
+      "value":"การเลือกอาชีพ"
     },
     {
       "key":"การเลือกศึกษาต่อ",
-      "value":"problem9"
+      "value":"การเลือกศึกษาต่อ"
     },
     {
       "key":"การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน",
-      "value":"problem10"
+      "value":"การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน"
     },
   ]
-  studentdetailArr12 = [
+  helpArr = [
     {
       "key":"บิดา",
-      "value":"help1"
+      "value":"บิดา"
     },
     {
       "key":"มารดา",
-      "value":"help2"
+      "value":"มารดา"
     },
     {
       "key":"ครูแนะแนว",
-      "value":"help3"
+      "value":"ครูแนะแนว"
     },
     {
       "key":"ครูที่ปรึกษา",
-      "value":"help4"
+      "value":"ครูที่ปรึกษา"
     },
     {
       "key":"เพื่อน",
-      "value":"help5"
+      "value":"เพื่อน"
     },
     {
       "key":"อื่นๆ",
-      "value":"help6"
+      "value":"อื่นๆ"
     }
   ]
   healtyArr1 = [
@@ -340,6 +370,134 @@ export class AddStudentCoreComponent implements OnInit {
     this.step = this.step - 1;
   }
 
+  //functioncheckbox
+  //talentstudent
+  readwrite(event){
+    const index = this.read_write.indexOf(event.target.value);
+    if(index == -1){
+      this.read_write.push(event.target.value);
+    }else{
+      this.read_write.splice(index,1);
+    }
+  }
+  understand(event){
+    const index = this.understandTalent.indexOf(event.target.value);
+    if(index == -1){
+      this.understandTalent.push(event.target.value);
+    }else{
+      this.understandTalent.splice(index,1);
+    }
+  }
+
+  //studentdetail
+  gadject(event){
+    const index = this.gadjectDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.gadjectDetail.push(event.target.value);
+    }else{
+      this.gadjectDetail.splice(index,1);
+    }
+  }
+  internet(event){
+    const index = this.internetDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.internetDetail.push(event.target.value);
+    }else{
+      this.internetDetail.splice(index,1);
+    }
+  }
+  lack(event){
+    const index = this.lackDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.lackDetail.push(event.target.value);
+    }else{
+      this.lackDetail.splice(index,1);
+    }
+  }
+  friend_drug(event){
+    const index = this.frienddrug.indexOf(event.target.value);
+    if(index == -1){
+      this.frienddrug.push(event.target.value);
+    }else{
+      this.frienddrug.splice(index,1);
+    }
+  }
+  sexual(event){
+    const index = this.sexualDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.sexualDetail.push(event.target.value);
+    }else{
+      this.sexualDetail.splice(index,1);
+    }
+  }
+  dark_travel(event){
+    const index = this.darktravelDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.darktravelDetail.push(event.target.value);
+    }else{
+      this.darktravelDetail.splice(index,1);
+    }
+  }
+  sell_drug(event){
+    const index = this.selldrugDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.selldrugDetail.push(event.target.value);
+    }else{
+      this.selldrugDetail.splice(index,1);
+    }
+  }
+  not_parent(event){
+    const index = this.notparentDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.notparentDetail.push(event.target.value);
+    }else{
+      this.notparentDetail.splice(index,1);
+    }
+  }
+  sexual_harrasment(event){
+    const index = this.sexualharrasmentDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.sexualharrasmentDetail.push(event.target.value);
+    }else{
+      this.sexualharrasmentDetail.splice(index,1);
+    }
+  }
+  cute_world(event){
+    const index = this.cuteworldDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.cuteworldDetail.push(event.target.value);
+    }else{
+      this.cuteworldDetail.splice(index,1);
+    }
+  }
+  rich_man(event){
+    const index = this.richmanDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.richmanDetail.push(event.target.value);
+    }else{
+      this.richmanDetail.splice(index,1);
+    }
+  }
+  problem(event){
+    const index = this.problemDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.problemDetail.push(event.target.value);
+    }else{
+      this.problemDetail.splice(index,1);
+    }
+  }
+  help(event){
+    const index = this.helpDetail.indexOf(event.target.value);
+    if(index == -1){
+      this.helpDetail.push(event.target.value);
+    }else{
+      this.helpDetail.splice(index,1);
+    }
+  }
+
+  //healty
+
+  //addstudentcore
   addstudentcore(){
     this.addstudent.addstudent(this.addstudents).subscribe(res1 => {
       console.log(res1);

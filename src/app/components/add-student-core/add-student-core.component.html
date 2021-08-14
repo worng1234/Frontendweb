@@ -719,8 +719,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3" *ngFor="let obj of talentArr1">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of read_writeArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="readwrite($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -729,8 +729,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3" *ngFor="let obj of talentArr2">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of understandArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="understand($event)"> {{obj.key}}
         </div>
       </div>
     </div>
@@ -784,8 +784,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr1">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of gadjectArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="gadject($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -794,8 +794,8 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr2">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of internetArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="internetDetail($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -831,72 +831,72 @@
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr3">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of lackArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="lack($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>คบเพื่อนที่เกี่ยวกับสิ่งเสพติด</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr4">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of friend_drugArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="friend_drug($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>มีพฤติกรรมส่อไปทางชู้สาว</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr5">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of sexualArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="sexual($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>ชอบเที่ยวกลางคืน</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr6">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of dark_travelArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="dark_travel($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>มีพฤติกรรมเสพหรือจำหน่ายสิ่งเสพติด</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr7">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of sell_drugArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="sell_drug($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>พักหรืออยู่อาสัยกับเพื่อนต่างเพศที่ไม่ใช่ญาติพี่น้อง</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr8">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of not_parentArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="not_parent($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>มีการล่วงละเมิดทางเพศ</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr8">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of sexual_harrasmentArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="sexual_harrasment($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนรู้สึกว่าโลกนี้(เลือก 1 ข้อ)</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr9">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of cute_worldArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="cute_world($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนรู้สึกว่าตัวเอง(เลือก 1 ข้อ)</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr10">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of rich_manArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="rich_man($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3"></div>
@@ -927,8 +927,8 @@
           >ปัญหาเรื่องใดที่นักเรียนกำลังประสบอยู่ในขณะนี้(เลือกได้มากกว่า 1
           ข้อ)</span
         >
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr11">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of problemArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="problem($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
@@ -936,8 +936,8 @@
           >ถ้าต้องการความช่วยเหลือ/ปรึกษา
           นักเรียนต้องการความช่วยเหลือ/ปรึกษาจากใคร(เลือกได้มากกว่า 1 ข้อ)</span
         >
-        <div class="col mb-3" *ngFor="let obj of studentdetailArr12">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of helpArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="help($event)"> {{obj.key}}
         </div>
       </div>
     </div>

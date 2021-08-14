@@ -11,15 +11,16 @@ import { TestService } from 'src/app/services/test/test.service';
 })
 export class EditComponent implements OnInit {
 
+  test = new test1();
   selectcheck:any = [];
   checkboxArr = [
     {
-      "key":"ja",
-      "value":"ja"
+      "key":"j",
+      "value":"ใช่"
     },
     {
-      "key":"JA",
-      "value":"JA"
+      "key":"j",
+      "value":"ไม่ใช่"
     },
     {
       "key":"j",
@@ -42,9 +43,15 @@ export class EditComponent implements OnInit {
     }else{
       this.selectcheck.splice(index,1);
     }
-    console.log(this.selectcheck);
+    //console.log(this.selectcheck);
   }
 
-
+  addtest(){
+    this.test.CheckBox = this.selectcheck.toString();
+    console.log(this.test.CheckBox);
+    this.t.checkboxtest(this.test).subscribe(res =>{
+      console.log(res);
+    })
+  }
 
 }
