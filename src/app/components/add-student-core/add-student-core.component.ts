@@ -39,6 +39,13 @@ export class AddStudentCoreComponent implements OnInit {
   richmanDetail:any = [];
   problemDetail:any = [];
   helpDetail:any = [];
+  sighteyeHealty:any = [];
+  glassesHealty:any = [];
+  unsoundHealty:any = [];
+  dangerHealty:any = [];
+  defectiveHealty:any = [];
+  parentStudent:any = [];
+  jobstudy:any = [];
 
   //array
   read_writeArr = [
@@ -267,94 +274,94 @@ export class AddStudentCoreComponent implements OnInit {
       "value":"อื่นๆ"
     }
   ]
-  healtyArr1 = [
+  sight_eyeArr = [
     {
       "key":"ปกติ",
-      "value":"sight_eye1"
+      "value":"ปกติ"
     },
     {
       "key":"สายตาสั้น",
-      "value":"sight_eye2"
+      "value":"สายตาสั้น"
     },
     {
       "key":"สายตายาว",
-      "value":"sight_eye3"
+      "value":"สายตายาว"
     },
     {
       "key":"สายตาเอียง",
-      "value":"sight_eye4"
+      "value":"สายตาเอียง"
     },
     {
       "key":"ตาบอดสี",
-      "value":"sight_eye5"
+      "value":"ตาบอดสี"
     },
     {
       "key":"อื่นๆ",
-      "value":"sight_eye6"
+      "value":"อื่นๆ"
     }
   ]
-  healtyArr2 = [
+  glassesArr = [
     {
       "key":"ใช่",
-      "value":"glasses"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"glasses"
+      "value":"ไม่ใช่"
     }
   ]
-  healtyArr3 = [
+  unsoundArr = [
     {
       "key":"ใช่",
-      "value":"unsound"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"unsound"
+      "value":"ไม่ใช่"
     }
   ]
-  healtyArr4 = [
+  dangerArr = [
     {
       "key":"ใช่",
-      "value":"danger"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"danger"
+      "value":"ไม่ใช่"
     }
   ]
-  healtyArr5 = [
+  defectiveArr = [
     {
       "key":"ใช่",
-      "value":"defective"
+      "value":"ใช่"
     },
     {
       "key":"ไม่ใช่",
-      "value":"defective"
+      "value":"ไม่ใช่"
     }
   ]
-  parentArr1 = [
+  parentArr = [
     {
       "key":"บิดา",
-      "value":"parent"
+      "value":"บิดา"
     },
     {
       "key":"มารดา",
-      "value":"parent"
+      "value":"มารดา"
     },
     {
       "key":"บุคคลอื่น(โปรดระบุ)",
-      "value":"parent"
+      "value":"บุคคลอื่น"
     },
   ]
-  parentArr2 = [
+  job_studyArr = [
     {
       "key":"มี",
-      "value":"job_study"
+      "value":"มี"
     },
     {
       "key":"ไม่มี",
-      "value":"job_study"
+      "value":"ไม่มี"
     }
   ]
 
@@ -496,24 +503,110 @@ export class AddStudentCoreComponent implements OnInit {
   }
 
   //healty
+  sight_eye(event){
+    const index = this.sighteyeHealty.indexOf(event.target.value);
+    if(index == -1){
+      this.sighteyeHealty.push(event.target.value);
+    }else{
+      this.sighteyeHealty.splice(index,1);
+    }
+  }
+  glasses(event){
+    const index = this.glassesHealty.indexOf(event.target.value);
+    if(index == -1){
+      this.glassesHealty.push(event.target.value);
+    }else{
+      this.glassesHealty.splice(index,1);
+    }
+  }
+  unsound(event){
+    const index = this.unsoundHealty.indexOf(event.target.value);
+    if(index == -1){
+      this.unsoundHealty.push(event.target.value);
+    }else{
+      this.unsoundHealty.splice(index,1);
+    }
+  }
+  danger(event){
+    const index = this.dangerHealty.indexOf(event.target.value);
+    if(index == -1){
+      this.dangerHealty.push(event.target.value);
+    }else{
+      this.dangerHealty.splice(index,1);
+    }
+  }
+  defective(event){
+    const index = this.defectiveHealty.indexOf(event.target.value);
+    if(index == -1){
+      this.defectiveHealty.push(event.target.value);
+    }else{
+      this.defectiveHealty.splice(index,1);
+    }
+  }
+
+  //parentstudent
+  parent_student(event){
+    const index = this.parentStudent.indexOf(event.target.value);
+    if(index == -1){
+      this.parentStudent.push(event.target.value);
+    }else{
+      this.parentStudent.splice(index,1);
+    }
+  }
+  job_study(event){
+    const index = this.jobstudy.indexOf(event.target.value);
+    if(index == -1){
+      this.jobstudy.push(event.target.value);
+    }else{
+      this.jobstudy.splice(index,1);
+    }
+  }
 
   //addstudentcore
   addstudentcore(){
+    //address
     this.addstudent.addstudent(this.addstudents).subscribe(res1 => {
       console.log(res1);
     });
+    //healty
+    this.healty.sight_eye = this.sighteyeHealty.toString();
+    this.healty.glasses = this.glassesHealty.toString();
+    this.healty.unsound = this.unsoundHealty.toString();
+    this.healty.danger = this.dangerHealty.toString();
+    this.healty.defective = this.defectiveHealty.toString();
     this.addstudent.healtystudent(this.healty).subscribe(res2 => {
       console.log(res2);
     });
+    //parent
+    this.parent.parent = this.parentStudent.toString();
+    this.parent.job_study = this.jobstudy.toString();
     this.addstudent.parentstudent(this.parent).subscribe(res3 => {
       console.log(res3);
     });
+    //studentdetail
+    this.studentdetail.gadject = this.gadjectDetail.toString();
+    this.studentdetail.internet = this.internetDetail.toString();
+    this.studentdetail.lack = this.lackDetail.toString();
+    this.studentdetail.friend_drug = this.frienddrug.toString();
+    this.studentdetail.sexual = this.sexualDetail.toString();
+    this.studentdetail.dark_travel = this.darktravelDetail.toString();
+    this.studentdetail.sell_drug = this.selldrugDetail.toString();
+    this.studentdetail.not_parent = this.notparentDetail.toString();
+    this.studentdetail.sexual_harrasment = this.sexualharrasmentDetail.toString();
+    this.studentdetail.cute_world = this.cuteworldDetail.toString();
+    this.studentdetail.rich_man = this.richmanDetail.toString();
+    this.studentdetail.problem = this.problemDetail.toString();
+    this.studentdetail.help = this.helpDetail.toString();
     this.addstudent.studentdetail(this.studentdetail).subscribe(res4 => {
       console.log(res4);
     });
+    //talent
+    this.talent.read_write = this.read_write.toString();
+    this.talent.understand = this.understandTalent.toString();
     this.addstudent.talentstudent(this.talent).subscribe(res5 => {
       console.log(res5);
     });
+    //studentcore
     this.addstudent.studentcore(this.studentcore).subscribe(res6 => {
       console.log(res6);
     });

@@ -1012,37 +1012,37 @@
           >นักเรียนมีภาวะทางสายตา(เลือกได้มากกว่า 1 อย่าง เช่น
           สายตาสั้น-เอียง)</span
         >
-        <div class="col mb-3" *ngFor="let obj of healtyArr1">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of sight_eyeArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="sight_eye($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
-        <div class="col mb-3" *ngFor="let obj of healtyArr2">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of glassesArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="glasses($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนมีความบกพร่องทางการได้ยิน</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of healtyArr3">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of unsoundArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="unsound($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนป่วยเป็นโรคร้ายแรงหรือเรื้อรัง</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of healtyArr4">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of dangerArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="danger($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-auto">
         <div class="col mb-3">
           <span>นักเรียนมีความบกพร่องทางร่างกาย</span>
         </div>
-        <div class="col mb-3" *ngFor="let obj of healtyArr5">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of defectiveArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="defective($event)"> {{obj.key}}
         </div>
       </div>
     </div>
@@ -1450,8 +1450,8 @@
         <span>ข้อมูลผู้ปกครอง</span>
       </div>
       <div class="row mb-3">
-        <div class="col mb-3" *ngFor="let obj of parentArr1">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col mb-3" *ngFor="let obj of parentArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="parent_student($event)"> {{obj.key}}
         </div>
       </div>
       <div class="row mb-3">
@@ -1811,8 +1811,8 @@
       </div>
       <div class="row mb-3">
         <span>การหารายได้ด้วยตัวเอง</span>
-        <div class="col" *ngFor="let obj of parentArr2">
-          <input type="checkbox" value="{{obj.value}}"> {{obj.key}}
+        <div class="col" *ngFor="let obj of job_studyArr">
+          <input type="checkbox" value="{{obj.value}}" (change)="job_study($event)"> {{obj.key}}
         </div>
         <div class="col">
           <input
