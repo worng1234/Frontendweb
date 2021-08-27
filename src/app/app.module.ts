@@ -36,6 +36,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginStudentComponent } from './components/login-student/login-student.component';
+import { LoginTeacherComponent } from './components/login-teacher/login-teacher.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 
 
 
@@ -66,6 +69,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddStudentCoreComponent,
     IndexComponent,
     TestComponent,
+    LoginStudentComponent,
+    LoginTeacherComponent,
+    LoginAdminComponent,
 
   ],
   imports: [

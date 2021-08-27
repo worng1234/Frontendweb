@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Login Student</h3>
+     <form #login="ngForm" (ngSubmit)="onSubmit()">
+      <div>
+        <input type="text" name="user" placeholder="User" [(ngModel)]="data.user" required>
+      </div>
+      <div>
+        <input type="text" name="password" placeholder="Password" [(ngModel)]="data.password" required>
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-success" [disabled]="!login.valid">Submit</button>
+        <button class="btn btn-outline-danger"  [routerLink] = "['/index']">Back</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

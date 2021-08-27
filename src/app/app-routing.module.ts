@@ -21,6 +21,9 @@ import { AddBehaviorComponent } from './components/add-behavior/add-behavior.com
 import { MainBehaviorComponent } from './components/main-behavior/main-behavior.component';
 import { AddStudentCoreComponent } from './components/add-student-core/add-student-core.component';
 import { TestComponent } from './components/test/test.component';
+import { LoginStudentComponent } from './components/login-student/login-student.component';
+import { LoginTeacherComponent } from './components/login-teacher/login-teacher.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 
 
 
@@ -45,6 +48,9 @@ const routes: Routes = [
   {path: 'Addbehavior' , component:AddBehaviorComponent},
   {path: 'Addstudentcore' , component:AddStudentCoreComponent},
   {path: 'Test' , component:TestComponent},
+  {path: 'LoginStudent' , component:LoginStudentComponent},
+  {path: 'LoginTeacher' , component:LoginTeacherComponent},
+  {path: 'LoginAdmin' , component:LoginAdminComponent},
 ];
 
 @NgModule({
