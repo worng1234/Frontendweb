@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+//import { loginstudent } from "../../models/loginstudent-model";
 
 @Component({
   selector: 'app-login-student',
@@ -11,7 +12,7 @@ export class LoginStudentComponent implements OnInit {
 
   form: FormGroup;
   public data = {
-    user:null,
+    email:null,
     password: null
   };
 
@@ -25,18 +26,18 @@ export class LoginStudentComponent implements OnInit {
   }
 
   onSubmit(){
-    // console.log(this.data);
-    const formData = this.form.getRawValue();
+    console.log(this.data);
+    const formData =  this.form.getRawValue();
     const data = {
-      username: formData.email,
+      email: formData.email,
       password: formData.password,
-      grant_type: 'password',
-      client_id: 2,
-      client_secret: 'ZBNaOGONUHaaVSllaZNSZzr4U5RKycBSwMNcCyuh',
-      scope: '*'
+      // grant_type: 'password',
+      // client_id: 2,
+      // client_secret: 'ZBNaOGONUHaaVSllaZNSZzr4U5RKycBSwMNcCyuh',
+      // scope: '*'
     };
 
-    this.http.post('http://localhost:8000/oauth/token', data).subscribe(
+    this.http.post('http://localhost:8000/api/login', data).subscribe(
       result => {
         console.log('success');
         console.log(result);
