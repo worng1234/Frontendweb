@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginStudentComponent } from './components/login-student/login-student.component';
 import { LoginTeacherComponent } from './components/login-teacher/login-teacher.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
 
 
@@ -72,6 +73,7 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
     LoginStudentComponent,
     LoginTeacherComponent,
     LoginAdminComponent,
+    AdminPageComponent,
 
   ],
   imports: [
