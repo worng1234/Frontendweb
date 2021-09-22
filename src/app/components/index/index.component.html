@@ -1,35 +1,96 @@
-<h1>หน้าหลัก</h1>
-<div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/NewStudentRegisterM1']">New Student M1</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/NewStudentRegisterM4']">New Student M4</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/SortNewstudentm1']">Sort New Student M1</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/SortNewstudentM4']">Sort New Student M4</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/StudentCoreInformation']">Student Core Information</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/Mainbehavior']">Main Page Behavior</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/Addstudentcore']">Add Student Core</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/LoginStudent']">Login Student</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/LoginTeacher']">Login Teacher</button>
-  </div>
-  <div>
-    <button class="btn btn-outline-secondary"  [routerLink] = "['/LoginAdmin']">Login Admin</button>
-  </div>
-</div>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/src/app/image/1300.png">ระบบบริหารจัดการข้อมูลโรงเรียนพร้าววิทยาคม
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="listNav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">เลือกระบบ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ติดต่อเรา</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+  <header>
+    <h1>หน้าหลัก(รูปส่วน Header)</h1>
+  </header>
+  <!-- Content -->
+  <div class="container">
+    <div class="login">
+      <div class="colorItem1">
+        <span class="loginItem1">เข้าสู่ระบบ</span>
+      </div>
+      <div class="loginItem2">
+        <button type="button" class="btn btn-success" style="margin-bottom: 20px;">นักเรียน</button>
+        <button type="button" class="btn btn-danger" style="margin-left: 10px;
+        margin-bottom: 20px;">อาจารย์</button>
+        <button type="button" class="btn btn-warning" style="margin-left: 10px;
+        margin-bottom: 20px;">ฝ่ายวิชาการ</button>
+        <button type="button" class="btn btn-dark" style="margin-left: 10px;
+        margin-bottom: 20px;">ฝ่ายกิจการนักเรียน</button>
+      </div>
+    </div>
 
+    <div class="system">
+      <div class="colorItem1">
+        <span class="loginItem1">เลือกระบบ</span>
+      </div>
+      <div class="loginItem2">
+        <button type="button" class="btn btn-success" style="margin-bottom: 20px;"
+        [routerLink] = "['/MainNewStudent']">รับสมัครนักเรียนใหม่</button>
+        <button type="button" class="btn btn-danger" style="margin-left: 10px;
+        margin-bottom: 20px;">ตารางเรียน</button>
+      </div>
+    </div>
+  </div>
 
+  <footer>
+    <p class="textFooter">Copyright © 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</p>
+  </footer>
+</body>
+
+<!-- <div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/NewStudentRegisterM1']">New Student M1</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/NewStudentRegisterM4']">New Student M4</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/SortNewstudentm1']">Sort New Student M1</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/SortNewstudentM4']">Sort New Student M4</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/StudentCoreInformation']">Student Core Information</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/Mainbehavior']">Main Page Behavior</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/Addstudentcore']">Add Student Core</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/LoginStudent']">Login Student</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/LoginTeacher']">Login Teacher</button>
+    </div>
+    <div>
+      <button class="btn btn-outline-secondary"  [routerLink] = "['/LoginAdmin']">Login Admin</button>
+    </div>
+  </div> -->

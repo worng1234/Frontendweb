@@ -1,0 +1,48 @@
+
+header {
+  background-color: rgb(84, 194, 56);
+  width: 0 auto;
+  height: 300px;
+}
+
+body {
+  background-color: rgb(216, 213, 213);
+}
+
+.login {
+  background-color: white;
+  margin-top: 25px;
+}
+
+.loginItem1 {
+  color: white;
+  margin-left: 30px;
+
+}
+
+.colorItem1 {
+  background-color: rgb(81, 8, 116);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.loginItem2 {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.system {
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 450px;
+}
+
+footer {
+  background-color: rgb(81, 8, 116);
+}
+
+.textFooter {
+  color: white;
+  text-align: center;
+}
+

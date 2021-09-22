@@ -26,6 +26,7 @@ import { LoginTeacherComponent } from './components/login-teacher/login-teacher.
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
+import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 
 
 
@@ -54,7 +55,8 @@ const routes: Routes = [
   {path: 'LoginTeacher' , component:LoginTeacherComponent},
   {path: 'LoginAdmin' , component:LoginAdminComponent},
   {path: 'AdminPage' , component:AdminPageComponent},
-  {path: 'AdminPageCommunicate' , component:AdminPageCommunicateComponent}
+  {path: 'AdminPageCommunicate' , component:AdminPageCommunicateComponent},
+  {path: 'MainNewStudent' , component:MainNewstudentComponent}
 ];
 
 @NgModule({
