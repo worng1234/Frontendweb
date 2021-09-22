@@ -12,11 +12,11 @@ import { FormGroup, Validators, FormBuilder, NgModel } from "@angular/forms";
 })
 export class NewStudentM4Component implements OnInit {
 
-  prename = ['','นาย','นางสาว'];
-  gender = ['','ชาย','หญิง'];
+  prename = ['นาย','นางสาว']
+  gender = ['','ชาย','หญิง']
   major = ['','วิทยาศาสตร์-คณิตศาสตร์','ศิลป์-จีน','ศิลป์-คำนวณ',
           'คหกรรม','เกษตร','ปวช','ศิลป์-พละ','ศิลป์-วาด',
-          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ'];
+          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ']
   newstudentm4 = new NewStudentM4Models();
   get: any;
   files:any;
@@ -32,6 +32,7 @@ export class NewStudentM4Component implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.createForm();
   }
 
   addNewstudentm4(){
@@ -123,6 +124,7 @@ export class NewStudentM4Component implements OnInit {
 
   createForm(){
     this.form = this.formBuilder.group({
+      image: [null, Validators.required],
       prename: [null, Validators.required],
       name: [null, Validators.required],
       name_cen: [null, Validators.required],

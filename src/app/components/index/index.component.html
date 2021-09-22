@@ -3,23 +3,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="/src/app/image/1300.png">ระบบบริหารจัดการข้อมูลโรงเรียนพร้าววิทยาคม
+          <img src="assets/image/logopwks.png" width="85" height="50" style="margin-left:40px;">ระบบบริหารจัดการข้อมูลโรงเรียนพร้าววิทยาคม
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="listNav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">หน้าแรก</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">เลือกระบบ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ติดต่อเรา</a>
-            </li>
-          </ul>
+          <button type="button" class="btn btn-outline-secondary" style="margin-left: 900px;">ติดต่อเรา</button>
         </div>
       </div>
     </nav>
@@ -38,7 +28,7 @@
         <button type="button" class="btn btn-danger" style="margin-left: 10px;
         margin-bottom: 20px;">อาจารย์</button>
         <button type="button" class="btn btn-warning" style="margin-left: 10px;
-        margin-bottom: 20px;">ฝ่ายวิชาการ</button>
+        margin-bottom: 20px;" [routerLink] = "['/MainStudy']">ฝ่ายวิชาการ</button>
         <button type="button" class="btn btn-dark" style="margin-left: 10px;
         margin-bottom: 20px;">ฝ่ายกิจการนักเรียน</button>
       </div>

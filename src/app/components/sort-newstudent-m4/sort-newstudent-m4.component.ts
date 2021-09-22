@@ -28,6 +28,7 @@ export class SortNewstudentM4Component implements OnInit {
 
   searchFunction_school;
   searchFunction_name : string;
+  searchFunction_surname : string;
   searchFunction_area: string;
   searchFunction_prename;
   searchFunction_major1;

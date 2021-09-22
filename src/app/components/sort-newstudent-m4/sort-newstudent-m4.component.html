@@ -1,72 +1,110 @@
-<form>
-  <div>
-    <h2>New Student Register M4</h2>
-  </div>
-  <div>
-    <label>ค้นหาจากชื่อ : </label>
-    <select name="prename" [(ngModel)]="searchFunction_prename" autocomplete="off">
-      <option *ngFor='let p of prename'>{{p}}</option>
-    </select>
-    <input type="text" name="searchFunction_name" [(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
-  </div>
-  <div>
-    <label>โรงเรียน : </label>
-    <select type="text" name="searchFunction_school" [(ngModel)]="searchFunction_school" autocomplete="off">
-      <option *ngFor='let s of school'>{{s}}</option>
-    </select>
-  </div>
-  <div>
-    <label>วิชาเอก1</label>
-    <select type="text" name="searchFunction_major1" [(ngModel)]="searchFunction_major1" autocomplete="off">
-      <option *ngFor='let m of major'>{{m}}</option>
-    </select>
-  </div>
-  <div>
-    <label>วิชาเอก2</label>
-    <select type="text" name="searchFunction_major2" [(ngModel)]="searchFunction_major2" autocomplete="off">
-      <option *ngFor='let m of major'>{{m}}</option>
-    </select>
-  </div>
-  <div>
-    <label>วิชาเอก3</label>
-    <select type="text" name="searchFunction_major3" [(ngModel)]="searchFunction_major3" autocomplete="off">
-      <option *ngFor='let m of major'>{{m}}</option>
-    </select>
-  </div>
-  <div>
-    <button class="btn btn-danger" [routerLink] = "['/mainpage']">ย้อนกลับ</button>
-  </div>
-  <table class="table table-bordered border-primary">
-    <thead>
-      <tr>
-        <th>ลำดับ</th>
-        <th>รูป</th>
-        <th>ชื่อ-นามสกุล</th>
-        <th>โรงเรียน</th>
-        <th>วิชาเอก</th>
-        <th>ข้อมูลประจำตัว</th>
-        <th>เอกสารสำคัญ</th>
-      </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor = "let s of newstudentm4list | filter:searchFunction_school |
-                      filter:searchFunction_name | filter:searchFunction_prename |
-                      filter:searchFunction_major1 | filter:searchFunction_major2 |
-                      filter:searchFunction_major3">
-          <td>{{ s.id }}</td>
-          <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
-          <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
-          <td>{{ s.final_school}}</td>
-          <td>อันดับ 1 {{s.major_name1}}<br>
-              อันดับ 2 {{s.major_name2}}<br>
-              อันดับ 3 {{s.major_name3}}</td>
-          <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
-          <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
-        </tr>
-      </tbody>
-  </table>
-  <div>
-    <button>พิมพ์เอกสาร</button>
-    <button>Clear</button>
-  </div>
-</form>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/image/logopwks.png" width="85" height="50" style="margin-left:40px;">ระบบบริหารจัดการข้อมูลโรงเรียนพร้าววิทยาคม
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button class="btn btn-danger" [routerLink] = "['/MainNewStudent']" style="margin-left: 900px;">ย้อนกลับ</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="img1">
+      <img src="assets/image/logopwks.png" width="300" height="200">
+    </div>
+    <div class="headerText1">
+      <h2>ตรวจสอบรายชื่อผู้ยื่นใบสมัครเข้าศึกาาต่อระดับชั้นมัธยมศึกษาปีที่ 4</h2>
+      <h5>
+        สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา เขต 34
+      </h5>
+    </div>
+    </div>
+
+    <div class="container">
+      <div style="background-color: white;">
+        <div class="formcontroller">
+
+            <div style="margin-top: 20px;">
+              <label style="margin-right: 5px; margin-top:20px;">ค้นหาจากชื่อ : </label>
+              <select name="prename" [(ngModel)]="searchFunction_prename" autocomplete="off">
+                <option *ngFor='let p of prename'>{{p}}</option>
+              </select>
+
+              <input type="text" name="searchFunction_name" style="margin-left: 10px;"
+              [(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()" placeholder="ชื่อภาษาไทย"/>
+
+              <input type="text" name="searchFunction_surname" style="margin-left: 10px;"
+              [(ngModel)]="searchFunction_surname" autocomplete="off" (input)="search()" placeholder="นามภาษาไทย"/>
+            </div>
+            <div>
+              <label style="margin-top: 20px; margin-right: 5px;">ค้นหาจากชื่อโรงเรียน : </label>
+              <select type="text" name="searchFunction_school" [(ngModel)]="searchFunction_school" autocomplete="off">
+                <option *ngFor='let s of school'>{{s}}</option>
+              </select>
+            </div>
+            <div style="margin-top: 15px;">
+              <label style="margin-right: 5px;">วิชาเอกอันดับ 1 :</label>
+              <select type="text" name="searchFunction_major1" [(ngModel)]="searchFunction_major1" autocomplete="off">
+                <option *ngFor='let m of major'>{{m}}</option>
+              </select>
+
+              <label style="margin-right: 5px; margin-left: 30px;">วิชาเอกอันดับ 2 :</label>
+              <select type="text" name="searchFunction_major2" [(ngModel)]="searchFunction_major2" autocomplete="off">
+                <option *ngFor='let m of major'>{{m}}</option>
+              </select>
+
+              <label style="margin-right: 5px; margin-left: 30px;">วิชาเอกอันดับ 3 :</label>
+              <select type="text" name="searchFunction_major3" [(ngModel)]="searchFunction_major3" autocomplete="off">
+                <option *ngFor='let m of major'>{{m}}</option>
+              </select>
+            </div>
+            <div class="label2">
+              <label style="margin-left: 20px;">รายชื่อผู้สมัคร</label>
+            </div>
+            <div style="margin-top: 20px;">
+              <table class="table table-bordered border-primary">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ลำดับ</th>
+                    <th>รูป</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>โรงเรียน</th>
+                    <th>วิชาเอก</th>
+                    <th>ข้อมูลประจำตัว</th>
+                    <th>เอกสารสำคัญ</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let s of newstudentm4list | filter:searchFunction_school |
+                                  filter:searchFunction_name | filter:searchFunction_prename |
+                                  filter:searchFunction_major1 | filter:searchFunction_major2 |
+                                  filter:searchFunction_major3 | filter:searchFunction_surname">
+                      <td>{{ s.id }}</td>
+                      <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
+                      <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
+                      <td>{{ s.final_school}}</td>
+                      <td>อันดับ 1 {{s.major_name1}}<br>
+                          อันดับ 2 {{s.major_name2}}<br>
+                          อันดับ 3 {{s.major_name3}}</td>
+                      <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
+                      <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div>
+              <button class="btn btn-outline-secondary" style="margin-bottom: 50px;">พิมพ์เอกสาร</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p class="textFooter">Copyright © 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</p>
+    </footer>
+</body>

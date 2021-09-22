@@ -25,6 +25,7 @@ export class SortNewstudentComponent implements OnInit {
   newstudentm1list:any;
   searchFunction_school;
   searchFunction_name : string;
+  searchFunction_surname : string;
   searchFunction_area: string;
   searchFunction_prename;
   imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';

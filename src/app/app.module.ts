@@ -42,6 +42,7 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
+import { MainStudyComponent } from './components/main-study/main-study.component';
 
 
 
@@ -78,6 +79,7 @@ import { MainNewstudentComponent } from './components/main-newstudent/main-newst
     AdminPageComponent,
     AdminPageCommunicateComponent,
     MainNewstudentComponent,
+    MainStudyComponent,
 
   ],
   imports: [
