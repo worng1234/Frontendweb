@@ -11,7 +11,7 @@ import { TestService } from 'src/app/services/test/test.service';
 })
 export class EditComponent implements OnInit {
 
-  test = new test1();
+  //test = new test1();
   selectcheck:any = [];
   checkboxArr = [
     {
@@ -46,12 +46,12 @@ export class EditComponent implements OnInit {
     //console.log(this.selectcheck);
   }
 
-  addtest(){
-    this.test.CheckBox = this.selectcheck.toString();
-    console.log(this.test.CheckBox);
-    this.t.checkboxtest(this.test).subscribe(res =>{
-      console.log(res);
-    })
-  }
+  // addtest(){
+  //   this.test.CheckBox = this.selectcheck.toString();
+  //   console.log(this.test.CheckBox);
+  //   this.t.checkboxtest(this.test).subscribe(res =>{
+  //     console.log(res);
+  //   })
+  // }
 
 }

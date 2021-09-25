@@ -13,7 +13,7 @@ import { HttpEventType, HttpClient } from '@angular/common/http';
 })
 export class TestComponent implements OnInit {
   preview: any = 1;
-  testadd = new test1();
+  ttt = new test1();
   get: any;
   files:any;
   submitted = false;
@@ -21,6 +21,7 @@ export class TestComponent implements OnInit {
   test3 = new test3();
   data:any;
   public progress: number;
+  selected: File = null;
 
   imageSrc: string;
    myForm = new FormGroup({
@@ -33,42 +34,35 @@ export class TestComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    //this.getAll();
-    //this.createForm();
+    this.form = new FormGroup({
+      name:  new FormControl(''),
+      surname: new FormControl(''),
+    });
   }
   get f(){
-    return this.myForm.controls;
-  }
-
-  onFileChange(event) {
-    const reader = new FileReader();
-
-    if(event.target.files && event.target.files.length) {
-      const [image] = event.target.files;
-      reader.readAsDataURL(image);
-
-      reader.onload = () => {
-
-        this.imageSrc = reader.result as string;
-
-        this.myForm.patchValue({
-          fileSource: reader.result
-        });
-
-      };
-
-    }
+    return this.form.controls;
   }
 
   submit(){
-    console.log(this.myForm.value);
-    this.http.post('http://127.0.0.1:8000/api/uploadimage/', this.myForm.value)
-      .subscribe(res => {
-        console.log(res);
-        alert('Uploaded Successfully.');
-      })
+    console.log(this.form.value);
+    this.ts.create(this.form.value).subscribe(res => {
+         console.log(res);
+         //this.router.navigateByUrl('person/index');
+    })
   }
 
+  onfilechang(event){
+    this.selected = <File>event.target.files[0];
+  }
+
+  onupload(){
+    const fd = new FormData();
+    fd.append('image', this.selected, this.selected.name);
+    fd.append('name', this.ttt.name);
+    this.http.post('http://127.0.0.1:8000/api/imageUp', fd).subscribe(res => {
+      console.log(res);
+    });
+  }
   // onSubmit(){
   //   this.submitted = true;
   //   if(this.form.invalid){
@@ -98,14 +92,6 @@ export class TestComponent implements OnInit {
   //   })
   // }
 
-  previewadd(){
-    //this.preview = this.preview + 1;
-    this.testadd;
-    console.log(this.testadd);
-  }
-  getAll(){
-    this.get = this.previewadd();
-    console.log(this.get);
-  }
+
 
 }

@@ -1,3 +1,4 @@
+
 export class NewStudentM1Models{
   id: number;
   prename: string;

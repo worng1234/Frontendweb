@@ -19,7 +19,7 @@ export class NewStudentM4Component implements OnInit {
           'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ']
   newstudentm4 = new NewStudentM4Models();
   get: any;
-  files:any;
+  files: File = null;
   submitted = false;
   form: FormGroup;
   img:any;
@@ -32,12 +32,12 @@ export class NewStudentM4Component implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createForm();
+
   }
 
   addNewstudentm4(){
     //Image
-    let formdata = new FormData();
+    const formdata = new FormData();
     formdata.append("pic",this.files, this.files.name);
     //Information
     formdata.append("prename",this.newstudentm4.prename);
@@ -102,14 +102,14 @@ export class NewStudentM4Component implements OnInit {
     formdata.append("name_cen",this.newstudentm4.name_cen);
     formdata.append("student_id",this.newstudentm4.student_id);
     //POST
-    this.nm4s.addNewstudentm4(formdata).subscribe(res => {
+    this.http.post('http://127.0.0.1:8000/api/registerm4',formdata).subscribe(res => {
       console.log(res);
-    });
+    })
 
   }
 
   imageUpload(event){
-    this.files = event.target.files[0];
+    this.files = <File>event.target.files[0];
     console.log(this.files);
   }
 
@@ -118,78 +118,11 @@ export class NewStudentM4Component implements OnInit {
   }
 
   uploadImage(event){
-    this.files = event.target.files[0]
-    console.log(this.files);
+    this.files = <File>event.target.files[0];
+    //console.log(this.files);
   }
 
-  createForm(){
-    this.form = this.formBuilder.group({
-      image: [null, Validators.required],
-      prename: [null, Validators.required],
-      name: [null, Validators.required],
-      name_cen: [null, Validators.required],
-      surname: [null, Validators.required],
-      sex: [null, Validators.required],
-      pic: [null, Validators.required],
-      id_number: [null, Validators.required],
-      birthday: [null, Validators.required],
-      religion: [null, Validators.required],
-      nationality: [null, Validators.required],
-      origin: [null, Validators.required],
-      disabled: [null, Validators.required],
-      poor_person: [null, Validators.required],
-      etc: [null, Validators.required],
-      tel: [null, Validators.required],
-      email: [null, Validators.required],
-      father_name: [null, Validators.required],
-      father_namecen: [null, Validators.required],
-      father_surname: [null, Validators.required],
-      father_id: [null, Validators.required],
-      father_job: [null, Validators.required],
-      father_tel: [null, Validators.required],
-      mother_name: [null, Validators.required],
-      mother_namecen: [null, Validators.required],
-      mother_surname: [null, Validators.required],
-      mother_id: [null, Validators.required],
-      mother_job: [null, Validators.required],
-      mother_tel: [null, Validators.required],
-      parent: [null, Validators.required],
-      parent_name: [null, Validators.required],
-      parent_namecen: [null, Validators.required],
-      parent_surname: [null, Validators.required],
-      parent_id: [null, Validators.required],
-      parent_job: [null, Validators.required],
-      parent_tel: [null, Validators.required],
-      house_number: [null, Validators.required],
-      street: [null, Validators.required],
-      bloc: [null, Validators.required],
-      road: [null, Validators.required],
-      sub_district: [null, Validators.required],
-      district: [null, Validators.required],
-      province: [null, Validators.required],
-      post: [null, Validators.required],
-      final_school: [null, Validators.required],
-      final_school_sub_district: [null, Validators.required],
-      final_school_district: [null, Validators.required],
-      final_school_province: [null, Validators.required],
-      major_name1: [null, Validators.required],
-      major_name2: [null, Validators.required],
-      major_name3: [null, Validators.required],
-      major_name4: [null, Validators.required],
-      major_name5: [null, Validators.required],
-      major_name6: [null, Validators.required],
-      major_name7: [null, Validators.required],
-      major_name8: [null, Validators.required],
-      major_name9: [null, Validators.required],
-      major_name10: [null, Validators.required],
-      onet_sci: [null, Validators.required],
-      onet_math: [null, Validators.required],
-      onet_thai: [null, Validators.required],
-      onet_eng: [null, Validators.required],
-      student_id: [null, Validators.required],
 
-    })
-  }
 
 
 

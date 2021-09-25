@@ -34,7 +34,7 @@ import { MainStudyComponent } from './components/main-study/main-study.component
 const routes: Routes = [
   {path: '' ,redirectTo: '/index',pathMatch:'full'},
   {path: 'index',component:IndexComponent},
-  {path: 'mainpage',component:MainpageComponent},
+  //{path: 'mainpage',component:MainpageComponent},
   {path: 'NewStudentRegisterM1',component:NewStudentM1Component},
   {path: 'NewStudentRegisterM4',component:NewStudentM4Component},
   {path: 'SortNewstudentm1',component:SortNewstudentComponent},
