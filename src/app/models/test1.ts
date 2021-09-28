@@ -3,6 +3,7 @@ export class test1{
   image : string;
   name : string;
   surname : string;
+  file_pdf : string;
   CheckBox: any;
 
 }

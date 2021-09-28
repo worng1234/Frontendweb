@@ -41,7 +41,8 @@ export class NewStudentM1Component implements OnInit {
   addNewstudentm1(){
     const fd = new FormData();
     fd.append('pic', this.files, this.files.name);
-
+    fd.append('id_number_pic', this.files, this.files.name);
+    fd.append('house_pic', this.files, this.files.name);
     //Information
     fd.append('prename', this.newstudent.prename);
     fd.append('name', this.newstudent.name);
@@ -89,11 +90,12 @@ export class NewStudentM1Component implements OnInit {
     fd.append('finalSchoolSubDistrict', this.newstudent.finalSchoolSubDistrict);
     fd.append('finalSchoolDistrict', this.newstudent.finalSchoolDistrict);
     fd.append('finalSchoolProvince', this.newstudent.finalSchoolProvince);
-    console.log(fd);
     //POST
     this.http.post('http://127.0.0.1:8000/api/registerm1',fd).subscribe(res => {
       console.log(res);
+      console.log(this.newstudent);
     })
+
   }
 
   imageUpload(event){

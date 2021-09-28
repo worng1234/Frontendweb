@@ -1,0 +1,68 @@
+<div class="container">
+  <div style="border-radius: 3px; height: 150px; width: 75px;">
+    <img [src]=" newstudentID.pic ? imageDirectoryPath+newstudentID.pic :
+  'assets/image/no-image.png'"  height="150px" width="75px">
+  </div>
+  <label style="margin-top: 15px; margin-bottom:100px;">ID : {{newstudentID.id}}</label>
+
+  <div>
+    <label>NAME : {{newstudentID.prename}}{{newstudentID.name}} {{newstudentID.nameCen}} {{newstudentID.surname}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>วัน/เดือน/ปี : {{newstudentID.birthday}} เพศ : {{newstudentID.sex}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>รหัสบัตรประชาชน : {{newstudentID.idNumber}} ศาสนา : {{newstudentID.religion}}
+      เชื่อชาติ : {{newstudentID.origin}} สัญชาติ : {{newstudentID.nationality}}
+    </label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>บิดา : {{newstudentID.fatherName}} {{newstudentID.fatherNamecen}} {{newstudentID.fatherSurname}}</label>
+  </div>
+  <div style="margin-top: 10px;">
+    <label>อาชีพ : {{newstudentID.fatherJob}} รหัสบัตรประชาชนบิดา : {{newstudentID.fatherId}} โทรศัพท์ : {{newstudentID.fatherTel}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>มารดา : {{newstudentID.motherName}} {{newstudentID.motherNamecen}} {{newstudentID.motherSurname}}</label>
+  </div>
+  <div style="margin-top: 10px;">
+    <label>อาชีพ : {{newstudentID.motherJob}} รหัสบัตรประชาชนมารดา : {{newstudentID.motherId}} โทรศัพท์ : {{newstudentID.motherTel}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>ผู้ปกครอง : {{newstudentID.parentName}} {{newstudentID.parentNamecen}} {{newstudentID.parentSurname}}</label>
+  </div>
+  <div style="margin-top: 10px;">
+    <label>ความสััมพันธ์ : {{newstudentID.parent}} อาชีพ : {{newstudentID.parentJob}} รหัสบัตรประชาชนผู้ปกครอง : {{newstudentID.parentId}} โทรศัพท์ : {{newstudentID.parentTel}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>ที่อยู่ตามทะเบียนบ้าน : บ้านเลขที่ {{newstudentID.houseNumber}} หมู่ {{newstudentID.bloc}} ซอย {{newstudentID.street}}
+      ถนน {{newstudentID.road}} ตำบล {{newstudentID.subDistrict}} อำเภอ {{newstudentID.district}}
+      จังหวัด {{newstudentID.province}} รหัสไปรษณีย์ {{newstudentID.post}} โทรศัพท์ {{newstudentID.tel}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>จบการศึกษาชั้นประถมศึกษาปีที่ 6 จาก : {{newstudentID.finalSchool}}</label>
+  </div>
+  <div style="margin-top: 10px;">
+    <label>ตำบล {{newstudentID.finalSchoolSubDistrict}} อำเภอ {{newstudentID.finalSchoolDistrict}} จังหวัด {{newstudentID.finalSchoolProvince}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>ผู้ด้อยโอกาส/ฐานะยากจน : {{newstudentID.poorPerson}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>ผู้พิการ/เด็กพิเศษ : {{newstudentID.disabled}}</label>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>อื่นๆ : {{newstudentID.etc}}</label>
+  </div>
+
+</div>

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TestService } from 'src/app/services/test/test.service';
 import { HttpEventType, HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -22,34 +23,21 @@ export class TestComponent implements OnInit {
   data:any;
   public progress: number;
   selected: File = null;
+  imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
+  pdfFilePath:any = 'http://127.0.0.1:8000/storage/newstudentm1PDF/';
 
-  imageSrc: string;
-   myForm = new FormGroup({
-    idNumber: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    image: new FormControl('', [Validators.required]),
-    fileSource: new FormControl('', [Validators.required])
-  });
+
 
   constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private ts: TestService,
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      name:  new FormControl(''),
-      surname: new FormControl(''),
-    });
+    this.getAll();
   }
   get f(){
     return this.form.controls;
   }
 
-  submit(){
-    console.log(this.form.value);
-    this.ts.create(this.form.value).subscribe(res => {
-         console.log(res);
-         //this.router.navigateByUrl('person/index');
-    })
-  }
 
   onfilechang(event){
     this.selected = <File>event.target.files[0];
@@ -58,40 +46,18 @@ export class TestComponent implements OnInit {
   onupload(){
     const fd = new FormData();
     fd.append('image', this.selected, this.selected.name);
+    fd.append('file_pdf', this.selected, this.selected.name);
     fd.append('name', this.ttt.name);
     this.http.post('http://127.0.0.1:8000/api/imageUp', fd).subscribe(res => {
       console.log(res);
     });
   }
-  // onSubmit(){
-  //   this.submitted = true;
-  //   if(this.form.invalid){
-  //     return;
-  //   }
-  //   const formData = new FormData();
-  //   formData.append('image', this.files, this.files.name);
 
-  //   this.http.post('http://127.0.0.1:8000/api/uploadImage',formData, {reportProgress: true, observe: 'events'}).subscribe(res => {
-  //     this.data = res;
-  //     console.log(this.data);
-  //   });
-  // }
-
-  // get f(){
-  //   return this.form.controls;
-  // }
-
-  // uploadImage(event){
-  //   this.files = event.target.files[0]
-  //   console.log(this.files);
-  // }
-
-  // createForm(){
-  //   this.form = this.formBuilder.group({
-  //     image: [null, Validators.required]
-  //   })
-  // }
-
-
+  getAll(){
+    this.http.get('http://127.0.0.1:8000/api/getall').subscribe(res => {
+      this.get = res;
+      console.log(this.get);
+    })
+  }
 
 }

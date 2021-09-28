@@ -2,6 +2,7 @@ import { test1 } from './../../models/test1';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TestService } from 'src/app/services/test/test.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,39 +13,52 @@ import { TestService } from 'src/app/services/test/test.service';
 export class EditComponent implements OnInit {
 
   //test = new test1();
-  selectcheck:any = [];
-  checkboxArr = [
-    {
-      "key":"j",
-      "value":"ใช่"
-    },
-    {
-      "key":"j",
-      "value":"ไม่ใช่"
-    },
-    {
-      "key":"j",
-      "value":"j"
-    },
-  ]
+  // selectcheck:any = [];
+  // checkboxArr = [
+  //   {
+  //     "key":"j",
+  //     "value":"ใช่"
+  //   },
+  //   {
+  //     "key":"j",
+  //     "value":"ไม่ใช่"
+  //   },
+  //   {
+  //     "key":"j",
+  //     "value":"j"
+  //   },
+  // ]
 
+  data: any;
+  id: any;
+  test = new test1();
+  imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
 
-  constructor(private http: HttpClientModule, private t : TestService) { }
+  constructor(private http: HttpClientModule, private t : TestService, private aRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    console.log(this.aRoute.snapshot.params.id);
+    this.id = this.aRoute.snapshot.params.id;
+    this.testID();
 
   }
 
-  testchange(event){
-    const index = this.selectcheck.indexOf(event.target.value);
-    if(index == -1){
-      this.selectcheck.push(event.target.value);
-    }else{
-      this.selectcheck.splice(index,1);
-    }
-    //console.log(this.selectcheck);
+  testID(){
+    this.t.testID(this.id).subscribe(res => {
+      this.data = res;
+      this.test = this.data;
+    })
   }
+
+  // testchange(event){
+  //   const index = this.selectcheck.indexOf(event.target.value);
+  //   if(index == -1){
+  //     this.selectcheck.push(event.target.value);
+  //   }else{
+  //     this.selectcheck.splice(index,1);
+  //   }
+  //   //console.log(this.selectcheck);
+  // }
 
   // addtest(){
   //   this.test.CheckBox = this.selectcheck.toString();

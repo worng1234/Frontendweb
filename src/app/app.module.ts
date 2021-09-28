@@ -20,6 +20,13 @@ import { AddStudentCoreComponent } from './components/add-student-core/add-stude
 import { IndexComponent } from './components/index/index.component';
 import { TestComponent } from './components/test/test.component';
 import { SortNewstudentM4Component } from './components/sort-newstudent-m4/sort-newstudent-m4.component';
+import { LoginStudentComponent } from './components/login-student/login-student.component';
+import { LoginTeacherComponent } from './components/login-teacher/login-teacher.component';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
+import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
+import { MainStudyComponent } from './components/main-study/main-study.component';
 
 //services
 import { NewStudentM1Service } from './services/new-student-m1-services/new-student-m1.service';
@@ -36,13 +43,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginStudentComponent } from './components/login-student/login-student.component';
-import { LoginTeacherComponent } from './components/login-teacher/login-teacher.component';
-import { LoginAdminComponent } from './components/login-admin/login-admin.component';
-import { AdminPageComponent } from './components/admin-page/admin-page.component';
-import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
-import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
-import { MainStudyComponent } from './components/main-study/main-study.component';
+import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
 
 
 
@@ -80,6 +81,7 @@ import { MainStudyComponent } from './components/main-study/main-study.component
     AdminPageCommunicateComponent,
     MainNewstudentComponent,
     MainStudyComponent,
+    NewStudentM1IdComponent,
 
   ],
   imports: [

@@ -46,6 +46,9 @@ export class TestService {
       return this.http.post<test1>('http://127.0.0.1:8000/api/test', JSON.stringify(data), this.httpOptions)
     }
 
+    testID(id){
+      return this.http.get('http://127.0.0.1:8000/api/testID/'+id);
+    }
 
   errorHandler(error) {
     let errorMessage = '';

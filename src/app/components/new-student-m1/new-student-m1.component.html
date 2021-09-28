@@ -30,11 +30,24 @@
 
             <label style="margin-top: 40px;"></label>
             <div class="label1">
-              <label style="margin-left: 30px;">รูปนักเรียน</label>
+              <label style="margin-left: 30px;">รูปนักเรียนและเอกสารสำคัญ ( สำเนาบัตรประชาชนและสำเนาทะเบียนบ้าน )</label>
             </div>
             <p>*หมายเหตุ รูปนักเรียนหน้าตรง 2 นิ้วฉากหลังสีฟ้าที่ถ่ายตามร้านถ่ายรูปเมื่อถ่ายเสร็จให้ขอไฟล์มาด้วย</p>
+            <label>รูปนักเรียน</label>
             <input type="file" name="pic"  class="form-control" id="pic"
             (change)="uploadImage($event)" >
+
+            <div>
+              <label>รูปสำเนาบัตรประจำตัว</label>
+            <input type="file" name="id_number_pic"  class="form-control" id="id_number_pic"
+            (change)="uploadImage($event)" >
+            </div>
+
+            <div>
+              <label>รูปสำเนาทะเบียนบ้าน</label>
+            <input type="file" name="house_pic"  class="form-control" id="house_pic"
+            (change)="uploadImage($event)" >
+            </div>
 
 
           <!-- ข้อมูลส่วนตัว -->

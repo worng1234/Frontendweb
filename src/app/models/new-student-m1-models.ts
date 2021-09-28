@@ -7,6 +7,8 @@ export class NewStudentM1Models{
   surname: string;
   sex: string;
   pic: string;
+  id_number_pic: string;
+  house_pic: string;
   idNumber: string;
   birthday: string;
   religion: string;

@@ -28,6 +28,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 import { MainStudyComponent } from './components/main-study/main-study.component';
+import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
 
 
 
@@ -42,7 +43,7 @@ const routes: Routes = [
   {path: 'CheckStudentRoom',component:CheckStudentRoomComponent},
   {path: 'BehaviorStudent',component:BehaviorStudentComponent},
   {path: 'BehaviorTeacher',component:BehaviorTeacherComponent},
-  {path: 'Edit',component:EditComponent},
+  {path: 'Edit/:id',component:EditComponent},
   {path: 'SortNewstudentM4',component:SortNewstudentM4Component},
   {path: 'StudentCoreInformation', component: StudentCoreInformationComponent},
   {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},
@@ -58,7 +59,8 @@ const routes: Routes = [
   {path: 'AdminPage' , component:AdminPageComponent},
   {path: 'AdminPageCommunicate' , component:AdminPageCommunicateComponent},
   {path: 'MainNewStudent' , component:MainNewstudentComponent},
-  {path: 'MainStudy' , component:MainStudyComponent}
+  {path: 'MainStudy' , component:MainStudyComponent},
+  {path: 'Newstudentm1ID/:id' , component:NewStudentM1IdComponent}
 ];
 
 @NgModule({

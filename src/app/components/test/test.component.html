@@ -31,10 +31,31 @@
   <form>
     <input type="file" name="image" id="image" (change)="onfilechang($event)">
     <div>
+      <input type="file" name="file_pdf" id="file_pdf" (change)="onfilechang($event)">
+    </div>
+    <div>
       <input type="text" name="image" id="image" placeholder="name" [(ngModel)]="ttt.name">
     </div>
     <button type="button" (click)="onupload()">Submit</button>
   </form>
 
+</div>
+<div>
+  <table>
+    <thead>
+      <th>รูป</th>
+      <th>ชื่อ</th>
+      <th>นามสกุล</th>
+      <th>PDF</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let g of get">
+        <td><img [src]=" g.image ? imageDirectoryPath+g.image : 'assets/image/no-image.png'" height="100px"></td>
+        <td>{{g.name}}</td>
+        <td>{{g.surname}}</td>
+        <td><button [routerLink]="['/Edit', g.id]">Get ID : {{g.id}}</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
