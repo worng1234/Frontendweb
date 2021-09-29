@@ -43,6 +43,8 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 import { MainStudyComponent } from './components/main-study/main-study.component';
+import { TestUIComponent } from './components/test-ui/test-ui.component';
+
 
 
 
@@ -80,6 +82,7 @@ import { MainStudyComponent } from './components/main-study/main-study.component
     AdminPageCommunicateComponent,
     MainNewstudentComponent,
     MainStudyComponent,
+    TestUIComponent,
 
   ],
   imports: [

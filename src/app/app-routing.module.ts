@@ -28,6 +28,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 import { MainStudyComponent } from './components/main-study/main-study.component';
+import { TestUIComponent } from './components/test-ui/test-ui.component';
 
 
 
@@ -58,7 +59,8 @@ const routes: Routes = [
   {path: 'AdminPage' , component:AdminPageComponent},
   {path: 'AdminPageCommunicate' , component:AdminPageCommunicateComponent},
   {path: 'MainNewStudent' , component:MainNewstudentComponent},
-  {path: 'MainStudy' , component:MainStudyComponent}
+  {path: 'MainStudy' , component:MainStudyComponent},
+  {path: 'TestUI' , component:TestUIComponent}
 ];
 
 @NgModule({
