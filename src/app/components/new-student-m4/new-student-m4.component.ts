@@ -39,12 +39,17 @@ export class NewStudentM4Component implements OnInit {
     //Image
     const formdata = new FormData();
     formdata.append("pic",this.files, this.files.name);
+    formdata.append("id_number_pic",this.files, this.files.name);
+    formdata.append("house_pic",this.files, this.files.name);
     //Information
     formdata.append("prename",this.newstudentm4.prename);
     formdata.append("name",this.newstudentm4.name);
     formdata.append("surname",this.newstudentm4.surname);
     formdata.append("sex",this.newstudentm4.sex);
     formdata.append("id_number",this.newstudentm4.id_number);
+    formdata.append("day",this.newstudentm4.day);
+    formdata.append("mounth",this.newstudentm4.mounth);
+    formdata.append("year",this.newstudentm4.year);
     formdata.append("religion",this.newstudentm4.religion);
     formdata.append("nationality",this.newstudentm4.nationality);
     formdata.append("origin",this.newstudentm4.origin);
@@ -76,7 +81,6 @@ export class NewStudentM4Component implements OnInit {
     formdata.append("disabled",this.newstudentm4.disabled);
     formdata.append("poor_person",this.newstudentm4.poor_person);
     formdata.append("etc",this.newstudentm4.etc);
-    formdata.append("birthday",this.newstudentm4.birthday);
     formdata.append("tel",this.newstudentm4.tel);
     formdata.append("major_name1",this.newstudentm4.major_name1);
     formdata.append("major_name2",this.newstudentm4.major_name2);
@@ -104,6 +108,7 @@ export class NewStudentM4Component implements OnInit {
     //POST
     this.http.post('http://127.0.0.1:8000/api/registerm4',formdata).subscribe(res => {
       console.log(res);
+      console.log(this.newstudentm4);
     })
 
   }

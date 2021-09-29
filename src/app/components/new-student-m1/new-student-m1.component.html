@@ -77,8 +77,12 @@
             </div>
             <label style="margin-top: 20px;">วันเดือนปีเกิดที่ปรากฎในบัตรประชาชน</label>
             <div>
-              <input type="text" name="birthday" id="birthday" [(ngModel)]="newstudent.birthday"
-               size="15" placeholder="xx มกราคม 25xx"/>
+              <input type="text" name="day" id="day" [(ngModel)]="newstudent.day"
+               size="5" placeholder="วัน"/>
+               <input type="text" name="mounth" id="mounth" [(ngModel)]="newstudent.mounth"
+               size="5" placeholder="เดือน"/>
+               <input type="text" name="year" id="year" [(ngModel)]="newstudent.year"
+               size="5" placeholder="ปี"/>
 
               <label style="margin-left: 19px; margin-right: 5px;">เพศ : </label>
                 <select type="text" name="sex" id="sex" [(ngModel)]="newstudent.sex">

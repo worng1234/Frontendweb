@@ -50,7 +50,9 @@ export class NewStudentM1Component implements OnInit {
     fd.append('surname', this.newstudent.surname);
     fd.append('sex', this.newstudent.sex);
     fd.append('idNumber', this.newstudent.idNumber);
-    fd.append('birthday', this.newstudent.birthday);
+    fd.append('day', this.newstudent.day);
+    fd.append('mounth', this.newstudent.mounth);
+    fd.append('year', this.newstudent.year);
     fd.append('religion', this.newstudent.religion);
     fd.append('nationality', this.newstudent.nationality);
     fd.append('origin', this.newstudent.origin);
@@ -93,7 +95,7 @@ export class NewStudentM1Component implements OnInit {
     //POST
     this.http.post('http://127.0.0.1:8000/api/registerm1',fd).subscribe(res => {
       console.log(res);
-      console.log(this.newstudent);
+      //console.log(this.newstudent);
     })
 
   }

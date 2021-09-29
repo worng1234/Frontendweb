@@ -36,6 +36,18 @@
             (change)="uploadImage($event)" >
           </div>
 
+          <div>
+            <label>รูปสำเนาบัตรประจำตัว</label>
+          <input type="file" name="id_number_pic"  class="form-control" id="id_number_pic"
+          (change)="uploadImage($event)" >
+          </div>
+
+          <div>
+            <label>รูปสำเนาทะเบียนบ้าน</label>
+          <input type="file" name="house_pic"  class="form-control" id="house_pic"
+          (change)="uploadImage($event)" >
+          </div>
+
           <!-- ข้อมูลส่วนตัว -->
           <div class="label2">
             <label style="margin-left: 30px;">ข้อมูลส่วนตัว</label>
@@ -60,8 +72,12 @@
                 </div>
                 <label style="margin-top: 20px;">วันเดือนปีเกิดที่ปรากฎในบัตรประชาชน</label>
             <div>
-              <input type="text" name="birthday" id="birthday"
-              [(ngModel)]="newstudentm4.birthday" size="15" placeholder="xx มกราคม 25xx"/>
+              <input type="text" name="day" id="day"
+              [(ngModel)]="newstudentm4.day" size="5" placeholder="วัน"/>
+              <input type="text" name="mounth" id="mounth"
+              [(ngModel)]="newstudentm4.mounth" size="5" placeholder="เดือน"/>
+              <input type="text" name="year" id="year"
+              [(ngModel)]="newstudentm4.year" size="5" placeholder="ปี"/>
 
               <input  type="text" name="sex" id="sex"
                 [(ngModel)]="newstudentm4.sex" placeholder="เพศ" style="margin-left: 15px;" size="10"/>
