@@ -20,7 +20,7 @@ export class NewStudentM1Component implements OnInit {
   gender = ['','ชาย','หญิง'];
   newstudent = new NewStudentM1Models();
   get: any;
-  files:any;
+  files: File = null;
   submitted = false;
   form: FormGroup;
   test3 = new test3();
@@ -34,68 +34,74 @@ export class NewStudentM1Component implements OnInit {
     private formBuilder: FormBuilder,) { }
 
     ngOnInit(): void{
-      this.createForm();
     }
 
+
+
   addNewstudentm1(){
-    //Image
-    let formdata = new FormData();
-    formdata.append("pic",this.files, this.files.name);
+    const fd = new FormData();
+    fd.append('pic', this.files, this.files.name);
+    fd.append('id_number_pic', this.files, this.files.name);
+    fd.append('house_pic', this.files, this.files.name);
     //Information
-    formdata.append("prename",this.newstudent.prename);
-    formdata.append("name",this.newstudent.name);
-    formdata.append("surname",this.newstudent.surname);
-    formdata.append("sex",this.newstudent.sex);
-    formdata.append("idNumber",this.newstudent.idNumber);
-    formdata.append("birthday",this.newstudent.birthday);
-    formdata.append("religion",this.newstudent.religion);
-    formdata.append("nationality",this.newstudent.nationality);
-    formdata.append("origin",this.newstudent.origin);
-    formdata.append("disabled",this.newstudent.disabled);
-    formdata.append("poorPerson",this.newstudent.poorPerson);
-    formdata.append("etc",this.newstudent.etc);
-    formdata.append("tel",this.newstudent.tel);
-    formdata.append("email",this.newstudent.email);
-    formdata.append("nameCen",this.newstudent.nameCen);
-    formdata.append("fatherName",this.newstudent.fatherName);
-    formdata.append("fatherNamecen",this.newstudent.fatherNamecen);
-    formdata.append("fatherSurname",this.newstudent.fatherSurname);
-    formdata.append("fatherId",this.newstudent.fatherId);
-    formdata.append("fatherJob",this.newstudent.fatherJob);
-    formdata.append("fatherTel",this.newstudent.fatherTel);
-    formdata.append("motherName",this.newstudent.motherName);
-    formdata.append("motherNamecen",this.newstudent.motherNamecen);
-    formdata.append("motherSurname",this.newstudent.motherSurname);
-    formdata.append("motherId",this.newstudent.motherId);
-    formdata.append("motherJob",this.newstudent.motherJob);
-    formdata.append("motherTel",this.newstudent.motherTel);
-    formdata.append("parent",this.newstudent.parent);
-    formdata.append("parentName",this.newstudent.parentName);
-    formdata.append("parentNamecen",this.newstudent.parentNamecen);
-    formdata.append("parentSurname",this.newstudent.parentSurname);
-    formdata.append("parentId",this.newstudent.parentId);
-    formdata.append("parentJob",this.newstudent.parentJob);
-    formdata.append("parentTel",this.newstudent.parentTel);
-    formdata.append("houseNumber",this.newstudent.houseNumber);
-    formdata.append("street",this.newstudent.street);
-    formdata.append("bloc",this.newstudent.bloc);
-    formdata.append("road",this.newstudent.road);
-    formdata.append("subDistrict",this.newstudent.subDistrict);
-    formdata.append("district",this.newstudent.district);
-    formdata.append("province",this.newstudent.province);
-    formdata.append("post",this.newstudent.post);
-    formdata.append("finalSchool",this.newstudent.finalSchool);
-    formdata.append("finalSchoolSubDistrict",this.newstudent.finalSchoolSubDistrict);
-    formdata.append("finalSchoolDistrict",this.newstudent.finalSchoolDistrict);
-    formdata.append("finalSchoolProvince",this.newstudent.finalSchoolProvince);
+    fd.append('prename', this.newstudent.prename);
+    fd.append('name', this.newstudent.name);
+    fd.append('nameCen', this.newstudent.nameCen);
+    fd.append('surname', this.newstudent.surname);
+    fd.append('sex', this.newstudent.sex);
+    fd.append('idNumber', this.newstudent.idNumber);
+    fd.append('day', this.newstudent.day);
+    fd.append('mounth', this.newstudent.mounth);
+    fd.append('year', this.newstudent.year);
+    fd.append('religion', this.newstudent.religion);
+    fd.append('nationality', this.newstudent.nationality);
+    fd.append('origin', this.newstudent.origin);
+    fd.append('disabled', this.newstudent.disabled);
+    fd.append('poorPerson', this.newstudent.poorPerson);
+    fd.append('etc', this.newstudent.etc);
+    fd.append('tel', this.newstudent.tel);
+    fd.append('email', this.newstudent.email);
+    fd.append('fatherName', this.newstudent.fatherName);
+    fd.append('fatherNamecen', this.newstudent.fatherNamecen);
+    fd.append('fatherSurname', this.newstudent.fatherSurname);
+    fd.append('fatherId', this.newstudent.fatherId);
+    fd.append('fatherJob', this.newstudent.fatherJob);
+    fd.append('fatherTel', this.newstudent.fatherTel);
+    fd.append('motherName', this.newstudent.motherName);
+    fd.append('motherNamecen', this.newstudent.motherNamecen);
+    fd.append('motherSurname', this.newstudent.motherSurname);
+    fd.append('motherJob', this.newstudent.motherJob);
+    fd.append('motherId', this.newstudent.motherId);
+    fd.append('motherTel', this.newstudent.motherTel);
+    fd.append('parent', this.newstudent.parent);
+    fd.append('parentName', this.newstudent.parentName);
+    fd.append('parentNamecen', this.newstudent.parentNamecen);
+    fd.append('parentSurname', this.newstudent.parentSurname);
+    fd.append('parentId', this.newstudent.parentId);
+    fd.append('parentJob', this.newstudent.parentJob);
+    fd.append('parentTel', this.newstudent.parentTel);
+    fd.append('houseNumber', this.newstudent.houseNumber);
+    fd.append('street', this.newstudent.street);
+    fd.append('road', this.newstudent.road);
+    fd.append('bloc', this.newstudent.bloc);
+    fd.append('subDistrict', this.newstudent.subDistrict);
+    fd.append('district', this.newstudent.district);
+    fd.append('province', this.newstudent.province);
+    fd.append('post', this.newstudent.post);
+    fd.append('finalSchool', this.newstudent.finalSchool);
+    fd.append('finalSchoolSubDistrict', this.newstudent.finalSchoolSubDistrict);
+    fd.append('finalSchoolDistrict', this.newstudent.finalSchoolDistrict);
+    fd.append('finalSchoolProvince', this.newstudent.finalSchoolProvince);
     //POST
-    this.nm1s.addNewstudentm1(formdata).subscribe(res => {
+    this.http.post('http://127.0.0.1:8000/api/registerm1',fd).subscribe(res => {
       console.log(res);
-    });
+      //console.log(this.newstudent);
+    })
+
   }
 
   imageUpload(event){
-    this.files = event.target.files[0];
+    this.files = <File>event.target.files[0];
     console.log(this.files);
   }
 
@@ -104,63 +110,11 @@ export class NewStudentM1Component implements OnInit {
   }
 
   uploadImage(event){
-    this.files = event.target.files[0]
-    console.log(this.files);
+    this.files = event.target.files[0];
+    //console.log(this.files);
   }
 
-  createForm(){
-    this.form = this.formBuilder.group({
-      image: [null, Validators.required],
-      prename: [null, Validators.required],
-      name: [null, Validators.required],
-      nameCen: [null, Validators.required],
-      surname: [null, Validators.required],
-      sex: [null, Validators.required],
-      pic: [null, Validators.required],
-      idNumber: [null, Validators.required],
-      birthday: [null, Validators.required],
-      religion: [null, Validators.required],
-      nationality: [null, Validators.required],
-      origin: [null, Validators.required],
-      disabled: [null, Validators.required],
-      poorPerson: [null, Validators.required],
-      etc: [null, Validators.required],
-      tel: [null, Validators.required],
-      email: [null, Validators.required],
-      fatherName: [null, Validators.required],
-      fatherNamecen: [null, Validators.required],
-      fatherSurname: [null, Validators.required],
-      fatherId: [null, Validators.required],
-      fatherJob: [null, Validators.required],
-      fatherTel: [null, Validators.required],
-      motherName: [null, Validators.required],
-      motherNamecen: [null, Validators.required],
-      motherSurname: [null, Validators.required],
-      motherId: [null, Validators.required],
-      motherJob: [null, Validators.required],
-      motherTel: [null, Validators.required],
-      parent: [null, Validators.required],
-      parentName: [null, Validators.required],
-      parentNamecen: [null, Validators.required],
-      parentSurname: [null, Validators.required],
-      parentId: [null, Validators.required],
-      parentJob: [null, Validators.required],
-      parentTel: [null, Validators.required],
-      houseNumber: [null, Validators.required],
-      street: [null, Validators.required],
-      bloc: [null, Validators.required],
-      road: [null, Validators.required],
-      subDistrict: [null, Validators.required],
-      district: [null, Validators.required],
-      province: [null, Validators.required],
-      post: [null, Validators.required],
-      finalSchool: [null, Validators.required],
-      finalSchoolSubDistrict: [null, Validators.required],
-      finalSchoolDistrict: [null, Validators.required],
-      finalSchoolProvince: [null, Validators.required],
 
-    })
-  }
 
 
 }

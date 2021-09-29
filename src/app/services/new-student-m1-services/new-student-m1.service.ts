@@ -16,18 +16,23 @@ import { environment } from 'src/environments/environment';
 export class NewStudentM1Service {
   newStudentm1 : any;
 
-
-  constructor( private http: HttpClient, private router: Router) { }
-
-  httpHeader = {
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
-  addNewstudentm1(data: any){
-    return this.http.post(environment.apiURL+'/api/newstudentm1', data);
+
+  constructor( private http: HttpClient, private router: Router) { }
+
+
+  // addNewstudentm1(data: any){
+  //   return this.http.post(environment.apiURL+'/api/registerm1', data);
+  // }
+  addNewstudentm1(data: any): Observable<NewStudentM1Models>{
+    return this.http.post<NewStudentM1Models>('http://127.0.0.1:8000/api/registerm1', JSON.stringify(data), this.httpOptions)
   }
+
 
   uploadImage(data: any){
     const headers = new HttpHeaders();

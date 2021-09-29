@@ -8,7 +8,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <button class="btn btn-danger" [routerLink] = "['/MainNewStudent']" style="margin-left: 900px;">ย้อนกลับ</button>
+        <button class="btn btn-danger" [routerLink] = "['/MainStudy']" style="margin-left: 900px;">ย้อนกลับ</button>
       </div>
     </div>
   </nav>
@@ -58,8 +58,7 @@
                   <th>รูป</th>
                   <th>ชื่อ-นามสกุล</th>
                   <th>โรงเรียน</th>
-                  <th>ข้อมูลประจำตัว</th>
-                  <th>เอกสารสำคัญ</th>
+                  <th>ข้อมูลส่วนตัว</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,8 +67,7 @@
                     <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
                     <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
                     <td>{{ s.final_school}}</td>
-                    <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบข้อมูล/แก้ไข</a></td>
-                    <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ตรวจสอบเอกสาร</a></td>
+                    <td><button class="btn btn-primary" [routerLink]="['/Newstudentm1ID' , s.id]">ข้อมูลส่วนตัว/แก้ไขข้อมูล</button></td>
                   </tr>
                 </tbody>
             </table>

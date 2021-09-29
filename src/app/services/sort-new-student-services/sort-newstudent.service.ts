@@ -16,5 +16,8 @@ export class SortNewstudentService {
    return this.http.get<NewStudentM1Models[]>('http://127.0.0.1:8000/api/getnewstudentm1');
   }
 
+  getNewstudentm1ID(id){
+    return this.http.get('http://127.0.0.1:8000/api/getnewstudentm1id/'+id);
+  }
 
 }

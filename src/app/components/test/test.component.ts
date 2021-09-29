@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TestService } from 'src/app/services/test/test.service';
 import { HttpEventType, HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -13,7 +14,7 @@ import { HttpEventType, HttpClient } from '@angular/common/http';
 })
 export class TestComponent implements OnInit {
   preview: any = 1;
-  testadd = new test1();
+  ttt = new test1();
   get: any;
   files:any;
   submitted = false;
@@ -21,91 +22,42 @@ export class TestComponent implements OnInit {
   test3 = new test3();
   data:any;
   public progress: number;
+  selected: File = null;
+  imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
+  pdfFilePath:any = 'http://127.0.0.1:8000/storage/newstudentm1PDF/';
 
-  imageSrc: string;
-   myForm = new FormGroup({
-    idNumber: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    image: new FormControl('', [Validators.required]),
-    fileSource: new FormControl('', [Validators.required])
-  });
+
 
   constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private ts: TestService,
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    //this.getAll();
-    //this.createForm();
+    this.getAll();
   }
   get f(){
-    return this.myForm.controls;
+    return this.form.controls;
   }
 
-  onFileChange(event) {
-    const reader = new FileReader();
 
-    if(event.target.files && event.target.files.length) {
-      const [image] = event.target.files;
-      reader.readAsDataURL(image);
-
-      reader.onload = () => {
-
-        this.imageSrc = reader.result as string;
-
-        this.myForm.patchValue({
-          fileSource: reader.result
-        });
-
-      };
-
-    }
+  onfilechang(event){
+    this.selected = <File>event.target.files[0];
   }
 
-  submit(){
-    console.log(this.myForm.value);
-    this.http.post('http://127.0.0.1:8000/api/uploadimage/', this.myForm.value)
-      .subscribe(res => {
-        console.log(res);
-        alert('Uploaded Successfully.');
-      })
+  onupload(){
+    const fd = new FormData();
+    fd.append('image', this.selected, this.selected.name);
+    fd.append('file_pdf', this.selected, this.selected.name);
+    fd.append('name', this.ttt.name);
+    this.http.post('http://127.0.0.1:8000/api/imageUp', fd).subscribe(res => {
+      console.log(res);
+    });
   }
 
-  // onSubmit(){
-  //   this.submitted = true;
-  //   if(this.form.invalid){
-  //     return;
-  //   }
-  //   const formData = new FormData();
-  //   formData.append('image', this.files, this.files.name);
-
-  //   this.http.post('http://127.0.0.1:8000/api/uploadImage',formData, {reportProgress: true, observe: 'events'}).subscribe(res => {
-  //     this.data = res;
-  //     console.log(this.data);
-  //   });
-  // }
-
-  // get f(){
-  //   return this.form.controls;
-  // }
-
-  // uploadImage(event){
-  //   this.files = event.target.files[0]
-  //   console.log(this.files);
-  // }
-
-  // createForm(){
-  //   this.form = this.formBuilder.group({
-  //     image: [null, Validators.required]
-  //   })
-  // }
-
-  previewadd(){
-    //this.preview = this.preview + 1;
-    this.testadd;
-    console.log(this.testadd);
-  }
   getAll(){
-    this.get = this.previewadd();
-    console.log(this.get);
+    this.http.get('http://127.0.0.1:8000/api/getall').subscribe(res => {
+      this.get = res;
+      console.log(this.get);
+    })
   }
 
 }

@@ -28,14 +28,18 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 import { MainStudyComponent } from './components/main-study/main-study.component';
+<<<<<<< HEAD
 import { TestUIComponent } from './components/test-ui/test-ui.component';
+=======
+import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
+>>>>>>> 50d6140d4be12078a3a4aeb34b0222c78e15bbff
 
 
 
 const routes: Routes = [
   {path: '' ,redirectTo: '/index',pathMatch:'full'},
   {path: 'index',component:IndexComponent},
-  {path: 'mainpage',component:MainpageComponent},
+  //{path: 'mainpage',component:MainpageComponent},
   {path: 'NewStudentRegisterM1',component:NewStudentM1Component},
   {path: 'NewStudentRegisterM4',component:NewStudentM4Component},
   {path: 'SortNewstudentm1',component:SortNewstudentComponent},
@@ -43,7 +47,7 @@ const routes: Routes = [
   {path: 'CheckStudentRoom',component:CheckStudentRoomComponent},
   {path: 'BehaviorStudent',component:BehaviorStudentComponent},
   {path: 'BehaviorTeacher',component:BehaviorTeacherComponent},
-  {path: 'Edit',component:EditComponent},
+  {path: 'Edit/:id',component:EditComponent},
   {path: 'SortNewstudentM4',component:SortNewstudentM4Component},
   {path: 'StudentCoreInformation', component: StudentCoreInformationComponent},
   {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},
@@ -60,7 +64,11 @@ const routes: Routes = [
   {path: 'AdminPageCommunicate' , component:AdminPageCommunicateComponent},
   {path: 'MainNewStudent' , component:MainNewstudentComponent},
   {path: 'MainStudy' , component:MainStudyComponent},
+<<<<<<< HEAD
   {path: 'TestUI' , component:TestUIComponent}
+=======
+  {path: 'Newstudentm1ID/:id' , component:NewStudentM1IdComponent}
+>>>>>>> 50d6140d4be12078a3a4aeb34b0222c78e15bbff
 ];
 
 @NgModule({

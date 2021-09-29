@@ -4,6 +4,8 @@ import { HttpClient ,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { test1 } from 'src/app/models/test1';
+import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Injectable({
@@ -15,6 +17,12 @@ export class TestService {
   url2: string = 'https://localhost:44342/api/test2';
   addTest1: any;
   addTest2: any;
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+ }
 
   constructor( private http: HttpClient, private router: Router) { }
     httpHeader = {
@@ -34,7 +42,13 @@ export class TestService {
       return this.http.post('http://127.0.0.1:8000/api/test',data)
     }
 
+    create(data): Observable<test1> {
+      return this.http.post<test1>('http://127.0.0.1:8000/api/test', JSON.stringify(data), this.httpOptions)
+    }
 
+    testID(id){
+      return this.http.get('http://127.0.0.1:8000/api/testID/'+id);
+    }
 
   errorHandler(error) {
     let errorMessage = '';
