@@ -43,19 +43,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import { LoginStudentComponent } from './components/login-student/login-student.component';
-import { LoginTeacherComponent } from './components/login-teacher/login-teacher.component';
-import { LoginAdminComponent } from './components/login-admin/login-admin.component';
-import { AdminPageComponent } from './components/admin-page/admin-page.component';
-import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
-import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
-import { MainStudyComponent } from './components/main-study/main-study.component';
 import { TestUIComponent } from './components/test-ui/test-ui.component';
-
-=======
 import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
->>>>>>> 50d6140d4be12078a3a4aeb34b0222c78e15bbff
+
 
 
 
@@ -93,11 +83,10 @@ import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-stud
     AdminPageCommunicateComponent,
     MainNewstudentComponent,
     MainStudyComponent,
-<<<<<<< HEAD
+
     TestUIComponent,
-=======
+
     NewStudentM1IdComponent,
->>>>>>> 50d6140d4be12078a3a4aeb34b0222c78e15bbff
 
   ],
   imports: [
