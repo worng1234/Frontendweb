@@ -30,7 +30,7 @@ export class LoginStudentComponent implements OnInit {
     this.http.get('http://localhost:8000/api/User', {headers}).subscribe(
       result => console.log(result)
     );
-  }
+  } 
 
   onSubmit(){
     // console.log(this.data);

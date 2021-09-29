@@ -43,7 +43,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestUIComponent } from './components/test-ui/test-ui.component';
 import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
+
 
 
 
@@ -81,6 +83,9 @@ import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-stud
     AdminPageCommunicateComponent,
     MainNewstudentComponent,
     MainStudyComponent,
+
+    TestUIComponent,
+
     NewStudentM1IdComponent,
 
   ],

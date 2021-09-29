@@ -28,6 +28,9 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 import { MainStudyComponent } from './components/main-study/main-study.component';
+
+import { TestUIComponent } from './components/test-ui/test-ui.component';
+
 import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
 
 
@@ -60,6 +63,7 @@ const routes: Routes = [
   {path: 'AdminPageCommunicate' , component:AdminPageCommunicateComponent},
   {path: 'MainNewStudent' , component:MainNewstudentComponent},
   {path: 'MainStudy' , component:MainStudyComponent},
+  {path: 'TestUI' , component:TestUIComponent},
   {path: 'Newstudentm1ID/:id' , component:NewStudentM1IdComponent}
 ];
 
