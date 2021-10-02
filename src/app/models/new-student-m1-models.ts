@@ -16,12 +16,14 @@ export class NewStudentM1Models{
   religion: string = '';
   nationality: string = '';
   origin: string = '';
+  father_prename: string = '';
   fatherName: string = '';
   fatherNamecen: string = '';
   fatherSurname: string = '';
   fatherId: string = '';
   fatherJob: string = '';
   fatherTel: string = '';
+  mother_prename: string = '';
   motherName: string = '';
   motherNamecen: string = '';
   motherSurname: string = '';
@@ -29,6 +31,7 @@ export class NewStudentM1Models{
   motherJob: string = '';
   motherTel: string = '';
   parent: string = '';
+  parent_prename: string = '';
   parentName: string = '';
   parentNamecen: string = '';
   parentSurname: string = '';

@@ -16,8 +16,20 @@ import { test3 } from 'src/app/models/test3';
 
 export class NewStudentM1Component implements OnInit {
 
-  prename = ['','นาย','นางสาว'];
-  gender = ['','ชาย','หญิง'];
+  prename = ['นาย','นางสาว'];
+  prename_parent = ['นาย','นาง','นางสาว'];
+  gender = ['ชาย','หญิง'];
+
+  days = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'
+          ,'16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
+
+  mounths = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤษจิกายน','ธันวาคม'];
+
+  years = ['2540','2541','2542','2543','2544','2545','2546','2547','2548','2549','2550','2551',
+            '2552','2553','2554','2555','2556','2557','2558','2559','2560','2561','2562','2563','2564'];
+
+  parents = ['พี่ชาย','พี่สาว','ลุง','ป้า','น้า','อา','ปู่','ย่า','ตา','ยาย'];
+
   newstudent = new NewStudentM1Models();
   get: any;
   files: File = null;
@@ -61,12 +73,14 @@ export class NewStudentM1Component implements OnInit {
     fd.append('etc', this.newstudent.etc);
     fd.append('tel', this.newstudent.tel);
     fd.append('email', this.newstudent.email);
+    fd.append('father_prename', this.newstudent.father_prename);
     fd.append('fatherName', this.newstudent.fatherName);
     fd.append('fatherNamecen', this.newstudent.fatherNamecen);
     fd.append('fatherSurname', this.newstudent.fatherSurname);
     fd.append('fatherId', this.newstudent.fatherId);
     fd.append('fatherJob', this.newstudent.fatherJob);
     fd.append('fatherTel', this.newstudent.fatherTel);
+    fd.append('mother_prename', this.newstudent.mother_prename);
     fd.append('motherName', this.newstudent.motherName);
     fd.append('motherNamecen', this.newstudent.motherNamecen);
     fd.append('motherSurname', this.newstudent.motherSurname);
@@ -74,6 +88,7 @@ export class NewStudentM1Component implements OnInit {
     fd.append('motherId', this.newstudent.motherId);
     fd.append('motherTel', this.newstudent.motherTel);
     fd.append('parent', this.newstudent.parent);
+    fd.append('parent_prename', this.newstudent.parent_prename);
     fd.append('parentName', this.newstudent.parentName);
     fd.append('parentNamecen', this.newstudent.parentNamecen);
     fd.append('parentSurname', this.newstudent.parentSurname);
