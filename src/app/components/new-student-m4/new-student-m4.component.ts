@@ -12,11 +12,24 @@ import { FormGroup, Validators, FormBuilder, NgModel } from "@angular/forms";
 })
 export class NewStudentM4Component implements OnInit {
 
-  prename = ['นาย','นางสาว']
-  gender = ['','ชาย','หญิง']
+  prename = ['','นาย','นางสาว'];
+  prename_parent = ['','นาย','นาง','นางสาว'];
+  gender = ['','ชาย','หญิง'];
+
+  days = ['','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'
+          ,'16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
+
+  mounths = ['','มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤษจิกายน','ธันวาคม'];
+
+  years = ['','2540','2541','2542','2543','2544','2545','2546','2547','2548','2549','2550','2551',
+            '2552','2553','2554','2555','2556','2557','2558','2559','2560','2561','2562','2563','2564'];
+
+  parents = ['','พี่ชาย','พี่สาว','ลุง','ป้า','น้า','อา','ปู่','ย่า','ตา','ยาย'];
+
   major = ['','วิทยาศาสตร์-คณิตศาสตร์','ศิลป์-จีน','ศิลป์-คำนวณ',
           'คหกรรม','เกษตร','ปวช','ศิลป์-พละ','ศิลป์-วาด',
-          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ']
+          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ'];
+
   newstudentm4 = new NewStudentM4Models();
   get: any;
   files: File = null;
@@ -53,15 +66,18 @@ export class NewStudentM4Component implements OnInit {
     formdata.append("religion",this.newstudentm4.religion);
     formdata.append("nationality",this.newstudentm4.nationality);
     formdata.append("origin",this.newstudentm4.origin);
+    formdata.append("father_prename",this.newstudentm4.father_prename);
     formdata.append("father_name",this.newstudentm4.father_name);
     formdata.append("father_id",this.newstudentm4.father_id);
     formdata.append("father_job",this.newstudentm4.father_job);
     formdata.append("father_tel",this.newstudentm4.father_tel);
+    formdata.append("mother_prename",this.newstudentm4.mother_prename);
     formdata.append("mother_name",this.newstudentm4.mother_name);
     formdata.append("mother_id",this.newstudentm4.mother_id);
     formdata.append("mother_job",this.newstudentm4.mother_job);
     formdata.append("mother_tel",this.newstudentm4.mother_tel);
     formdata.append("parent",this.newstudentm4.parent);
+    formdata.append("parent_prename",this.newstudentm4.parent_prename);
     formdata.append("parent_name",this.newstudentm4.parent_name);
     formdata.append("parent_id",this.newstudentm4.parent_id);
     formdata.append("parent_job",this.newstudentm4.parent_job);
