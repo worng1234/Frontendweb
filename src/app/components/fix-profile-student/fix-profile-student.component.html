@@ -32,36 +32,7 @@
           <input type="text" class="form-control" id="email"
                  [(ngModel)]="currentStudent.email" name="email">
         </div>
-        <!-- <div class="form-group">
-          <label for="prename">บิดา</label>
-          <input type="text" class="form-control" id="father_name"
-                 [(ngModel)]="currentStudent.father_name" name="father_name">
-        </div>
-        <div class="form-group">
-          <label for="prename">เบอร์โทรติดต่อบิดา</label>
-          <input type="text" class="form-control" id="father_tel"
-                 [(ngModel)]="currentStudent.father_tel" name="father_tel">
-        </div>
-        <div class="form-group">
-          <label for="prename">มารดา</label>
-          <input type="text" class="form-control" id="mother_name"
-                 [(ngModel)]="currentStudent.mother_name" name="mother_name">
-        </div>
-        <div class="form-group">
-          <label for="prename">เบอร์โทรติดต่อมารดา</label>
-          <input type="text" class="form-control" id="mother_tel"
-                 [(ngModel)]="currentStudent.mother_tel" name="mother_tel">
-        </div>
-        <div class="form-group">
-          <label for="prename">ผู้ปกครอง</label>
-          <input type="text" class="form-control" id="parent_name"
-                 [(ngModel)]="currentStudent.parent_name" name="parent_name">
-        </div>
-        <div class="form-group">
-          <label for="prename">เบอร์โทรติดต่อผู้ปกครอง</label>
-          <input type="text" class="form-control" id="parent_tel"
-                 [(ngModel)]="currentStudent.parent_tel" name="parent_tel">
-        </div> -->
+
       </form>
       <button type="submit" class="btn btn-success" (click)="updateProfilestudent()">ยืนยัน</button>
       <button type="submit" class="btn btn-danger" [routerLink] = "['/Showstudentbyid', currentStudent.id ]">ย้อนกลับ</button>

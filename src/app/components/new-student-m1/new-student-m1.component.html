@@ -120,6 +120,21 @@
                 <li><a class="dropdown-item" href="new-student-m4.component.html" [routerLink]="['/NewStudentRegisterM4']">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
               </ul>
 
+              <button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="margin-left: 41px; color: rgb(156, 155, 155);"
+              >
+                จัดการข้อมูลนักเรียนใหม่
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="sort-newstudent.component.html" [routerLink]="['/SortNewstudentm1']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a></li>
+                <li><a class="dropdown-item" href="sort-newstudent-m4.component.html" [routerLink]="['/SortNewstudentm4']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
+              </ul>
+
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>
@@ -193,7 +208,7 @@
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อภาษาไทย</label>
                                                 <input id="name" type="text" class="form-control" placeholder=""
-                                                  name="name" [(ngModel)]="newstudent.name">
+                                                  name="fname" [(ngModel)]="newstudent.fname">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">

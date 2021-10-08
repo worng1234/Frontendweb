@@ -2,7 +2,7 @@
 export class NewStudentM1Models{
   id: number;
   prename: string = '';
-  name: string = '';
+  fname: string = '';
   nameCen: string = '';
   surname: string = '';
   sex: string = '';

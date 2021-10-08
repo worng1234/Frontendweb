@@ -32,6 +32,9 @@ import { MainStudyComponent } from './components/main-study/main-study.component
 import { TestUIComponent } from './components/test-ui/test-ui.component';
 
 import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
+import { FixNewStudentIdM1Component } from './components/fix-new-student-id-m1/fix-new-student-id-m1.component';
+import { FixNewStudentIdM4Component } from './components/fix-new-student-id-m4/fix-new-student-id-m4.component';
+import { NewStudentM4IdComponent } from './components/new-student-m4-id/new-student-m4-id.component';
 
 
 
@@ -47,7 +50,7 @@ const routes: Routes = [
   {path: 'BehaviorStudent',component:BehaviorStudentComponent},
   {path: 'BehaviorTeacher',component:BehaviorTeacherComponent},
   {path: 'Edit/:id',component:EditComponent},
-  {path: 'SortNewstudentM4',component:SortNewstudentM4Component},
+  {path: 'SortNewstudentm4',component:SortNewstudentM4Component},
   {path: 'StudentCoreInformation', component: StudentCoreInformationComponent},
   {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},
   {path: 'Statusstudent/:student_id' , component: StatusStudentComponent},
@@ -64,7 +67,10 @@ const routes: Routes = [
   {path: 'MainNewStudent' , component:MainNewstudentComponent},
   {path: 'MainStudy' , component:MainStudyComponent},
   {path: 'TestUI' , component:TestUIComponent},
-  {path: 'Newstudentm1ID/:id' , component:NewStudentM1IdComponent}
+  {path: 'Newstudentm1ID/:id' , component:NewStudentM1IdComponent},
+  {path: 'Newstudentm4ID/:id' , component:NewStudentM4IdComponent},
+  {path: 'Fixnewstudentm1/:id' , component:FixNewStudentIdM1Component},
+  {path: 'Fixnewstudentm4/:id' , component:FixNewStudentIdM4Component},
 ];
 
 @NgModule({

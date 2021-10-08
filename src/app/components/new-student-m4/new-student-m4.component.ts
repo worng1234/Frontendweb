@@ -56,7 +56,7 @@ export class NewStudentM4Component implements OnInit {
     formdata.append("house_pic",this.files, this.files.name);
     //Information
     formdata.append("prename",this.newstudentm4.prename);
-    formdata.append("name",this.newstudentm4.name);
+    formdata.append("fname",this.newstudentm4.fname);
     formdata.append("surname",this.newstudentm4.surname);
     formdata.append("sex",this.newstudentm4.sex);
     formdata.append("id_number",this.newstudentm4.id_number);

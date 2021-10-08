@@ -2,7 +2,7 @@ export class NewStudentM4Models{
   id : number;
   student_id : string = '';
   prename : string = '';
-  name : string = '';
+  fname : string = '';
   name_cen : string = '';
   surname : string = '';
   sex : string = '';

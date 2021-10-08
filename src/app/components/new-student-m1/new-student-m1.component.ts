@@ -16,7 +16,7 @@ import { test3 } from 'src/app/models/test3';
 
 export class NewStudentM1Component implements OnInit {
 
-  prename = ['','นาย','นางสาว'];
+  prename = ['','เด็กชาย','เด็กหญิง'];
   prename_parent = ['','นาย','นาง','นางสาว'];
   gender = ['','ชาย','หญิง'];
 
@@ -57,7 +57,7 @@ export class NewStudentM1Component implements OnInit {
     fd.append('house_pic', this.files, this.files.name);
     //Information
     fd.append('prename', this.newstudent.prename);
-    fd.append('name', this.newstudent.name);
+    fd.append('fname', this.newstudent.fname);
     fd.append('nameCen', this.newstudent.nameCen);
     fd.append('surname', this.newstudent.surname);
     fd.append('sex', this.newstudent.sex);

@@ -45,6 +45,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestUIComponent } from './components/test-ui/test-ui.component';
 import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
+import { FixNewStudentIdM1Component } from './components/fix-new-student-id-m1/fix-new-student-id-m1.component';
+import { NewStudentM4IdComponent } from './components/new-student-m4-id/new-student-m4-id.component';
+import { FixNewStudentIdM4Component } from './components/fix-new-student-id-m4/fix-new-student-id-m4.component';
 
 
 
@@ -87,6 +90,9 @@ import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-stud
     TestUIComponent,
 
     NewStudentM1IdComponent,
+      FixNewStudentIdM1Component,
+      NewStudentM4IdComponent,
+      FixNewStudentIdM4Component,
 
   ],
   imports: [

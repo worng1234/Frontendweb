@@ -21,7 +21,7 @@ export class SortNewstudentComponent implements OnInit {
   student_class =['','มัธยมศึกษาปีที่ 1','มัธยมศึกษาปีที่ 2'];
 
   study_area = ['','นอกเขต','ในเขต'];
-  prename = ['','นาย','นางสาว']
+  prename = ['','เด็กชาย','เด็กหญิง']
   newstudentm1list:any;
   searchFunction_school;
   searchFunction_name : string;
@@ -48,7 +48,7 @@ export class SortNewstudentComponent implements OnInit {
 
   search(){
     this.newstudentm1list = this.newstudentm1list.filter(res =>{
-      return res.name;
+      return res.fname;
     });
   }
 

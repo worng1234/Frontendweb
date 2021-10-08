@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NewStudentM1Models } from 'src/app/models/new-student-m1-models';
 import { SortNewstudentService } from 'src/app/services/sort-new-student-services/sort-newstudent.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-new-student-m1-id',
-  templateUrl: './new-student-m1-id.component.html',
-  styleUrls: ['./new-student-m1-id.component.css']
+  selector: 'app-fix-new-student-id-m1',
+  templateUrl: './fix-new-student-id-m1.component.html',
+  styleUrls: ['./fix-new-student-id-m1.component.css']
 })
-export class NewStudentM1IdComponent implements OnInit {
+export class FixNewStudentIdM1Component implements OnInit {
 
   newstudentID = null;
   message ='';
-  imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
 
   constructor(private sortnewstudentm1service : SortNewstudentService, private aRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    // console.log(this.aRoute.snapshot.params.id);
-    // this.id = this.aRoute.snapshot.params.id;
-    // this.getnewstudentm1ID();
+    this.message='';
     this.getnewstudentm1ID(this.aRoute.snapshot.paramMap.get('id'));
   }
 
@@ -31,4 +27,15 @@ export class NewStudentM1IdComponent implements OnInit {
       console.log(error);
     });
   }
+
+  updateNewstudentm1(): void {
+    this.sortnewstudentm1service.updateNewstudentm1(this.newstudentID.id, this.newstudentID)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    })
+  }
+
 }

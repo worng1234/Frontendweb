@@ -105,48 +105,36 @@
 							</a>
 						</li>
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-id-card-alt"></i>
-								<p>รับสมัครนักเรียนใหม่</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="agreement-form-m1.html">
-											<span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="agreement-form-m4.html">
-											<span class="sub-item">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-                        <li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="agree">
-								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="tables-agreement-m1.html">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+						<button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="margin-left: 41px; color: rgb(156, 155, 155);"
+              >
+                รับสมัครนักเรียนใหม่
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="new-student-m1.component.html" [routerLink]="['/NewStudentRegisterM1']">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a></li>
+                <li><a class="dropdown-item" href="new-student-m4.component.html" [routerLink]="['/NewStudentRegisterM4']">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
+              </ul>
+
+            <button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="margin-left: 41px; color: rgb(156, 155, 155);"
+              >
+                จัดการข้อมูลนักเรียนใหม่
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="sort-newstudent.component.html" [routerLink]="['/SortNewstudentm1']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a></li>
+                <li><a class="dropdown-item" href="sort-newstudent-m4.component.html" [routerLink]="['/SortNewstudentm4']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
+              </ul>
+
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>
@@ -215,14 +203,14 @@
 														<div class="form-group form-group-default">
 															<label>ชื่อภาษาไทย</label>
 															<input type="text" class="form-control" placeholder="" name="searchFunction_name"
-                              [(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
+                              								[(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>นามสกุลภาษาไทย</label>
 															<input type="text" class="form-control" placeholder="" name="searchFunction_surname"
-                              [(ngModel)]="searchFunction_surname" autocomplete="off" (input)="search()">
+                              								[(ngModel)]="searchFunction_surname" autocomplete="off" (input)="search()">
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
@@ -240,11 +228,11 @@
 													<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
 														<thead>
 															<tr>
-																<th scope="col" width="10%">ชื่อ-นามสกุล</th>
-																<th scope="col" width="5%">โรงเรียน</th>
-																<th scope="col" width="3%">ข้อมูลส่วนตัว</th>
-																<th scope="col" width="5%">รูปภาพ</th>
-																<th scope="col" width="4%">จัดการ</th>
+																<th scope="col" width="10%" style="text-align: center;">ชื่อ-นามสกุล</th>
+																<th scope="col" width="5%" style="text-align: center;">โรงเรียน</th>
+																<th scope="col" width="3%" style="text-align: center;">ข้อมูลส่วนตัว</th>
+																<th scope="col" width="5%" style="text-align: center;">รูปภาพ</th>
+																<th scope="col" width="4%" style="text-align: center;">จัดการ</th>
 
 															</tr>
 														</thead>
@@ -254,11 +242,11 @@
 														<!-- // Modal Show Club Detail -->
                             <tr *ngFor = "let s of newstudentm1list | filter:searchFunction_school |
                             filter:searchFunction_name | filter:searchFunction_prename | filter:searchFunction_surname">
-                              <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
+                              <td>{{ s.prename}}{{s.fname}} {{s.surname}}</td>
                               <td>{{ s.final_school}}</td>
                               <td><button class="btn btn-primary" [routerLink]="['/Newstudentm1ID' , s.id]">ข้อมูลส่วนตัว</button></td>
                               <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
-                              <td><button class="btn btn-primary" [routerLink]="['/' , s.id]">แก้ไขข้อมูล</button></td>
+                              <td><button class="btn btn-primary" [routerLink]="['/Fixnewstudentm1' , s.id]">แก้ไขข้อมูล</button></td>
 
                             </tr>
 

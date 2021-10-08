@@ -30,7 +30,7 @@
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
-				
+
 				<a href="index.html" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
@@ -61,17 +61,17 @@
                             <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                                 <i class="fas fa-school"></i>
                             </a>
-                        </li>					
+                        </li>
                     </ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
-			
+
 		</div>
 		<!-- // End main-header -->
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 
@@ -83,7 +83,7 @@
 							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
 							<label><small>เริ่ม : 2 ส.ค. 2564 เวลา 08:30:00</small></label>
 							<label><small>สิ้นสุด : 5 ส.ค. 2564 เวลา 16:30:00</small></label>
-							
+
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary" >
-						
+
 						<li class="nav-item">
 							<a href="index.html">
 								<i class="fas fa-home"></i>
@@ -159,7 +159,7 @@
 								<p>ติดต่อเรา</p>
 							</a>
 						</li>
-		
+
 						<li class="nav-item">
 							<a href="widgets.html">
 								<i class="fas fa-desktop"></i>
@@ -167,13 +167,13 @@
 								<span class="badge badge-success">4</span>
 							</a>
 						</li>
-					
+
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- สิ้นสุดเมนู -->
-		
+
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
 			<div class="content">
@@ -205,38 +205,38 @@
 													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
 															<label>คำนำหน้าชื่อ</label>
-															<select class="form-control" id="formGroupDefaultSelect">
-																<option>เลือก</option>
-																<option>เด็กชาย</option>
-																<option>เด็กหญิง</option>
-																<option>นาย</option>
-																<option>นางสาว</option>
+															<select class="form-control" id="formGroupDefaultSelect" name="prename" [(ngModel)]="searchFunction_prename" autocomplete="off">
+																<option disabled>เลือก</option>
+                                <option *ngFor='let p of prename'>{{p}}</option>
 															</select>
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ชื่อภาษาไทย</label>
-															<input id="Name" type="text" class="form-control" placeholder="">
-														</div> 
+															<input id="Name" type="text" class="form-control" placeholder=""  name="searchFunction_name"
+                              [(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
+														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>นามสกุลภาษาไทย</label>
-															<input id="Name" type="text" class="form-control" placeholder="">
-														</div> 
+															<input id="Name" type="text" class="form-control" placeholder="" name="searchFunction_surname"
+                              [(ngModel)]="searchFunction_surname" autocomplete="off" (input)="search()">
+														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ค้นหาจากชื่อโรงเรียน</label>
-															<input id="Name" type="text" class="form-control" placeholder="">
-														</div> 
+															<input id="Name" type="text" class="form-control" placeholder="" name="searchFunction_school"
+                              [(ngModel)]="searchFunction_school" autocomplete="off" (input)="search()"	>
+														</div>
 													</div>
 													<button class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
 												</div>
 											</form>
 										</div>
-									
+
 												<!-- ตารางแสดงข้อมูล-->
 													<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
 														<thead>
@@ -247,29 +247,31 @@
 																<th scope="col" width="13%"><center>ข้อมูลส่วนตัว</center></th>
 																<th scope="col" width="15%"><center>รูปภาพ</center></th>
 																<th scope="col" width="12%"><center>จัดการ</center></th>
-																
+
 															</tr>
 														</thead>
 														<tbody>
 														<!-- Modal Show Club Detail -->
 														<!-- อะไรไม่รู้ -->
-														<div class="modal fade" id="ModalShowDetail1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-															<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-																<div class="modal-content">
-																<div class="modal-header">
-																	<h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-book"></i>...</h5>
-																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
-																	</button>
-																</div>
-															</div>
-														</div>
+                              <tr *ngFor = "let s of newstudentm4list | filter:searchFunction_school |
+                                          filter:searchFunction_name | filter:searchFunction_prename |
+                                          filter:searchFunction_major1 | filter:searchFunction_major2 |
+                                          filter:searchFunction_major3 | filter:searchFunction_surname">
+                                <td>{{ s.prename}}{{s.name}} {{s.surname}}</td>
+                                <td>{{ s.final_school}}</td>
+                                <td>อันดับ 1 {{s.major_name1}}<br>
+                                  อันดับ 2 {{s.major_name2}}<br>
+                                  อันดับ 3 {{s.major_name3}}</td>
+                                <td><a class="btn btn-primary" [routerLink]="['/',s.id]">ข้อมูลส่วนตัว</a></td>
+                                <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
+                                <td><a class="btn btn-primary" [routerLink]="['/',s.id]">แก้ไขข้อมูล</a></td>
+                              </tr>
 														<!-- // Modal Show Club Detail -->
-																									
+
 														</tbody>
 													</table>
 												<!-- //ตารางแสดงข้อมูล-->
-	
+
 									</div>
 								</div>
 							</div>
@@ -284,7 +286,7 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul class="nav">
-							
+
 							<li class="nav-item">
 								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
 							</li>
@@ -292,7 +294,7 @@
 					</nav>
 					<div class="copyright ml-auto">
 						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-					</div>						
+					</div>
 				</div>
 			</footer>
 		</div>

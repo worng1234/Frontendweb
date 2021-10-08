@@ -120,27 +120,21 @@
                 <li><a class="dropdown-item" href="new-student-m4.component.html" [routerLink]="['/NewStudentRegisterM4']">สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
               </ul>
 
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#agree">
-								<i class="fas fa-id-card-alt"></i>
-								<p>จัดการข้อมูลนักเรียนใหม่</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="agree">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="tables-agreement-m1.html">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+              <button
+              class="btn btn-light dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="margin-left: 41px; color: rgb(156, 155, 155);"
+            >
+              จัดการข้อมูลนักเรียนใหม่
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="sort-newstudent.component.html" [routerLink]="['/SortNewstudentm1']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a></li>
+              <li><a class="dropdown-item" href="sort-newstudent-m4.component.html" [routerLink]="['/SortNewstudentm4']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
+            </ul>
+
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>

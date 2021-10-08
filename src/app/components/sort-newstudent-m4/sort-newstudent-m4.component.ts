@@ -46,7 +46,7 @@ export class SortNewstudentM4Component implements OnInit {
   }
   search(){
     this.newstudentm4list = this.newstudentm4list.filter(res =>{
-      return res.name;
+      return res.fname;
     });
   }
 
