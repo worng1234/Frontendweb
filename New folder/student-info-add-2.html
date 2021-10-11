@@ -30,7 +30,7 @@
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
-				
+
 				<a href="student-index.html" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
@@ -61,17 +61,17 @@
                             <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                                 <i class="fas fa-school"></i>
                             </a>
-                        </li>					
+                        </li>
                     </ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
-			
+
 		</div>
 		<!-- // End main-header -->
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 
@@ -83,8 +83,8 @@
 							<label><b>เลขประจำตัวนักเรียน :</b> 50190</label>
 							<label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
 							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
-							
-							
+
+
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
-						
+
 						<li class="nav-item">
 							<a href="student-index.html">
 								<i class="fas fa-home"></i>
@@ -138,7 +138,7 @@
 								<p>ติดต่อเรา</p>
 							</a>
 						</li>
-		
+
 						<li class="nav-item">
 							<a href="widgets.html">
 								<i class="fas fa-desktop"></i>
@@ -146,13 +146,13 @@
 								<span class="badge badge-success">4</span>
 							</a>
 						</li>
-					
+
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- สิ้นสุดเมนู -->
-		
+
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
 			<div class="content">
@@ -178,10 +178,10 @@
 
 								<!-- ข้อมูลที่อยู่ตามทะเบียนบ้าน -->
 								<div class="card-body">
-									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i> 
+									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i>
 										กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนในการใช้ขอทุน หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5></div>
-										
-									
+
+
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                         <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลที่อยู่ตามทะเบียนบ้าน</b></p>
                                     </div>
@@ -189,58 +189,67 @@
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>บ้านเลขที่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="house_number" type="text" class="form-control" placeholder=""
+                                                name="house_number" [(ngModel)]="addstudents.house_number">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>หมู่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="group" type="text" class="form-control" placeholder=""
+                                                name="group" [(ngModel)]="addstudents.group">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อหมู่บ้าน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="village" type="text" class="form-control" placeholder=""
+                                                name="village" [(ngModel)]="addstudents.village">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ซอย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="alley" type="text" class="form-control" placeholder=""
+                                                name="alley" [(ngModel)]="addstudents.alley">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ถนน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="street" type="text" class="form-control" placeholder=""
+                                                name="street" [(ngModel)]="addstudents.street">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ตำบล/แขวง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="subdistrict" type="text" class="form-control" placeholder=""
+                                                name="subdistrict" [(ngModel)]="addstudents.subdistrict">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>อำเภอ/เขต</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="district" type="text" class="form-control" placeholder=""
+                                                name="district" [(ngModel)]="addstudents.district">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>จังหวัด</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="province" type="text" class="form-control" placeholder=""
+                                                name="province" [(ngModel)]="addstudents.province">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>รหัสไปรษณีย์</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="post" type="text" class="form-control" placeholder=""
+                                                name="post" [(ngModel)]="addstudents.post">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -252,72 +261,81 @@
                                         <div class="col-sm-6 col-md-12">
 											<div class="form-check">
 												<label class="form-radio-label">
-													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
+													<input class="form-radio-input" type="radio" name="optionsRadios" value="value" (change)="addressnow($event)">
 													<span class="form-radio-sign">ที่อยู่ตามทะเบียนบ้าน</span>
 												</label>
 												<label class="form-radio-label ml-1">
-													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
+													<input class="form-radio-input" type="radio" name="optionsRadios" value="value" (change)="addressnow($event)">
 													<span class="form-radio-sign">ที่อยู่อื่น (โปรดระบุ)*</span>
 												</label>
 											</div>
-                                        </div> 
+                                        </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>บ้านเลขที่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="house_number_n" type="text" class="form-control" placeholder=""
+                                                name="house_number_n" [(ngModel)]="addstudents.house_number_n">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>หมู่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="group_n" type="text" class="form-control" placeholder=""
+                                                name="group_n" [(ngModel)]="addstudents.group_n">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อหมู่บ้าน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="v" type="text" class="form-control" placeholder=""
+                                                name="village_n" [(ngModel)]="addstudents.village_n">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ซอย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="alley_n" type="text" class="form-control" placeholder=""
+                                                name="alley_n" [(ngModel)]="addstudents.alley_n">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ถนน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="street_n" type="text" class="form-control" placeholder=""
+                                                name="street_n" [(ngModel)]="addstudents.street_n">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ตำบล/แขวง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="subdistrict_n" type="text" class="form-control" placeholder=""
+                                                name="subdistrict_n" [(ngModel)]="addstudents.subdistrict_n">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>อำเภอ/เขต</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="district_n" type="text" class="form-control" placeholder=""
+                                                name="district_n" [(ngModel)]="addstudents.district_n">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>จังหวัด</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="province_n" type="text" class="form-control" placeholder=""
+                                                name="province_n" [(ngModel)]="addstudents.province_n">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>รหัสไปรษณีย์</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="post_n" type="text" class="form-control" placeholder=""
+                                                name="post_n" [(ngModel)]="addstudents.post_n">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -342,7 +360,7 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul class="nav">
-							
+
 							<li class="nav-item">
 								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
 							</li>
@@ -350,7 +368,7 @@
 					</nav>
 					<div class="copyright ml-auto">
 						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-					</div>						
+					</div>
 				</div>
 			</footer>
 		</div>

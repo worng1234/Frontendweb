@@ -30,7 +30,7 @@
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
-				
+
 				<a href="student-index.html" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
@@ -61,17 +61,17 @@
                             <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                                 <i class="fas fa-school"></i>
                             </a>
-                        </li>					
+                        </li>
                     </ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
-			
+
 		</div>
 		<!-- // End main-header -->
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 
@@ -83,8 +83,8 @@
 							<label><b>เลขประจำตัวนักเรียน :</b> 50190</label>
 							<label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
 							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
-							
-							
+
+
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
-						
+
 						<li class="nav-item">
 							<a href="student-index.html">
 								<i class="fas fa-home"></i>
@@ -138,7 +138,7 @@
 								<p>ติดต่อเรา</p>
 							</a>
 						</li>
-		
+
 						<li class="nav-item">
 							<a href="widgets.html">
 								<i class="fas fa-desktop"></i>
@@ -146,13 +146,13 @@
 								<span class="badge badge-success">4</span>
 							</a>
 						</li>
-					
+
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- สิ้นสุดเมนู -->
-		
+
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
 			<div class="content">
@@ -178,10 +178,10 @@
 
 								<!-- ความสามารถ -->
 								<div class="card-body">
-									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i> 
+									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i>
 										กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนในการใช้ขอทุน หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5></div>
-										
-									
+
+
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                         <p  style="margin-left: 25px;  font-size: 15px;"><b>การเดินทาง</b></p>
                                     </div>
@@ -190,9 +190,8 @@
 											<div class="form-group form-group-default">
 												<label>การเดินทางมาโรงเรียน</label>
 												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
+													<option disabled>เลือก</option>
+													<option *ngFor="let gs of goSchool">{{gs}}</option>
 												</select>
 											</div>
                                         </div>
@@ -200,19 +199,19 @@
                                             <div class="form-group form-group-default">
                                                 <label>ระยะเวลาเดินทาง (นาที)</label>
                                                 <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ระยะห่างจาก ร.ร. (ลูกรัง) เมตร</label>
                                                 <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ระยะห่างจาก ร.ร. (ลาดยาง) เมตร</label>
                                                 <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
@@ -222,12 +221,12 @@
 										<div class="col-sm-6 col-md-6">
 											<label style="margin-bottom: 5px;"><small>อุปกรณ์ที่มี (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
                                             <div class="form-group">
-												<div class="selectgroup selectgroup-pills">
+												<div class="selectgroup selectgroup-pills" *ngFor="let obj of gadjectArr">
 													<label class="selectgroup-item">
-														<input type="checkbox" name="tool" value="1" class="selectgroup-input">
-														<span class="selectgroup-button">มือถือ/สมาร์ทโฟน</span>
+														<input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="gadject($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="checkbox" name="tool" value="2" class="selectgroup-input">
 														<span class="selectgroup-button">แท็บเล็ต</span>
 													</label>
@@ -238,22 +237,22 @@
 													<label class="selectgroup-item">
 														<input type="checkbox" name="tool" value="4" class="selectgroup-input">
 														<span class="selectgroup-button">คอมพิวเตอร์แบบตั้งโต๊ะ</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
 										<div class="col-sm-6 col-md-6">
                                             <label style="margin-bottom: 5px;"><small>อินเตอร์เน็ตที่ใช้ (เลือก 1 หัวข้อ)</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of internetArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="net" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">อินเตอร์เน็ตไร้สาย</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="internetDetail($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="net" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">อินเตอร์เน็ตสาย</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
@@ -266,9 +265,8 @@
 											<div class="form-group form-group-default">
 												<label>ความพิการ</label>
 												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
+													<option disabled>เลือก</option>
+													<option *ngFor="let d of Disable">{{d}}</option>
 												</select>
 											</div>
                                         </div>
@@ -276,9 +274,8 @@
 											<div class="form-group form-group-default">
 												<label>ความด้อยโอกาส</label>
 												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
+													<option disabled>เลือก</option>
+													<option *ngFor="let uf of unFortuned">{{uf}}</option>
 												</select>
 											</div>
                                         </div>
@@ -287,12 +284,12 @@
 										<div class="col-sm-6 col-md-12">
 											<label style="margin-bottom: 5px;"><small>ความขาดแคลน (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
                                             <div class="form-group">
-												<div class="selectgroup selectgroup-pills">
+												<div class="selectgroup selectgroup-pills" *ngFor="let obj of lackArr">
 													<label class="selectgroup-item">
-														<input type="checkbox" name="lack" value="1" class="selectgroup-input">
-														<span class="selectgroup-button">ขาดแคลนแบบเรียน</span>
+														<input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="lack($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="checkbox" name="lack" value="2" class="selectgroup-input">
 														<span class="selectgroup-button">ขาดแคลนเครื่องเขียน</span>
 													</label>
@@ -307,7 +304,7 @@
                                                     <label class="selectgroup-item">
 														<input type="checkbox" name="lack" value="5" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ขาดแคลน</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
@@ -316,90 +313,90 @@
 										<div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนคบเพื่อนที่เกี่ยวข้องกับสิ่งเสพติด</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of friend_drugArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="1" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">ใช่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="friend_drug($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="1" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ใช่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนมีพฤติกรรมเสพยาหรือจำหน่ายสิ่งเสพติด</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of sell_drugArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="2" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">ใช่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="sell_drug($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="2" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ใช่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนมีพฤติกรรมส่อไปในทางชู้สาว</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of sexualArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="3" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">ใช่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="sexual($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="3" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ใช่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนพักหรืออาศัยอยู่กับเพื่อนต่างเพศที่มิใช่ญาติพี่น้อง</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of not_parentArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="4" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">ใช่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="not_parent($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="4" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ใช่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนชอบเที่ยวกลางคืน</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of dark_travelArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="5" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">ใช่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="dark_travel($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="5" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ใช่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนเคยถูกล่วงละเมิดทางเพศ</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of sexual_harrasmentArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="6" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">ใช่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="sexual_harrasment($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="6" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่ใช่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
@@ -408,30 +405,30 @@
 										<div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนรู้สึกว่าโลกนี้ (เลือก 1 หัวข้อ)</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of cute_worldArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="world" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">น่าอยู่</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="cute_world($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="world" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่น่าอยู่</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <label style="margin-bottom: 5px;"><small>นักเรียนรู้สึกว่าตัวเอง (เลือก 1 หัวข้อ)</small></label>
 											<div class="form-group">
-												<div class="selectgroup selectgroup-secondary selectgroup-pills">
+												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of rich_manArr">
 													<label class="selectgroup-item">
-														<input type="radio" name="heart" value="yes" class="selectgroup-input">
-														<span class="selectgroup-button">มีค่า</span>
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="rich_man($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="radio" name="heart" value="no" class="selectgroup-input">
 														<span class="selectgroup-button">ไม่มีค่า</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
@@ -441,25 +438,25 @@
                                             <div class="form-group form-group-default">
                                                 <label>นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร</label>
                                                 <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-6 col-md-6">
                                             <div class="form-group form-group-default">
                                                 <label>นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร</label>
                                                 <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
 										<div class="col-sm-6 col-md-12">
 											<label style="margin-bottom: 5px;"><small>ปัญหาเรื่องใด ที่นักเรียนกำลังประสบอยู่ในขณะนี้ (เลือกได้มากกว่า 1 อย่าง)</small></label>
                                             <div class="form-group">
-												<div class="selectgroup selectgroup-pills">
+												<div class="selectgroup selectgroup-pills" *ngFor="let obj of problemArr">
 													<label class="selectgroup-item">
-														<input type="checkbox" name="issue" value="1" class="selectgroup-input">
-														<span class="selectgroup-button">ครอบครัว</span>
+														<input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="problem($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="checkbox" name="issue" value="2" class="selectgroup-input">
 														<span class="selectgroup-button">การเรียน</span>
 													</label>
@@ -494,7 +491,7 @@
                                                     <label class="selectgroup-item">
 														<input type="checkbox" name="issue" value="10" class="selectgroup-input">
 														<span class="selectgroup-button">การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
@@ -503,12 +500,12 @@
 										<div class="col-sm-6 col-md-12">
 											<label style="margin-bottom: 5px;"><small>ถ้าต้องการความช่วยเหลือ/ปรึกษา นักเรียนต้องการความช่วยเหลือ/ปรึกษา จากใคร (เลือกได้มากกว่า 1 อย่าง)</small></label>
                                             <div class="form-group">
-												<div class="selectgroup selectgroup-pills">
+												<div class="selectgroup selectgroup-pills" *ngFor="let obj of helpArr">
 													<label class="selectgroup-item">
-														<input type="checkbox" name="lack" value="1" class="selectgroup-input">
-														<span class="selectgroup-button">บิดา</span>
+														<input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="help($event)">
+														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
-													<label class="selectgroup-item">
+													<!-- <label class="selectgroup-item">
 														<input type="checkbox" name="lack" value="2" class="selectgroup-input">
 														<span class="selectgroup-button">มารดา</span>
 													</label>
@@ -527,19 +524,11 @@
                                                     <label class="selectgroup-item">
 														<input type="checkbox" name="lack" value="5" class="selectgroup-input">
 														<span class="selectgroup-button">อื่นๆ</span>
-													</label>
+													</label> -->
 												</div>
 											</div>
                                         </div>
                                     </div>
-									
-								
-									
-									
-
-
-
-
 
 
 
@@ -563,7 +552,7 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul class="nav">
-							
+
 							<li class="nav-item">
 								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
 							</li>
@@ -571,7 +560,7 @@
 					</nav>
 					<div class="copyright ml-auto">
 						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-					</div>						
+					</div>
 				</div>
 			</footer>
 		</div>

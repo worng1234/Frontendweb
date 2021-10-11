@@ -21,7 +21,7 @@ export class Studentcore{
   language:string = '';
   tel_s:string = '';
   email:string = '';
-  name:string = '';
+  fname:string = '';
   name_cen:string = '';
   surname:string = '';
 }

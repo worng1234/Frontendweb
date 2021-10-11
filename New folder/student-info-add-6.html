@@ -30,7 +30,7 @@
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="white">
-				
+
 				<a href="student-index.html" class="logo">
 					<img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
 				</a>
@@ -61,17 +61,17 @@
                             <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                                 <i class="fas fa-school"></i>
                             </a>
-                        </li>					
+                        </li>
                     </ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
-			
+
 		</div>
 		<!-- // End main-header -->
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 
@@ -83,8 +83,8 @@
 							<label><b>เลขประจำตัวนักเรียน :</b> 50190</label>
 							<label><b>ชั้นมัธยมศึกษาปีที่ :</b> 5 <b>ห้อง:</b> 2</label>
 							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
-							
-							
+
+
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
-						
+
 						<li class="nav-item">
 							<a href="student-index.html">
 								<i class="fas fa-home"></i>
@@ -138,7 +138,7 @@
 								<p>ติดต่อเรา</p>
 							</a>
 						</li>
-		
+
 						<li class="nav-item">
 							<a href="widgets.html">
 								<i class="fas fa-desktop"></i>
@@ -146,13 +146,13 @@
 								<span class="badge badge-success">4</span>
 							</a>
 						</li>
-					
+
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- สิ้นสุดเมนู -->
-		
+
 		<!-- เริ่มเนื้อหา-->
 		<div class="main-panel">
 			<div class="content">
@@ -176,85 +176,79 @@
 									</div>
 								</div>
 
-								<!-- ความสามารถ -->
+								<!-- รายละเอียดครอบครัว -->
 								<div class="card-body">
-									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i> 
+									<div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i>
 										กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนในการใช้ขอทุน หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5></div>
-										
-									
+
+
 									<div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                         <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลบิดา</b></p>
                                     </div>
-									
+
                                     <div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>นาย</option>
-													<option>นางสาว</option>
-                                                    <option>นาง</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="prename_f" [(ngModel)]="parent.prename_f">
+													<option disabled>เลือก</option>
+													<option *ngFor="let pp of prename_parent">{{pp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="name_f" type="text" class="form-control" placeholder=""
+                                                name="name_f" [(ngModel)]="parent.name_f">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)">
-                                            </div> 
+                                                <input id="name_cen_f" type="text" class="form-control" placeholder="(ถ้ามี)"
+                                                name="name_cen_f" [(ngModel)]="parent.name_cen_f">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="surname_f" type="text" class="form-control" placeholder=""
+                                                name="surname_f" [(ngModel)]="parent.surname_f">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-6">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="id_father" type="text" class="form-control" placeholder=""
+                                                name="id_father" [(ngModel)]="parent.id_father">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชนิดของบัตร</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="type_card_f" [(ngModel)]="parent.type_card_f">
+													<option disabled>เลือก</option>
+													<option *ngFor="let tic of type_id_card">{{tic}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>อายุ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="age_f" type="text" class="form-control" placeholder=""
+                        name="age_f" [(ngModel)]="parent.age_f">
 											</div>
+
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>หมู่เลือด</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>A</option>
-													<option>B</option>
-													<option>O</option>
-													<option>AB</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="bloodgroup_f" [(ngModel)]="parent.bloodgroup_f">
+													<option disabled>เลือก</option>
+													<option *ngFor="let bg of bloodgroups">{{bg}}</option>
 												</select>
 											</div>
                                         </div>
@@ -263,164 +257,161 @@
 										<div class="col-6 col-md-6">
 											<div class="form-group form-group-default">
 												<label>การประกอบอาชีพ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="job_f" type="text" class="form-control" placeholder="เช่น หมอ ตำรวจ ค้าขาย เกษตรกร ฯลฯ"
+                        name="job_f" [(ngModel)]="parent.job_f">
 											</div>
                                         </div>
                                         <div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>รายได้ต่อเดือน (บาท)</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="salary_f" [(ngModel)]="parent.salary_f">
+													<option disabled>เลือก</option>
+													<option *ngFor="let sp of salary_parent">{{sp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control">
-                                            </div> 
+                                                <input id="tel_f" type="text" class="form-control"
+                                                name="tel_f" [(ngModel)]="parent.tel_f">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>บ้านเลขที่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="house_number_f" type="text" class="form-control" placeholder=""
+                                                name="house_number_f" [(ngModel)]="parent.house_number_f">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>หมู่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="group_f" type="text" class="form-control" placeholder=""
+                                                name="group_f" [(ngModel)]="parent.group_f">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อหมู่บ้าน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="village_f" type="text" class="form-control" placeholder=""
+                                                name="village_f" [(ngModel)]="parent.village_f">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ซอย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="alley_f" type="text" class="form-control" placeholder=""
+                                                name="alley_f" [(ngModel)]="parent.alley_f">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ถนน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="street_f" type="text" class="form-control" placeholder=""
+                                                name="street_f" [(ngModel)]="parent.street_f">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ตำบล/แขวง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="subdistrict_f" type="text" class="form-control" placeholder=""
+                                                name="subdistrict_f" [(ngModel)]="parent.subdistrict_f">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>อำเภอ/เขต</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="district_f" type="text" class="form-control" placeholder=""
+                                                name="district_f" [(ngModel)]="parent.district_f">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>จังหวัด</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="province_f" type="text" class="form-control" placeholder=""
+                                                name="province_f" [(ngModel)]="parent.province_f">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>รหัสไปรษณีย์</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="post_f" type="text" class="form-control" placeholder=""
+                                                name="post_f" [(ngModel)]="parent.post_f">
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
                                         <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลมารดา</b></p>
                                     </div>
-									
+
                                     <div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>นาย</option>
-													<option>นางสาว</option>
-                                                    <option>นาง</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="prename_m" [(ngModel)]="parent.prename_m">
+													<option disabled>เลือก</option>
+													<option *ngFor="let pp of prename_parent">{{pp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="name_m" type="text" class="form-control" placeholder=""
+                                                name="name_m" [(ngModel)]="parent.name_m">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)">
-                                            </div> 
+                                                <input id="name_cen_m" type="text" class="form-control" placeholder="(ถ้ามี)"
+                                                name="name_cen_m" [(ngModel)]="parent.name_cen_m">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="surname_m" type="text" class="form-control" placeholder=""
+                                                name="surname_m" [(ngModel)]="parent.surname_m">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-6">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="id_mother" type="text" class="form-control" placeholder=""
+                                                name="id_mother" [(ngModel)]="parent.id_mother">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชนิดของบัตร</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="type_card_m" [(ngModel)]="parent.type_card_m">
+													<option disabled>เลือก</option>
+													<option *ngFor="let tic of type_id_card">{{tic}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>อายุ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="age_m" type="text" class="form-control" placeholder=""
+                        name="age_m" [(ngModel)]="parent.age_m">
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>หมู่เลือด</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>A</option>
-													<option>B</option>
-													<option>O</option>
-													<option>AB</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="bloodgroup_m" [(ngModel)]="parent.bloodgroup_m">
+													<option disabled>เลือก</option>
+													<option *ngFor="let bg of bloodgroups">{{bg}}</option>
 												</select>
 											</div>
                                         </div>
@@ -429,88 +420,92 @@
 										<div class="col-6 col-md-6">
 											<div class="form-group form-group-default">
 												<label>การประกอบอาชีพ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="job_m" type="text" class="form-control" placeholder="เช่น หมอ ตำรวจ ค้าขาย เกษตรกร ฯลฯ"
+                        name="job_m" [(ngModel)]="parent.job_m">
 											</div>
                                         </div>
                                         <div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>รายได้ต่อเดือน (บาท)</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="salary_m" [(ngModel)]="parent.salary_m">
+													<option disabled>เลือก</option>
+													<option *ngFor="let sp of salary_parent">{{sp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control">
-                                            </div> 
+                                                <input id="tel_m" type="text" class="form-control"
+                                                name="tel_m" [(ngModel)]="parent.tel_m">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>บ้านเลขที่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="house_number_m" type="text" class="form-control" placeholder=""
+                                                name="house_number_m" [(ngModel)]="parent.house_number_m">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>หมู่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="group_m" type="text" class="form-control" placeholder=""
+                                                name="group_m" [(ngModel)]="parent.group_m">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อหมู่บ้าน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="village_m" type="text" class="form-control" placeholder=""
+                                                name="village_m" [(ngModel)]="parent.village_m">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ซอย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="alley_m" type="text" class="form-control" placeholder=""
+                                                name="alley_m" [(ngModel)]="parent.alley_m">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ถนน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="street_m" type="text" class="form-control" placeholder=""
+                                                name="street_m" [(ngModel)]="parent.street_m">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ตำบล/แขวง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="subdistrict_m" type="text" class="form-control" placeholder=""
+                                                name="subdistrict_m" [(ngModel)]="parent.subdistrict_m">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>อำเภอ/เขต</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="district_m" type="text" class="form-control" placeholder=""
+                                                name="district_m" [(ngModel)]="parent.district_m">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>จังหวัด</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="province_m" type="text" class="form-control" placeholder=""
+                                                name="province_m" [(ngModel)]="parent.province_m">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>รหัสไปรษณีย์</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="post_m" type="text" class="form-control" placeholder=""
+                                                name="post_m" [(ngModel)]="parent.post_m">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -521,97 +516,85 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-md-12">
 
-											<div class="form-check">
+											<div class="form-check" *ngFor="let obj of parentArr">
 												<label class="form-radio-label">
-													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-													<span class="form-radio-sign">บิดา</span>
+													<input class="form-radio-input" type="radio"
+                          value="{{obj.value}}" (change)="parent_student($event)">
+													<span class="form-radio-sign">{{obj.key}}</span>
 												</label>
-												<label class="form-radio-label ml-1">
+												<!-- <label class="form-radio-label ml-1">
 													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
 													<span class="form-radio-sign">มารดา</span>
 												</label>
 												<label class="form-radio-label ml-1">
 													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
 													<span class="form-radio-sign">บุคคลอื่น</span>
-												</label>
+												</label> -->
 											</div>
-                                        </div> 
+                                        </div>
                                     </div>
 									<div class="row">
 										<div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>คำนำหน้าชื่อ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>นาย</option>
-													<option>นางสาว</option>
-                                                    <option>นาง</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="prename_p" [(ngModel)]="parent.prename_p">
+													<option disabled>เลือก</option>
+													<option *ngFor="let pp of prename_parent">{{pp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="name_p" type="text" class="form-control" placeholder=""
+                                                name="name_p" [(ngModel)]="parent.name_p">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อกลาง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="(ถ้ามี)">
-                                            </div> 
+                                                <input id="name_cen_p" type="text" class="form-control" placeholder="(ถ้ามี)"
+                                                name="name_cen_p" [(ngModel)]="parent.name_cen_p">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>นามสกุลภาษาไทย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="surname_p" type="text" class="form-control" placeholder=""
+                                                name="surname_p" [(ngModel)]="parent.surname_p">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-5">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="id_parent" type="text" class="form-control" placeholder=""
+                                                name="id_parent" [(ngModel)]="parent.id_parent">
+                                            </div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>ชนิดของบัตร</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="type_card_p" [(ngModel)]="parent.type_card_p">
+													<option disabled>เลือก</option>
+													<option *ngFor="let tic of type_id_card">{{tic}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>อายุ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="Name" type="text" class="form-control" placeholder=""
+                        						name="age_p" [(ngModel)]="parent.age_p">
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>ความสัมพันธ์ผู้ปกครอง</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>พี่ชาย</option>
-													<option>พี่สาว</option>
-													<option>ลุง</option>
-													<option>ป้า</option>
-													<option>น้า</option>
-													<option>อา</option>
-													<option>ปู่</option>
-													<option>ย่า</option>
-													<option>ตา</option>
-													<option>ยาย</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="bloodgroup_p" [(ngModel)]="parent.bloodgroup_p">
+													<option disabled>เลือก</option>
+													<option *ngFor="let p of parents">{{p}}</option>
 												</select>
 											</div>
                                         </div>
@@ -620,88 +603,92 @@
 										<div class="col-6 col-md-6">
 											<div class="form-group form-group-default">
 												<label>การประกอบอาชีพ</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="job_p" type="text" class="form-control" placeholder="เช่น หมอ ตำรวจ ค้าขาย เกษตรกร ฯลฯ"
+                        						name="job_p" [(ngModel)]="parent.job_p">
 											</div>
                                         </div>
                                         <div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>รายได้ต่อเดือน (บาท)</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="salary_p" [(ngModel)]="parent.salary_p">
+													<option disabled>เลือก</option>
+													<option *ngFor="let sp of salary_parent">{{sp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>หมายเลขโทรศัพท์ที่สามารถติดต่อได้</label>
-                                                <input id="Name" type="text" class="form-control">
-                                            </div> 
+                                                <input id="tel_p" type="text" class="form-control"
+                                                name="tel_p" [(ngModel)]="parent.tel_p">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>บ้านเลขที่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="house_number_p" type="text" class="form-control" placeholder=""
+                                                name="house_number_p" [(ngModel)]="parent.house_number_p">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>หมู่</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="group_p" type="text" class="form-control" placeholder=""
+                                                name="group_p" [(ngModel)]="parent.group_p">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ชื่อหมู่บ้าน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="village_p" type="text" class="form-control" placeholder=""
+                                                name="village_p" [(ngModel)]="parent.village_p">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-2">
                                             <div class="form-group form-group-default">
                                                 <label>ซอย</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="alley_p" type="text" class="form-control" placeholder=""
+                                                name="alley_p" [(ngModel)]="parent.alley_p">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ถนน</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="street_p" type="text" class="form-control" placeholder=""
+                                                name="street_p" [(ngModel)]="parent.street_p">
+                                            </div>
                                         </div>
                                     </div>
 									<div class="row">
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>ตำบล/แขวง</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="subdistrict_p" type="text" class="form-control" placeholder=""
+                                                name="subdistrict_p" [(ngModel)]="parent.subdistrict_p">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>อำเภอ/เขต</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="district_p" type="text" class="form-control" placeholder=""
+                                                name="district_p" [(ngModel)]="parent.district_p">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>จังหวัด</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="province_p" type="text" class="form-control" placeholder=""
+                                                name="province_p" [(ngModel)]="parent.province_p">
+                                            </div>
                                         </div>
 										<div class="col-6 col-md-3">
                                             <div class="form-group form-group-default">
                                                 <label>รหัสไปรษณีย์</label>
-                                                <input id="Name" type="text" class="form-control" placeholder="">
-                                            </div> 
+                                                <input id="post_p" type="text" class="form-control" placeholder=""
+                                                name="post_p" [(ngModel)]="parent.post_p">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -713,18 +700,16 @@
 										<div class="col-6 col-md-8">
 											<div class="form-group form-group-default">
 												<label>สถานภาพสมรสของบิดามารดา</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="status_parent" [(ngModel)]="parent.status_parent">
+													<option disabled>เลือก</option>
+													<option *ngFor="let ps of parents_status">{{ps}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>สถานะผู้ปกครองนักเรียน</label>
-												<select class="form-control" id="formGroupDefaultSelect">
+												<select class="form-control" id="formGroupDefaultSelect" name="student_parent" [(ngModel)]="parent.student_parent">
 													<option>เลือก</option>
 													<option>1</option>
 													<option>2</option>
@@ -737,55 +722,45 @@
 										<div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>จำนวนพี่น้อง ร่วมสายโลหิต</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_blood" [(ngModel)]="parent.no_blood">
+													<option disabled>เลือก</option>
+													<option *ngFor="let nb of num_blood">{{nb}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>จำนวนพี่ชาย</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_brother" [(ngModel)]="parent.no_brother">
+													<option disabled>เลือก</option>
+													<option *ngFor="let nbt of num_brother">{{nbt}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>จำนวนน้องชาย</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_son" [(ngModel)]="parent.no_son">
+													<option disabled>เลือก</option>
+													<option *ngFor="let ns of num_son">{{ns}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>จำนวนพี่สาว</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_sister" [(ngModel)]="parent.no_sister">
+													<option disabled>เลือก</option>
+													<option *ngFor="let nst of num_sister">{{nst}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>จำนวนน้องสาว</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_son2" [(ngModel)]="parent.no_son2">
+													<option disabled>เลือก</option>
+													<option *ngFor="let ns2 of num_son2">{{ns2}}</option>
 												</select>
 											</div>
                                         </div>
@@ -794,44 +769,36 @@
 										<div class="col-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>นักเรียนเป็นบุตรคนที่</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_parent" [(ngModel)]="parent.no_parent">
+													<option disabled>เลือก</option>
+													<option *ngFor="let np of num_parent">{{np}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>จำนวนพี่น้องที่ศึกษาอยู่ (ไม่นับรวมนักเรียน)</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_study" [(ngModel)]="parent.no_study">
+													<option disabled>เลือก</option>
+													<option *ngFor="let nsd of num_study">{{nsd}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>จำนวนพี่น้องที่ประกอบอาชีพแล้ว</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_job" [(ngModel)]="parent.no_job">
+													<option disabled>เลือก</option>
+													<option *ngFor="let nj of num_job">{{nj}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>จำนวนพี่น้องที่อยู่ในความอุปการะของครอบครัว</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="no_house" [(ngModel)]="parent.no_house">
+													<option disabled>เลือก</option>
+													<option *ngFor="let nh of num_house">{{nh}}</option>
 												</select>
 											</div>
                                         </div>
@@ -840,18 +807,15 @@
 										<div class="col-sm-6 col-md-9">
                                             <div class="form-group form-group-default">
                                                 <label>นักเรียนมีหน้าที่รับผิดชอบภายในบ้าน นอกเหนือจากการเรียน</label>
-                                                <input id="Name" type="text" class="form-control">
-                                            </div> 
+                                                <input id="student_job" type="text" class="form-control"
+                                                name="student_job" [(ngModel)]="parent.student_job">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
 											<div class="form-group form-group-default">
 												<label>นักเรียนนำเงินมาโรงเรียนวันละ (บาท)</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select>
+												<input id="student_money" type="text" class="form-control" placeholder=""
+                        						name="student_money" [(ngModel)]="parent.student_money">
 											</div>
                                         </div>
                                     </div>
@@ -859,35 +823,25 @@
                                         <div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>รายได้ของครอบครัวต่อเดือน (รายได้รวมกัน)</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="parent_money" [(ngModel)]="parent.parent_money">
+													<option disabled>เลือก</option>
+													<option *ngFor="let sp of salary_parent">{{sp}}</option>
 												</select>
 											</div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="form-group form-group-default">
                                                 <label>ผู้ออกค่าใช้จ่ายให้นักเรียน (ชื่อ-นามสกุล)</label>
-                                                <input id="Name" type="text" class="form-control">
-                                            </div> 
+                                                <input id="parent_total" type="text" class="form-control"
+                                                name="parent_total" [(ngModel)]="parent.parent_total">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-2">
 											<div class="form-group form-group-default">
 												<label>เกี่ยวข้องเป็น</label>
-												<select class="form-control" id="formGroupDefaultSelect">
-													<option>เลือก</option>
-													<option>พี่ชาย</option>
-													<option>พี่สาว</option>
-													<option>ลุง</option>
-													<option>ป้า</option>
-													<option>น้า</option>
-													<option>อา</option>
-													<option>ปู่</option>
-													<option>ย่า</option>
-													<option>ตา</option>
-													<option>ยาย</option>
+												<select class="form-control" id="formGroupDefaultSelect" name="parent_house" [(ngModel)]="parent.parent_house">
+													<option disabled>เลือก</option>
+													<option *ngFor="let p of parents">{{p}}</option>
 												</select>
 											</div>
                                         </div>
@@ -895,35 +849,28 @@
                                     <div class="row">
 										<div class="col-sm-6 col-md-12">
                                             <label style="margin-bottom: 5px;"><small>การหารายได้ด้วยตนเอง</small></label>
-											<div class="form-check">
+											<div class="form-check" *ngFor="let obj of job_studyArr">
 												<label class="form-radio-label">
-													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
-													<span class="form-radio-sign">ไม่มี</span>
+													<input class="form-radio-input" type="radio" value="{{obj.value}}" (change)="job_study($event)">
+													<span class="form-radio-sign">{{obj.key}}</span>
 												</label><br><br>
-												<label class="form-radio-label">
+												<!-- <label class="form-radio-label">
 													<input class="form-radio-input" type="radio" name="optionsRadios" value="">
 													<span class="form-radio-sign">มี</span>
-												</label>
+												</label> -->
 												<div class="form-group form-group-default">
 													<label>โปรดระบุ (หารายได้จากอะไร)</label>
-													<input id="Name" type="text" class="form-control">
+													<input id="job_detail" type="text" class="form-control"
+                          							name="job_detail" [(ngModel)]="parent.job_detail">
 												</div>
                                                 <div class="form-group form-group-default">
                                                     <label>รายได้เฉลี่ยวันละ (บาท)</label>
-                                                    <select class="form-control" id="formGroupDefaultSelect">
-                                                        <option>เลือก</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                    </select>
+                                                    <input id="total_study" type="text" class="form-control"
+                                                    name="total_study" [(ngModel)]="parent.total_study">
                                                 </div>
 											</div>
 										</div>
 									</div>
-
-
-
-
-
 
 
 								</div>
@@ -945,7 +892,7 @@
 				<div class="container-fluid">
 					<nav class="pull-left">
 						<ul class="nav">
-							
+
 							<li class="nav-item">
 								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
 							</li>
@@ -953,7 +900,7 @@
 					</nav>
 					<div class="copyright ml-auto">
 						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
-					</div>						
+					</div>
 				</div>
 			</footer>
 		</div>

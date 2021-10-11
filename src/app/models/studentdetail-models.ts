@@ -1,5 +1,6 @@
 export class Studentdetail{
   go_school:string = '';
+  go_school_time:string = '';
   distance:string = '';
   long_distance:string = '';
   gadject:string = '';

@@ -13,8 +13,69 @@ import { AddStudentcoreService } from 'src/app/services/add-studentcore/add-stud
   styleUrls: ['./add-student-core.component.css']
 })
 export class AddStudentCoreComponent implements OnInit {
+
+  step:any = 1;
+
   //form&model
-  step: any = 1;
+  prename = ['','เด็กชาย','เด็กหญิง','นาย','นางสาว'];
+
+  prename_parent = ['','นาย','นางสาว' ,'นาง'];
+
+  type_id_card = ['','บัตรประจำตัวประชาชน','บัตรประจำตัวคนซึ่งไม่มีสัญชาติไทย','บัตรประจำตัวบุคคลที่ไม่มีสถานะทางทะเบียน'];
+
+  prenameEng = ['','Mr.','Mrs.'];
+
+  gender = ['','ชาย','หญิง'];
+
+  classList = ['','1','2','3','4','5','6'];
+
+  roomList = ['','1','2','3','4','5','6','7','8','9','10'];
+
+  major = ['','วิทยาศาสตร์-คณิตศาสตร์','ศิลป์-จีน','ศิลป์-คำนวณ',
+          'คหกรรม','เกษตร','ปวช','ศิลป์-พละ','ศิลป์-วาด',
+          'วิทยาศาสตร์-คอมพิวเตอร์','ศิลป์-ฝรั่งเศษ'];
+
+  days = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'
+          ,'16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
+
+  mounths = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤษจิกายน','ธันวาคม'];
+
+  years = ['2540','2541','2542','2543','2544','2545','2546','2547','2548','2549','2550','2551',
+            '2552','2553','2554','2555','2556','2557','2558','2559','2560','2561','2562','2563','2564'];
+
+  bloodgroups = ['A','B','O','AB'];
+
+  goSchool = ['เดินเท้า','รถจักรยาน','รถจักรยานยนต์','รถเดือน','พ่อแม่มาส่ง'];
+
+  Disable = ['ไม่มี','การมองเห็น','การได้ยิน','สติปัญญา','ร่างกาย/สุขภาพ','การเรียนรู้','การพูด/ภาษา','พฤติกรรม/อารมณ์','ออทิสติก','พิการซ้ำซ้อน'];
+
+  unFortuned = ['ไม่มี','ถูกบังคับขายแรงงาน','อยู่ในธุรกิจทางเพศ','ถูกทอดทิ้ง','เด็กเร่ร่อน','ได้รับผลกระทบจากเอดส์','ชนกลุ่มน้อย','ถูกทำร้ายทารุณ',
+                'เด็กยากจน','เด็กที่มีปัญหาเกี่ยวกับยาเสพติด','เด็กกำพร้า','ทำงานรับผิดชอบตนเองและครอบครัว'];
+
+  salary_parent = ['','0 - 9000', '9,001 - 15,000', '15,001 - 30,000', '30,001 - 50,000', '50,001 - 100,000', '100,001 - 300,000'];
+
+  parents = ['พี่ชาย','พี่สาว','ลุง','ป้า','น้า','อา','ปู่','ย่า','ตา','ยาย'];
+
+  parents_status = ['','สมรส','หย่าร้าง'];
+
+  num_blood = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_brother = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_son = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_sister = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_son2 = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_parent = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_study = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_job = [0,1,2,3,4,5,6,7,8,9,10];
+
+  num_house = [0,1,2,3,4,5,6,7,8,9,10];
+
   addstudents = new Addressstudent();
   healty = new Healtystudent();
   parent = new Parentstudent();
@@ -24,6 +85,7 @@ export class AddStudentCoreComponent implements OnInit {
 
 
   //checkbox
+  address_now:any = [];
   read_write:any = [];
   understandTalent:any = [];
   gadjectDetail:any = [];
@@ -48,6 +110,16 @@ export class AddStudentCoreComponent implements OnInit {
   jobstudy:any = [];
 
   //array
+  address_nowArr = [
+    {
+      "key":"ที่อยู่ตามทะเบียนบ้าน",
+      "value":"ที่อยู่ตามทะเบียนบ้าน"
+    },
+    {
+      "key":"ที่อยู่อื่น",
+      "value":"ที่อยู่อื่น"
+    }
+  ]
   read_writeArr = [
     {
       "key":"อ่านเขียนคล่อง",
@@ -86,12 +158,12 @@ export class AddStudentCoreComponent implements OnInit {
       "value":"แท็บเล็ต"
     },
     {
-      "key":"โน๊ตบุค",
-      "value":"โน๊ตบุค"
+      "key":"โน๊ตบุ๊ค",
+      "value":"โน๊ตบุ๊ค"
     },
     {
-      "key":"คอมพิวเตอร์",
-      "value":"คอมพิวเตอร์"
+      "key":"คอมพิวเตอร์แบบตั้งโต๊ะ",
+      "value":"คอมพิวเตอร์แบบตั้งโต๊ะ"
     },
   ]
   internetArr = [
@@ -370,14 +442,25 @@ export class AddStudentCoreComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(){
+  next(){
     this.step = this.step + 1;
+    console.log(this.step);
   }
   back(){
     this.step = this.step - 1;
+    console.log(this.step);
   }
 
   //functioncheckbox
+  //addressstudent
+  addressnow(event){
+    const index = this.read_write.indexOf(event.target.value);
+    if(index == -1){
+      this.read_write.push(event.target.value);
+    }else{
+      this.read_write.splice(index,1);
+    }
+  }
   //talentstudent
   readwrite(event){
     const index = this.read_write.indexOf(event.target.value);
@@ -565,6 +648,7 @@ export class AddStudentCoreComponent implements OnInit {
   //addstudentcore
   addstudentcore(){
     //address
+    this.address_now = this.address_nowArr.toString();
     this.addstudent.addstudent(this.addstudents).subscribe(res1 => {
       console.log(res1);
     });
