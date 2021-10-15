@@ -1,8 +1,14 @@
 import { test1 } from './../../models/test1';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { TestService } from 'src/app/services/test/test.service';
 import { ActivatedRoute } from '@angular/router';
+// import Swal from 'sweetalert2';
+import { faWrench } from '@fortawesome/free-solid-svg-icons';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+
+
 
 
 @Component({
@@ -12,29 +18,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  //test = new test1();
-  // selectcheck:any = [];
-  // checkboxArr = [
-  //   {
-  //     "key":"j",
-  //     "value":"ใช่"
-  //   },
-  //   {
-  //     "key":"j",
-  //     "value":"ไม่ใช่"
-  //   },
-  //   {
-  //     "key":"j",
-  //     "value":"j"
-  //   },
-  // ]
 
   data: any;
   id: any;
   test = new test1();
   imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
+  faWrench = faWrench;
 
-  constructor(private http: HttpClientModule, private t : TestService, private aRoute: ActivatedRoute) { }
+  constructor(private http: HttpClientModule, private t : TestService, private aRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
     console.log(this.aRoute.snapshot.params.id);
@@ -42,6 +33,10 @@ export class EditComponent implements OnInit {
     this.testID();
 
   }
+
+  // alertWithSuccess(){
+  //   Swal.fire('Thank you...', 'You submitted succesfully!', 'success')
+  // }
 
   testID(){
     this.t.testID(this.id).subscribe(res => {

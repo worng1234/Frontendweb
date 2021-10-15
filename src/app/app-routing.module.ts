@@ -49,7 +49,7 @@ const routes: Routes = [
   {path: 'CheckStudentRoom',component:CheckStudentRoomComponent},
   {path: 'BehaviorStudent',component:BehaviorStudentComponent},
   {path: 'BehaviorTeacher',component:BehaviorTeacherComponent},
-  {path: 'Edit/:id',component:EditComponent},
+  {path: 'Edit',component:EditComponent},
   {path: 'SortNewstudentm4',component:SortNewstudentM4Component},
   {path: 'StudentCoreInformation', component: StudentCoreInformationComponent},
   {path: 'Showstudentbyid/:id' , component: ShowStudentByIdComponent},

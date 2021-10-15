@@ -27,6 +27,10 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { AdminPageCommunicateComponent } from './components/admin-page-communicate/admin-page-communicate.component';
 import { MainNewstudentComponent } from './components/main-newstudent/main-newstudent.component';
 import { MainStudyComponent } from './components/main-study/main-study.component';
+import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
+import { FixNewStudentIdM1Component } from './components/fix-new-student-id-m1/fix-new-student-id-m1.component';
+import { NewStudentM4IdComponent } from './components/new-student-m4-id/new-student-m4-id.component';
+import { FixNewStudentIdM4Component } from './components/fix-new-student-id-m4/fix-new-student-id-m4.component';
 
 //services
 import { NewStudentM1Service } from './services/new-student-m1-services/new-student-m1.service';
@@ -43,11 +47,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTablesModule } from "angular-datatables";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TestUIComponent } from './components/test-ui/test-ui.component';
-import { NewStudentM1IdComponent } from './components/new-student-m1-id/new-student-m1-id.component';
-import { FixNewStudentIdM1Component } from './components/fix-new-student-id-m1/fix-new-student-id-m1.component';
-import { NewStudentM4IdComponent } from './components/new-student-m4-id/new-student-m4-id.component';
-import { FixNewStudentIdM4Component } from './components/fix-new-student-id-m4/fix-new-student-id-m4.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 
 
@@ -104,6 +110,11 @@ import { FixNewStudentIdM4Component } from './components/fix-new-student-id-m4/f
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    DataTablesModule,
+    FontAwesomeModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
 
   ],
   providers: [NewStudentM1Service,SortNewstudentService],

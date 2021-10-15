@@ -17,6 +17,7 @@
 			}
 		});
 	</script>
+  <!-- <script src="https://kit.fontawesome.com/b61e11c043.js" crossorigin="anonymous"></script> -->
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
@@ -208,7 +209,8 @@
 													<div class="col-6 col-md-2">
 														<div class="form-group form-group-default">
 															<label>คำนำหน้าชื่อ</label>
-															<select class="form-control" id="formGroupDefaultSelect" [(ngModel)]="searchFunction_prename" autocomplete="off" name="prename">
+															<select class="form-control" id="formGroupDefaultSelect"
+                              [(ngModel)]="searchFunctionprename" autocomplete="off" name="prename">
 																<option disabled>เลือก</option>
 																<option *ngFor='let p of prename'>{{p}}</option>
 															</select>
@@ -217,22 +219,22 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ชื่อภาษาไทย</label>
-															<input type="text" class="form-control" placeholder="" name="searchFunction_name"
-                              								[(ngModel)]="searchFunction_name" autocomplete="off" (input)="search()">
+															<input type="text" class="form-control" name="fname"
+                              [(ngModel)]="searchFunctionname" autocomplete="off" >
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>นามสกุลภาษาไทย</label>
-															<input type="text" class="form-control" placeholder="" name="searchFunction_surname"
-                              								[(ngModel)]="searchFunction_surname" autocomplete="off" (input)="search()">
+															<input type="text" class="form-control"
+                              [(ngModel)]="searchFunctionsurname" autocomplete="off" >
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ค้นหาจากชื่อโรงเรียน</label>
-															<input type="text" class="form-control" placeholder="" name="searchFunction_school"
-                              [(ngModel)]="searchFunction_school" autocomplete="off" (input)="search()">
+															<input type="text" class="form-control"
+                              [(ngModel)]="searchFunctionschool" autocomplete="off" >
 														</div>
 													</div>
 												</div>
@@ -243,6 +245,7 @@
 													<table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%">
 														<thead>
 															<tr>
+                                <th scope="col" width="10%" style="text-align: center;">ID</th>
 																<th scope="col" width="10%" style="text-align: center;">ชื่อ-นามสกุล</th>
 																<th scope="col" width="5%" style="text-align: center;">โรงเรียน</th>
 																<th scope="col" width="3%" style="text-align: center;">ข้อมูลส่วนตัว</th>
@@ -255,18 +258,20 @@
 														<!-- Modal Show Club Detail -->
 														<!-- อะไรไม่รู้ -->
 														<!-- // Modal Show Club Detail -->
-                            <tr *ngFor = "let s of newstudentm1list | filter:searchFunction_school |
-                            filter:searchFunction_name | filter:searchFunction_prename | filter:searchFunction_surname">
+                            <tr *ngFor = "let s of newstudentm1list | filter:searchFunctionschool |
+                            filter:searchFunctionname | filter:searchFunctionprename |
+                            filter:searchFunctionsurname" style="text-align: center;">
+                              <td>{{ s.id}}</td>
                               <td>{{ s.prename}}{{s.fname}} {{s.surname}}</td>
                               <td>{{ s.final_school}}</td>
-                              <td><button class="btn btn-primary" [routerLink]="['/Newstudentm1ID' , s.id]">ข้อมูลส่วนตัว</button></td>
+                              <td><button class="btn btn-primary" [routerLink]="['/Newstudentm1ID' , s.id]"><fa-icon [icon]="faFileAlt" style="color: white;"></fa-icon></button></td>
                               <td><img [src]=" s.pic ? imageDirectoryPath+s.pic : 'assets/image/no-image.png'" height="100px"></td>
-                              <td><button class="btn btn-primary" [routerLink]="['/Fixnewstudentm1' , s.id]">แก้ไขข้อมูล</button></td>
+                              <td><button class="btn btn-primary" [routerLink]="['/Fixnewstudentm1' , s.id]"><fa-icon [icon]="faEdit" style="color: white;"></fa-icon></button></td>
 
                             </tr>
-
 														</tbody>
 													</table>
+                          <mat-paginator [pageSizeOptions]="[ 5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
 												<!-- //ตารางแสดงข้อมูล-->
 
 									</div>
@@ -443,8 +448,8 @@
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
 	</script>
-</body>
-</html>
+<!-- </body>
+</html> -->
 
 
 

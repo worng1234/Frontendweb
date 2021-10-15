@@ -2,6 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewStudentM1Models } from './../../models/new-student-m1-models';
 import { SortNewstudentService } from './../../services/sort-new-student-services/sort-newstudent.service';
 import { Component, OnInit } from '@angular/core';
+//Icon
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
+//Tables
+import {MatPaginator} from '@angular/material/paginator';
 
 
 
@@ -23,12 +28,16 @@ export class SortNewstudentComponent implements OnInit {
   study_area = ['','นอกเขต','ในเขต'];
   prename = ['','เด็กชาย','เด็กหญิง']
   newstudentm1list:any;
-  searchFunction_school;
-  searchFunction_name : string;
-  searchFunction_surname : string;
-  searchFunction_area: string;
-  searchFunction_prename;
+  searchFunctionschool;
+  searchFunctionname : string;
+  searchFunctionsurname : string;
+  searchFunctionarea: string;
+  searchFunctionprename;
   imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
+
+  //Icon
+  faEdit = faEdit;
+  faFileAlt = faFileAlt;
 
 
   constructor( private nsm1list: SortNewstudentService, private http: HttpClientModule) { }

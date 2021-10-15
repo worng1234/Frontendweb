@@ -110,7 +110,7 @@ export class NewStudentM1Component implements OnInit {
     //POST
     this.http.post('http://127.0.0.1:8000/api/registerm1',fd).subscribe(res => {
       console.log(res);
-      //console.log(this.newstudent);
+
     })
 
   }

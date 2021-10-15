@@ -2,6 +2,11 @@ import { SortNewStudentM4ServicesService } from './../../services/sort-new-stude
 import { NewStudentM4Models } from './../../models/new-student-m4-models';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+//Icon
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
+//Tables
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-sort-newstudent-m4',
@@ -35,6 +40,10 @@ export class SortNewstudentM4Component implements OnInit {
   searchFunction_major2;
   searchFunction_major3;
   imageDirectoryPath:any = 'http://127.0.0.1:8000/storage/newstudentm1PIC/';
+
+  //Icon
+  faEdit = faEdit;
+  faFileAlt = faFileAlt;
 
   constructor( private nsm4List: SortNewStudentM4ServicesService, private http: HttpClientModule) { }
 
