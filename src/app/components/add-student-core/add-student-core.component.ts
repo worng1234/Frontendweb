@@ -454,11 +454,11 @@ export class AddStudentCoreComponent implements OnInit {
   //functioncheckbox
   //addressstudent
   addressnow(event){
-    const index = this.read_write.indexOf(event.target.value);
+    const index = this.address_now.indexOf(event.target.value);
     if(index == -1){
-      this.read_write.push(event.target.value);
+      this.address_now.push(event.target.value);
     }else{
-      this.read_write.splice(index,1);
+      this.address_now.splice(index,1);
     }
   }
   //talentstudent

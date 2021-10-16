@@ -50,6 +50,14 @@ export class TestService {
       return this.http.get('http://127.0.0.1:8000/api/testID/'+id);
     }
 
+    testPost1(data){
+      return this.http.post('http://127.0.0.1:8000/api/testpost1',data);
+    }
+
+    testPost2(data){
+      return this.http.post('http://127.0.0.1:8000/api/testpost2',data);
+    }
+
   errorHandler(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

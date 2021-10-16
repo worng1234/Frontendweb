@@ -1,4 +1,5 @@
 export class Parentstudent{
+  student_idcard_p:string = '';
   prename_f:string = '';
   name_f:string = '';
   name_cen_f:string = '';

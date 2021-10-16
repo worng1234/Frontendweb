@@ -272,7 +272,18 @@
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
                                                 <input id="student_id_card" type="text" class="form-control" placeholder=""
-                                                [(ngModel)]="studentcore.student_id_card" name="student_id_card">
+                                                [(ngModel)]="studentcore.student_id_card"
+                                                [(ngModel)]="addstudents.student_idcard_a"
+                                                [(ngModel)]="healty.student_idcard_h"
+                                                [(ngModel)]="parent.student_idcard_p"
+                                                [(ngModel)]="studentdetail.student_idcard_d"
+                                                [(ngModel)]="talent.student_idcard_t"
+                                                name="student_id_card"
+                                                name="student_idcard_a"
+                                                name="student_idcard_h"
+                                                name="student_idcard_p"
+                                                name="student_idcard_d"
+                                                name="student_idcard_t">
                                             </div>
                                         </div>
                                     </div>
@@ -539,15 +550,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-12">
-											<div class="form-check">
+											<div class="form-check" *ngFor="let obj of address_nowArr">
 												<label class="form-radio-label">
-													<input class="form-radio-input" type="radio" name="optionsRadios" value="value" (change)="addressnow($event)">
-													<span class="form-radio-sign">ที่อยู่ตามทะเบียนบ้าน</span>
+													<input class="form-radio-input" type="radio" name="optionsRadios" value="{{obj.value}}" (change)="addressnow($event)">
+													<span class="form-radio-sign">{{obj.key}}</span>
 												</label>
-												<label class="form-radio-label ml-1">
+												<!-- <label class="form-radio-label ml-1">
 													<input class="form-radio-input" type="radio" name="optionsRadios" value="value" (change)="addressnow($event)">
 													<span class="form-radio-sign">ที่อยู่อื่น (โปรดระบุ)*</span>
-												</label>
+												</label> -->
 											</div>
                                         </div>
                                     </div>
@@ -913,7 +924,7 @@
 											<div class="form-group">
 												<div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of internetArr">
 													<label class="selectgroup-item">
-														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="internetDetail($event)">
+														<input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="internet($event)">
 														<span class="selectgroup-button">{{obj.key}}</span>
 													</label>
 													<!-- <label class="selectgroup-item">
@@ -931,7 +942,7 @@
                                         <div class="col-6 col-md-6">
 											<div class="form-group form-group-default">
 												<label>ความพิการ</label>
-												<select class="form-control" id="formGroupDefaultSelect" name="disebled" [(ngModel)]="studentdetail.disebled">
+												<select class="form-control" id="formGroupDefaultSelect" name="disebled" [(ngModel)]="studentdetail.disabled">
 													<option disabled>เลือก</option>
 													<option *ngFor="let d of Disable">{{d}}</option>
 												</select>

@@ -1,4 +1,5 @@
 export class Addressstudent {
+  student_idcard_a:string = '';
   house_number:string = '';
   group:string = '';
   village:string = '';

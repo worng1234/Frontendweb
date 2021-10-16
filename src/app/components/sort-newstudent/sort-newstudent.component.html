@@ -219,21 +219,21 @@
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ชื่อภาษาไทย</label>
-															<input type="text" class="form-control" name="fname"
+															<input type="text" class="form-control" name="searchFunctionname"
                               [(ngModel)]="searchFunctionname" autocomplete="off" >
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>นามสกุลภาษาไทย</label>
-															<input type="text" class="form-control"
+															<input type="text" class="form-control" name="searchFunctionsurname"
                               [(ngModel)]="searchFunctionsurname" autocomplete="off" >
 														</div>
 													</div>
 													<div class="col-6 col-md-3">
 														<div class="form-group form-group-default">
 															<label>ค้นหาจากชื่อโรงเรียน</label>
-															<input type="text" class="form-control"
+															<input type="text" class="form-control" name="searchFunctionschool"
                               [(ngModel)]="searchFunctionschool" autocomplete="off" >
 														</div>
 													</div>
@@ -255,9 +255,6 @@
 															</tr>
 														</thead>
 														<tbody>
-														<!-- Modal Show Club Detail -->
-														<!-- อะไรไม่รู้ -->
-														<!-- // Modal Show Club Detail -->
                             <tr *ngFor = "let s of newstudentm1list | filter:searchFunctionschool |
                             filter:searchFunctionname | filter:searchFunctionprename |
                             filter:searchFunctionsurname" style="text-align: center;">

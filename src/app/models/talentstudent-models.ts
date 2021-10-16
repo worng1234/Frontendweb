@@ -1,4 +1,5 @@
 export class Talentstudent{
+  student_idcard_t:string = '';
   final_school:string = '';
   final_class:string = '';
   avg_grade:string = '';

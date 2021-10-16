@@ -4,6 +4,7 @@ export class test1{
   name : string;
   surname : string;
   file_pdf : string;
+  id_number1 : string;
   CheckBox: any;
 
 }

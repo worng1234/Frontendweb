@@ -1,11 +1,12 @@
 export class Studentdetail{
+  student_idcard_d:string = '';
   go_school:string = '';
   go_school_time:string = '';
   distance:string = '';
   long_distance:string = '';
   gadject:string = '';
   internet:string = '';
-  disebled:string = '';
+  disabled:string = '';
   unfortuned:string = '';
   lack:string = '';
   friend_drug:string = '';

@@ -2,6 +2,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { StudentCoreInformationService } from 'src/app/services/student_core_information_services/student-core-information.service';
 import { StudentInformationCore } from 'src/app/models/student-information-core';
+//Icon
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -12,11 +15,16 @@ import { StudentInformationCore } from 'src/app/models/student-information-core'
 export class StudentCoreInformationComponent implements OnInit {
 
   sciList : any;
-  prename = ['','นาย','นางสาว'];
-  searchPrename: string;
-  searchName: string;
-  searchSurname: string;
-  searchStudentID: string;
+
+  Class = ['','ชั้นมัธยมศึกษาปีที่ 1','ชั้นมัธยมศึกษาปีที่ 2','ชั้นมัธยมศึกษาปีที่ 3','ชั้นมัธยมศึกษาปีที่ 4','ชั้นมัธยมศึกษาปีที่ 5','ชั้นมัธยมศึกษาปีที่ 6','ปวช.1','ปวช.2','ปวช.3'];
+  Room = ['','1','2','3','4','5','6','7','8','9','10'];
+
+  searchClass: string;
+  searchRoom: string;
+  searchFullName: string;
+  //Icon
+  faEdit = faEdit;
+  faTrash = faTrash;
 
 
   constructor( private sci : StudentCoreInformationService, private http : HttpClientModule) {}
@@ -28,7 +36,7 @@ export class StudentCoreInformationComponent implements OnInit {
 
   search(){
     this.sciList = this.sciList.filter(res =>{
-      return res.name;
+      return res.fname;
     });
   }
 
