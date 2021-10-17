@@ -1,4 +1,5 @@
 export class Studentdetail{
+  id:number;
   student_idcard_d:string = '';
   go_school:string = '';
   go_school_time:string = '';

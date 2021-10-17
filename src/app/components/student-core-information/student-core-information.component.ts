@@ -5,6 +5,7 @@ import { StudentInformationCore } from 'src/app/models/student-information-core'
 //Icon
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Studentcore } from 'src/app/models/studentcore-models';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class StudentCoreInformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.sci.getStudentList()
-    .subscribe((data: StudentInformationCore[]) => { console.log(data); this.sciList = data;});
+    .subscribe((data: Studentcore[]) => { console.log(data); this.sciList = data;});
   }
 
   search(){

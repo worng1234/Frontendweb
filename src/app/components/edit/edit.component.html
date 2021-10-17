@@ -1,364 +1,635 @@
-<form (ngSubmit)="studentDetail()">
-<!-- รายละเอียดนักเรียน -->
-<div class="card-body" >
-  <div class="alert alert-info" role="alert" align="center"><h5><i class="fas fa-info-circle"></i>
-    กรุณากรอกข้อมูลตามความเป็นจริงก่อนบันทึกข้อมูลเพื่อผลประโยชน์ของนักเรียนในการใช้ขอทุน หรือตรวจสอบปัจจัยต่างๆที่จะได้รับ</h5></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>ระบบบริหารจัดการข้อมูลทางการศึกษา โรงเรียนพร้าววิทยาคม</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="../../../assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../assets/css/atlantis.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="../../../assets/css/demo.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    window.addEventListener("resize", function() {
+      "use strict"; window.location.reload();
+    });
+
+    document.addEventListener("DOMContentLoaded", function(){
+       // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+
+        document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
+
+          element.addEventListener('click', function (e) {
+
+              let nextEl = element.nextElementSibling;
+              let parentEl  = element.parentElement;
+              let allSubmenus_array =	parentEl.querySelectorAll('.submenu');
+
+              if(nextEl && nextEl.classList.contains('submenu')) {
+                e.preventDefault();
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+
+                } else {
+                  nextEl.style.display = 'block';
+                }
+
+              }
+          });
+        })
+      }
+      // end if innerWidth
+
+    });
+    // DOMContentLoaded  end
+  </script>
+  <style type="text/css">
 
 
-  <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                        <p  style="margin-left: 25px;  font-size: 15px;"><b>การเดินทาง</b></p>
-                    </div>
-  <div class="row">
-                        <div class="col-6 col-md-3">
-      <div class="form-group form-group-default">
-        <label>การเดินทางมาโรงเรียน</label>
-        <select class="form-control" id="formGroupDefaultSelect" name="go_school" [(ngModel)]="studentdetail.go_school">
-          <option disabled>เลือก</option>
-          <option *ngFor="let gs of goSchool">{{gs}}</option>
-        </select>
-      </div>
-                        </div>
-    <div class="col-6 col-md-3">
-                            <div class="form-group form-group-default">
-                                <label>ระยะเวลาเดินทาง (นาที)</label>
-                                <input id="go_school_time" type="text" class="form-control" placeholder=""
-                                name="go_school_time" [(ngModel)]="studentdetail.go_school_time">
-                            </div>
-                        </div>
-    <div class="col-6 col-md-3">
-                            <div class="form-group form-group-default">
-                                <label>ระยะห่างจาก ร.ร. (ลูกรัง) เมตร</label>
-                                <input id="distance" type="text" class="form-control" placeholder=""
-                                name="distance" [(ngModel)]="studentdetail.distance">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="form-group form-group-default">
-                                <label>ระยะห่างจาก ร.ร. (ลาดยาง) เมตร</label>
-                                <input id="long_distance" type="text" class="form-control" placeholder=""
-                                name="long_distance" [(ngModel)]="studentdetail.long_distance">
-                            </div>
-                        </div>
-                    </div>
-                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                        <p  style="margin-left: 25px;  font-size: 15px;"><b>การเรียนออนไลน์</b></p>
-                    </div>
-  <div class="row">
-    <div class="col-sm-6 col-md-6">
-      <label style="margin-bottom: 5px;"><small>อุปกรณ์ที่มี (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
-                            <div class="form-group">
-        <div class="selectgroup selectgroup-pills" *ngFor="let obj of gadjectArr">
-          <label class="selectgroup-item">
-            <input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="gadject($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="checkbox" name="tool" value="2" class="selectgroup-input">
-            <span class="selectgroup-button">แท็บเล็ต</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="tool" value="3" class="selectgroup-input">
-            <span class="selectgroup-button">โน๊ตบุ๊ค</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="tool" value="4" class="selectgroup-input">
-            <span class="selectgroup-button">คอมพิวเตอร์แบบตั้งโต๊ะ</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-    <div class="col-sm-6 col-md-6">
-                            <label style="margin-bottom: 5px;"><small>อินเตอร์เน็ตที่ใช้ (เลือก 1 หัวข้อ)</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of internetArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="internet($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="net" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">อินเตอร์เน็ตสาย</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                    </div>
-                    <div style="border-radius: 5px; background-color: #8B469B; margin-bottom: 15px; color: white;">
-                        <p  style="margin-left: 25px;  font-size: 15px;"><b>ข้อมูลด้านอื่นๆ</b></p>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 col-md-6">
-      <div class="form-group form-group-default">
-        <label>ความพิการ</label>
-        <select class="form-control" id="formGroupDefaultSelect" name="disebled" [(ngModel)]="studentdetail.disabled">
-          <option disabled>เลือก</option>
-          <option *ngFor="let d of Disable">{{d}}</option>
-        </select>
-      </div>
-                        </div>
-                        <div class="col-6 col-md-6">
-      <div class="form-group form-group-default">
-        <label>ความด้อยโอกาส</label>
-        <select class="form-control" id="formGroupDefaultSelect" name="unfortuned" [(ngModel)]="studentdetail.unfortuned">
-          <option disabled>เลือก</option>
-          <option *ngFor="let uf of unFortuned">{{uf}}</option>
-        </select>
-      </div>
-                        </div>
-                    </div>
-                    <div class="row">
-    <div class="col-sm-6 col-md-12">
-      <label style="margin-bottom: 5px;"><small>ความขาดแคลน (เลือกได้มากกว่า 1 หัวข้อ)</small></label>
-                            <div class="form-group">
-        <div class="selectgroup selectgroup-pills" *ngFor="let obj of lackArr">
-          <label class="selectgroup-item">
-            <input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="lack($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="2" class="selectgroup-input">
-            <span class="selectgroup-button">ขาดแคลนเครื่องเขียน</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="3" class="selectgroup-input">
-            <span class="selectgroup-button">ขาดแคลนอาหารกลางวัน</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="4" class="selectgroup-input">
-            <span class="selectgroup-button">ขาดแคลนเครื่องแบบ</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="5" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ขาดแคลน</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                    </div>
-                    <div class="row">
-    <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนคบเพื่อนที่เกี่ยวข้องกับสิ่งเสพติด</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of friend_drugArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="friend_drug($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="1" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ใช่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนมีพฤติกรรมเสพยาหรือจำหน่ายสิ่งเสพติด</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of sell_drugArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="sell_drug($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="2" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ใช่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนมีพฤติกรรมส่อไปในทางชู้สาว</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of sexualArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="sexual($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="3" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ใช่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนพักหรืออาศัยอยู่กับเพื่อนต่างเพศที่มิใช่ญาติพี่น้อง</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of not_parentArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="not_parent($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="4" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ใช่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนชอบเที่ยวกลางคืน</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of dark_travelArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="dark_travel($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="5" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ใช่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนเคยถูกล่วงละเมิดทางเพศ</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of sexual_harrasmentArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="sexual_harrasment($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="6" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่ใช่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                    </div>
-                    <div class="row">
-    <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนรู้สึกว่าโลกนี้ (เลือก 1 หัวข้อ)</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of cute_worldArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="cute_world($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="world" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่น่าอยู่</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <label style="margin-bottom: 5px;"><small>นักเรียนรู้สึกว่าตัวเอง (เลือก 1 หัวข้อ)</small></label>
-      <div class="form-group">
-        <div class="selectgroup selectgroup-secondary selectgroup-pills" *ngFor="let obj of rich_manArr">
-          <label class="selectgroup-item">
-            <input type="radio" class="selectgroup-input" value="{{obj.value}}" (change)="rich_man($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="radio" name="heart" value="no" class="selectgroup-input">
-            <span class="selectgroup-button">ไม่มีค่า</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                    </div>
-                    <div class="row">
-    <div class="col-6 col-md-6">
-                            <div class="form-group form-group-default">
-                                <label>นักเรียนคิดว่าคนที่ดีควรมีลักษณะอย่างไร</label>
-                                <input id="good_guy" type="text" class="form-control" placeholder=""
-                                name="good_guy" [(ngModel)]="studentdetail.good_guy">
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-6">
-                            <div class="form-group form-group-default">
-                                <label>นักเรียนคิดว่าสังคมที่ดีควรมีลักษณะอย่างไร</label>
-                                <input id="social_good" type="text" class="form-control" placeholder=""
-                                name="social_good" [(ngModel)]="studentdetail.social_good">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-    <div class="col-sm-6 col-md-12">
-      <label style="margin-bottom: 5px;"><small>ปัญหาเรื่องใด ที่นักเรียนกำลังประสบอยู่ในขณะนี้ (เลือกได้มากกว่า 1 อย่าง)</small></label>
-                            <div class="form-group">
-        <div class="selectgroup selectgroup-pills" *ngFor="let obj of problemArr">
-          <label class="selectgroup-item">
-            <input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="problem($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="2" class="selectgroup-input">
-            <span class="selectgroup-button">การเรียน</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="3" class="selectgroup-input">
-            <span class="selectgroup-button">สุขภาพ</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="4" class="selectgroup-input">
-            <span class="selectgroup-button">เศรษฐกิจ</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="5" class="selectgroup-input">
-            <span class="selectgroup-button">การคบเพื่อน</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="6" class="selectgroup-input">
-            <span class="selectgroup-button">การวางตัวในสังคม</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="7" class="selectgroup-input">
-            <span class="selectgroup-button">การใช้เวลาว่าง</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="8" class="selectgroup-input">
-            <span class="selectgroup-button">การเลือกอาชีพ</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="9" class="selectgroup-input">
-            <span class="selectgroup-button">การเลือกศึกษาต่อ</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="issue" value="10" class="selectgroup-input">
-            <span class="selectgroup-button">การปรับตัวเข้ากับครู-อาจารย์ในโรงเรียน</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                    </div>
-                    <div class="row">
-    <div class="col-sm-6 col-md-12">
-      <label style="margin-bottom: 5px;"><small>ถ้าต้องการความช่วยเหลือ/ปรึกษา นักเรียนต้องการความช่วยเหลือ/ปรึกษา จากใคร (เลือกได้มากกว่า 1 อย่าง)</small></label>
-                            <div class="form-group">
-        <div class="selectgroup selectgroup-pills" *ngFor="let obj of helpArr">
-          <label class="selectgroup-item">
-            <input type="checkbox" class="selectgroup-input" value="{{obj.value}}" (change)="help($event)">
-            <span class="selectgroup-button">{{obj.key}}</span>
-          </label>
-          <!-- <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="2" class="selectgroup-input">
-            <span class="selectgroup-button">มารดา</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="3" class="selectgroup-input">
-            <span class="selectgroup-button">ครูแนะแนว</span>
-          </label>
-          <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="4" class="selectgroup-input">
-            <span class="selectgroup-button">ครูที่ปรึกษา</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="5" class="selectgroup-input">
-            <span class="selectgroup-button">เพื่อน</span>
-          </label>
-                                    <label class="selectgroup-item">
-            <input type="checkbox" name="lack" value="5" class="selectgroup-input">
-            <span class="selectgroup-button">อื่นๆ</span>
-          </label> -->
-        </div>
-      </div>
-                        </div>
-                    </div>
+    /* ============ desktop view ============ */
+    @media all and (min-width: 992px) {
+
+      .sidebar li{ position: relative; }
+
+      .sidebar li .submenu{
+        display: none;
+        position: absolute;
+        left:100%; top:-7px;
+        min-width: 240px;
+      }
+
+      [dir=rtl] .sidebar li .submenu{
+        right:100%; left:auto;
+      }
+
+      .sidebar li:hover{ background: var(--bs-light); }
+      .sidebar li:hover > .submenu{ display: block; }
+
+    }
+    /* ============ desktop view .end// ============ */
 
 
-</div>
-<button type="submit">Submit</button>
-</form>
+    /* ============ small devices ============ */
+    @media (max-width: 991px) {
+
+      .sidebar .submenu, .sidebar .dropdown-menu{
+        position: static!important;
+        margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+      }
+
+    }
+    /* ============ small devices .end// ============ */
+
+
+    .sidebar .nav-link {
+        font-weight: 500;
+        color: var(--bs-dark);
+    }
+    .sidebar .nav-link:hover {
+        background: var(--bs-light);
+        color: var(--bs-primary);
+    }
+
+    </style>
+
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="white">
+
+				<a href="student-index.html" class="logo">
+					<img src="../../assets/img/logo3.png" alt="navbar brand" class="navbar-brand" style="width: 100%; height: 75%;">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
+				<div class="container-fluid">
+					<div class="collapse" id="search-nav">
+						<p class="card-title" style="font-size: 20px;"><b><font color='#685DA7'>ระบบบริหารจัดการข้อมูลทางการศึกษา</font></b></p>
+							<label><small>โรงเรียนพร้าววิทยาคม จังหวัดเชียงใหม่ (สำหรับเจ้าหน้าที่ฝ่ายวิชาการ)</small></label>
+					</div>
+
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        <li class="nav-item toggle-nav-search hidden-caret">
+                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+                                <i class="fas fa-school"></i>
+                            </a>
+                        </li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" href="index.html" aria-expanded="false">
+								<i class="fas fa-unlock"></i> ออกระบบ
+							</a>
+						</li>
+                    </ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+
+		</div>
+		<!-- // End main-header -->
+
+		<!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+
+					<!-- เริ่มโปรไฟล์ -->
+					<div class="user">
+						<div class="info">
+
+							<label><b>ชื่อ-นามสกุล :</b> ทำงานดี มีเมตตา</label>
+							<label><b>ตำแหน่ง :</b> ลูกจ้างประจำ (พนักงานธุรการ)</label>
+							<label><b>ภาคเรียนที่ :</b> 1/2565</label>
+
+
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<!-- สิ้นสุดโปรไฟล์ -->
+
+					<!-- เริ่มเมนู -->
+            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropright
+            </button>
+            <ul class="dropdown-menu">
+                <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropright2
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item"  >1</a></li>
+                    <li><a class="dropdown-item"  >4</a></li>
+                </ul>
+              <li><a class="dropdown-item"  >สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a></li>
+              <li><a class="dropdown-item"  >สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
+            </ul>
+					<ul class="nav nav-primary">
+
+						<li class="nav-item">
+							<a href="academic-index.html">
+								<i class="fas fa-home"></i>
+								<p>หน้าหลัก</p>
+							</a>
+						</li>
+
+						<li class="nav-item active submenu">
+							<a data-toggle="collapse" href="#forms">
+								<i class="fas fa-user-graduate"></i>
+								<p>จัดการข้อมูลนักเรียน</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse show" id="forms">
+								<ul class="nav nav-collapse">
+									<li>
+										<a data-toggle="collapse" href="#forms1">
+											<span class="sub-item">ข้อมูลนักเรียนพื้นฐาน</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse show" id="forms1">
+											<ul class="nav nav-collapse subnav">
+												<li class="active">
+													<a href="academic-info-all.html">
+														<span class="sub-item">แสดงข้อมูลนักเรียน</span>
+													</a>
+												</li>
+												<li>
+													<a href="academic-info-add.html">
+														<span class="sub-item">เพิ่มข้อมูลนักเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+
+									<li>
+										<a data-toggle="collapse" href="#forms2">
+											<span class="sub-item">เลื่อนชั้นเรียน</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms2">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="#">
+														<span class="sub-item">แสดงข้อมูลเลื่อนชั้นเรียน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+
+									<li>
+										<a data-toggle="collapse" href="#forms3">
+											<span class="sub-item">จบการศึกษา</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms3">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="academic-graduated-all.html">
+														<span class="sub-item">แสดงข้อมูลจบการศึกษา</span>
+													</a>
+												</li>
+												<li>
+													<a href="academic-graduated-all.html">
+														<span class="sub-item">เพิ่มนักเรียนจบการศึกษา</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+
+									<li>
+										<a data-toggle="collapse" href="#forms4">
+											<span class="sub-item">ย้ายสถานศึกษา</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms4">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="academic-move-all.html">
+														<span class="sub-item">แสดงข้อมูลย้ายสถานศึกษา</span>
+													</a>
+												</li>
+												<li>
+													<a href="academic-move-add.html">
+														<span class="sub-item">เพิ่มนักเรียนย้ายสถานศึกษา</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+
+									<li>
+										<a data-toggle="collapse" href="#forms5">
+											<span class="sub-item">ออกกลางคัน</span>
+											<span class="caret"></span>
+										</a>
+										<div class="collapse" id="forms5">
+											<ul class="nav nav-collapse subnav">
+												<li>
+													<a href="academic-out-all.html">
+														<span class="sub-item">แสดงข้อมูลออกกลางคัน</span>
+													</a>
+												</li>
+												<li>
+													<a href="academic-out-add.html">
+														<span class="sub-item">เพิ่มนักเรียนออกกลางคัน</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+                        <li class="nav-item">
+							<a data-toggle="collapse" href="#agree">
+								<i class="fas fa-id-card-alt"></i>
+								<p>จัดการข้อมูลนักเรียนใหม่</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="agree">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="academic-new-info-tables-agree-m1.html">
+											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</span>
+										</a>
+									</li>
+									<li>
+										<a href="academic-new-info-tables-agree-m4.html">
+											<span class="sub-item">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="nav-item ">
+							<a href="#">
+								<i class="fas fa-book-open"></i>
+								<p>คู่มือการใช้งาน</p>
+							</a>
+						</li>
+						<li class="nav-item ">
+							<a href="#">
+								<i class="fas fa-comments"></i>
+								<p>ติดต่อเรา</p>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- สิ้นสุดเมนู -->
+
+		<!-- เริ่มเนื้อหา-->
+		<div class="main-panel">
+			<div class="content">
+				<div class="panel-header " style="background-color: #33658A;">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h3 class="text-white pb-2 fw-bold"></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="page-inner mt--5">
+					<div class="row mt--2">
+						<div class="col-md-12">
+							<div class="card full-height">
+								<div class="card-header">
+									<div class="card-head-row">
+										<div class="card-title"><i class="fas fa-user-graduate"></i> &nbsp;&nbsp; จัดการข้อมูลนักเรียน <i class="flaticon-right-arrow"></i> แสดงข้อมูลนักเรียน </div>
+									</div>
+								</div>
+                                <div class="card-body" style="min-height: 370px">
+									<div class="alert alert-info" role="alert" align="center">
+											<h4 class="fw-bold"><i class="far fa-calendar-check"></i> &nbsp;&nbsp; ปีการศึกษาปัจจุบันคือ <font color="red">1/2565</font></h4>
+									</div>
+									<div class="table-responsive" >
+										<div class="form-group">
+											<!-- <form role="form" method="post"  action=""> -->
+												<!-- <div class="row"> -->
+
+													<!-- <div class="col-6 col-md-3">
+														<div class="form-group form-group-default">
+															<label>ระดับชั้น</label>
+															<select class="form-control" id="formGroupDefaultSelect" [(ngModel)] = "searchClass" name="searchClass">
+																<option disabled>เลือก</option>
+																<option *ngFor = "let c of Class">{{c}}</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-6 col-md-3">
+														<div class="form-group form-group-default">
+															<label>ลำดับห้อง</label>
+															<select class="form-control" id="formGroupDefaultSelect" [(ngModel)] = "searchRoom" name="searchRoom">
+																<option disabled>เลือก</option>
+																<option *ngFor = "let r of Room">{{r}}</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-6 col-md-5">
+														<div class="form-group form-group-default">
+															<label>สามารถค้นหาจากชื่อ-นามสกุล, เลขประจำตัวนักเรียน</label>
+															<input name="searchFullName" type="text" class="form-control" placeholder=""
+                              [(ngModel)] = "searchFullName" >
+														</div>
+													</div>
+													<button type="submit" class="btn btn-primary form-group form-group-default col-sm-6 col-md-1" ><i class="fas fa-search"></i> แสดง</button>
+												</div>
+											</form> -->
+										</div>
+
+												<!-- ตารางแสดงข้อมูล-->
+													<!-- <table id="basic-datatables" class="table table-bordered table-striped table-hover" style="width:100%; text-align: center;">
+														<thead>
+															<tr>
+																<th scope="col" width="10%">ลำดับ</th>
+																<th scope="col" width="14%">เลขประจำตัวนักเรียน</th>
+																<th scope="col" width="8%">เลขที่</th>
+																<th scope="col" width="26">ชื่อ-นามสกุล</th>
+																<th scope="col" width="8%">เพศ</th>
+																<th scope="col" width="14%">ชั้นเรียน</th>
+																<th scope="col" width="8%">ห้อง</th>
+																<th scope="col" width="12%">จัดการ</th>
+
+															</tr>
+														</thead>
+														<tbody>
+															<tr *ngFor = "let s of sciList | filter:searchFullName | filter:searchClass | filter:searchRoom ">
+
+																<td align="center">{{s.id_s}}</td>
+																<td align="center">{{s.student_id}}</td>
+																<td align="center">{{s.student_number}}</td>
+																<td>{{s.prename}} {{s.name}} {{s.name_cen}} {{s.surname}}</td>
+																<td align="center">{{s.gender}}</td>
+																<td align="center">{{s.class}}</td>
+																<td align="center">{{s.room}}</td>
+																<td align="center">
+																	<form role="form" method="post" action="?r=admin_student_edit">
+																		<button type="button" class="btn btn-primary btn-xs" [routerLink] = "['/Showstudentbyid', s.id ]"><fa-icon [icon]="faEdit" style="color: white;"></fa-icon></button>
+                                    <button type="button" class="btn btn-danger btn-xs" style="margin-left: 15px;"><fa-icon [icon]="faTrash" style="color: white;"></fa-icon></button>
+
+																	</form>
+																</td>
+															</tr>
+														</tbody>
+													</table> -->
+												<!-- //ตารางแสดงข้อมูล-->
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- สิ้นสุดเนื้อหา -->
+			<!-- เริ่ม Footer -->
+			<footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+
+							<li class="nav-item">
+								<a class="nav-link" target="_blank">&copy; 2021 Phrao wittayakom School. | พัฒนาโดย PWK40 & CSMJU23</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						Theme by <a href="https://www.themekita.com" target="_blank">ThemeKita</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- สิ้นสุด Footter -->
+	</div>
+  <script src="../../../assets/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!--   Core JS Files   -->
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../assets/js/core/popper.min.js"></script>
+	<script src="../assets/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+	<!-- Chart JS -->
+	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="../assets/js/atlantis.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="../assets/js/setting-demo.js"></script>
+	<script src="../assets/js/demo.js"></script>
+
+	<!-- Date time picker -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+				"pageLength": 50,
+				"language":{
+					"search": "ค้นหาข้อมูล :"
+				},
+							"ordering": false
+			});
+		});
+	</script>
+
+	<script>
+		Circles.create({
+			id:'circles-1',
+			radius:45,
+			value:60,
+			maxValue:100,
+			width:7,
+			text: 5,
+			colors:['#f1f1f1', '#FF9E27'],
+			duration:400,
+			wrpClass:'circles-wrp',
+			textClass:'circles-text',
+			styleWrapper:true,
+			styleText:true
+		})
+
+		Circles.create({
+			id:'circles-2',
+			radius:45,
+			value:70,
+			maxValue:100,
+			width:7,
+			text: 36,
+			colors:['#f1f1f1', '#2BB930'],
+			duration:400,
+			wrpClass:'circles-wrp',
+			textClass:'circles-text',
+			styleWrapper:true,
+			styleText:true
+		})
+
+		Circles.create({
+			id:'circles-3',
+			radius:45,
+			value:40,
+			maxValue:100,
+			width:7,
+			text: 12,
+			colors:['#f1f1f1', '#F25961'],
+			duration:400,
+			wrpClass:'circles-wrp',
+			textClass:'circles-text',
+			styleWrapper:true,
+			styleText:true
+		})
+
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+				datasets : [{
+					label: "Total Income",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines : {
+							drawBorder: false,
+							display : false
+						}
+					}],
+					xAxes : [ {
+						gridLines : {
+							drawBorder: false,
+							display : false
+						}
+					}]
+				},
+			}
+		});
+
+		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
+</body>
+</html>

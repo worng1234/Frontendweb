@@ -92,13 +92,11 @@ import { MatSortModule } from '@angular/material/sort';
     AdminPageCommunicateComponent,
     MainNewstudentComponent,
     MainStudyComponent,
-
     TestUIComponent,
-
     NewStudentM1IdComponent,
-      FixNewStudentIdM1Component,
-      NewStudentM4IdComponent,
-      FixNewStudentIdM4Component,
+    FixNewStudentIdM1Component,
+    NewStudentM4IdComponent,
+    FixNewStudentIdM4Component,
 
   ],
   imports: [

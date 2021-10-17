@@ -1,4 +1,5 @@
 export class Talentstudent{
+  id:number;
   student_idcard_t:string = '';
   final_school:string = '';
   final_class:string = '';

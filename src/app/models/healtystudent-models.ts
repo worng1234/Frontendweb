@@ -1,4 +1,5 @@
 export class Healtystudent{
+  id:number;
   student_idcard_h:string = '';
   weight:string = '';
   height:string = '';

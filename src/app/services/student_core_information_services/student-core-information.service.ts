@@ -23,6 +23,32 @@ export class StudentCoreInformationService {
     return this.http.get('http://127.0.0.1:8000/api/getstudentcoreid/'+id);
   }
 
+  //GetID
+  studentcoreID(id){
+    return this.http.get('http://127.0.0.1:8000/api/studentcoreID/'+id);
+  }
+
+  addressstudentID(id){
+    return this.http.get('http://127.0.0.1:8000/api/addressstudentID/'+id);
+  }
+
+  healtystudentID(id){
+    return this.http.get('http://127.0.0.1:8000/api/healtystudentID/'+id);
+  }
+
+  parentstudentID(id){
+    return this.http.get('http://127.0.0.1:8000/api/parentstudentID/'+id);
+  }
+
+  studentdetailID(id){
+    return this.http.get('http://127.0.0.1:8000/api/studentdetailID/'+id);
+  }
+
+  talentstudentID(id){
+    return this.http.get('http://127.0.0.1:8000/api/talentstudentID/'+id);
+  }
+///////////////////////
+
   updateProfilestudent(id: number, data): Observable<any>{
     return this.http.put('http://127.0.0.1:8000/api/editstudentcore/' + id, data);
   }

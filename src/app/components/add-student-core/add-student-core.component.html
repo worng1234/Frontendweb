@@ -92,15 +92,20 @@
 
 					<!-- เริ่มเมนู -->
 					<ul class="nav nav-primary">
-
-						<li class="nav-item">
-							<a href="student-index.html">
+						<li class="nav-item active">
+							<a href="#" >
 								<i class="fas fa-home"></i>
 								<p>หน้าหลัก</p>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a href="login.html">
+								<i class="fas fa-lock"></i>
+								<p>เข้าระบบ</p>
+							</a>
+						</li>
 
-            <button
+              <button
                 class="btn btn-light dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton1"
@@ -116,21 +121,21 @@
               </ul>
 
               <button
-                class="btn btn-light dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style="margin-left: 41px; color: rgb(156, 155, 155);"
-              >
-                จัดการข้อมูลนักเรียนใหม่
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="sort-newstudent.component.html" [routerLink]="['/SortNewstudentm1']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 1</a></li>
-                <li><a class="dropdown-item" href="sort-newstudent-m4.component.html" [routerLink]="['/SortNewstudentm4']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
-              </ul>
+              class="btn btn-light dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="margin-left: 41px; color: rgb(156, 155, 155);"
+            >
+              จัดการข้อมูลนักเรียนใหม่
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="sort-newstudent.component.html" [routerLink]="['/SortNewstudentm1']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียน<br/>ชั้นมัธยมศึกษาปีที่ 1</a></li>
+              <li><a class="dropdown-item" href="sort-newstudent-m4.component.html" [routerLink]="['/SortNewstudentm4']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียน<br/>ชั้นมัธยมศึกษาปีที่ 4</a></li>
+            </ul>
 
-              <button
+            <button
                 class="btn btn-light dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton1"
@@ -141,36 +146,10 @@
               ระบบบันทึกข้อมูลพื้นฐาน
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="add-student-core.component.html" [routerLink]="['/Addstudentcore']">เพิ่มข้อมูล</a></li>
-                <li><a class="dropdown-item" href="sort-newstudent-m4.component.html" [routerLink]="['/SortNewstudentm4']">ตรวจสอบรายชื่อผู้สมัครเข้าเรียนชั้นมัธยมศึกษาปีที่ 4</a></li>
+                <li><a class="dropdown-item" href="add-student-core.component.html" [routerLink]="['/Addstudentcore']">เพิ่มข้อมูลนักเรียน</a></li>
+                <li><a class="dropdown-item" href="student-core-information.component.html" [routerLink]="['/StudentCoreInformation']">ตรวจสอบรายชื่อนักเรียน</a></li>
               </ul>
 
-						<!-- <li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-file-alt"></i>
-								<p>ระบบบันทึกข้อมูลพื้นฐาน</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="forms">
-								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="student-info-add-1.html">
-											<span class="sub-item">เพิ่มข้อมูล</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="sub-item">แก้ไขข้อมูล</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="sub-item">ตรวจสอบข้อมูล</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li> -->
 						<li class="nav-item ">
 							<a href="#">
 								<i class="fas fa-book-open"></i>
@@ -183,15 +162,6 @@
 								<p>ติดต่อเรา</p>
 							</a>
 						</li>
-
-						<li class="nav-item">
-							<a href="widgets.html">
-								<i class="fas fa-desktop"></i>
-								<p>ต้นฉบับ</p>
-								<span class="badge badge-success">4</span>
-							</a>
-						</li>
-
 					</ul>
 				</div>
 			</div>
@@ -234,8 +204,8 @@
                                         <div class="col-6 col-md-5">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวนักเรียน</label>
-                                                <input id="student_id" type="text" class="form-control" placeholder=""
-                                                [(ngModel)]="studentcore.student_id" name="student_id">
+                                                <input id="studentID" type="text" class="form-control" placeholder=""
+                                                [(ngModel)]="studentcore.studentID" name="studentID">
                                             </div>
                                         </div>
                                         <div class="col-6 col-md-3">
@@ -1423,14 +1393,14 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-6 col-md-6">
+                                        <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
                                                 <input id="id_father" type="text" class="form-control" placeholder=""
                                                 name="id_father" [(ngModel)]="parent.id_father">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-2">
+                                        <div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ชนิดของบัตร</label>
 												<select class="form-control" id="formGroupDefaultSelect" name="type_card_f" [(ngModel)]="parent.type_card_f">
@@ -1587,14 +1557,14 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-6 col-md-6">
+                                        <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
                                                 <input id="id_mother" type="text" class="form-control" placeholder=""
                                                 name="id_mother" [(ngModel)]="parent.id_mother">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-2">
+                                        <div class="col-sm-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ชนิดของบัตร</label>
 												<select class="form-control" id="formGroupDefaultSelect" name="type_card_m" [(ngModel)]="parent.type_card_m">
@@ -1770,14 +1740,14 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-6 col-md-5">
+                                        <div class="col-sm-6 col-md-4">
                                             <div class="form-group form-group-default">
                                                 <label>เลขประจำตัวประชาชน</label>
                                                 <input id="id_parent" type="text" class="form-control" placeholder=""
                                                 name="id_parent" [(ngModel)]="parent.id_parent">
                                             </div>
                                         </div>
-                                        <div class="col-6 col-md-2">
+                                        <div class="col-6 col-md-4">
 											<div class="form-group form-group-default">
 												<label>ชนิดของบัตร</label>
 												<select class="form-control" id="formGroupDefaultSelect" name="type_card_p" [(ngModel)]="parent.type_card_p">

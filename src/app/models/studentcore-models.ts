@@ -1,6 +1,7 @@
 export class Studentcore{
-  student_id_card:number;
-  student_id:number;
+  id:number;
+  student_id_card:string;
+  studentID:string;
   student_major:string = '';
   student_class:string = '';
   student_room:string = '';
