@@ -12,6 +12,12 @@ import { StudentCoreInformationService } from 'src/app/services/student_core_inf
 export class FixProfileStudentComponent implements OnInit {
   currentStudent = null;
   message ='';
+  studentcore = null;
+  addressstudent = null;
+  healtystudent = null;
+  parentstudent = null;
+  studentdetail = null;
+  talentstudent = null;
 
   constructor(private aRoute: ActivatedRoute,
               private sci: StudentCoreInformationService,
@@ -24,8 +30,43 @@ export class FixProfileStudentComponent implements OnInit {
   }
 
   getStudentListID(id): void{
-    this.sci.getStudentListID(id).subscribe(data =>{
-      this.currentStudent = data;
+    this.sci.studentcoreID(id).subscribe(data =>{
+      this.studentcore = data;
+      console.log(data);
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.addressstudentID(id).subscribe(data =>{
+      this.addressstudent = data;
+      console.log(data);
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.healtystudentID(id).subscribe(data =>{
+      this.healtystudent = data;
+      console.log(data);
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.studentdetailID(id).subscribe(data =>{
+      this.studentdetail = data;
+      console.log(data);
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.parentstudentID(id).subscribe(data =>{
+      this.parentstudent = data;
+      console.log(data);
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.talentstudentID(id).subscribe(data =>{
+      this.talentstudent = data;
       console.log(data);
     },error =>{
       console.log(error);
@@ -33,13 +74,53 @@ export class FixProfileStudentComponent implements OnInit {
   }
 
   updateProfilestudent(): void {
-    this.sci.updateProfilestudent(this.currentStudent.id, this.currentStudent)
+    this.sci.studentcoreUpdate(this.studentcore.id, this.studentcore)
     .subscribe(response =>{
       console.log(response);
       this.message = 'Success update student';
     },error =>{
       console.log(error);
-    })
+    });
+
+    this.sci.addressstudentUpdate(this.addressstudent.id, this.addressstudent)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.healtystudentUpdate(this.healtystudent.id, this.healtystudent)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.studentdetailUpdate(this.studentdetail.id, this.studentdetail)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.parentstudentUpdate(this.parentstudent.id, this.parentstudent)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    });
+
+    this.sci.talentstudentUpdate(this.talentstudent.id, this.talentstudent)
+    .subscribe(response =>{
+      console.log(response);
+      this.message = 'Success update student';
+    },error =>{
+      console.log(error);
+    });
   }
 
 }

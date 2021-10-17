@@ -188,7 +188,7 @@
 							<div class="card full-height">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; ระบบบันทึกข้อมูลพื้นฐาน <i class="flaticon-right-arrow"></i> เพิ่มข้อมูล</div>
+										<div class="card-title"><i class="fas fa-id-card-alt"></i> &nbsp;&nbsp; ระบบแสดงข้อมูลพื้นฐานรายบุคคล </div>
 									</div>
 								</div>
 
@@ -1612,7 +1612,8 @@
 
 
 								<div class="card-footer" align="center">
-									<button type="button" class="btn btn-danger" [routerLink]="['/StudentCoreInformation']">ย้อนกลับ</button>
+                  <button type="button" class="btn btn-secondary" [routerLink]="['/Fixprofilestudent' ,id]">จัดการข้อมูล</button>
+                  <button type="button" class="btn btn-danger" [routerLink]="['/StudentCoreInformation']" style="margin-left: 70px;">ย้อนกลับ</button>
 								</div><br>
 
 							</div>

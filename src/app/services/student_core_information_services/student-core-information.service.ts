@@ -49,6 +49,31 @@ export class StudentCoreInformationService {
   }
 ///////////////////////
 
+//update
+  studentcoreUpdate(id: number, data): Observable<any>{
+    return this.http.put('http://127.0.0.1:8000/api/studentcoreUpdate/' + id, data);
+  }
+
+  addressstudentUpdate(id: number, data): Observable<any>{
+    return this.http.put('http://127.0.0.1:8000/api/addressstudentUpdate/' + id, data);
+  }
+
+  healtystudentUpdate(id: number, data): Observable<any>{
+    return this.http.put('http://127.0.0.1:8000/api/healtystudentUpdate/' + id, data);
+  }
+
+  parentstudentUpdate(id: number, data): Observable<any>{
+    return this.http.put('http://127.0.0.1:8000/api/parentstudentUpdate/' + id, data);
+  }
+
+  studentdetailUpdate(id: number, data): Observable<any>{
+    return this.http.put('http://127.0.0.1:8000/api/studentdetailUpdate/' + id, data);
+  }
+
+  talentstudentUpdate(id: number, data): Observable<any>{
+    return this.http.put('http://127.0.0.1:8000/api/talentstudentUpdate/' + id, data);
+  }
+
   updateProfilestudent(id: number, data): Observable<any>{
     return this.http.put('http://127.0.0.1:8000/api/editstudentcore/' + id, data);
   }
